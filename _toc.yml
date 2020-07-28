@@ -15,8 +15,8 @@
   sections:
   - file: dictionaries_exercises
 - file: files
-- file: scripts_debugging
-- file: 08_functions_modules_style
+- file: scripts_and_debugging
+- file: functions_modules_style
 - file: 09_pandas
 - file: 10_visualization
 - file: 11_footprints
