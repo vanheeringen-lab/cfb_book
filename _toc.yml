@@ -18,6 +18,6 @@
 - file: content/scripts_and_debugging
 - file: content/functions_modules_style
 - file: content/pandas
-- file: content/10_visualization
+- file: content/visualization
 - file: content/11_footprints
 - file: content/12_dnase_motifs
