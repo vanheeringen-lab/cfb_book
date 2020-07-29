@@ -1,3 +1,0 @@
-Cell line 1 is	HCT116
-Cell line 2 is	HeLa
-Cell line 3 is	HEK293

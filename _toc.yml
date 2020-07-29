@@ -1,23 +1,23 @@
-- file: 01_introduction
-- file: 02_first_exercises
-- file: 03_lists
+- file: content/01_introduction
+- file: content/02_first_exercises
+- file: content/03_lists
   sections: 
-  - file: lists
-  - file: lists_exercises
-- file: 04_loops_control_flow
+  - file: content/lists
+  - file: content/lists_exercises
+- file:  content/04_loops_control_flow
   sections:
-  - file: control_flow
-  - file: control_flow_exercises
-  - file: loops
-  - file: loops_exercises
-- file: dictionaries
+  - file:  content/control_flow
+  - file: content/control_flow_exercises
+  - file: content/loops
+  - file: content/loops_exercises
+- file: content/dictionaries
   expand_sections: true
   sections:
-  - file: dictionaries_exercises
-- file: files
-- file: scripts_and_debugging
-- file: functions_modules_style
-- file: 09_pandas
-- file: 10_visualization
-- file: 11_footprints
-- file: 12_dnase_motifs
+  - file: content/dictionaries_exercises
+- file: content/files
+- file: content/scripts_and_debugging
+- file: content/functions_modules_style
+- file: content/pandas
+- file: content/10_visualization
+- file: content/11_footprints
+- file: content/12_dnase_motifs
