@@ -1,0 +1,351 @@
+
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Exercises: control flow &#8212; NWI-BM066A Computation for Biologists</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
+    <link href="../_static/css/index.css" rel="stylesheet">
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/jupyter-sphinx.css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/sphinx-book-theme.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/mystnb.js"></script>
+    <script src="../_static/sphinx-book-theme.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Loops" href="loops.html" />
+    <link rel="prev" title="Control flow" href="control_flow.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="docsearch:language" content="en">
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../index.html">
+  
+  
+  <h1 class="site-logo" id="site-title">NWI-BM066A Computation for Biologists</h1>
+  
+</a>
+</div>
+
+<form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="01_introduction.html">
+   Introduction
+  </a>
+ </li>
+</ul>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="02_first_exercises.html">
+   First exercises
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="03_lists.html">
+   Lists
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="reference internal" href="04_loops_control_flow.html">
+   Control flow and loops
+  </a>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="control_flow.html">
+     Control flow
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="control_flow.html#glossary-of-control-flow-terms">
+     Glossary of control flow terms
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Exercises: control flow
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="loops.html">
+     Loops
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="loops.html#glossary-of-loop-terms">
+     Glossary of loop terms
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="loops_exercises.html">
+     <strong>
+      Exercises
+     </strong>
+     : loops
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="dictionaries.html">
+   Dictionaries
+  </a>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="dictionaries_exercises.html">
+     Exercises: dictionaries
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="dictionaries_exercises.html#exercises-putting-it-all-together">
+     Exercises: Putting it all together
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="files.html">
+   Files
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="scripts_and_debugging.html">
+   Scripts and debugging
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="functions_modules_style.html">
+   Functions and modules
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="pandas.html">
+   Introduction to pandas DataFrames
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="visualization.html">
+   Visualization
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="11_footprints.html">
+   Creating a DNAseI footprint profile
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="12_dnase_motifs.html">
+   Motifs in DNase I peaks
+  </a>
+ </li>
+</ul>
+
+</nav>
+
+ <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        <div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/content/control_flow_exercises.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+    
+</div>
+        <!-- Source interaction buttons -->
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> On this page
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercise-4-1">
+   Exercise 4.1
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercise-4-2">
+   Exercise 4.2
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercise-4-3">
+   Exercise 4.3
+  </a>
+ </li>
+</ul>
+
+        </nav>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="exercises-control-flow">
+<h1>Exercises: control flow<a class="headerlink" href="#exercises-control-flow" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="exercise-4-1">
+<h2>Exercise 4.1<a class="headerlink" href="#exercise-4-1" title="Permalink to this headline">¶</a></h2>
+<p>Here are two variables containing sequences:</p>
+<p>Write a block of statements that provides an answer to the question whether:</p>
+<ol class="simple">
+<li><p>the sequence of <code class="docutils literal notranslate"><span class="pre">a</span></code> is the same as the sequence of <code class="docutils literal notranslate"><span class="pre">b</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">a</span></code> is longer than <code class="docutils literal notranslate"><span class="pre">b</span></code>, shorter than <code class="docutils literal notranslate"><span class="pre">b</span></code>, or the same length as <code class="docutils literal notranslate"><span class="pre">b</span></code></p></li>
+<li><p>which of the sequences (if any) contains an ‘N’</p></li>
+</ol>
+</div>
+<div class="section" id="exercise-4-2">
+<h2>Exercise 4.2<a class="headerlink" href="#exercise-4-2" title="Permalink to this headline">¶</a></h2>
+<p>Take the following DNA sequence.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>dna = &quot;TTGCATGTCAATCGATCGGATTGGTTGATTTATCCCGA&quot;
+</pre></div>
+</div>
+<p>Write code that will print <code class="docutils literal notranslate"><span class="pre">*</span></code> if there is a stop codon in this sequence (TAA, TAG or TGA).</p>
+</div>
+<div class="section" id="exercise-4-3">
+<h2>Exercise 4.3<a class="headerlink" href="#exercise-4-3" title="Permalink to this headline">¶</a></h2>
+<p>Read the description and methods of the UCSC CpG island track: <a class="reference external" href="https://genome.ucsc.edu/cgi-bin/hgTrackUi?g=cpgIslandSuper">https://genome.ucsc.edu/cgi-bin/hgTrackUi?g=cpgIslandSuper</a>.</p>
+<p>Write the code that will test if a sequence is a CpG island. You can test your code with the following sequences (only the first is a CpG island):</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>#chr15:74022901-74023101
+    seq1 = (&quot;AAGTGCGACATCAGCGCAGAGATCCAGCAGCGACAGGAGGAG&quot;
+        &quot;CTGGACGCCATGACGCAGGCGCTGCAGGAGCAGGATAGTGCC&quot;
+        &quot;TTTGGCGCGGTTCACGCGCAGATGCACGCGGCCGTCGGCCAG&quot;
+        &quot;CTGGGCCGCGCGCGTGCCGAGACCGAGGAGCTGATCCGCGAG&quot;
+        &quot;CGCGTGCGCCAGGTGGTAGCTCACGTGCGGGCGT&quot;)
+
+#chr15:74022838-74023029
+seq2 = (&quot;CGAGGATGTTCCAAGCCGCTGTGCTGCTCGTGCGCGCTCCTT&quot;
+        &quot;GACAGCAGCCACAGTGAGCTCAAGTGCGACATCAGCGCAGAG&quot;
+        &quot;ATCCAGCAGCGACAGGAGGAGCTGGACGCCATGACGCAGGCG&quot;
+        &quot;CTGCAGGAGCAGGATAGTGCCTTTGGCGCGGTTCACGCGCAG&quot;
+        &quot;ATGCACGCGGCCGTCGGCCAGCTG&quot;)
+
+#chr15:74022489-74022698 
+seq3 = (&quot;AGATGTGTGGAAGGGTGCACCCCACGATGCTCACCTGGTGCT&quot;
+        &quot;TCCTCGGTGGGGAAGGGAAATTCAGAAGTGGTGGAAAGAGAT&quot;
+        &quot;GATTGTCGTTTCGTATATCTTTGTATTGTTTCCCGGATGTTG&quot;
+        &quot;AAATTGTTACTGTAGTAACTTTTTATACTCATGTGTTATTGG&quot;
+        &quot;TAGTTTGGATACTATCACCATAACCACAAACACTGAATTAGG&quot;)
+</pre></div>
+</div>
+</div>
+</div>
+
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="control_flow.html" title="previous page">Control flow</a>
+    <a class='right-next' id="next-link" href="loops.html" title="next page">Loops</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Simon van Heeringen, Arjen Brinkman, Kees Albers<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    <script src="../_static/js/index.js"></script>
+    
+  </body>
+</html>

@@ -1,0 +1,448 @@
+
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Control flow &#8212; NWI-BM066A Computation for Biologists</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
+    <link href="../_static/css/index.css" rel="stylesheet">
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/jupyter-sphinx.css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/sphinx-book-theme.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/mystnb.js"></script>
+    <script src="../_static/sphinx-book-theme.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Exercises: control flow" href="control_flow_exercises.html" />
+    <link rel="prev" title="Control flow and loops" href="04_loops_control_flow.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="docsearch:language" content="en">
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../index.html">
+  
+  
+  <h1 class="site-logo" id="site-title">NWI-BM066A Computation for Biologists</h1>
+  
+</a>
+</div>
+
+<form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="01_introduction.html">
+   Introduction
+  </a>
+ </li>
+</ul>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="02_first_exercises.html">
+   First exercises
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="03_lists.html">
+   Lists
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="reference internal" href="04_loops_control_flow.html">
+   Control flow and loops
+  </a>
+  <ul class="current">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Control flow
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="#glossary-of-control-flow-terms">
+     Glossary of control flow terms
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="control_flow_exercises.html">
+     Exercises: control flow
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="loops.html">
+     Loops
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="loops.html#glossary-of-loop-terms">
+     Glossary of loop terms
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="loops_exercises.html">
+     <strong>
+      Exercises
+     </strong>
+     : loops
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="dictionaries.html">
+   Dictionaries
+  </a>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="dictionaries_exercises.html">
+     Exercises: dictionaries
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="dictionaries_exercises.html#exercises-putting-it-all-together">
+     Exercises: Putting it all together
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="files.html">
+   Files
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="scripts_and_debugging.html">
+   Scripts and debugging
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="functions_modules_style.html">
+   Functions and modules
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="pandas.html">
+   Introduction to pandas DataFrames
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="visualization.html">
+   Visualization
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="11_footprints.html">
+   Creating a DNAseI footprint profile
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="12_dnase_motifs.html">
+   Motifs in DNase I peaks
+  </a>
+ </li>
+</ul>
+
+</nav>
+
+ <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        <div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/content/control_flow.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+    
+</div>
+        <!-- Source interaction buttons -->
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> On this page
+        </div>
+        <nav id="bd-toc-nav">
+            
+        </nav>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="control-flow">
+<h1>Control flow<a class="headerlink" href="#control-flow" title="Permalink to this headline">¶</a></h1>
+<p>The <code class="docutils literal notranslate"><span class="pre">if</span></code> statement is used to <strong>check a condition</strong>: if the condition is true, we run a block of statements (called the if-block), next we can test another condition (<code class="docutils literal notranslate"><span class="pre">elif</span></code>, short for “else if”) and we process another block of statements (called the elif-block). Lastly, we can use an <code class="docutils literal notranslate"><span class="pre">else</span></code> clause, which is optional.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cell_lines</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;HCT116&#39;</span><span class="p">,</span> <span class="s1">&#39;HeLa&#39;</span><span class="p">,</span> <span class="s1">&#39;HEK293&#39;</span><span class="p">]</span>
+<span class="n">c</span> <span class="o">=</span> <span class="s1">&#39;HeLa&#39;</span>
+
+<span class="k">if</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">cell_lines</span><span class="p">:</span>
+    <span class="c1"># New block starts here</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Yes, cell line is present.&#39;</span><span class="p">)</span>
+    <span class="c1"># New block ends here</span>
+<span class="k">elif</span> <span class="n">c</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">cell_lines</span><span class="p">:</span>
+    <span class="c1"># Another block</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;No, not present&#39;</span><span class="p">)</span>
+    <span class="c1"># block ends here</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>Yes, cell line is present.
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now, run the same commands for <code class="docutils literal notranslate"><span class="pre">c</span> <span class="pre">=</span> <span class="pre">'U2Os'</span></code>.</p>
+<p>Note the following:</p>
+<ul class="simple">
+<li><p>In the example above we used <code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">c</span> <span class="pre">in</span> <span class="pre">cell_lines</span></code> to test a condition (“is c an element of the <code class="docutils literal notranslate"><span class="pre">list</span></code> cell_lines?”).</p></li>
+<li><p>The checked condition statement is always followed by <code class="docutils literal notranslate"><span class="pre">:</span></code>.</p></li>
+<li><p>The following block is <strong>indented</strong>, <strong>4 spaces</strong> is conventionally used.</p></li>
+<li><p>The outcome of such test is <code class="docutils literal notranslate"><span class="pre">True</span></code> or <code class="docutils literal notranslate"><span class="pre">False</span></code>. If <code class="docutils literal notranslate"><span class="pre">True</span></code>, the codeblock is executed</p></li>
+<li><p>Here are some operators for condition tests:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">in</span></code> is an element of</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">==</span></code> equivalence (values, strings)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&gt;</span></code>  greater than</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&gt;=</span></code> greater than or equal</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;</span></code>  less than</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;=</span></code> less than or equal</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">!=</span></code> not equal</p></li>
+</ul>
+</li>
+<li><p>You can combine condition tests with <code class="docutils literal notranslate"><span class="pre">or</span></code>, <code class="docutils literal notranslate"><span class="pre">and</span></code></p></li>
+<li><p>You can “invert” a condition by placing <code class="docutils literal notranslate"><span class="pre">not</span></code> in front</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">=</span></code> is different from <code class="docutils literal notranslate"><span class="pre">==</span></code> !!</p></li>
+</ul>
+<p>Here is another example, in this case we use <code class="docutils literal notranslate"><span class="pre">if</span></code> to compare values:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">some_number</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">n</span> <span class="o">=</span> <span class="mi">9</span>
+ 
+<span class="k">if</span> <span class="n">n</span> <span class="o">&lt;</span> <span class="n">some_number</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Your number n is less.&#39;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">n</span> <span class="o">==</span> <span class="n">some_number</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Your number n is exactly the same!&#39;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;No idea...greater maybe?&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>Your number n is less.
+</pre></div>
+</div>
+</div>
+</div>
+<p>Run the same block for other values of <code class="docutils literal notranslate"><span class="pre">n</span></code>.</p>
+<p>The result of your condition test is <code class="docutils literal notranslate"><span class="pre">True</span></code> or <code class="docutils literal notranslate"><span class="pre">False</span></code>. Check this by running:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>c in cell_lines
+
+n &lt; some_number
+</pre></div>
+</div>
+<p>So, simply running the following also works:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Yes, no doubt about this...&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>Yes, no doubt about this...
+</pre></div>
+</div>
+</div>
+</div>
+<p>One conditional can also be nested within another. For example:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">y</span> <span class="o">=</span> <span class="mi">6</span>
+
+<span class="k">if</span> <span class="n">x</span> <span class="o">==</span> <span class="n">y</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;x and y are equal&#39;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="n">y</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;x is less than y&#39;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;x is greater than y&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>x is less than y
+</pre></div>
+</div>
+</div>
+</div>
+<p>Although the indentation of the statements makes the structure apparent, nested conditionals become difficult to read very quickly.
+<strong>Logical operators</strong> (e.g. <code class="docutils literal notranslate"><span class="pre">and</span></code>, <code class="docutils literal notranslate"><span class="pre">or</span></code>) often provide a way to simplify nested conditional statements. For example, we can rewrite the following code using a single conditional:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">1</span>
+
+<span class="k">if</span> <span class="mi">0</span> <span class="o">&lt;</span> <span class="n">x</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;x is a positive single-digit number.&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>x is a positive single-digit number.
+</pre></div>
+</div>
+</div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">print()</span></code> statement is executed only if we make it past both conditionals, so we can get the same effect with the and operator:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="mi">0</span> <span class="o">&lt;</span> <span class="n">x</span> <span class="ow">and</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;x is a positive single-digit number.&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>x is a positive single-digit number.
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="glossary-of-control-flow-terms">
+<h1>Glossary of control flow terms<a class="headerlink" href="#glossary-of-control-flow-terms" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">if</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">elif</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">else</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">and</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">or</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">not</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">in</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">==</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&gt;</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&gt;=</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;=</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">!=</span></code></p></li>
+</ul>
+</div>
+
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="04_loops_control_flow.html" title="previous page">Control flow and loops</a>
+    <a class='right-next' id="next-link" href="control_flow_exercises.html" title="next page">Exercises: control flow</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Simon van Heeringen, Arjen Brinkman, Kees Albers<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    <script src="../_static/js/index.js"></script>
+    
+  </body>
+</html>

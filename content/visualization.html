@@ -1,0 +1,991 @@
+
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Visualization &#8212; NWI-BM066A Computation for Biologists</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
+    <link href="../_static/css/index.css" rel="stylesheet">
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/jupyter-sphinx.css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/sphinx-book-theme.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/mystnb.js"></script>
+    <script src="../_static/sphinx-book-theme.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Creating a DNAseI footprint profile" href="11_footprints.html" />
+    <link rel="prev" title="Introduction to pandas DataFrames" href="pandas.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="docsearch:language" content="en">
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../index.html">
+  
+  
+  <h1 class="site-logo" id="site-title">NWI-BM066A Computation for Biologists</h1>
+  
+</a>
+</div>
+
+<form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="01_introduction.html">
+   Introduction
+  </a>
+ </li>
+</ul>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="02_first_exercises.html">
+   First exercises
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="03_lists.html">
+   Lists
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="04_loops_control_flow.html">
+   Control flow and loops
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="dictionaries.html">
+   Dictionaries
+  </a>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="dictionaries_exercises.html">
+     Exercises: dictionaries
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="dictionaries_exercises.html#exercises-putting-it-all-together">
+     Exercises: Putting it all together
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="files.html">
+   Files
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="scripts_and_debugging.html">
+   Scripts and debugging
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="functions_modules_style.html">
+   Functions and modules
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="pandas.html">
+   Introduction to pandas DataFrames
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Visualization
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="11_footprints.html">
+   Creating a DNAseI footprint profile
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="12_dnase_motifs.html">
+   Motifs in DNase I peaks
+  </a>
+ </li>
+</ul>
+
+</nav>
+
+ <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        <div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/content/visualization.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+    
+</div>
+        <!-- Source interaction buttons -->
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> On this page
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#h3k4me1-and-h3k4me3-marking-in-promoters-and-enhancers-in-fetal-brain">
+   H3K4me1 and H3K4me3 marking in promoters and enhancers in Fetal Brain
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#h3k4me1-and-h3k4me3-marking-in-promoters-and-enhancers-fetal-brain-specific-enhancers-only">
+   H3K4me1 and H3K4me3 marking in promoters and enhancers: Fetal Brain-specific enhancers only
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#enhancer-marking-in-different-cell-types">
+   Enhancer marking in different cell types
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#promoter-marking-vs-gene-expression">
+   Promoter marking vs. gene expression
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercises">
+   <strong>
+    Exercises
+   </strong>
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-10-1-visualization-using-pandas-and-seaborn">
+     <strong>
+      Exercise
+     </strong>
+     10.1 Visualization using pandas and seaborn {-}
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#exercise-outline">
+       <strong>
+        Exercise
+       </strong>
+       outline {-}
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#question-1-function-for-reading-a-file-into-a-pandas-dataframe">
+       Question 1. Function for reading a file into a pandas DataFrame {-}
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#question-2-create-lists-with-filenames-and-object-names">
+       Question 2. Create lists with filenames and object names {-}
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#question-3-make-a-dictionary-with-dataframes">
+       Question 3. Make a dictionary with DataFrames {-}
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#question-4-make-a-merged-dataframe-with-readcounts">
+       Question 4. Make a merged DataFrame with readcounts {-}
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#question-5-make-a-dataframe-with-pairwise-correlations">
+       Question 5. Make a DataFrame with pairwise correlations {-}
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#question-6-plot-a-heatmap-displaying-the-pairwise-correlations">
+       Question 6. Plot a heatmap displaying the pairwise correlations {-}
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+        </nav>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="visualization">
+<h1>Visualization<a class="headerlink" href="#visualization" title="Permalink to this headline">¶</a></h1>
+<p>In this Pandas tutorial you will use Pandas to explore ChIP-seq and DNase-seq footprinting datasets for 3 different celltypes from the Roadmap data:</p>
+<ul class="simple">
+<li><p>E081: Fetal Brain Male</p></li>
+<li><p>E082: Fetal Brain Female</p></li>
+<li><p>E083: Fetal Heart</p></li>
+</ul>
+<p>Before we start, import the appropriate modules</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="o">%</span><span class="n">matplotlib</span> <span class="n">inline</span>
+
+<span class="c1"># Set directory for the data files</span>
+<span class="n">DATA_DIR</span> <span class="o">=</span> <span class="s2">&quot;/scratch/cfb/visual&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Note that by doing this:</p>
+<ul class="simple">
+<li><p>we import three modules:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">pandas</span></code>, a module that allows us to work with DataFrames</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">numpy</span></code>, a module for scientific calculations</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pyplot</span></code> functionality from the module <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">seaborn</span></code>, a module for making pretty plots</p></li>
+</ul>
+</li>
+<li><p>we make sure that</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">pandas</span></code> commands can be called with <code class="docutils literal notranslate"><span class="pre">pd.</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">numpy</span></code> commands can be called with <code class="docutils literal notranslate"><span class="pre">np.</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pyplot</span></code> commands can be called with <code class="docutils literal notranslate"><span class="pre">plt.</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">seaborn</span></code> commands can be called with <code class="docutils literal notranslate"><span class="pre">sns.</span></code></p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">%matplotlib</span> <span class="pre">inline</span></code>: we make sure that all plotting is going to be shown “inline” with our commands (in Jupyter)</p></li>
+</ul>
+<div class="section" id="h3k4me1-and-h3k4me3-marking-in-promoters-and-enhancers-in-fetal-brain">
+<h2>H3K4me1 and H3K4me3 marking in promoters and enhancers in Fetal Brain<a class="headerlink" href="#h3k4me1-and-h3k4me3-marking-in-promoters-and-enhancers-in-fetal-brain" title="Permalink to this headline">¶</a></h2>
+<p>Next, we can import the data for E082 into pandas DataFrames, using the <code class="docutils literal notranslate"><span class="pre">read_csv()</span></code> function. Note: in earlier versions of pandas you could use the <code class="docutils literal notranslate"><span class="pre">read_table()</span></code> function, however, in newer versions of pandas this function has been deprecated and will be removed.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">E082_prom_K4me1</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">DATA_DIR</span><span class="si">}</span><span class="s2">/hg19_RefSeq_TSS500__E082-H3K4me1.counts.gz&quot;</span><span class="p">,</span> 
+                                <span class="n">sep</span><span class="o">=</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">&quot;</span><span class="p">,</span> <span class="c1"># The files are tab-separated </span>
+                                <span class="n">header</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                                <span class="n">names</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;chr&#39;</span><span class="p">,</span> <span class="s1">&#39;start&#39;</span><span class="p">,</span> <span class="s1">&#39;end&#39;</span><span class="p">,</span> <span class="s1">&#39;reads&#39;</span><span class="p">])</span>
+<span class="n">E082_enh_K4me1</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">DATA_DIR</span><span class="si">}</span><span class="s2">/regions_enh_E081_E082_E083__E082-H3K4me1.counts.gz&quot;</span><span class="p">,</span>
+                                <span class="n">sep</span><span class="o">=</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">&quot;</span><span class="p">,</span> <span class="c1"># The files are tab-separated </span>
+                                <span class="n">header</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                                <span class="n">names</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;chr&#39;</span><span class="p">,</span> <span class="s1">&#39;start&#39;</span><span class="p">,</span> <span class="s1">&#39;end&#39;</span><span class="p">,</span> <span class="s1">&#39;reads&#39;</span><span class="p">])</span>
+<span class="n">E082_prom_K4me3</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">DATA_DIR</span><span class="si">}</span><span class="s2">/hg19_RefSeq_TSS500__E082-H3K4me3.counts.gz&quot;</span><span class="p">,</span>
+                                <span class="n">sep</span><span class="o">=</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">&quot;</span><span class="p">,</span> <span class="c1"># The files are tab-separated </span>
+                                <span class="n">header</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                                <span class="n">names</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;chr&#39;</span><span class="p">,</span> <span class="s1">&#39;start&#39;</span><span class="p">,</span> <span class="s1">&#39;end&#39;</span><span class="p">,</span> <span class="s1">&#39;reads&#39;</span><span class="p">])</span>
+<span class="n">E082_enh_K4me3</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">DATA_DIR</span><span class="si">}</span><span class="s2">/regions_enh_E081_E082_E083__E082-H3K4me3.counts.gz&quot;</span><span class="p">,</span>
+                                <span class="n">sep</span><span class="o">=</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">&quot;</span><span class="p">,</span> <span class="c1"># The files are tab-separated </span>
+                               <span class="n">header</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                               <span class="n">names</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;chr&#39;</span><span class="p">,</span> <span class="s1">&#39;start&#39;</span><span class="p">,</span> <span class="s1">&#39;end&#39;</span><span class="p">,</span> <span class="s1">&#39;reads&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>For each DataFrame, make columns with the corresponding annotation</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">E082_prom_K4me1</span><span class="p">[</span><span class="s1">&#39;elem&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;prom&#39;</span>
+<span class="n">E082_enh_K4me1</span><span class="p">[</span><span class="s1">&#39;elem&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;enh&#39;</span>
+<span class="n">E082_prom_K4me3</span><span class="p">[</span><span class="s1">&#39;elem&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;prom&#39;</span>
+<span class="n">E082_enh_K4me3</span><span class="p">[</span><span class="s1">&#39;elem&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;enh&#39;</span>
+
+<span class="n">E082_prom_K4me1</span><span class="p">[</span><span class="s1">&#39;mark&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;H3K4me1&#39;</span>
+<span class="n">E082_enh_K4me1</span><span class="p">[</span><span class="s1">&#39;mark&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;H3K4me1&#39;</span>
+<span class="n">E082_prom_K4me3</span><span class="p">[</span><span class="s1">&#39;mark&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;H3K4me3&#39;</span>
+<span class="n">E082_enh_K4me3</span><span class="p">[</span><span class="s1">&#39;mark&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;H3K4me3&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Check the result by doing a <code class="docutils literal notranslate"><span class="pre">head()</span></code> on some of the DataFrames ( <code class="docutils literal notranslate"><span class="pre">df.head()</span></code>, where <code class="docutils literal notranslate"><span class="pre">df</span></code> is the object name of the DataFrame )</p>
+<p>Concatenate the DataFrames into one DataFrame (all DataFrame rows will be added to one big DataFrame)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">E082</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">E082_prom_K4me1</span><span class="p">,</span> <span class="n">E082_enh_K4me1</span><span class="p">,</span> <span class="n">E082_prom_K4me3</span><span class="p">,</span> <span class="n">E082_enh_K4me3</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Make a boxplot of H3K4me1, H3K4me3 in promoters and enhancers</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s2">&quot;elem&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;reads&quot;</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s2">&quot;mark&quot;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">E082</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:xlabel=&#39;elem&#39;, ylabel=&#39;reads&#39;&gt;
+</pre></div>
+</div>
+<img alt="../_images/visualization_10_1.png" src="../_images/visualization_10_1.png" />
+</div>
+</div>
+<p>Note how the synthax for <code class="docutils literal notranslate"><span class="pre">boxplot</span></code> is assembled:</p>
+<ul class="simple">
+<li><p>Use the column with name <code class="docutils literal notranslate"><span class="pre">elem</span></code> as a grouping of boxes along the x-axis</p></li>
+<li><p>Use the column with name <code class="docutils literal notranslate"><span class="pre">reads</span></code> as the value to plot along the y-axis</p></li>
+<li><p>Use the column with name <code class="docutils literal notranslate"><span class="pre">mark</span></code> to differentially color the boxes</p></li>
+</ul>
+<p>Make sure you understand how this works.</p>
+<p>There are lots of outliers (dots stacked on top of each box/whisker) which do not contribute much to the plot</p>
+<p>It is probably better to not plot the outliers</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s2">&quot;elem&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;reads&quot;</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s2">&quot;mark&quot;</span><span class="p">,</span> <span class="n">fliersize</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">E082</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:xlabel=&#39;elem&#39;, ylabel=&#39;reads&#39;&gt;
+</pre></div>
+</div>
+<img alt="../_images/visualization_12_1.png" src="../_images/visualization_12_1.png" />
+</div>
+</div>
+<p>This is better already, but the boxplots are all at the bottom of the graph, this does not help much for clarity.</p>
+<p>If you do a <strong>data transformation</strong>, the plot may look better.</p>
+<p>For readcounts (integers ranging from 0 up to …) a squareroot transformation can work well since it handles zeros well (log-transformation does not handle the zeros).</p>
+<p>Repeat the boxplot on the transformed data.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">E082</span><span class="p">[</span><span class="s1">&#39;reads_sqrt&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">E082</span><span class="p">[</span><span class="s1">&#39;reads&#39;</span><span class="p">])</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s2">&quot;elem&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;reads_sqrt&quot;</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s2">&quot;mark&quot;</span><span class="p">,</span> <span class="n">fliersize</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">E082</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:xlabel=&#39;elem&#39;, ylabel=&#39;reads_sqrt&#39;&gt;
+</pre></div>
+</div>
+<img alt="../_images/visualization_14_1.png" src="../_images/visualization_14_1.png" />
+</div>
+</div>
+<p>Knowing that the regions in the DataFrame are not of the same length, we may need to correct the transformed readcounts for the length of the regions</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">E082</span><span class="p">[</span><span class="s1">&#39;reads_sqrt_bp&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">E082</span><span class="p">[</span><span class="s1">&#39;reads_sqrt&#39;</span><span class="p">]</span><span class="o">/</span><span class="p">(</span><span class="n">E082</span><span class="p">[</span><span class="s1">&#39;end&#39;</span><span class="p">]</span><span class="o">-</span><span class="n">E082</span><span class="p">[</span><span class="s1">&#39;start&#39;</span><span class="p">])</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s2">&quot;elem&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;reads_sqrt_bp&quot;</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s2">&quot;mark&quot;</span><span class="p">,</span> <span class="n">fliersize</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">E082</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:xlabel=&#39;elem&#39;, ylabel=&#39;reads_sqrt_bp&#39;&gt;
+</pre></div>
+</div>
+<img alt="../_images/visualization_16_1.png" src="../_images/visualization_16_1.png" />
+</div>
+</div>
+<p>This is definitely better, but the plot may even better if we adapt the y-axis scale</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mf">0.05</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s2">&quot;elem&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;reads_sqrt_bp&quot;</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s2">&quot;mark&quot;</span><span class="p">,</span> <span class="n">fliersize</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">E082</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:xlabel=&#39;elem&#39;, ylabel=&#39;reads_sqrt_bp&#39;&gt;
+</pre></div>
+</div>
+<img alt="../_images/visualization_18_1.png" src="../_images/visualization_18_1.png" />
+</div>
+</div>
+<p>Great, this is a nice boxplot.</p>
+<p>What can you conclude for H3K4me3 and H3K4me1 in promoters and enhancers?</p>
+</div>
+<div class="section" id="h3k4me1-and-h3k4me3-marking-in-promoters-and-enhancers-fetal-brain-specific-enhancers-only">
+<h2>H3K4me1 and H3K4me3 marking in promoters and enhancers: Fetal Brain-specific enhancers only<a class="headerlink" href="#h3k4me1-and-h3k4me3-marking-in-promoters-and-enhancers-fetal-brain-specific-enhancers-only" title="Permalink to this headline">¶</a></h2>
+<p>In the previous section we used all enhancers that were called in Fetal Brain (male and Female) and Fetal Heart, but maybe we should include only those enhancers that were really called as an enhancer in E082 (Fetal Brain Female)</p>
+<p>This information is in the file <code class="docutils literal notranslate"><span class="pre">regions_enh_E081_E082_E083.bed</span></code>, which you find in the <code class="docutils literal notranslate"><span class="pre">/scratch/cfb/visual</span></code> directory.</p>
+<p>This file has the same order as all files above that are called  <code class="docutils literal notranslate"><span class="pre">regions_enh_E081_E082_E083__xxxxx</span></code>.</p>
+<p>Read the file into a pandas DataFrame.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">enh</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">DATA_DIR</span><span class="si">}</span><span class="s2">/regions_enh_E081_E082_E083.bed.gz&quot;</span><span class="p">,</span>
+                    <span class="n">sep</span><span class="o">=</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">&quot;</span><span class="p">,</span>
+                    <span class="n">header</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                    <span class="n">names</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;chr&#39;</span><span class="p">,</span> <span class="s1">&#39;start&#39;</span><span class="p">,</span> <span class="s1">&#39;end&#39;</span><span class="p">,</span> <span class="s1">&#39;celltype&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Do a head to see what the file looks like.</p>
+<p>To select all the regions that are called as enhancer in E082, we will create a <strong>boolean</strong> that consists of <code class="docutils literal notranslate"><span class="pre">True</span></code> / <code class="docutils literal notranslate"><span class="pre">False</span></code> indicating which line (=region, =enhancer) in the <code class="docutils literal notranslate"><span class="pre">enh</span></code> DataFrame refers to an enhancer in E082.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cond</span> <span class="o">=</span> <span class="n">enh</span><span class="p">[</span><span class="s1">&#39;celltype&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="s1">&#39;E082&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Remember that the order of the <code class="docutils literal notranslate"><span class="pre">enh</span></code> DataFrame was the same as for all enhancer DataFrames.</p>
+<p>Now we take the individual enhancer DataFrames for E082 (not the concatenated one) and select from those only the E082-specific enhancer regions</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">E082_enh_K4me1_spec</span> <span class="o">=</span> <span class="n">E082_enh_K4me1</span><span class="p">[</span><span class="n">cond</span><span class="p">]</span>
+<span class="n">E082_enh_K4me3_spec</span> <span class="o">=</span> <span class="n">E082_enh_K4me3</span><span class="p">[</span><span class="n">cond</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now that we have selected the E082-specific enhancers only, we can concatenate the DataFrames like we did above</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">E082_spec</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">E082_prom_K4me1</span><span class="p">,</span> <span class="n">E082_enh_K4me1_spec</span><span class="p">,</span> <span class="n">E082_prom_K4me3</span><span class="p">,</span> <span class="n">E082_enh_K4me3_spec</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Like above, we do the sqrt transformation and length-correction</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">E082_spec</span><span class="p">[</span><span class="s1">&#39;reads_sqrt&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">E082_spec</span><span class="p">[</span><span class="s1">&#39;reads&#39;</span><span class="p">])</span>
+<span class="n">E082_spec</span><span class="p">[</span><span class="s1">&#39;reads_sqrt_bp&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">E082_spec</span><span class="p">[</span><span class="s1">&#39;reads_sqrt&#39;</span><span class="p">]</span><span class="o">/</span><span class="p">(</span><span class="n">E082_spec</span><span class="p">[</span><span class="s1">&#39;end&#39;</span><span class="p">]</span><span class="o">-</span><span class="n">E082_spec</span><span class="p">[</span><span class="s1">&#39;start&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can now make the boxplot as we did above</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mf">0.05</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s2">&quot;elem&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;reads_sqrt_bp&quot;</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s2">&quot;mark&quot;</span><span class="p">,</span> <span class="n">fliersize</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">E082_spec</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:xlabel=&#39;elem&#39;, ylabel=&#39;reads_sqrt_bp&#39;&gt;
+</pre></div>
+</div>
+<img alt="../_images/visualization_30_1.png" src="../_images/visualization_30_1.png" />
+</div>
+</div>
+<p>Do you see a difference with the boxplot above?</p>
+<p>Does this make sense (H3K4me is a typical enhancer mark) ?</p>
+</div>
+<div class="section" id="enhancer-marking-in-different-cell-types">
+<h2>Enhancer marking in different cell types<a class="headerlink" href="#enhancer-marking-in-different-cell-types" title="Permalink to this headline">¶</a></h2>
+<p>Now let us look at H3K4me1 data only, in enhancers only, but in different cell types</p>
+<p>We will add data from a different cell type, E081 (Fetal Brain Male), E082 (Fetal Brain Female) and E083 (Fetal Heart)</p>
+<p>First, read in the data into a pandas DataFrame again</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">E081_enh_K4me1</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">DATA_DIR</span><span class="si">}</span><span class="s2">/regions_enh_E081_E082_E083__E081-H3K4me1.counts.gz&quot;</span><span class="p">,</span>
+                                <span class="n">sep</span><span class="o">=</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">&quot;</span><span class="p">,</span> 
+                                <span class="n">header</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                                <span class="n">names</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;chr&#39;</span><span class="p">,</span> <span class="s1">&#39;start&#39;</span><span class="p">,</span> <span class="s1">&#39;end&#39;</span><span class="p">,</span> <span class="s1">&#39;reads&#39;</span><span class="p">])</span>
+<span class="n">E082_enh_K4me1</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">DATA_DIR</span><span class="si">}</span><span class="s2">/regions_enh_E081_E082_E083__E082-H3K4me1.counts.gz&quot;</span><span class="p">,</span>
+                                <span class="n">sep</span><span class="o">=</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">&quot;</span><span class="p">,</span> 
+                                <span class="n">header</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                                <span class="n">names</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;chr&#39;</span><span class="p">,</span> <span class="s1">&#39;start&#39;</span><span class="p">,</span> <span class="s1">&#39;end&#39;</span><span class="p">,</span> <span class="s1">&#39;reads&#39;</span><span class="p">])</span>
+<span class="n">E083_enh_K4me1</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">DATA_DIR</span><span class="si">}</span><span class="s2">/regions_enh_E081_E082_E083__E083-H3K4me1.counts.gz&quot;</span><span class="p">,</span>
+                                <span class="n">sep</span><span class="o">=</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">&quot;</span><span class="p">,</span> 
+                                <span class="n">header</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                                <span class="n">names</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;chr&#39;</span><span class="p">,</span> <span class="s1">&#39;start&#39;</span><span class="p">,</span> <span class="s1">&#39;end&#39;</span><span class="p">,</span> <span class="s1">&#39;reads&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>In each DataFrame, annotate from which celltype the data comes in a column called <code class="docutils literal notranslate"><span class="pre">celltype</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">E081_enh_K4me1</span><span class="p">[</span><span class="s1">&#39;celltype&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;E081&quot;</span>
+<span class="n">E082_enh_K4me1</span><span class="p">[</span><span class="s1">&#39;celltype&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;E082&quot;</span>
+<span class="n">E083_enh_K4me1</span><span class="p">[</span><span class="s1">&#39;celltype&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;E083&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>In each DataFrame, annotate the enhancers that were called for each cell type.</p>
+<p>We create a column called <code class="docutils literal notranslate"><span class="pre">enh</span></code> which denotes whether a region was called as enhancer in E081, E082, or E083.</p>
+<p>This data we take from the DataFrame <code class="docutils literal notranslate"><span class="pre">enh</span></code>, from which we know that the order is the same as in our DataFrames.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">E081_enh_K4me1</span><span class="p">[</span><span class="s1">&#39;enh&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">enh</span><span class="p">[</span><span class="s1">&#39;celltype&#39;</span><span class="p">]</span>
+<span class="n">E082_enh_K4me1</span><span class="p">[</span><span class="s1">&#39;enh&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">enh</span><span class="p">[</span><span class="s1">&#39;celltype&#39;</span><span class="p">]</span>
+<span class="n">E083_enh_K4me1</span><span class="p">[</span><span class="s1">&#39;enh&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">enh</span><span class="p">[</span><span class="s1">&#39;celltype&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Like above, we make a concatenated DataFrame <code class="docutils literal notranslate"><span class="pre">m</span></code> using <code class="docutils literal notranslate"><span class="pre">concat</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">m</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">E081_enh_K4me1</span><span class="p">,</span> <span class="n">E082_enh_K4me1</span><span class="p">,</span> <span class="n">E083_enh_K4me1</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Like above, we transform the readcounts using <code class="docutils literal notranslate"><span class="pre">sqrt</span></code>, and correct for region length.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">m</span><span class="p">[</span><span class="s1">&#39;reads_sqrt&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">m</span><span class="p">[</span><span class="s1">&#39;reads&#39;</span><span class="p">])</span>
+<span class="n">m</span><span class="p">[</span><span class="s1">&#39;reads_sqrt_bp&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">m</span><span class="p">[</span><span class="s1">&#39;reads_sqrt&#39;</span><span class="p">]</span><span class="o">/</span><span class="p">(</span><span class="n">m</span><span class="p">[</span><span class="s1">&#39;end&#39;</span><span class="p">]</span><span class="o">-</span><span class="n">m</span><span class="p">[</span><span class="s1">&#39;start&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now we can make the boxplot.</p>
+<p>Note that we add an extra argument called <code class="docutils literal notranslate"><span class="pre">hue</span></code> which colors the boxplot according the information in the column called <code class="docutils literal notranslate"><span class="pre">enh</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s2">&quot;celltype&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;reads_sqrt_bp&quot;</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s2">&quot;enh&quot;</span><span class="p">,</span> <span class="n">fliersize</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">m</span><span class="p">)</span>
+
+<span class="c1"># Move legend outside the plot</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">bbox_to_anchor</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="n">loc</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="c1"># Adapt the y-axis</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">0.08</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>(0.0, 0.08)
+</pre></div>
+</div>
+<img alt="../_images/visualization_42_1.png" src="../_images/visualization_42_1.png" />
+</div>
+</div>
+<p>Carefully look at the boxplot</p>
+<p>Does this make sense?</p>
+</div>
+<div class="section" id="promoter-marking-vs-gene-expression">
+<h2>Promoter marking vs. gene expression<a class="headerlink" href="#promoter-marking-vs-gene-expression" title="Permalink to this headline">¶</a></h2>
+<p>You are going to plot the gene expression (RNA-seq, so RPKM) as a function of the active promoter mark H3K4me3 at the corresponding genes, for E082.</p>
+<p>For this you need the file <code class="docutils literal notranslate"><span class="pre">hg19_RefSeq_TSS500_ENSEMBL_RPKM</span></code> from the <code class="docutils literal notranslate"><span class="pre">/scratch/cfb/visual</span></code> directory.</p>
+<p>This file has the same ordering as all files named <code class="docutils literal notranslate"><span class="pre">hg19_RefSeq_TSS500__xxxxx</span></code>.</p>
+<p>First, read in the expression data into a pandas DataFrame.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">rpkm</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">DATA_DIR</span><span class="si">}</span><span class="s2">/hg19_RefSeq_TSS500_ENSEMBL_RPKM.gz&quot;</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Check with a <code class="docutils literal notranslate"><span class="pre">head()</span></code> what this file looks like. Note that we did not specify column names, since these are already present in the file. `read_csv by default assumes that this first line is a header line</p>
+<p>Note that <code class="docutils literal notranslate"><span class="pre">head()</span></code> does not show you all columns, so you can use the following to see all column names</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">rpkm</span><span class="o">.</span><span class="n">columns</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>Index([&#39;chr&#39;, &#39;start&#39;, &#39;end&#39;, &#39;refseq&#39;, &#39;gene&#39;, &#39;strand&#39;, &#39;ensembl&#39;, &#39;E000&#39;,
+       &#39;E003&#39;, &#39;E004&#39;, &#39;E005&#39;, &#39;E006&#39;, &#39;E007&#39;, &#39;E011&#39;, &#39;E012&#39;, &#39;E013&#39;, &#39;E016&#39;,
+       &#39;E024&#39;, &#39;E027&#39;, &#39;E028&#39;, &#39;E037&#39;, &#39;E038&#39;, &#39;E047&#39;, &#39;E050&#39;, &#39;E053&#39;, &#39;E054&#39;,
+       &#39;E055&#39;, &#39;E056&#39;, &#39;E057&#39;, &#39;E058&#39;, &#39;E059&#39;, &#39;E061&#39;, &#39;E062&#39;, &#39;E065&#39;, &#39;E066&#39;,
+       &#39;E070&#39;, &#39;E071&#39;, &#39;E079&#39;, &#39;E082&#39;, &#39;E084&#39;, &#39;E085&#39;, &#39;E087&#39;, &#39;E094&#39;, &#39;E095&#39;,
+       &#39;E096&#39;, &#39;E097&#39;, &#39;E098&#39;, &#39;E100&#39;, &#39;E104&#39;, &#39;E105&#39;, &#39;E106&#39;, &#39;E109&#39;, &#39;E112&#39;,
+       &#39;E113&#39;, &#39;E114&#39;, &#39;E116&#39;, &#39;E117&#39;, &#39;E118&#39;, &#39;E119&#39;, &#39;E120&#39;, &#39;E122&#39;, &#39;E123&#39;,
+       &#39;E127&#39;, &#39;E128&#39;],
+      dtype=&#39;object&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+<p>The DataFrame <code class="docutils literal notranslate"><span class="pre">rpkm</span></code> has many columns, you need to paste the column called <code class="docutils literal notranslate"><span class="pre">E082</span></code> to a DataFrame called <code class="docutils literal notranslate"><span class="pre">E082_prom_K4me3</span></code></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">E082_prom_K4me3</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">DATA_DIR</span><span class="si">}</span><span class="s2">/hg19_RefSeq_TSS500__E082-H3K4me3.counts.gz&quot;</span><span class="p">,</span>
+                                <span class="n">sep</span><span class="o">=</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">&quot;</span><span class="p">,</span>
+                                <span class="n">header</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                                <span class="n">names</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;chr&#39;</span><span class="p">,</span> <span class="s1">&#39;start&#39;</span><span class="p">,</span> <span class="s1">&#39;end&#39;</span><span class="p">,</span> <span class="s1">&#39;reads&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Like above, do the sqrt transformation on the H3K4me3 readcounts.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">E082_prom_K4me3</span><span class="p">[</span><span class="s1">&#39;reads_sqrt&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">E082_prom_K4me3</span><span class="p">[</span><span class="s1">&#39;reads&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>In this case there is no need to normalize for region length since all promoters here have the same length. However if you do normalize, it does not matter</p>
+<p>Since the order of the regions (=lines) in the <code class="docutils literal notranslate"><span class="pre">rpkm</span></code> DataFrame is the same as in the <code class="docutils literal notranslate"><span class="pre">E082_prom_K4me3</span></code> DataFrame, we can paste the RPKM column <code class="docutils literal notranslate"><span class="pre">E082</span></code> from the <code class="docutils literal notranslate"><span class="pre">rpkm</span></code> DataFrame into the <code class="docutils literal notranslate"><span class="pre">E082_prom_K4me3</span></code> DataFrame.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">E082_prom_K4me3</span><span class="p">[</span><span class="s1">&#39;rpkm&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">rpkm</span><span class="p">[</span><span class="s1">&#39;E082&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now we can make a scatterplot, in which each dot represent a promoter and the RPKM of the corresponding gene.</p>
+<p>We use the function <code class="docutils literal notranslate"><span class="pre">lmplot()</span></code> from seaborn.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">lmplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;reads_sqrt&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;rpkm&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">E082_prom_K4me3</span><span class="p">,</span> <span class="n">fit_reg</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.FacetGrid at 0x7f4ce1e13ca0&gt;
+</pre></div>
+</div>
+<img alt="../_images/visualization_54_1.png" src="../_images/visualization_54_1.png" />
+</div>
+</div>
+<p>Note that <code class="docutils literal notranslate"><span class="pre">lmplot()</span></code> by default plots a regression line, which you can turn off by <code class="docutils literal notranslate"><span class="pre">fit_reg=False</span></code>.</p>
+<p>Looking at the plot, we can say that this does not look fantastic….</p>
+<p>Most dots are at the bottom of the graph, and we cannot see whether there is any correlation.</p>
+<p>For gene expression it is usually good to plot it in log-scale.</p>
+<p>In this case we choose the log2, but a log10 would be fine as well.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">E082_prom_K4me3</span><span class="p">[</span><span class="s1">&#39;rpkm_log&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">log2</span><span class="p">(</span><span class="n">E082_prom_K4me3</span><span class="p">[</span><span class="s1">&#39;rpkm&#39;</span><span class="p">])</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">lmplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;reads_sqrt&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;rpkm_log&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">E082_prom_K4me3</span><span class="p">,</span> <span class="n">fit_reg</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="stderr docutils container">
+<pre class="stderr literal-block">/home/simon/anaconda3/envs/cfb/lib/python3.8/site-packages/pandas/core/series.py:726: RuntimeWarning: divide by zero encountered in log2
+  result = getattr(ufunc, method)(*inputs, **kwargs)
+</pre>
+</div>
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.FacetGrid at 0x7f4ce1e13fa0&gt;
+</pre></div>
+</div>
+<img alt="../_images/visualization_56_2.png" src="../_images/visualization_56_2.png" />
+</div>
+</div>
+<p>This looks much better.</p>
+<p>Although the relationship is not clear-cut, there is definitely a trend of higher expression for genes which promoters have higher H3K4me3.</p>
+<p>We can think about a control for this analysis.</p>
+<p>To check whether the observed trend has some biological meaning, we can plot the same gene expression from <strong>E082</strong> as a function of H3K4me3 in <strong>E083</strong> (the ‘wrong’ celltype).</p>
+<p>The expectation is that the trend you observed above is less clear here.</p>
+<p>Read the promoter H3K4me3 data into a pandas DataFrame as we did above</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">E083_prom_K4me3</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">DATA_DIR</span><span class="si">}</span><span class="s2">/hg19_RefSeq_TSS500__E083-H3K4me3.counts.gz&quot;</span><span class="p">,</span>
+                                <span class="n">sep</span><span class="o">=</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">&quot;</span><span class="p">,</span>
+                                <span class="n">header</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                                <span class="n">names</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;chr&#39;</span><span class="p">,</span> <span class="s1">&#39;start&#39;</span><span class="p">,</span> <span class="s1">&#39;end&#39;</span><span class="p">,</span> <span class="s1">&#39;reads&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Do the sqrt transformation of the H3K4me3 readcounts, as above.</p>
+<p>Paste the RPKMs into the H3K4me3 DataFrame of E083, as above.</p>
+<p>Do the RPKM log2 transformation, as above.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">E083_prom_K4me3</span><span class="p">[</span><span class="s1">&#39;reads_sqrt&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">E083_prom_K4me3</span><span class="p">[</span><span class="s1">&#39;reads&#39;</span><span class="p">])</span>
+<span class="n">E083_prom_K4me3</span><span class="p">[</span><span class="s1">&#39;rpkm&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">rpkm</span><span class="p">[</span><span class="s1">&#39;E082&#39;</span><span class="p">]</span>
+<span class="n">E083_prom_K4me3</span><span class="p">[</span><span class="s1">&#39;rpkm_log&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">log2</span><span class="p">(</span><span class="n">E083_prom_K4me3</span><span class="p">[</span><span class="s1">&#39;rpkm&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="stderr docutils container">
+<pre class="stderr literal-block">/home/simon/anaconda3/envs/cfb/lib/python3.8/site-packages/pandas/core/series.py:726: RuntimeWarning: divide by zero encountered in log2
+  result = getattr(ufunc, method)(*inputs, **kwargs)
+</pre>
+</div>
+</div>
+</div>
+<p>And then the scatterplot.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">lmplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;reads_sqrt&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;rpkm_log&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">E083_prom_K4me3</span><span class="p">,</span> <span class="n">fit_reg</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.FacetGrid at 0x7f4cd49e6580&gt;
+</pre></div>
+</div>
+<img alt="../_images/visualization_62_1.png" src="../_images/visualization_62_1.png" />
+</div>
+</div>
+<p>As an alternative to the scatterplot approach above, we can classify our H3K4me3 levels into ‘high’ or ‘low’. But, what is ‘high’ and what is ‘low’? Where should we put the threshold for ‘high’?</p>
+<p>To get an idea, we can plot the distribution of the H3K4me3 signal using a histogram/densityplot. For this we use the <code class="docutils literal notranslate"><span class="pre">distplot</span></code> function from seaborn.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">distplot</span><span class="p">(</span><span class="n">E082_prom_K4me3</span><span class="p">[</span><span class="s1">&#39;reads_sqrt&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:xlabel=&#39;reads_sqrt&#39;&gt;
+</pre></div>
+</div>
+<img alt="../_images/visualization_64_1.png" src="../_images/visualization_64_1.png" />
+</div>
+</div>
+<p>By looking at this histogram, we could conclude that the regions with ‘high’ H3K4me3 are the ones that roughly have signals higher than 15 or so.</p>
+<p>To assign ‘high’ and ‘low’ to H3K4me3 levels we add a column to the E082 DataFrame called <code class="docutils literal notranslate"><span class="pre">reads_sqrt_bin</span></code>.</p>
+<p>For this we use the <code class="docutils literal notranslate"><span class="pre">where</span></code> function from numpy, in which we state: if the values in column x are higher than 15, return “high H3K4me3”, else, return “low H3K4me3”.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">E082_prom_K4me3</span><span class="p">[</span><span class="s1">&#39;reads_sqrt_bin&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">E082_prom_K4me3</span><span class="p">[</span><span class="s1">&#39;reads_sqrt&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">15</span><span class="p">,</span> <span class="s2">&quot;high K4me3&quot;</span><span class="p">,</span> <span class="s2">&quot;low K4me3&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Do a <code class="docutils literal notranslate"><span class="pre">head()</span></code> on the DataFrame to see what happened.</p>
+<p>Now we can use a boxplot instead of a scatterplot.</p>
+<p>In this boxplot the RPKM is plotted in boxes, as a function of “high K4me3” or “low K4me3”.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s2">&quot;reads_sqrt_bin&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;rpkm_log&quot;</span><span class="p">,</span> <span class="n">fliersize</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">E082_prom_K4me3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:xlabel=&#39;reads_sqrt_bin&#39;, ylabel=&#39;rpkm_log&#39;&gt;
+</pre></div>
+</div>
+<img alt="../_images/visualization_68_1.png" src="../_images/visualization_68_1.png" />
+</div>
+</div>
+<p>In this plot it is already much more clear that gener with high H3K4me3 at the promoter have higher expression.</p>
+<p>Rather than assigning two “bins” (“high” and “low”) by ourselves, we can specify multiple bins.</p>
+<p>For this we use the <code class="docutils literal notranslate"><span class="pre">cut</span></code> method of pandas, for which we can specify the number of bins we want.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">E082_prom_K4me3</span><span class="p">[</span><span class="s1">&#39;reads_sqrt_bin&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">cut</span><span class="p">(</span><span class="n">E082_prom_K4me3</span><span class="p">[</span><span class="s1">&#39;reads_sqrt&#39;</span><span class="p">],</span> <span class="mi">3</span><span class="p">,</span> <span class="n">labels</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Note that we used <code class="docutils literal notranslate"><span class="pre">labels=False</span></code>, which causes the bins to be numbered.</p>
+<p>We can now make a similar boxplot as above, with the RPKM plotted in boxes, as a function of the different bins we created.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s2">&quot;reads_sqrt_bin&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;rpkm_log&quot;</span><span class="p">,</span> <span class="n">fliersize</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">E082_prom_K4me3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:xlabel=&#39;reads_sqrt_bin&#39;, ylabel=&#39;rpkm_log&#39;&gt;
+</pre></div>
+</div>
+<img alt="../_images/visualization_72_1.png" src="../_images/visualization_72_1.png" />
+</div>
+</div>
+</div>
+<div class="section" id="exercises">
+<h2><strong>Exercises</strong><a class="headerlink" href="#exercises" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="exercise-10-1-visualization-using-pandas-and-seaborn">
+<h3><strong>Exercise</strong> 10.1 Visualization using pandas and seaborn {-}<a class="headerlink" href="#exercise-10-1-visualization-using-pandas-and-seaborn" title="Permalink to this headline">¶</a></h3>
+<p>In this exercise you are going to compare the different ChIP-seq and DNase-seq datasets from</p>
+<ul class="simple">
+<li><p>E081: Fetal Brain Male</p></li>
+<li><p>E082: Fetal Brain Female</p></li>
+<li><p>E083: Fetal Heart</p></li>
+</ul>
+<p>The final goal is to see <strong>how these marks correlate</strong>, and <strong>how these marks classify the different cell types</strong>.
+You will visualize this in a <strong>heatmap</strong> that shows <strong>pairwise correlations</strong>, and clusters the datasets that are most similar.</p>
+<p>To get to this, the exercise is divided into different questions that will lead you through the exercise.
+By the way, for help you are allowed (=encouraged) to use Google as well!</p>
+<div class="section" id="exercise-outline">
+<h4><strong>Exercise</strong> outline {-}<a class="headerlink" href="#exercise-outline" title="Permalink to this headline">¶</a></h4>
+<p>The strategy is outlined here, a detailed description follows after this:</p>
+<ul class="simple">
+<li><p>Make a dictionary with pandas DataFrames, so that object names can be used to access the DataFrames</p>
+<ul>
+<li><p>Q1. Create a definition to read files into pandas DataFrames</p></li>
+<li><p>Q2. Create lists with filenames and their corresponding object names</p></li>
+<li><p>Q3. Create the dictionary with DataFrames</p></li>
+</ul>
+</li>
+<li><p>Q4. Make one merged DataFrame containing the readcounts as columns, one for each datasets.</p></li>
+<li><p>Q5. Make a DataFrame with all pairwise correlations</p></li>
+<li><p>Q6. Plot the heatmap of pairwise correlations</p></li>
+</ul>
+</div>
+<div class="section" id="question-1-function-for-reading-a-file-into-a-pandas-dataframe">
+<h4>Question 1. Function for reading a file into a pandas DataFrame {-}<a class="headerlink" href="#question-1-function-for-reading-a-file-into-a-pandas-dataframe" title="Permalink to this headline">¶</a></h4>
+<p>Write a definition (function) that:</p>
+<ul class="simple">
+<li><p>uses a filename as input (e.g. <code class="docutils literal notranslate"><span class="pre">dirname_xxxxx/filename_xxxxx</span></code>)</p></li>
+<li><p>returns the corresponding pandas DataFrame</p></li>
+<li><p>this should work for files with four columns (e.g. named ‘chr’, ‘start’, ‘end’, ‘reads’)</p></li>
+</ul>
+</div>
+<div class="section" id="question-2-create-lists-with-filenames-and-object-names">
+<h4>Question 2. Create lists with filenames and object names {-}<a class="headerlink" href="#question-2-create-lists-with-filenames-and-object-names" title="Permalink to this headline">¶</a></h4>
+<p>The directory <code class="docutils literal notranslate"><span class="pre">/scratch/cfb/visual</span></code> contains:</p>
+<ul class="simple">
+<li><p>readcounts for promoters (<code class="docutils literal notranslate"><span class="pre">hg19_RefSeq_TSS500__xxxxx.counts.gz</span></code>)</p></li>
+<li><p>readcounts for enhancers (<code class="docutils literal notranslate"><span class="pre">regions_enh_E081_E082_E083__xxxxx.counts.gz</span></code>)</p></li>
+</ul>
+<p>Create 4 lists:</p>
+<ol class="simple">
+<li><p>filenames (e.g. <code class="docutils literal notranslate"><span class="pre">dirname_xxxxx/filename_xxxxx</span></code>) for all promoter files with</p>
+<ul class="simple">
+<li><p>DNase</p></li>
+<li><p>H3K4me3</p></li>
+<li><p>H3K27me3</p></li>
+</ul>
+</li>
+<li><p>filenames (e.g. <code class="docutils literal notranslate"><span class="pre">dirname_xxxxx/filename_xxxxx</span></code>) for all enhancer files with</p>
+<ul class="simple">
+<li><p>DNase</p></li>
+<li><p>H3K4me1</p></li>
+<li><p>H3K27me3</p></li>
+</ul>
+</li>
+<li><p>object names for all promoter files of list 1. (e.g. <code class="docutils literal notranslate"><span class="pre">&quot;E082-H3K27me3&quot;</span></code>)</p></li>
+<li><p>object names for all enhancer files of list 2. (e.g. <code class="docutils literal notranslate"><span class="pre">&quot;E082-H3K4me1&quot;</span></code>)</p></li>
+</ol>
+<p>Note: these filenames should contain the full path to the file</p>
+<p>Note: it is OK to create the lists with filenames manually, but the lists with object names can be derived from the former, using python.</p>
+</div>
+<div class="section" id="question-3-make-a-dictionary-with-dataframes">
+<h4>Question 3. Make a dictionary with DataFrames {-}<a class="headerlink" href="#question-3-make-a-dictionary-with-dataframes" title="Permalink to this headline">¶</a></h4>
+<p>Make a dictionary with DataFrames with</p>
+<ul class="simple">
+<li><p>object names as <strong>keys</strong> (e.g. <code class="docutils literal notranslate"><span class="pre">&quot;E081-H3K4me1&quot;</span></code>, use the list with object names created above)</p></li>
+<li><p>the corresponding pandas DataFrame as <strong>values</strong> (use the list with filenames created above)</p></li>
+</ul>
+<p>Make one such dictionary for promoters, and one dictionary for enhancers</p>
+</div>
+<div class="section" id="question-4-make-a-merged-dataframe-with-readcounts">
+<h4>Question 4. Make a merged DataFrame with readcounts {-}<a class="headerlink" href="#question-4-make-a-merged-dataframe-with-readcounts" title="Permalink to this headline">¶</a></h4>
+<p>Make a merged pandas DataFrame in which the columns contain the readcounts from each DataFrame in your dictionary</p>
+<ul class="simple">
+<li><p>one DataFrame for the promoters</p></li>
+<li><p>one DataFrame for the enhancers</p></li>
+</ul>
+</div>
+<div class="section" id="question-5-make-a-dataframe-with-pairwise-correlations">
+<h4>Question 5. Make a DataFrame with pairwise correlations {-}<a class="headerlink" href="#question-5-make-a-dataframe-with-pairwise-correlations" title="Permalink to this headline">¶</a></h4>
+<p>Make a pandas DataFrame containing the pairwise correlations between the different datasets</p>
+<ul class="simple">
+<li><p>one DataFrame for the promoters</p></li>
+<li><p>one DataFrame for the enhancers</p></li>
+</ul>
+<p>Hint: you can do this by using the <code class="docutils literal notranslate"><span class="pre">corr()</span></code> method for a pandas DataFrame</p>
+</div>
+<div class="section" id="question-6-plot-a-heatmap-displaying-the-pairwise-correlations">
+<h4>Question 6. Plot a heatmap displaying the pairwise correlations {-}<a class="headerlink" href="#question-6-plot-a-heatmap-displaying-the-pairwise-correlations" title="Permalink to this headline">¶</a></h4>
+<p>Plot a heatmap that displays the correlation coefficients obtained in the DataFrame above.</p>
+<ul class="simple">
+<li><p>Make one heatmap for the promoters</p></li>
+<li><p>Make one heatmap for the enhancers</p></li>
+</ul>
+<p>Hint: you can do this by using the <code class="docutils literal notranslate"><span class="pre">clustermap()</span></code> function for a pandas DataFrame, which will not only draw the heatmap, but also cluster the heatmap</p>
+<p>Which of the two, promoters or enhancers, are best for classifying the different celltypes?</p>
+</div>
+</div>
+</div>
+</div>
+
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="pandas.html" title="previous page">Introduction to pandas DataFrames</a>
+    <a class='right-next' id="next-link" href="11_footprints.html" title="next page">Creating a DNAseI footprint profile</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Simon van Heeringen, Arjen Brinkman, Kees Albers<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    <script src="../_static/js/index.js"></script>
+    
+  </body>
+</html>

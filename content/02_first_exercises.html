@@ -1,0 +1,468 @@
+
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>First exercises &#8212; NWI-BM066A Computation for Biologists</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
+    <link href="../_static/css/index.css" rel="stylesheet">
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/jupyter-sphinx.css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/sphinx-book-theme.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/mystnb.js"></script>
+    <script src="../_static/sphinx-book-theme.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Lists" href="03_lists.html" />
+    <link rel="prev" title="Introduction" href="01_introduction.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="docsearch:language" content="en">
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../index.html">
+  
+  
+  <h1 class="site-logo" id="site-title">NWI-BM066A Computation for Biologists</h1>
+  
+</a>
+</div>
+
+<form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="01_introduction.html">
+   Introduction
+  </a>
+ </li>
+</ul>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   First exercises
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="03_lists.html">
+   Lists
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="04_loops_control_flow.html">
+   Control flow and loops
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="dictionaries.html">
+   Dictionaries
+  </a>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="dictionaries_exercises.html">
+     Exercises: dictionaries
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="dictionaries_exercises.html#exercises-putting-it-all-together">
+     Exercises: Putting it all together
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="files.html">
+   Files
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="scripts_and_debugging.html">
+   Scripts and debugging
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="functions_modules_style.html">
+   Functions and modules
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="pandas.html">
+   Introduction to pandas DataFrames
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="visualization.html">
+   Visualization
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="11_footprints.html">
+   Creating a DNAseI footprint profile
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="12_dnase_motifs.html">
+   Motifs in DNase I peaks
+  </a>
+ </li>
+</ul>
+
+</nav>
+
+ <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        <div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/content/02_first_exercises.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+    
+</div>
+        <!-- Source interaction buttons -->
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> On this page
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercises-integer-int-and-string-str-variables">
+   <strong>
+    Exercises
+   </strong>
+   : integer (int) and string (str) variables
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-2-1">
+     <strong>
+      Exercise
+     </strong>
+     2.1 {-}
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-2-2">
+     <strong>
+      Exercise
+     </strong>
+     2.2 {-}
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-2-3">
+     <strong>
+      Exercise
+     </strong>
+     2.3 {-}
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-2-4">
+     <strong>
+      Exercise
+     </strong>
+     2.4 {-}
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-2-5">
+     <strong>
+      Exercise
+     </strong>
+     2.5 {-}
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#working-with-strings">
+   Working with strings
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercises-strings">
+   <strong>
+    Exercises
+   </strong>
+   : strings
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-2-6">
+     <strong>
+      Exercise
+     </strong>
+     2.6 {-}
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-2-7">
+     <strong>
+      Exercise
+     </strong>
+     2.7 {-}
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-2-8">
+     <strong>
+      Exercise
+     </strong>
+     2.8 {-}
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-2-9">
+     <strong>
+      Exercise
+     </strong>
+     2.9 {-}
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-2-10">
+     <strong>
+      Exercise
+     </strong>
+     2.10 {-}
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+        </nav>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="first-exercises">
+<h1>First exercises<a class="headerlink" href="#first-exercises" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="exercises-integer-int-and-string-str-variables">
+<h2><strong>Exercises</strong>: integer (int) and string (str) variables<a class="headerlink" href="#exercises-integer-int-and-string-str-variables" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="exercise-2-1">
+<h3><strong>Exercise</strong> 2.1 {-}<a class="headerlink" href="#exercise-2-1" title="Permalink to this headline">¶</a></h3>
+<p>Consider the following code:</p>
+<ol class="simple">
+<li><p>Question: What is the value of <em>c</em> that is printed?</p></li>
+<li><p>Modify the value that is assigned to variable <em>b</em> in such a way that the value of <em>c</em> printed to screen is 16.</p></li>
+</ol>
+</div>
+<div class="section" id="exercise-2-2">
+<h3><strong>Exercise</strong> 2.2 {-}<a class="headerlink" href="#exercise-2-2" title="Permalink to this headline">¶</a></h3>
+<p>Create two variables <em>a</em> and <em>b</em>, and assign them the values 4 and 20 respectively. Create a new variable <em>c</em> that is the sum of these two variables. Your code should produce the following output by printing the value of the variable <em>c</em> to the screen:</p>
+</div>
+<div class="section" id="exercise-2-3">
+<h3><strong>Exercise</strong> 2.3 {-}<a class="headerlink" href="#exercise-2-3" title="Permalink to this headline">¶</a></h3>
+<p>Run the following code:</p>
+<ol class="simple">
+<li><p>Question: Which value is printed to the screen and how often?</p></li>
+</ol>
+<p>Now assign the variable <em>b</em> a new value after having printed the value of <em>c</em>, like so:</p>
+<ol class="simple">
+<li><p>Question: Why does the value of the variable <em>c</em> not change between the first and the second print statement (in line 4 and line 6 respectively)?</p></li>
+</ol>
+</div>
+<div class="section" id="exercise-2-4">
+<h3><strong>Exercise</strong> 2.4 {-}<a class="headerlink" href="#exercise-2-4" title="Permalink to this headline">¶</a></h3>
+<p>Run the following code (make sure to write it <em>exactly</em> as shown here):</p>
+<ol class="simple">
+<li><p>Question: what is printed to the screen?</p></li>
+<li><p>Question: what type of variable are <em>a</em>, <em>b</em> and <em>c</em>? (e.g. list, integer, float, string)</p></li>
+<li><p>Question: why does it not print ‘14’ to the screen? You could also try this example to see what is happening:</p></li>
+</ol>
+</div>
+<div class="section" id="exercise-2-5">
+<h3><strong>Exercise</strong> 2.5 {-}<a class="headerlink" href="#exercise-2-5" title="Permalink to this headline">¶</a></h3>
+<p>Have a look at the following code (do not run it yet):</p>
+<ol class="simple">
+<li><p>Question: what type of variable is <em>a</em>?</p></li>
+<li><p>Question: what type of variable is <em>b</em>?</p></li>
+<li><p>Question: what is the output of the code? (Run it!)</p></li>
+<li><p>Question: do you understand the output?</p></li>
+</ol>
+</div>
+</div>
+<div class="section" id="working-with-strings">
+<h2>Working with strings<a class="headerlink" href="#working-with-strings" title="Permalink to this headline">¶</a></h2>
+<p>You can convert a number, such as an <code class="docutils literal notranslate"><span class="pre">int</span></code> or <code class="docutils literal notranslate"><span class="pre">float</span></code> to a string with the <code class="docutils literal notranslate"><span class="pre">str</span></code> method.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;float&#39;&gt;
+&lt;class &#39;str&#39;&gt;
+</pre></div>
+</div>
+<p>Similarly, you can convert a string that contains a number to an integer with the <code class="docutils literal notranslate"><span class="pre">int</span></code> function or to a float with the <code class="docutils literal notranslate"><span class="pre">float</span></code> function.</p>
+<p>Strings have a number of methods that allow you to perform a variety of useful functions. For instance, <code class="docutils literal notranslate"><span class="pre">lower</span></code> creates a new string where all characters are in lowercase.</p>
+<p>Similarly, you can use <code class="docutils literal notranslate"><span class="pre">upper</span></code> to convert a string to all uppercase. These methods create a <em>new</em> string, they leave the string you use to call the method unchanged.</p>
+<p>Here is a list of useful string methods. For a complete overview you can check the <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#string-methods">Python string documentation</a>.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">upper</span></code> - Returns a string in uppercase</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">lower</span></code> - Returns a string in lowercase</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">len</span></code> - Returns the length of a string</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">count</span></code> - Returns the number of occurrences of a string within another string</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">replace</span></code> - Returns a string with specific text replaced</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">find</span></code> - Return the first position where a substring is found, or -1 if is not found</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">strip</span></code> - Returns a string with all leading and trailing whitespace removed</p></li>
+</ul>
+</div>
+<div class="section" id="exercises-strings">
+<h2><strong>Exercises</strong>: strings<a class="headerlink" href="#exercises-strings" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="exercise-2-6">
+<h3><strong>Exercise</strong> 2.6 {-}<a class="headerlink" href="#exercise-2-6" title="Permalink to this headline">¶</a></h3>
+<p>You are going to analyze the following sequence in more detail using Python:</p>
+<p>To get this sequence into python you are allowed to copy paste!
+Provide answers + code to the following questions:</p>
+<ol class="simple">
+<li><p>What is the length of this sequence?</p></li>
+<li><p>What is the 40th base of this sequence?</p></li>
+<li><p>Is there a C in the sequence starting at base position 44 and ending at position 53? (let Python tell you)</p></li>
+</ol>
+</div>
+<div class="section" id="exercise-2-7">
+<h3><strong>Exercise</strong> 2.7 {-}<a class="headerlink" href="#exercise-2-7" title="Permalink to this headline">¶</a></h3>
+<p>Given the following input:</p>
+<p>Write the code that will calculate the total length of these three sequences and print the following output:</p>
+</div>
+<div class="section" id="exercise-2-8">
+<h3><strong>Exercise</strong> 2.8 {-}<a class="headerlink" href="#exercise-2-8" title="Permalink to this headline">¶</a></h3>
+<p>An open reading frame is a sequence of DNA that starts with the start codon ATG and ends with a stop codon (TAA, TAG or TGA). Take the following DNA sequence.</p>
+<p>This sequence contains one ORF, with a start codon at the 5th position and a stop codon (TGA) at the 26th position.</p>
+<ol class="simple">
+<li><p>Write code that will print the ORF of this sequence.</p></li>
+</ol>
+<p>Let’s look at a different DNA sequence:</p>
+<ol class="simple">
+<li><p>Does the code that you wrote for 1) also work for this sequence? If not, write code that will print the ORF of a DNA sequence (only with the TGA stop codon) that works with either of this sequences.</p></li>
+</ol>
+</div>
+<div class="section" id="exercise-2-9">
+<h3><strong>Exercise</strong> 2.9 {-}<a class="headerlink" href="#exercise-2-9" title="Permalink to this headline">¶</a></h3>
+<p>Write code that will print the GC content of a sequence. This is the fraction of a sequence that is either C or G. When you use string <code class="docutils literal notranslate"><span class="pre">dna</span></code> from <strong>2.7</strong> it should print the following:</p>
+</div>
+<div class="section" id="exercise-2-10">
+<h3><strong>Exercise</strong> 2.10 {-}<a class="headerlink" href="#exercise-2-10" title="Permalink to this headline">¶</a></h3>
+<p>Write code that will print a sequence in lower-case with the ORF (start ATG, stop TGA) in upper-case.</p>
+<p>For instance, the following sequence:</p>
+<p>Would be printed like this:</p>
+</div>
+</div>
+</div>
+
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="01_introduction.html" title="previous page">Introduction</a>
+    <a class='right-next' id="next-link" href="03_lists.html" title="next page">Lists</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Simon van Heeringen, Arjen Brinkman, Kees Albers<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    <script src="../_static/js/index.js"></script>
+    
+  </body>
+</html>

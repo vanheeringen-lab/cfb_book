@@ -1,0 +1,598 @@
+
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Files &#8212; NWI-BM066A Computation for Biologists</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
+    <link href="../_static/css/index.css" rel="stylesheet">
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/jupyter-sphinx.css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/sphinx-book-theme.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/mystnb.js"></script>
+    <script src="../_static/sphinx-book-theme.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Scripts and debugging" href="scripts_and_debugging.html" />
+    <link rel="prev" title="Exercises: dictionaries" href="dictionaries_exercises.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="docsearch:language" content="en">
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../index.html">
+  
+  
+  <h1 class="site-logo" id="site-title">NWI-BM066A Computation for Biologists</h1>
+  
+</a>
+</div>
+
+<form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="01_introduction.html">
+   Introduction
+  </a>
+ </li>
+</ul>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="02_first_exercises.html">
+   First exercises
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="03_lists.html">
+   Lists
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="04_loops_control_flow.html">
+   Control flow and loops
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="dictionaries.html">
+   Dictionaries
+  </a>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="dictionaries_exercises.html">
+     Exercises: dictionaries
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="dictionaries_exercises.html#exercises-putting-it-all-together">
+     Exercises: Putting it all together
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Files
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="scripts_and_debugging.html">
+   Scripts and debugging
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="functions_modules_style.html">
+   Functions and modules
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="pandas.html">
+   Introduction to pandas DataFrames
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="visualization.html">
+   Visualization
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="11_footprints.html">
+   Creating a DNAseI footprint profile
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="12_dnase_motifs.html">
+   Motifs in DNase I peaks
+  </a>
+ </li>
+</ul>
+
+</nav>
+
+ <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        <div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/content/files.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+    
+</div>
+        <!-- Source interaction buttons -->
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> On this page
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#introduction-to-files">
+   Introduction to files
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#glossary-of-terms-and-functions">
+   Glossary of terms and functions
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercises-putting-it-all-together">
+   <strong>
+    Exercises
+   </strong>
+   : putting it all together
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-6-1">
+     <strong>
+      Exercise
+     </strong>
+     6.1
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+        </nav>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="files">
+<h1>Files<a class="headerlink" href="#files" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="introduction-to-files">
+<h2>Introduction to files<a class="headerlink" href="#introduction-to-files" title="Permalink to this headline">¶</a></h2>
+<p>Thus far we have used Python without reading input from files and writing output to files. We have created objects like lists and dictionaries, but nothing has been saved persistently on a disk, meaning that if we close Python, everything is gone. Usually you want to open a file, read its contents (line by line), analyze it, and write it to another file. To work with files we need the Python <code class="docutils literal notranslate"><span class="pre">file</span></code> object. <code class="docutils literal notranslate"><span class="pre">file</span></code> objects serve as a <em>link to a file</em> residing on a disk of a computer.</p>
+<p>To open a file, write some contents to it and close it:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">myfile</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;testfile.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span>
+<span class="n">myfile</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;some text</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">myfile</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Note the following:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">myfile</span></code> is the name of the Python <code class="docutils literal notranslate"><span class="pre">file</span></code> <em>object</em></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">'testfile.txt'</span></code> is the name of the <em>file</em> written to the disk of the computer</p>
+<ul>
+<li><p>extension is not important, but suggests that it contains text</p></li>
+</ul>
+</li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">'w'</span></code> argument to the <code class="docutils literal notranslate"><span class="pre">open()</span></code> function opens the file for <em>writing</em></p></li>
+<li><p>If the file <code class="docutils literal notranslate"><span class="pre">'testfile.txt'</span></code> already exists, you will overwrite its contents</p></li>
+<li><p>If not, the file <code class="docutils literal notranslate"><span class="pre">'testfile.txt'</span></code> will be created</p></li>
+<li><p>You can also use <code class="docutils literal notranslate"><span class="pre">'a'</span></code> instead, which would <em>append</em> any output to the existing file called <code class="docutils literal notranslate"><span class="pre">'testfile.txt'</span></code></p></li>
+<li><p>If you use <code class="docutils literal notranslate"><span class="pre">'r'</span></code> instead, you only open the file for only <em>reading</em> (it has to exist of course)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">write()</span></code> is a method belonging to the <code class="docutils literal notranslate"><span class="pre">file</span></code> object</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">write()</span></code> does not add a newline character to the end of a line, that is why we add <code class="docutils literal notranslate"><span class="pre">\n</span></code> to our text</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">close()</span></code> is a method belonging to the <code class="docutils literal notranslate"><span class="pre">file</span></code> object</p></li>
+</ul>
+<p>Many files used for our analyses are large. We could open them, store their contents in the memory of computer (RAM) and work on the complete contents. However, in most cases we want to avoid loading all contents into memory, and as most of the files we work with contain lines of text, we rather open the file, process its contents <em>line-by-line</em>, and write output to another file.</p>
+<p>To open a file and read its contents line-by-line we first open the file using <code class="docutils literal notranslate"><span class="pre">open()</span></code>. To step through the file line-by-line we use a <code class="docutils literal notranslate"><span class="pre">for</span></code> or <code class="docutils literal notranslate"><span class="pre">while</span></code> loop to ‘iterate’ over the resulting <code class="docutils literal notranslate"><span class="pre">file</span></code> object. <em>Each iteration returns a line of the file, from top to bottom</em>.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">for</span></code> or <code class="docutils literal notranslate"><span class="pre">while</span></code> loop automatically ends as soon as there are no lines anymore (=after the last line).</p>
+<p>At the end of the code that you execute for each line, you should close the file.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">infile</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;/scratch/cfb/list-dict-loop/example.bed&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">infile</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
+<span class="n">infile</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>browser position chr7:127471196-127495720
+
+browser hide all
+
+track name=&quot;example&quot; description=&quot;example_bed_file&quot; visibility=2 itemRgb=&quot;On&quot;
+
+chr7	127471196	127472363	Pos1	0	+	127471196	127472363	255,0,0
+
+chr7	127472363	127473530	Pos2	0	+	127472363	127473530	255,0,0
+
+chr7	127473530	127474697	Pos3	0	+	127473530	127474697	255,0,0
+
+chr7	127474697	127475864	Pos4	0	+	127474697	127475864	255,0,0
+
+chr7	127475864	127477031	Neg1	0	-	127475864	127477031	0,0,255
+
+chr7	127477031	127478198	Neg2	0	-	127477031	127478198	0,0,255
+
+chr7	127478198	127479365	Neg3	0	-	127478198	127479365	0,0,255
+
+chr7	127479365	127480532	Pos5	0	+	127479365	127480532	255,0,0
+
+chr7	127480532	127481699	Neg4	0	-	127480532	127481699	0,0,255
+</pre></div>
+</div>
+</div>
+</div>
+<p>The file <code class="docutils literal notranslate"><span class="pre">/scratch/cfb/list-dict-loop/example.bed</span></code> is an example BED file. BED files are used to store genomic coordinates along with additional information. BED files are for instance used to store genomic coordinates of ChIP-seq peaks. The first three fields (columns) contain the chromosome, start, and end of the features, respectively. The file <code class="docutils literal notranslate"><span class="pre">/scratch/cfb/list-dict-loop/example.bed</span></code> also contains ‘header’ lines that are used when the file is displayed in the UCSC genome browser. This is not always the case for BED files.</p>
+<p>While the code above functions just fine, it is nowadays more common in Python to open files with the <code class="docutils literal notranslate"><span class="pre">with</span></code> statement.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;/scratch/cfb/list-dict-loop/example.bed&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">infile</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">infile</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>browser position chr7:127471196-127495720
+
+browser hide all
+
+track name=&quot;example&quot; description=&quot;example_bed_file&quot; visibility=2 itemRgb=&quot;On&quot;
+
+chr7	127471196	127472363	Pos1	0	+	127471196	127472363	255,0,0
+
+chr7	127472363	127473530	Pos2	0	+	127472363	127473530	255,0,0
+
+chr7	127473530	127474697	Pos3	0	+	127473530	127474697	255,0,0
+
+chr7	127474697	127475864	Pos4	0	+	127474697	127475864	255,0,0
+
+chr7	127475864	127477031	Neg1	0	-	127475864	127477031	0,0,255
+
+chr7	127477031	127478198	Neg2	0	-	127477031	127478198	0,0,255
+
+chr7	127478198	127479365	Neg3	0	-	127478198	127479365	0,0,255
+
+chr7	127479365	127480532	Pos5	0	+	127479365	127480532	255,0,0
+
+chr7	127480532	127481699	Neg4	0	-	127480532	127481699	0,0,255
+</pre></div>
+</div>
+</div>
+</div>
+<p>You see that the code is very similar. However, you don’t have to explicitly close the file. As soon as the code exits the <code class="docutils literal notranslate"><span class="pre">with</span></code> block, the file is closed automatically.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">with</span></code> statement is the preferred way to work with files.</p>
+</div>
+<p>In the next few examples we will see some analysis of this file in action. Each example adds some steps and builds from the previous example.</p>
+<p>Example 1:</p>
+<ul class="simple">
+<li><p>open the <code class="docutils literal notranslate"><span class="pre">/scratch/cfb/list-dict-loop/example.bed</span></code> file</p></li>
+<li><p>read the file line-by-line</p></li>
+<li><p>ignore header lines starting with ‘browser’ or ‘track’</p></li>
+<li><p>split each line into a list based on the <code class="docutils literal notranslate"><span class="pre">&lt;tab&gt;</span></code> character</p></li>
+<li><p>print each line</p></li>
+<li><p>print the values</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;/scratch/cfb/list-dict-loop/example.bed&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">infile</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">infile</span><span class="p">:</span>        <span class="c1"># use a variable called &#39;line&#39; for each line</span>
+        <span class="n">line</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>    <span class="c1"># take away the &#39;\\n&#39; character at the end of each line</span>
+        <span class="c1"># only proceed with lines lacking &#39;browser&#39; or &#39;track&#39; at the beginning</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">line</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;browser&#39;</span><span class="p">)</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">line</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;track&#39;</span><span class="p">):</span>
+            <span class="c1"># split the line (`string`) into a `list`, with the &#39;\\t&#39; as a delimiter</span>
+            <span class="n">vals</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="n">vals</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>[&#39;chr7&#39;, &#39;127471196&#39;, &#39;127472363&#39;, &#39;Pos1&#39;, &#39;0&#39;, &#39;+&#39;, &#39;127471196&#39;, &#39;127472363&#39;, &#39;255,0,0&#39;]
+[&#39;chr7&#39;, &#39;127472363&#39;, &#39;127473530&#39;, &#39;Pos2&#39;, &#39;0&#39;, &#39;+&#39;, &#39;127472363&#39;, &#39;127473530&#39;, &#39;255,0,0&#39;]
+[&#39;chr7&#39;, &#39;127473530&#39;, &#39;127474697&#39;, &#39;Pos3&#39;, &#39;0&#39;, &#39;+&#39;, &#39;127473530&#39;, &#39;127474697&#39;, &#39;255,0,0&#39;]
+[&#39;chr7&#39;, &#39;127474697&#39;, &#39;127475864&#39;, &#39;Pos4&#39;, &#39;0&#39;, &#39;+&#39;, &#39;127474697&#39;, &#39;127475864&#39;, &#39;255,0,0&#39;]
+[&#39;chr7&#39;, &#39;127475864&#39;, &#39;127477031&#39;, &#39;Neg1&#39;, &#39;0&#39;, &#39;-&#39;, &#39;127475864&#39;, &#39;127477031&#39;, &#39;0,0,255&#39;]
+[&#39;chr7&#39;, &#39;127477031&#39;, &#39;127478198&#39;, &#39;Neg2&#39;, &#39;0&#39;, &#39;-&#39;, &#39;127477031&#39;, &#39;127478198&#39;, &#39;0,0,255&#39;]
+[&#39;chr7&#39;, &#39;127478198&#39;, &#39;127479365&#39;, &#39;Neg3&#39;, &#39;0&#39;, &#39;-&#39;, &#39;127478198&#39;, &#39;127479365&#39;, &#39;0,0,255&#39;]
+[&#39;chr7&#39;, &#39;127479365&#39;, &#39;127480532&#39;, &#39;Pos5&#39;, &#39;0&#39;, &#39;+&#39;, &#39;127479365&#39;, &#39;127480532&#39;, &#39;255,0,0&#39;]
+[&#39;chr7&#39;, &#39;127480532&#39;, &#39;127481699&#39;, &#39;Neg4&#39;, &#39;0&#39;, &#39;-&#39;, &#39;127480532&#39;, &#39;127481699&#39;, &#39;0,0,255&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Note how we used <code class="docutils literal notranslate"><span class="pre">startswith()</span></code> to check if a string starts with ‘browser’ or ‘track’</p>
+<p>Example 2:</p>
+<ul class="simple">
+<li><p>assign the first three elements of this list to the variables <code class="docutils literal notranslate"><span class="pre">chrom</span></code>, <code class="docutils literal notranslate"><span class="pre">start</span></code>, and <code class="docutils literal notranslate"><span class="pre">end</span></code></p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;/scratch/cfb/list-dict-loop/example.bed&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">infile</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">infile</span><span class="p">:</span>
+        <span class="n">line</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">line</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;browser&#39;</span><span class="p">)</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">line</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;track&#39;</span><span class="p">):</span>
+            <span class="n">vals</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">)</span>
+            <span class="n">chrom</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="n">end</span> <span class="o">=</span> <span class="n">vals</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">3</span><span class="p">]</span>  
+            <span class="nb">print</span><span class="p">(</span><span class="n">chrom</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>chr7 127471196 127472363
+chr7 127472363 127473530
+chr7 127473530 127474697
+chr7 127474697 127475864
+chr7 127475864 127477031
+chr7 127477031 127478198
+chr7 127478198 127479365
+chr7 127479365 127480532
+chr7 127480532 127481699
+</pre></div>
+</div>
+</div>
+</div>
+<p>Example 3:</p>
+<ul class="simple">
+<li><p>convert the <code class="docutils literal notranslate"><span class="pre">start</span></code> and <code class="docutils literal notranslate"><span class="pre">end</span></code> variables to an integer <code class="docutils literal notranslate"><span class="pre">int</span></code> (they are strings at first)</p></li>
+<li><p>calculate the width (size in bases) of each feature</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;/scratch/cfb/list-dict-loop/example.bed&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">infile</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">infile</span><span class="p">:</span>              
+        <span class="n">line</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>          
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">line</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;browser&#39;</span><span class="p">)</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">line</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;track&#39;</span><span class="p">):</span>
+            <span class="n">line</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">)</span>  
+            <span class="n">chrom</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="n">end</span> <span class="o">=</span> <span class="n">line</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">3</span><span class="p">]</span>      
+            <span class="n">start</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">start</span><span class="p">)</span>    <span class="c1"># convert start to `int`</span>
+            <span class="n">end</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">end</span><span class="p">)</span>        <span class="c1"># convert end to `int`</span>
+            <span class="n">width</span> <span class="o">=</span> <span class="n">end</span> <span class="o">-</span> <span class="n">start</span>
+            <span class="nb">print</span><span class="p">(</span><span class="n">width</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>1167
+1167
+1167
+1167
+1167
+1167
+1167
+1167
+1167
+</pre></div>
+</div>
+</div>
+</div>
+<p>Example 4:</p>
+<ul class="simple">
+<li><p>calculate how many features with strand ‘+’ and strand ‘-‘ are present</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">plus</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">minus</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;/scratch/cfb/list-dict-loop/example.bed&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">infile</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">infile</span><span class="p">:</span>
+        <span class="n">line</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">line</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;browser&#39;</span><span class="p">)</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">line</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;track&#39;</span><span class="p">):</span>
+            <span class="n">vals</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">)</span>
+            <span class="n">strand</span> <span class="o">=</span> <span class="n">vals</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span>
+            <span class="k">if</span> <span class="n">strand</span> <span class="o">==</span> <span class="s1">&#39;+&#39;</span><span class="p">:</span>
+                <span class="n">plus</span> <span class="o">=</span> <span class="n">plus</span> <span class="o">+</span> <span class="mi">1</span>
+            <span class="k">elif</span> <span class="n">strand</span> <span class="o">==</span> <span class="s1">&#39;-&#39;</span><span class="p">:</span>
+                <span class="n">minus</span> <span class="o">=</span> <span class="n">minus</span> <span class="o">+</span> <span class="mi">1</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">plus</span><span class="p">,</span> <span class="n">minus</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>5 4
+</pre></div>
+</div>
+</div>
+</div>
+<p>Thus far we have used the <code class="docutils literal notranslate"><span class="pre">print()</span></code> statement to print output to the screen. But if you want to be more explicit in the formatting of the output, you should use <code class="docutils literal notranslate"><span class="pre">format()</span></code>, which creates a <code class="docutils literal notranslate"><span class="pre">string</span></code> that can either be printed or written to a file. The standard way of using <code class="docutils literal notranslate"><span class="pre">format()</span></code> is like this: <code class="docutils literal notranslate"><span class="pre">'some</span> <span class="pre">text</span> <span class="pre">{}</span> <span class="pre">more</span> <span class="pre">text</span> <span class="pre">{}'.format(var1,</span> <span class="pre">var2)</span></code>. See the following example in which <code class="docutils literal notranslate"><span class="pre">format()</span></code> is used:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cell_lines</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;HCT116&#39;</span><span class="p">,</span> <span class="s1">&#39;HeLa&#39;</span><span class="p">,</span> <span class="s1">&#39;HEK293&#39;</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
+    <span class="n">args</span> <span class="o">=</span> <span class="s1">&#39;Cell line </span><span class="si">{}</span><span class="s1"> is </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">cell_lines</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">args</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>Cell line 1 is HCT116
+Cell line 2 is HeLa
+Cell line 3 is HEK293
+</pre></div>
+</div>
+</div>
+</div>
+<p>Note that the <code class="docutils literal notranslate"><span class="pre">print()</span></code> statement by default adds a newline character <code class="docutils literal notranslate"><span class="pre">&quot;\n&quot;</span></code>. If you write to a file you need to add the newline character <code class="docutils literal notranslate"><span class="pre">&quot;\n&quot;</span></code> to the string:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;cell_lines.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">outfile</span><span class="p">:</span>
+    <span class="n">cell_lines</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;HCT116&#39;</span><span class="p">,</span> <span class="s1">&#39;HeLa&#39;</span><span class="p">,</span> <span class="s1">&#39;HEK293&#39;</span><span class="p">]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
+        <span class="n">args</span> <span class="o">=</span> <span class="s1">&#39;Cell line </span><span class="si">{}</span><span class="s1"> is</span><span class="se">\t</span><span class="si">{}</span><span class="se">\n</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">cell_lines</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+        <span class="n">outfile</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">args</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Note how we also used <code class="docutils literal notranslate"><span class="pre">&quot;\t&quot;</span></code> here. This is the character that specifies a <code class="docutils literal notranslate"><span class="pre">&lt;tab&gt;</span></code>.</p>
+</div>
+<div class="section" id="glossary-of-terms-and-functions">
+<h2>Glossary of terms and functions<a class="headerlink" href="#glossary-of-terms-and-functions" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">open()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">with</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">for</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">while</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">write()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">startswith()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">format()</span></code></p></li>
+</ul>
+</div>
+<div class="section" id="exercises-putting-it-all-together">
+<h2><strong>Exercises</strong>: putting it all together<a class="headerlink" href="#exercises-putting-it-all-together" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="exercise-6-1">
+<h3><strong>Exercise</strong> 6.1<a class="headerlink" href="#exercise-6-1" title="Permalink to this headline">¶</a></h3>
+<p>In this exercise you are going to analyze data from ChIP-seq of several transcription factors in mouse embryonic stem cells (<a class="reference external" href="https://pubmed.ncbi.nlm.nih.gov/18555785/">Chen et al. 2008, 13;133(6):1106-17, PMID 18555785</a>). Please have a look at Figure 1 and 2 of this paper. Figure 1 shows the ChIP-seq profiles for the transcription factors.</p>
+<p>The ChIP-seq peaks that you see represent <em>in vivo</em> binding sites of these transcription factors. In Figure 2 the authors have analyzed the DNA sequence underneath these peaks, and identified specific DNA sequences (<strong>motifs</strong>) for each transcription factor.</p>
+<p>You are going to analyze these sequences as well, to see which motifs you can identify. You will count <strong>k-mers</strong> (short sequences, e.g. 8 bases in length) in the sequences underneath the ChIP-seq peaks of a specific transcription factor, and analyze which k-mers are overrepresented.</p>
+<p>DNA (or amino acid) sequence files are usually in FASTA format. Check out https://en.wikipedia.org/wiki/FASTA_format for a FASTA description and an example. Just read the first part.</p>
+<p>Before you start off using the FASTA files from the study mentioned above, you will work on a file called <code class="docutils literal notranslate"><span class="pre">testfile.fasta</span></code> (present in <code class="docutils literal notranslate"><span class="pre">/scratch/cfb/list-dict-loop</span></code>), which is a small FASTA file. This allows you to make and test your code quicker.</p>
+<ol class="simple">
+<li><p>Provide the Python code that allows you to read the FASTA file while ignoring the description lines containing <code class="docutils literal notranslate"><span class="pre">&gt;</span></code>. For now it is OK to print the output.</p></li>
+<li><p>Extend your code with the following: For each sequence, extract all possible k-mers of length 4. Skip sequences that are shorter than 4 bases. Print the output. Make sure your code allows you to easily run the same analysis with different k-mer lengths.</p></li>
+<li><p>Extend your code with the following: Count the number of occurrences for each k-mer that is encountered (in all sequences together)</p></li>
+<li><p>Extend your code with the following: Write the top 10 most abundant k-mer sequences to an output file, along the the number of times they occur</p></li>
+<li><p>Now that you have assembled your code (you can remove the printing statements you used for testing) adapt your code to count kmers of <strong>length 8</strong>. Run your code on 2 files present in the <code class="docutils literal notranslate"><span class="pre">/scratch/cfb/list-dict-loop</span></code> directory:</p></li>
+</ol>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">GSM288346_ES_Oct4_mm9.peaks.fasta</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">GSM288356_ES_c-Myc_mm9.peaks.fasta</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">GSM288353_ES_Stat3_mm9.peaks.fasta</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">GSM288354_ES_Klf4_mm9.peaks.fasta</span></code></p></li>
+</ul>
+<p>For the top most occurring 8-mers that you obtained for each file, do these resemble the motifs for the corresponding transcription factors as displayed in Figure 2 of the paper?</p>
+</div>
+</div>
+</div>
+
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="dictionaries_exercises.html" title="previous page">Exercises: dictionaries</a>
+    <a class='right-next' id="next-link" href="scripts_and_debugging.html" title="next page">Scripts and debugging</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Simon van Heeringen, Arjen Brinkman, Kees Albers<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    <script src="../_static/js/index.js"></script>
+    
+  </body>
+</html>
