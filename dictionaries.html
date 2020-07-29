@@ -1,0 +1,561 @@
+
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Dictionaries &#8212; NWI-BM066A Computation for Biologists</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
+    <link href="_static/css/index.css" rel="stylesheet">
+    <link rel="stylesheet" href="_static/sphinx-book-theme.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/jupyter-sphinx.css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/sphinx-book-theme.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/mystnb.js"></script>
+    <script src="_static/sphinx-book-theme.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Exercises: dictionaries" href="dictionaries_exercises.html" />
+    <link rel="prev" title="Exercises: loops" href="loops_exercises.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="docsearch:language" content="en">
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="index.html">
+  
+  
+  <h1 class="site-logo" id="site-title">NWI-BM066A Computation for Biologists</h1>
+  
+</a>
+</div>
+
+<form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="01_introduction.html">
+   Introduction
+  </a>
+ </li>
+</ul>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="02_first_exercises.html">
+   First exercises
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="03_lists.html">
+   Lists
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="04_loops_control_flow.html">
+   Control flow and loops
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Dictionaries
+  </a>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="dictionaries_exercises.html">
+     Exercises: dictionaries
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="dictionaries_exercises.html#exercises-putting-it-all-together">
+     Exercises: Putting it all together
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="files.html">
+   Files
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="functions_modules_style.html">
+   Functions and modules
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="09_pandas.html">
+   Introduction to pandas DataFrames
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="10_visualization.html">
+   Visualization
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="11_footprints.html">
+   Creating a DNAseI footprint profile
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="12_dnase_motifs.html">
+   Motifs in DNase I peaks
+  </a>
+ </li>
+</ul>
+
+</nav>
+
+ <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        <div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/dictionaries.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+    
+</div>
+        <!-- Source interaction buttons -->
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> On this page
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#dictionary-methods">
+   Dictionary Methods
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#glossary-of-useful-dictionary-terms">
+   Glossary of useful
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     dictionary
+    </span>
+   </code>
+   terms
+  </a>
+ </li>
+</ul>
+
+        </nav>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="dictionaries">
+<h1>Dictionaries<a class="headerlink" href="#dictionaries" title="Permalink to this headline">¶</a></h1>
+<p>A dictionary, or <code class="docutils literal notranslate"><span class="pre">dict</span></code>, is like a list, but more general. In a list, the indices have to be integers; in a dictionary they can be (almost) any type.
+You can think of a dictionary as a <em>mapping between a set of indices (which are called keys) and a set of values</em>. Each key maps to a value. The association of a key and a value is called a <em>key-value pair</em> or sometimes an <em>item</em>.</p>
+<p>As an example, we’ll build a dictionary that maps from <em>codons</em> to <em>amino acids</em>, so the keys and the values are all strings.</p>
+<p><img alt="" src="_images/dict1.png" /></p>
+<p>The function <code class="docutils literal notranslate"><span class="pre">dict()</span></code> creates a new dictionary with no items. Because <code class="docutils literal notranslate"><span class="pre">dict</span></code> is the name of a built-in function, you should avoid using it as a variable name.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cod2aa</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">cod2aa</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">cod2aa</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>{}
+&lt;class &#39;dict&#39;&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<p>The curly-brackets, <code class="docutils literal notranslate"><span class="pre">{}</span></code>, represent an empty dictionary.
+You can als create an empty dictionary with the curly brackets (<code class="docutils literal notranslate"><span class="pre">{}</span></code>), just like you can create an empty list with square brackets (<code class="docutils literal notranslate"><span class="pre">[]</span></code>).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cod2aa</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">cod2aa</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>{}
+</pre></div>
+</div>
+</div>
+</div>
+<p>To add items to the dictionary one at a time, you use square brackets:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cod2aa</span><span class="p">[</span><span class="s1">&#39;CTA&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;Leu&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>This line creates an item that maps from the key <code class="docutils literal notranslate"><span class="pre">'CTA'</span></code> to the value <code class="docutils literal notranslate"><span class="pre">'Leu'</span></code>. If we print the dictionary again, we see a key-value pair with a colon between the key and value:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">cod2aa</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>{&#39;CTA&#39;: &#39;Leu&#39;}
+</pre></div>
+</div>
+</div>
+</div>
+<p>This output format is also an input format. For example, you can create a new dictionary with 3 items:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cod2aa</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;CTA&#39;</span><span class="p">:</span> <span class="s1">&#39;Leu&#39;</span><span class="p">,</span> <span class="s1">&#39;AGC&#39;</span><span class="p">:</span> <span class="s1">&#39;Ser&#39;</span><span class="p">,</span> <span class="s1">&#39;ACT&#39;</span><span class="p">:</span> <span class="s1">&#39;Thr&#39;</span><span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>If you print <code class="docutils literal notranslate"><span class="pre">cod2aa</span></code>, you will see that the order of the items in the dictionary is the same. The order of items in the dictionary identical top the order of insertion.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">cod2aa</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>{&#39;CTA&#39;: &#39;Leu&#39;, &#39;AGC&#39;: &#39;Ser&#39;, &#39;ACT&#39;: &#39;Thr&#39;}
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The dictionary order became available in Python 3.6 and is guaranteed from Python 3.7 onwards. If you ever use an older Python version, be aware that this order is not guaranteed and practically unpredictable. In this case you have to assume that a dictionary is unordered!</p>
+</div>
+<p>You can retrieve an item from a dictionary by using the <code class="docutils literal notranslate"><span class="pre">[]</span></code> square brackets. This is similar as to how you access elements from a list.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">cod2aa</span><span class="p">[</span><span class="s1">&#39;ACT&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>Thr
+</pre></div>
+</div>
+</div>
+</div>
+<p>The key <code class="docutils literal notranslate"><span class="pre">'ACT'</span></code> always maps to the value <code class="docutils literal notranslate"><span class="pre">'Thr'</span></code> so the order of the items doesn’t matter.
+If the key isn’t in the dictionary, you get a <code class="docutils literal notranslate"><span class="pre">KeyError</span></code> exception:</p>
+<div class="cell tag_raises-exception docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">cod2aa</span><span class="p">[</span><span class="s1">&#39;GGT&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">KeyError</span><span class="g g-Whitespace">                                  </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">8</span><span class="o">-</span><span class="n">de50dd413888</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="nb">print</span><span class="p">(</span><span class="n">cod2aa</span><span class="p">[</span><span class="s1">&#39;GGT&#39;</span><span class="p">])</span>
+
+<span class="ne">KeyError</span>: &#39;GGT&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Dictionaries are very similar to lists. The one major differences is that values in a <code class="docutils literal notranslate"><span class="pre">list</span></code> are always access by an integer and that value in a <code class="docutils literal notranslate"><span class="pre">dict</span></code> are can be accessed by a variety of key types.</p>
+</div>
+<p>Because you use keys to look up values, you can understand that <em>keys must always be unique</em>. On the other hand, <em>values do not need to be unique and can be anything</em>, including a <code class="docutils literal notranslate"><span class="pre">list</span></code> or a <code class="docutils literal notranslate"><span class="pre">dict</span></code>.
+Let us add another codon (key) that maps to an already existing amino acid (value):</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cod2aa</span><span class="p">[</span><span class="s1">&#39;TTG&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;Leu&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">cod2aa</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>{&#39;CTA&#39;: &#39;Leu&#39;, &#39;AGC&#39;: &#39;Ser&#39;, &#39;ACT&#39;: &#39;Thr&#39;, &#39;TTG&#39;: &#39;Leu&#39;}
+</pre></div>
+</div>
+</div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">len()</span></code> function works on dictionaries; it returns the number of key-value pairs:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">cod2aa</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>4
+</pre></div>
+</div>
+</div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">in</span></code> operator works on dictionaries; it tells you whether something appears as a <em>key</em> in the dictionary (appearing as a value is not good enough).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;CTA&#39;</span> <span class="ow">in</span> <span class="n">cod2aa</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;Leu&#39;</span> <span class="ow">in</span> <span class="n">cod2aa</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>False
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="dictionary-methods">
+<h2>Dictionary Methods<a class="headerlink" href="#dictionary-methods" title="Permalink to this headline">¶</a></h2>
+<p>Python provides methods that operate on dictionaries. For example, <code class="docutils literal notranslate"><span class="pre">keys()</span></code> gives you all the keys of a dictionary, <code class="docutils literal notranslate"><span class="pre">values()</span></code> gives you all the values, and <code class="docutils literal notranslate"><span class="pre">items()</span></code> gives you all key:value pairs.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cod2aa</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;TTG&#39;</span><span class="p">:</span> <span class="s1">&#39;Leu&#39;</span><span class="p">,</span> <span class="s1">&#39;CTA&#39;</span><span class="p">:</span> <span class="s1">&#39;Leu&#39;</span><span class="p">,</span> <span class="s1">&#39;ACT&#39;</span><span class="p">:</span> <span class="s1">&#39;Thr&#39;</span><span class="p">,</span> <span class="s1">&#39;AGC&#39;</span><span class="p">:</span> <span class="s1">&#39;Ser&#39;</span><span class="p">}</span>
+<span class="n">codons</span> <span class="o">=</span> <span class="n">cod2aa</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">codons</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>dict_keys([&#39;TTG&#39;, &#39;CTA&#39;, &#39;ACT&#39;, &#39;AGC&#39;])
+</pre></div>
+</div>
+</div>
+</div>
+<p>You see all the values of the keys in <code class="docutils literal notranslate"><span class="pre">cod2aa</span></code>, which are the different codons. However, you’ll als not an unfamiliar <code class="docutils literal notranslate"><span class="pre">dict_keys()</span></code> object. If you want to loop over all the keys, this doesn’t matter:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">codon</span> <span class="ow">in</span> <span class="n">codons</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">codon</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>TTG
+CTA
+ACT
+AGC
+</pre></div>
+</div>
+</div>
+</div>
+<p>However, if you want to use this object as a <code class="docutils literal notranslate"><span class="pre">list</span></code> you have to explicitly convert it to <code class="docutils literal notranslate"><span class="pre">list</span></code> using the <code class="docutils literal notranslate"><span class="pre">list()</span></code> function.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">codons</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">codons</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">codons</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>[&#39;TTG&#39;, &#39;CTA&#39;, &#39;ACT&#39;, &#39;AGC&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">values()</span></code> and <code class="docutils literal notranslate"><span class="pre">items()</span></code> methods are very similar to <code class="docutils literal notranslate"><span class="pre">keys()</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">amino_acids</span> <span class="o">=</span> <span class="n">cod2aa</span><span class="o">.</span><span class="n">values</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">amino_acids</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>dict_values([&#39;Leu&#39;, &#39;Leu&#39;, &#39;Thr&#39;, &#39;Ser&#39;])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">i</span> <span class="o">=</span> <span class="n">cod2aa</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>dict_items([(&#39;TTG&#39;, &#39;Leu&#39;), (&#39;CTA&#39;, &#39;Leu&#39;), (&#39;ACT&#39;, &#39;Thr&#39;), (&#39;AGC&#39;, &#39;Ser&#39;)])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">codon</span><span class="p">,</span> <span class="n">aa</span> <span class="ow">in</span> <span class="n">cod2aa</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">codon</span><span class="si">}</span><span class="s2"> encodes for </span><span class="si">{</span><span class="n">aa</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>TTG encodes for Leu
+CTA encodes for Leu
+ACT encodes for Thr
+AGC encodes for Ser
+</pre></div>
+</div>
+</div>
+</div>
+<p>As with lists, you can use <code class="docutils literal notranslate"><span class="pre">pop()</span></code> to obtain and delete one key:value pair.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;before pop:&quot;</span><span class="p">,</span> <span class="n">cod2aa</span><span class="p">)</span>
+<span class="n">p</span> <span class="o">=</span> <span class="n">cod2aa</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">&#39;ACT&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;after pop:&quot;</span><span class="p">,</span> <span class="n">cod2aa</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>before pop: {&#39;TTG&#39;: &#39;Leu&#39;, &#39;CTA&#39;: &#39;Leu&#39;, &#39;ACT&#39;: &#39;Thr&#39;, &#39;AGC&#39;: &#39;Ser&#39;}
+Thr
+after pop: {&#39;TTG&#39;: &#39;Leu&#39;, &#39;CTA&#39;: &#39;Leu&#39;, &#39;AGC&#39;: &#39;Ser&#39;}
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="glossary-of-useful-dictionary-terms">
+<h2>Glossary of useful <code class="docutils literal notranslate"><span class="pre">dictionary</span></code> terms<a class="headerlink" href="#glossary-of-useful-dictionary-terms" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">dict()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">len()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">in</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">values()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">keys()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">items()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pop()</span></code></p></li>
+</ul>
+<div class="toctree-wrapper compound">
+</div>
+</div>
+</div>
+
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="loops_exercises.html" title="previous page"><strong>Exercises</strong>: loops</a>
+    <a class='right-next' id="next-link" href="dictionaries_exercises.html" title="next page">Exercises: dictionaries</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Simon van Heeringen, Arjen Brinkman, Kees Albers<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    <script src="_static/js/index.js"></script>
+    
+  </body>
+</html>
