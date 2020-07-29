@@ -76,14 +76,46 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="03_lists.html">
+  <a class="reference internal" href="lists.html">
    Lists
   </a>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="lists_exercises.html">
+     <strong>
+      Exercises
+     </strong>
+     : lists
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="04_loops_control_flow.html">
-   Control flow and loops
+  <a class="reference internal" href="control_flow.html">
+   Control flow
   </a>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="control_flow_exercises.html">
+     Exercises: control flow
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="loops.html">
+   Loops
+  </a>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="loops_exercises.html">
+     <strong>
+      Exercises
+     </strong>
+     : loops
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
@@ -108,8 +140,23 @@
   </a>
  </li>
  <li class="toctree-l1">
+  <a class="reference internal" href="files.html#exercises-putting-it-all-together">
+   Exercises: putting it all together
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="scripts_and_debugging.html">
    Scripts and debugging
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="scripts_and_debugging.html#exercises-scripts">
+   Exercises: scripts
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="scripts_and_debugging.html#exercises-debugging">
+   Exercises: debugging
   </a>
  </li>
  <li class="toctree-l1">
@@ -128,12 +175,12 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="11_footprints.html">
+  <a class="reference internal" href="footprints.html">
    Creating a DNAseI footprint profile
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="12_dnase_motifs.html">
+  <a class="reference internal" href="dnase_motifs.html">
    Motifs in DNase I peaks
   </a>
  </li>
@@ -238,7 +285,7 @@
 <p>A dictionary, or <code class="docutils literal notranslate"><span class="pre">dict</span></code>, is like a list, but more general. In a list, the indices have to be integers; in a dictionary they can be (almost) any type.
 You can think of a dictionary as a <em>mapping between a set of indices (which are called keys) and a set of values</em>. Each key maps to a value. The association of a key and a value is called a <em>key-value pair</em> or sometimes an <em>item</em>.</p>
 <p>As an example, we’ll build a dictionary that maps from <em>codons</em> to <em>amino acids</em>, so the keys and the values are all strings.</p>
-<p><img alt="" src="content/img/dict1.png" /></p>
+<p><img alt="" src="../_images/dict1.png" /></p>
 <p>The function <code class="docutils literal notranslate"><span class="pre">dict()</span></code> creates a new dictionary with no items. Because <code class="docutils literal notranslate"><span class="pre">dict</span></code> is the name of a built-in function, you should avoid using it as a variable name.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">

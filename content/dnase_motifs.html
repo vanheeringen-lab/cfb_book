@@ -30,7 +30,7 @@
     <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="prev" title="Creating a DNAseI footprint profile" href="11_footprints.html" />
+    <link rel="prev" title="Creating a DNAseI footprint profile" href="footprints.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="docsearch:language" content="en">
@@ -75,14 +75,46 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="03_lists.html">
+  <a class="reference internal" href="lists.html">
    Lists
   </a>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="lists_exercises.html">
+     <strong>
+      Exercises
+     </strong>
+     : lists
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="04_loops_control_flow.html">
-   Control flow and loops
+  <a class="reference internal" href="control_flow.html">
+   Control flow
   </a>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="control_flow_exercises.html">
+     Exercises: control flow
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="loops.html">
+   Loops
+  </a>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="loops_exercises.html">
+     <strong>
+      Exercises
+     </strong>
+     : loops
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="dictionaries.html">
@@ -107,8 +139,23 @@
   </a>
  </li>
  <li class="toctree-l1">
+  <a class="reference internal" href="files.html#exercises-putting-it-all-together">
+   Exercises: putting it all together
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="scripts_and_debugging.html">
    Scripts and debugging
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="scripts_and_debugging.html#exercises-scripts">
+   Exercises: scripts
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="scripts_and_debugging.html#exercises-debugging">
+   Exercises: debugging
   </a>
  </li>
  <li class="toctree-l1">
@@ -127,7 +174,7 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="11_footprints.html">
+  <a class="reference internal" href="footprints.html">
    Creating a DNAseI footprint profile
   </a>
  </li>
@@ -178,9 +225,9 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/content/12_dnase_motifs.md"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/content/dnase_motifs.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.md</button></a>
+                data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
             onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
@@ -208,30 +255,27 @@
             <ul class="nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#exercise-12-1">
-   <strong>
-    Exercise
-   </strong>
-   12.1 {-}
+   Exercise 12.1
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#data">
-     Data {-}
+     Data
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#retrieving-sequences-from-a-genome-fasta-file">
-     Retrieving sequences from a genome FASTA file. {-}
+     Retrieving sequences from a genome FASTA file.
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#approach">
-     Approach {-}
+     Approach
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#questions">
-     Questions {-}
+     Questions
     </a>
    </li>
   </ul>
@@ -249,13 +293,13 @@
   <div class="section" id="motifs-in-dnase-i-peaks">
 <h1>Motifs in DNase I peaks<a class="headerlink" href="#motifs-in-dnase-i-peaks" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="exercise-12-1">
-<h2><strong>Exercise</strong> 12.1 {-}<a class="headerlink" href="#exercise-12-1" title="Permalink to this headline">¶</a></h2>
+<h2>Exercise 12.1<a class="headerlink" href="#exercise-12-1" title="Permalink to this headline">¶</a></h2>
 <p>The exercise for this week is to compare the relation between transcription factor motif presence and DNase I signal in different cell types.</p>
 <p>The result of your code should be a figure like the following (the values here are not real, but only shown for illustrative purposes):</p>
-<p><img alt="Figure 1: Example heatmap for this exercise." src="content/img/dnase_motifs_heatmap.png" /></p>
+<p><img alt="Figure 1: Example heatmap for this exercise." src="../_images/dnase_motifs_heatmap.png" /></p>
 <p>This heatmap shows, for every cell type and motif combination, the difference of the mean signal for regions with a motif compared to regions without a motif.</p>
 <div class="section" id="data">
-<h3>Data {-}<a class="headerlink" href="#data" title="Permalink to this headline">¶</a></h3>
+<h3>Data<a class="headerlink" href="#data" title="Permalink to this headline">¶</a></h3>
 <p>In the directory <code class="docutils literal notranslate"><span class="pre">/scratch/cfb/dnase_motifs/</span></code> you will find two files:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">DNase_table.tsv</span></code></p></li>
@@ -266,21 +310,29 @@
 <li><p><code class="docutils literal notranslate"><span class="pre">/scratch/genomes/hg38/hg38.fa</span></code></p></li>
 </ul>
 <p>The file <code class="docutils literal notranslate"><span class="pre">DNase_table.tsv</span></code> looks like this:</p>
-<p><img alt="Figure 2: Contents of DNase_table.tsv." src="content/img/dnase_table.png" /></p>
+<p><img alt="Figure 2: Contents of DNase_table.tsv." src="../_images/dnase_table.png" /></p>
 <p>This tab-separated file contains DNase I signals for six hematopoietic cell types in 10,000 genomic regions. The DNase I reads were counted, log2 transformed and normalized by scaling.</p>
 <p>The file <code class="docutils literal notranslate"><span class="pre">motifs.txt</span></code> contains the name and consensus sequence for seven motifs.</p>
 </div>
 <div class="section" id="retrieving-sequences-from-a-genome-fasta-file">
-<h3>Retrieving sequences from a genome FASTA file. {-}<a class="headerlink" href="#retrieving-sequences-from-a-genome-fasta-file" title="Permalink to this headline">¶</a></h3>
+<h3>Retrieving sequences from a genome FASTA file.<a class="headerlink" href="#retrieving-sequences-from-a-genome-fasta-file" title="Permalink to this headline">¶</a></h3>
 <p>You can use the <code class="docutils literal notranslate"><span class="pre">pyfaidx</span></code> module to retrieve specific sequences from a FASTA file based on genomic coordinates. See the documentation of the module <a class="reference external" href="https://pythonhosted.org/pyfaidx/">here</a>.</p>
 <p>First, you create a FASTA object.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>from pyfaidx import Fasta
+genome = Fasta(&quot;my_genome.fa&quot;)
+</pre></div>
+</div>
 <p>Then, you can retrieve sequences in a dictionary-like approach.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">TCATGACCATAGAGAACAGACTAAAGCATATGCAGTAACATATAGAAGCATTTTTATTCATATATATGgaaagcctggaagcaatgacatcttagttgca</span>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>my_seq = genome[&quot;chr2&quot;][5000000:5000020]
+print(my_seq.seq)
+
+
+TCATGACCATAGAGAACAGA
 </pre></div>
 </div>
 </div>
 <div class="section" id="approach">
-<h3>Approach {-}<a class="headerlink" href="#approach" title="Permalink to this headline">¶</a></h3>
+<h3>Approach<a class="headerlink" href="#approach" title="Permalink to this headline">¶</a></h3>
 <p>Think about your approach before you start writing code!
 You will have to:</p>
 <ul class="simple">
@@ -291,7 +343,7 @@ You will have to:</p>
 </ul>
 </div>
 <div class="section" id="questions">
-<h3>Questions {-}<a class="headerlink" href="#questions" title="Permalink to this headline">¶</a></h3>
+<h3>Questions<a class="headerlink" href="#questions" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>Make a correlation plot of the DNase signal in these hematopoietic cel types? Is this what you expect?</p></li>
 <li><p>Which motifs are specific for certain cell types?</p></li>
@@ -310,7 +362,7 @@ You will have to:</p>
     
     <div class='prev-next-bottom'>
         
-    <a class='left-prev' id="prev-link" href="11_footprints.html" title="previous page">Creating a DNAseI footprint profile</a>
+    <a class='left-prev' id="prev-link" href="footprints.html" title="previous page">Creating a DNAseI footprint profile</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">

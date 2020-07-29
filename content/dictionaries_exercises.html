@@ -76,14 +76,46 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="03_lists.html">
+  <a class="reference internal" href="lists.html">
    Lists
   </a>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="lists_exercises.html">
+     <strong>
+      Exercises
+     </strong>
+     : lists
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="04_loops_control_flow.html">
-   Control flow and loops
+  <a class="reference internal" href="control_flow.html">
+   Control flow
   </a>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="control_flow_exercises.html">
+     Exercises: control flow
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="loops.html">
+   Loops
+  </a>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="loops_exercises.html">
+     <strong>
+      Exercises
+     </strong>
+     : loops
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toctree-l1 current active">
   <a class="reference internal" href="dictionaries.html">
@@ -108,8 +140,23 @@
   </a>
  </li>
  <li class="toctree-l1">
+  <a class="reference internal" href="files.html#exercises-putting-it-all-together">
+   Exercises: putting it all together
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="scripts_and_debugging.html">
    Scripts and debugging
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="scripts_and_debugging.html#exercises-scripts">
+   Exercises: scripts
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="scripts_and_debugging.html#exercises-debugging">
+   Exercises: debugging
   </a>
  </li>
  <li class="toctree-l1">
@@ -128,12 +175,12 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="11_footprints.html">
+  <a class="reference internal" href="footprints.html">
    Creating a DNAseI footprint profile
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="12_dnase_motifs.html">
+  <a class="reference internal" href="dnase_motifs.html">
    Motifs in DNase I peaks
   </a>
  </li>
@@ -396,11 +443,11 @@ Which type of variable is more efficient to store and access these keys and valu
 <ol class="simple">
 <li><p>You are now going to write Python code to store a transcription factor regulatory network (Neph et al., Cell 2012) in a dictionary. Create a dictionary variable that contains all the regulatory relationships between the TFs in the Skeletal Muscle network shown below. The keys of the dictionary should be the names of the TFs. The value for each <code class="docutils literal notranslate"><span class="pre">key</span></code> (representing a TF) should be a <code class="docutils literal notranslate"><span class="pre">list</span></code> that contains the <em><strong>target genes</strong></em> of that TF. At the end of your code, print the dictionary.</p></li>
 </ol>
-<p><img alt="" src="content/img/skeletal_muscle_myoblast_denovo_network.png" /></p>
+<p><img alt="" src="../_images/skeletal_muscle_myoblast_denovo_network.png" /></p>
 <ol class="simple">
 <li><p>Do the same for the Embryonic Stem Cell (ESC) network shown below, and print the dictionary.</p></li>
 </ol>
-<p><img alt="" src="content/img/embryonic_stem_cells_denovo_network.png" /></p>
+<p><img alt="" src="../_images/embryonic_stem_cells_denovo_network.png" /></p>
 <ol class="simple">
 <li><p>Write Python code that prints each target gene of OCT4 in the ESC network <em><strong>using a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop</strong></em>. To answer this question, first think of how you can retrieve the target genes of ‘OCT4’ (which is the <code class="docutils literal notranslate"><span class="pre">key</span></code>) from the ESC network dictionary. Use the name <em>targetGene</em> for the loop variable. Remember that the code needs to be able to produce the output when run in a new session of Python, so you need to include the definitions of the networks as well in your answer.</p></li>
 <li><p>Write Python code that does the following:</p></li>
