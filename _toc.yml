@@ -1,14 +1,16 @@
 - file: content/01_introduction
 - file: content/02_first_exercises
-- file: content/03_lists
+- file: content/lists
+  expand_sections: true
   sections: 
-  - file: content/lists
   - file: content/lists_exercises
-- file:  content/04_loops_control_flow
+- file: content/control_flow
+  expand_sections: true
   sections:
-  - file:  content/control_flow
   - file: content/control_flow_exercises
-  - file: content/loops
+- file: content/loops
+  expand_sections: true
+  sections:
   - file: content/loops_exercises
 - file: content/dictionaries
   expand_sections: true
@@ -19,5 +21,5 @@
 - file: content/functions_modules_style
 - file: content/pandas
 - file: content/visualization
-- file: content/11_footprints
-- file: content/12_dnase_motifs
+- file: content/footprints
+- file: content/dnase_motifs
