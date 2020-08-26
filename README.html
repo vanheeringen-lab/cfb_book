@@ -70,67 +70,104 @@
 <ul class="nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="content/first_exercises.html">
-   First exercises
+   1. First exercises
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="content/lists.html">
-   Lists
+   2. Lists
   </a>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="content/lists_exercises.html">
+     2.2.1. Exercises: lists
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="content/control_flow.html">
-   Control flow
+   3. Control flow
   </a>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="content/control_flow_exercises.html">
+     3.1.1. Exercises: control flow
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="content/loops.html">
-   Loops
+   4. Loops
   </a>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="content/loops_exercises.html">
+     4.1.1.
+     <strong>
+      Exercises
+     </strong>
+     : loops
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="content/dictionaries.html">
-   Dictionaries
+   5. Dictionaries
   </a>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="content/dictionaries_exercises.html">
+     5.2.1. Exercises: dictionaries
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="content/dictionaries_exercises.html#exercises-putting-it-all-together">
+     5.2.2. Exercises: Putting it all together
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="content/files.html">
-   Files
+   6. Files
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="content/files.html#exercises-putting-it-all-together">
-   Exercises: putting it all together
+   7. Exercises: putting it all together
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="content/scripts_and_debugging.html">
-   Scripts and debugging
+   8. Scripts and debugging
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="content/functions_modules_style.html">
-   Functions and modules
+   9. Functions and modules
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="content/pandas.html">
-   Introduction to pandas DataFrames
+   10. Introduction to pandas DataFrames
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="content/visualization.html">
-   Visualization
+   11. Visualization
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="content/footprints.html">
-   Creating a DNAseI footprint profile
+   12. Creating a DNAseI footprint profile
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="content/dnase_motifs.html">
-   Motifs in DNase I peaks
+   13. Motifs in DNase I peaks
   </a>
  </li>
 </ul>
@@ -216,6 +253,17 @@
 <p>Textbook for the <a class="reference external" href="https://www.ru.nl/courseguides/science/vm/osirislinks/bm/nwi-bm066a/">Computation for Biologists</a> course.</p>
 <p>This document contains material based on <a class="reference external" href="https://greenteapress.com/wp/think-python-2e/">Think Python</a>, which is available under the <a class="reference external" href="http://creativecommons.org/licenses/by-nc/3.0/">Creative Commons Attribution-NonCommercial 3.0 Unported License</a>, and <a class="reference external" href="https://python.swaroopch.com/">A Byte of Python</a>, which is licensed under the <a class="reference external" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>. The material has been adapted for the subject matter of this course.</p>
 <p>All other text is licensed under the <a class="reference external" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.</p>
+</div>
+<div class="section" id="dev">
+<h1>Dev<a class="headerlink" href="#dev" title="Permalink to this headline">¶</a></h1>
+<p>To locally build the book:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">jupyter</span><span class="o">-</span><span class="n">book</span> <span class="n">build</span> <span class="o">.</span>
+</pre></div>
+</div>
+<p>To publish (only with correct credentials):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ghp</span><span class="o">-</span><span class="kn">import</span> <span class="o">-</span><span class="n">n</span> <span class="o">-</span><span class="n">p</span> <span class="o">-</span><span class="n">f</span> <span class="n">_build</span><span class="o">/</span><span class="n">html</span>
+</pre></div>
+</div>
 </div>
 
 

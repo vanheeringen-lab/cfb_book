@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>Exercises: control flow &#8212; NWI-BM066A Computation for Biologists</title>
+    <title>3.1.1. Exercises: control flow &#8212; NWI-BM066A Computation for Biologists</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
     <link href="../_static/css/index.css" rel="stylesheet">
     <link rel="stylesheet" href="../_static/sphinx-book-theme.css" type="text/css" />
@@ -30,8 +30,8 @@
     <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Loops" href="loops.html" />
-    <link rel="prev" title="Control flow" href="control_flow.html" />
+    <link rel="next" title="4. Loops" href="loops.html" />
+    <link rel="prev" title="3. Control flow" href="control_flow.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="docsearch:language" content="en">
@@ -72,74 +72,104 @@
 <ul class="current nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="first_exercises.html">
-   First exercises
+   1. First exercises
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="lists.html">
-   Lists
+   2. Lists
   </a>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="lists_exercises.html">
+     2.2.1. Exercises: lists
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toctree-l1 current active">
   <a class="reference internal" href="control_flow.html">
-   Control flow
+   3. Control flow
   </a>
   <ul class="current">
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     Exercises: control flow
+     3.1.1. Exercises: control flow
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="loops.html">
-   Loops
+   4. Loops
   </a>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="loops_exercises.html">
+     4.1.1.
+     <strong>
+      Exercises
+     </strong>
+     : loops
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="dictionaries.html">
-   Dictionaries
+   5. Dictionaries
   </a>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="dictionaries_exercises.html">
+     5.2.1. Exercises: dictionaries
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="dictionaries_exercises.html#exercises-putting-it-all-together">
+     5.2.2. Exercises: Putting it all together
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="files.html">
-   Files
+   6. Files
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="files.html#exercises-putting-it-all-together">
-   Exercises: putting it all together
+   7. Exercises: putting it all together
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="scripts_and_debugging.html">
-   Scripts and debugging
+   8. Scripts and debugging
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="functions_modules_style.html">
-   Functions and modules
+   9. Functions and modules
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="pandas.html">
-   Introduction to pandas DataFrames
+   10. Introduction to pandas DataFrames
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="visualization.html">
-   Visualization
+   11. Visualization
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="footprints.html">
-   Creating a DNAseI footprint profile
+   12. Creating a DNAseI footprint profile
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="dnase_motifs.html">
-   Motifs in DNase I peaks
+   13. Motifs in DNase I peaks
   </a>
  </li>
 </ul>
@@ -214,17 +244,17 @@
             <ul class="nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#exercise-4-1">
-   Exercise 4.1
+   3.1.1.1. Exercise 4.1
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#exercise-4-2">
-   Exercise 4.2
+   3.1.1.2. Exercise 4.2
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#exercise-4-3">
-   Exercise 4.3
+   3.1.1.3. Exercise 4.3
   </a>
  </li>
 </ul>
@@ -238,9 +268,9 @@
               <div>
                 
   <div class="section" id="exercises-control-flow">
-<h1>Exercises: control flow<a class="headerlink" href="#exercises-control-flow" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">3.1.1. </span>Exercises: control flow<a class="headerlink" href="#exercises-control-flow" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="exercise-4-1">
-<h2>Exercise 4.1<a class="headerlink" href="#exercise-4-1" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">3.1.1.1. </span>Exercise 4.1<a class="headerlink" href="#exercise-4-1" title="Permalink to this headline">¶</a></h2>
 <p>Here are two variables containing sequences:</p>
 <p>Write a block of statements that provides an answer to the question whether:</p>
 <ol class="simple">
@@ -250,7 +280,7 @@
 </ol>
 </div>
 <div class="section" id="exercise-4-2">
-<h2>Exercise 4.2<a class="headerlink" href="#exercise-4-2" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">3.1.1.2. </span>Exercise 4.2<a class="headerlink" href="#exercise-4-2" title="Permalink to this headline">¶</a></h2>
 <p>Take the following DNA sequence.</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>dna = &quot;TTGCATGTCAATCGATCGGATTGGTTGATTTATCCCGA&quot;
 </pre></div>
@@ -258,7 +288,7 @@
 <p>Write code that will print <code class="docutils literal notranslate"><span class="pre">*</span></code> if there is a stop codon in this sequence (TAA, TAG or TGA).</p>
 </div>
 <div class="section" id="exercise-4-3">
-<h2>Exercise 4.3<a class="headerlink" href="#exercise-4-3" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">3.1.1.3. </span>Exercise 4.3<a class="headerlink" href="#exercise-4-3" title="Permalink to this headline">¶</a></h2>
 <p>Read the description and methods of the UCSC CpG island track: <a class="reference external" href="https://genome.ucsc.edu/cgi-bin/hgTrackUi?g=cpgIslandSuper">https://genome.ucsc.edu/cgi-bin/hgTrackUi?g=cpgIslandSuper</a>.</p>
 <p>Write the code that will test if a sequence is a CpG island. You can test your code with the following sequences (only the first is a CpG island):</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>#chr15:74022901-74023101
@@ -295,8 +325,8 @@ seq3 = (&quot;AGATGTGTGGAAGGGTGCACCCCACGATGCTCACCTGGTGCT&quot;
     
     <div class='prev-next-bottom'>
         
-    <a class='left-prev' id="prev-link" href="control_flow.html" title="previous page">Control flow</a>
-    <a class='right-next' id="next-link" href="loops.html" title="next page">Loops</a>
+    <a class='left-prev' id="prev-link" href="control_flow.html" title="previous page"><span class="section-number">3. </span>Control flow</a>
+    <a class='right-next' id="next-link" href="loops.html" title="next page"><span class="section-number">4. </span>Loops</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">

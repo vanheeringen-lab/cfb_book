@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>Visualization &#8212; NWI-BM066A Computation for Biologists</title>
+    <title>11. Visualization &#8212; NWI-BM066A Computation for Biologists</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
     <link href="../_static/css/index.css" rel="stylesheet">
     <link rel="stylesheet" href="../_static/sphinx-book-theme.css" type="text/css" />
@@ -30,8 +30,8 @@
     <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Creating a DNAseI footprint profile" href="footprints.html" />
-    <link rel="prev" title="Introduction to pandas DataFrames" href="pandas.html" />
+    <link rel="next" title="12. Creating a DNAseI footprint profile" href="footprints.html" />
+    <link rel="prev" title="10. Introduction to pandas DataFrames" href="pandas.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="docsearch:language" content="en">
@@ -72,67 +72,104 @@
 <ul class="current nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="first_exercises.html">
-   First exercises
+   1. First exercises
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="lists.html">
-   Lists
+   2. Lists
   </a>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="lists_exercises.html">
+     2.2.1. Exercises: lists
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="control_flow.html">
-   Control flow
+   3. Control flow
   </a>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="control_flow_exercises.html">
+     3.1.1. Exercises: control flow
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="loops.html">
-   Loops
+   4. Loops
   </a>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="loops_exercises.html">
+     4.1.1.
+     <strong>
+      Exercises
+     </strong>
+     : loops
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="dictionaries.html">
-   Dictionaries
+   5. Dictionaries
   </a>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="dictionaries_exercises.html">
+     5.2.1. Exercises: dictionaries
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="dictionaries_exercises.html#exercises-putting-it-all-together">
+     5.2.2. Exercises: Putting it all together
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="files.html">
-   Files
+   6. Files
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="files.html#exercises-putting-it-all-together">
-   Exercises: putting it all together
+   7. Exercises: putting it all together
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="scripts_and_debugging.html">
-   Scripts and debugging
+   8. Scripts and debugging
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="functions_modules_style.html">
-   Functions and modules
+   9. Functions and modules
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="pandas.html">
-   Introduction to pandas DataFrames
+   10. Introduction to pandas DataFrames
   </a>
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   Visualization
+   11. Visualization
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="footprints.html">
-   Creating a DNAseI footprint profile
+   12. Creating a DNAseI footprint profile
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="dnase_motifs.html">
-   Motifs in DNase I peaks
+   13. Motifs in DNase I peaks
   </a>
  </li>
 </ul>
@@ -207,26 +244,27 @@
             <ul class="nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#h3k4me1-and-h3k4me3-marking-in-promoters-and-enhancers-in-fetal-brain">
-   H3K4me1 and H3K4me3 marking in promoters and enhancers in Fetal Brain
+   11.1. H3K4me1 and H3K4me3 marking in promoters and enhancers in Fetal Brain
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#h3k4me1-and-h3k4me3-marking-in-promoters-and-enhancers-fetal-brain-specific-enhancers-only">
-   H3K4me1 and H3K4me3 marking in promoters and enhancers: Fetal Brain-specific enhancers only
+   11.2. H3K4me1 and H3K4me3 marking in promoters and enhancers: Fetal Brain-specific enhancers only
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#enhancer-marking-in-different-cell-types">
-   Enhancer marking in different cell types
+   11.3. Enhancer marking in different cell types
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#promoter-marking-vs-gene-expression">
-   Promoter marking vs. gene expression
+   11.4. Promoter marking vs. gene expression
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#exercises">
+   11.5.
    <strong>
     Exercises
    </strong>
@@ -234,6 +272,7 @@
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#exercise-10-1-visualization-using-pandas-and-seaborn">
+     11.5.1.
      <strong>
       Exercise
      </strong>
@@ -242,6 +281,7 @@
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#exercise-outline">
+       11.5.1.1.
        <strong>
         Exercise
        </strong>
@@ -250,32 +290,32 @@
      </li>
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#question-1-function-for-reading-a-file-into-a-pandas-dataframe">
-       Question 1. Function for reading a file into a pandas DataFrame {-}
+       11.5.1.2. Question 1. Function for reading a file into a pandas DataFrame {-}
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#question-2-create-lists-with-filenames-and-object-names">
-       Question 2. Create lists with filenames and object names {-}
+       11.5.1.3. Question 2. Create lists with filenames and object names {-}
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#question-3-make-a-dictionary-with-dataframes">
-       Question 3. Make a dictionary with DataFrames {-}
+       11.5.1.4. Question 3. Make a dictionary with DataFrames {-}
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#question-4-make-a-merged-dataframe-with-readcounts">
-       Question 4. Make a merged DataFrame with readcounts {-}
+       11.5.1.5. Question 4. Make a merged DataFrame with readcounts {-}
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#question-5-make-a-dataframe-with-pairwise-correlations">
-       Question 5. Make a DataFrame with pairwise correlations {-}
+       11.5.1.6. Question 5. Make a DataFrame with pairwise correlations {-}
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#question-6-plot-a-heatmap-displaying-the-pairwise-correlations">
-       Question 6. Plot a heatmap displaying the pairwise correlations {-}
+       11.5.1.7. Question 6. Plot a heatmap displaying the pairwise correlations {-}
       </a>
      </li>
     </ul>
@@ -293,7 +333,7 @@
               <div>
                 
   <div class="section" id="visualization">
-<h1>Visualization<a class="headerlink" href="#visualization" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">11. </span>Visualization<a class="headerlink" href="#visualization" title="Permalink to this headline">¶</a></h1>
 <p>In this Pandas tutorial you will use Pandas to explore ChIP-seq and DNase-seq footprinting datasets for 3 different celltypes from the Roadmap data:</p>
 <ul class="simple">
 <li><p>E081: Fetal Brain Male</p></li>
@@ -336,7 +376,7 @@
 <li><p><code class="docutils literal notranslate"><span class="pre">%matplotlib</span> <span class="pre">inline</span></code>: we make sure that all plotting is going to be shown “inline” with our commands (in Jupyter)</p></li>
 </ul>
 <div class="section" id="h3k4me1-and-h3k4me3-marking-in-promoters-and-enhancers-in-fetal-brain">
-<h2>H3K4me1 and H3K4me3 marking in promoters and enhancers in Fetal Brain<a class="headerlink" href="#h3k4me1-and-h3k4me3-marking-in-promoters-and-enhancers-in-fetal-brain" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">11.1. </span>H3K4me1 and H3K4me3 marking in promoters and enhancers in Fetal Brain<a class="headerlink" href="#h3k4me1-and-h3k4me3-marking-in-promoters-and-enhancers-in-fetal-brain" title="Permalink to this headline">¶</a></h2>
 <p>Next, we can import the data for E082 into pandas DataFrames, using the <code class="docutils literal notranslate"><span class="pre">read_csv()</span></code> function. Note: in earlier versions of pandas you could use the <code class="docutils literal notranslate"><span class="pre">read_table()</span></code> function, however, in newer versions of pandas this function has been deprecated and will be removed.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -396,7 +436,7 @@
 <div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:xlabel=&#39;elem&#39;, ylabel=&#39;reads&#39;&gt;
 </pre></div>
 </div>
-<img alt="_build/jupyter_execute/content/visualization_10_1.png" src="_build/jupyter_execute/content/visualization_10_1.png" />
+<img alt="../_images/visualization_10_1.png" src="../_images/visualization_10_1.png" />
 </div>
 </div>
 <p>Note how the synthax for <code class="docutils literal notranslate"><span class="pre">boxplot</span></code> is assembled:</p>
@@ -418,7 +458,7 @@
 <div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:xlabel=&#39;elem&#39;, ylabel=&#39;reads&#39;&gt;
 </pre></div>
 </div>
-<img alt="_build/jupyter_execute/content/visualization_12_1.png" src="_build/jupyter_execute/content/visualization_12_1.png" />
+<img alt="../_images/visualization_12_1.png" src="../_images/visualization_12_1.png" />
 </div>
 </div>
 <p>This is better already, but the boxplots are all at the bottom of the graph, this does not help much for clarity.</p>
@@ -436,7 +476,7 @@
 <div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:xlabel=&#39;elem&#39;, ylabel=&#39;reads_sqrt&#39;&gt;
 </pre></div>
 </div>
-<img alt="_build/jupyter_execute/content/visualization_14_1.png" src="_build/jupyter_execute/content/visualization_14_1.png" />
+<img alt="../_images/visualization_14_1.png" src="../_images/visualization_14_1.png" />
 </div>
 </div>
 <p>Knowing that the regions in the DataFrame are not of the same length, we may need to correct the transformed readcounts for the length of the regions</p>
@@ -451,7 +491,7 @@
 <div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:xlabel=&#39;elem&#39;, ylabel=&#39;reads_sqrt_bp&#39;&gt;
 </pre></div>
 </div>
-<img alt="_build/jupyter_execute/content/visualization_16_1.png" src="_build/jupyter_execute/content/visualization_16_1.png" />
+<img alt="../_images/visualization_16_1.png" src="../_images/visualization_16_1.png" />
 </div>
 </div>
 <p>This is definitely better, but the plot may even better if we adapt the y-axis scale</p>
@@ -466,14 +506,14 @@
 <div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:xlabel=&#39;elem&#39;, ylabel=&#39;reads_sqrt_bp&#39;&gt;
 </pre></div>
 </div>
-<img alt="_build/jupyter_execute/content/visualization_18_1.png" src="_build/jupyter_execute/content/visualization_18_1.png" />
+<img alt="../_images/visualization_18_1.png" src="../_images/visualization_18_1.png" />
 </div>
 </div>
 <p>Great, this is a nice boxplot.</p>
 <p>What can you conclude for H3K4me3 and H3K4me1 in promoters and enhancers?</p>
 </div>
 <div class="section" id="h3k4me1-and-h3k4me3-marking-in-promoters-and-enhancers-fetal-brain-specific-enhancers-only">
-<h2>H3K4me1 and H3K4me3 marking in promoters and enhancers: Fetal Brain-specific enhancers only<a class="headerlink" href="#h3k4me1-and-h3k4me3-marking-in-promoters-and-enhancers-fetal-brain-specific-enhancers-only" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">11.2. </span>H3K4me1 and H3K4me3 marking in promoters and enhancers: Fetal Brain-specific enhancers only<a class="headerlink" href="#h3k4me1-and-h3k4me3-marking-in-promoters-and-enhancers-fetal-brain-specific-enhancers-only" title="Permalink to this headline">¶</a></h2>
 <p>In the previous section we used all enhancers that were called in Fetal Brain (male and Female) and Fetal Heart, but maybe we should include only those enhancers that were really called as an enhancer in E082 (Fetal Brain Female)</p>
 <p>This information is in the file <code class="docutils literal notranslate"><span class="pre">regions_enh_E081_E082_E083.bed</span></code>, which you find in the <code class="docutils literal notranslate"><span class="pre">/scratch/cfb/visual</span></code> directory.</p>
 <p>This file has the same order as all files above that are called  <code class="docutils literal notranslate"><span class="pre">regions_enh_E081_E082_E083__xxxxx</span></code>.</p>
@@ -536,14 +576,14 @@
 <div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:xlabel=&#39;elem&#39;, ylabel=&#39;reads_sqrt_bp&#39;&gt;
 </pre></div>
 </div>
-<img alt="_build/jupyter_execute/content/visualization_30_1.png" src="_build/jupyter_execute/content/visualization_30_1.png" />
+<img alt="../_images/visualization_30_1.png" src="../_images/visualization_30_1.png" />
 </div>
 </div>
 <p>Do you see a difference with the boxplot above?</p>
 <p>Does this make sense (H3K4me is a typical enhancer mark) ?</p>
 </div>
 <div class="section" id="enhancer-marking-in-different-cell-types">
-<h2>Enhancer marking in different cell types<a class="headerlink" href="#enhancer-marking-in-different-cell-types" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">11.3. </span>Enhancer marking in different cell types<a class="headerlink" href="#enhancer-marking-in-different-cell-types" title="Permalink to this headline">¶</a></h2>
 <p>Now let us look at H3K4me1 data only, in enhancers only, but in different cell types</p>
 <p>We will add data from a different cell type, E081 (Fetal Brain Male), E082 (Fetal Brain Female) and E083 (Fetal Heart)</p>
 <p>First, read in the data into a pandas DataFrame again</p>
@@ -622,14 +662,14 @@
 <div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>(0.0, 0.08)
 </pre></div>
 </div>
-<img alt="_build/jupyter_execute/content/visualization_42_1.png" src="_build/jupyter_execute/content/visualization_42_1.png" />
+<img alt="../_images/visualization_42_1.png" src="../_images/visualization_42_1.png" />
 </div>
 </div>
 <p>Carefully look at the boxplot</p>
 <p>Does this make sense?</p>
 </div>
 <div class="section" id="promoter-marking-vs-gene-expression">
-<h2>Promoter marking vs. gene expression<a class="headerlink" href="#promoter-marking-vs-gene-expression" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">11.4. </span>Promoter marking vs. gene expression<a class="headerlink" href="#promoter-marking-vs-gene-expression" title="Permalink to this headline">¶</a></h2>
 <p>You are going to plot the gene expression (RNA-seq, so RPKM) as a function of the active promoter mark H3K4me3 at the corresponding genes, for E082.</p>
 <p>For this you need the file <code class="docutils literal notranslate"><span class="pre">hg19_RefSeq_TSS500_ENSEMBL_RPKM</span></code> from the <code class="docutils literal notranslate"><span class="pre">/scratch/cfb/visual</span></code> directory.</p>
 <p>This file has the same ordering as all files named <code class="docutils literal notranslate"><span class="pre">hg19_RefSeq_TSS500__xxxxx</span></code>.</p>
@@ -700,10 +740,10 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.FacetGrid at 0x7f9cb7d0af70&gt;
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.FacetGrid at 0x7f739982da30&gt;
 </pre></div>
 </div>
-<img alt="_build/jupyter_execute/content/visualization_54_1.png" src="_build/jupyter_execute/content/visualization_54_1.png" />
+<img alt="../_images/visualization_54_1.png" src="../_images/visualization_54_1.png" />
 </div>
 </div>
 <p>Note that <code class="docutils literal notranslate"><span class="pre">lmplot()</span></code> by default plots a regression line, which you can turn off by <code class="docutils literal notranslate"><span class="pre">fit_reg=False</span></code>.</p>
@@ -724,10 +764,10 @@
   result = getattr(ufunc, method)(*inputs, **kwargs)
 </pre>
 </div>
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.FacetGrid at 0x7f9ca9cce760&gt;
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.FacetGrid at 0x7f739983d4c0&gt;
 </pre></div>
 </div>
-<img alt="_build/jupyter_execute/content/visualization_56_2.png" src="_build/jupyter_execute/content/visualization_56_2.png" />
+<img alt="../_images/visualization_56_2.png" src="../_images/visualization_56_2.png" />
 </div>
 </div>
 <p>This looks much better.</p>
@@ -773,10 +813,10 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.FacetGrid at 0x7f9ca9d03820&gt;
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.FacetGrid at 0x7f73a9aedd60&gt;
 </pre></div>
 </div>
-<img alt="_build/jupyter_execute/content/visualization_62_1.png" src="_build/jupyter_execute/content/visualization_62_1.png" />
+<img alt="../_images/visualization_62_1.png" src="../_images/visualization_62_1.png" />
 </div>
 </div>
 <p>As an alternative to the scatterplot approach above, we can classify our H3K4me3 levels into ‘high’ or ‘low’. But, what is ‘high’ and what is ‘low’? Where should we put the threshold for ‘high’?</p>
@@ -791,7 +831,7 @@
 <div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:xlabel=&#39;reads_sqrt&#39;&gt;
 </pre></div>
 </div>
-<img alt="_build/jupyter_execute/content/visualization_64_1.png" src="_build/jupyter_execute/content/visualization_64_1.png" />
+<img alt="../_images/visualization_64_1.png" src="../_images/visualization_64_1.png" />
 </div>
 </div>
 <p>By looking at this histogram, we could conclude that the regions with ‘high’ H3K4me3 are the ones that roughly have signals higher than 15 or so.</p>
@@ -817,7 +857,7 @@
 <div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:xlabel=&#39;reads_sqrt_bin&#39;, ylabel=&#39;rpkm_log&#39;&gt;
 </pre></div>
 </div>
-<img alt="_build/jupyter_execute/content/visualization_68_1.png" src="_build/jupyter_execute/content/visualization_68_1.png" />
+<img alt="../_images/visualization_68_1.png" src="../_images/visualization_68_1.png" />
 </div>
 </div>
 <p>In this plot it is already much more clear that gener with high H3K4me3 at the promoter have higher expression.</p>
@@ -842,14 +882,14 @@
 <div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:xlabel=&#39;reads_sqrt_bin&#39;, ylabel=&#39;rpkm_log&#39;&gt;
 </pre></div>
 </div>
-<img alt="_build/jupyter_execute/content/visualization_72_1.png" src="_build/jupyter_execute/content/visualization_72_1.png" />
+<img alt="../_images/visualization_72_1.png" src="../_images/visualization_72_1.png" />
 </div>
 </div>
 </div>
 <div class="section" id="exercises">
-<h2><strong>Exercises</strong><a class="headerlink" href="#exercises" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">11.5. </span><strong>Exercises</strong><a class="headerlink" href="#exercises" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="exercise-10-1-visualization-using-pandas-and-seaborn">
-<h3><strong>Exercise</strong> 10.1 Visualization using pandas and seaborn {-}<a class="headerlink" href="#exercise-10-1-visualization-using-pandas-and-seaborn" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">11.5.1. </span><strong>Exercise</strong> 10.1 Visualization using pandas and seaborn {-}<a class="headerlink" href="#exercise-10-1-visualization-using-pandas-and-seaborn" title="Permalink to this headline">¶</a></h3>
 <p>In this exercise you are going to compare the different ChIP-seq and DNase-seq datasets from</p>
 <ul class="simple">
 <li><p>E081: Fetal Brain Male</p></li>
@@ -861,7 +901,7 @@ You will visualize this in a <strong>heatmap</strong> that shows <strong>pairwis
 <p>To get to this, the exercise is divided into different questions that will lead you through the exercise.
 By the way, for help you are allowed (=encouraged) to use Google as well!</p>
 <div class="section" id="exercise-outline">
-<h4><strong>Exercise</strong> outline {-}<a class="headerlink" href="#exercise-outline" title="Permalink to this headline">¶</a></h4>
+<h4><span class="section-number">11.5.1.1. </span><strong>Exercise</strong> outline {-}<a class="headerlink" href="#exercise-outline" title="Permalink to this headline">¶</a></h4>
 <p>The strategy is outlined here, a detailed description follows after this:</p>
 <ul class="simple">
 <li><p>Make a dictionary with pandas DataFrames, so that object names can be used to access the DataFrames</p>
@@ -877,7 +917,7 @@ By the way, for help you are allowed (=encouraged) to use Google as well!</p>
 </ul>
 </div>
 <div class="section" id="question-1-function-for-reading-a-file-into-a-pandas-dataframe">
-<h4>Question 1. Function for reading a file into a pandas DataFrame {-}<a class="headerlink" href="#question-1-function-for-reading-a-file-into-a-pandas-dataframe" title="Permalink to this headline">¶</a></h4>
+<h4><span class="section-number">11.5.1.2. </span>Question 1. Function for reading a file into a pandas DataFrame {-}<a class="headerlink" href="#question-1-function-for-reading-a-file-into-a-pandas-dataframe" title="Permalink to this headline">¶</a></h4>
 <p>Write a definition (function) that:</p>
 <ul class="simple">
 <li><p>uses a filename as input (e.g. <code class="docutils literal notranslate"><span class="pre">dirname_xxxxx/filename_xxxxx</span></code>)</p></li>
@@ -886,7 +926,7 @@ By the way, for help you are allowed (=encouraged) to use Google as well!</p>
 </ul>
 </div>
 <div class="section" id="question-2-create-lists-with-filenames-and-object-names">
-<h4>Question 2. Create lists with filenames and object names {-}<a class="headerlink" href="#question-2-create-lists-with-filenames-and-object-names" title="Permalink to this headline">¶</a></h4>
+<h4><span class="section-number">11.5.1.3. </span>Question 2. Create lists with filenames and object names {-}<a class="headerlink" href="#question-2-create-lists-with-filenames-and-object-names" title="Permalink to this headline">¶</a></h4>
 <p>The directory <code class="docutils literal notranslate"><span class="pre">/scratch/cfb/visual</span></code> contains:</p>
 <ul class="simple">
 <li><p>readcounts for promoters (<code class="docutils literal notranslate"><span class="pre">hg19_RefSeq_TSS500__xxxxx.counts.gz</span></code>)</p></li>
@@ -915,7 +955,7 @@ By the way, for help you are allowed (=encouraged) to use Google as well!</p>
 <p>Note: it is OK to create the lists with filenames manually, but the lists with object names can be derived from the former, using python.</p>
 </div>
 <div class="section" id="question-3-make-a-dictionary-with-dataframes">
-<h4>Question 3. Make a dictionary with DataFrames {-}<a class="headerlink" href="#question-3-make-a-dictionary-with-dataframes" title="Permalink to this headline">¶</a></h4>
+<h4><span class="section-number">11.5.1.4. </span>Question 3. Make a dictionary with DataFrames {-}<a class="headerlink" href="#question-3-make-a-dictionary-with-dataframes" title="Permalink to this headline">¶</a></h4>
 <p>Make a dictionary with DataFrames with</p>
 <ul class="simple">
 <li><p>object names as <strong>keys</strong> (e.g. <code class="docutils literal notranslate"><span class="pre">&quot;E081-H3K4me1&quot;</span></code>, use the list with object names created above)</p></li>
@@ -924,7 +964,7 @@ By the way, for help you are allowed (=encouraged) to use Google as well!</p>
 <p>Make one such dictionary for promoters, and one dictionary for enhancers</p>
 </div>
 <div class="section" id="question-4-make-a-merged-dataframe-with-readcounts">
-<h4>Question 4. Make a merged DataFrame with readcounts {-}<a class="headerlink" href="#question-4-make-a-merged-dataframe-with-readcounts" title="Permalink to this headline">¶</a></h4>
+<h4><span class="section-number">11.5.1.5. </span>Question 4. Make a merged DataFrame with readcounts {-}<a class="headerlink" href="#question-4-make-a-merged-dataframe-with-readcounts" title="Permalink to this headline">¶</a></h4>
 <p>Make a merged pandas DataFrame in which the columns contain the readcounts from each DataFrame in your dictionary</p>
 <ul class="simple">
 <li><p>one DataFrame for the promoters</p></li>
@@ -932,7 +972,7 @@ By the way, for help you are allowed (=encouraged) to use Google as well!</p>
 </ul>
 </div>
 <div class="section" id="question-5-make-a-dataframe-with-pairwise-correlations">
-<h4>Question 5. Make a DataFrame with pairwise correlations {-}<a class="headerlink" href="#question-5-make-a-dataframe-with-pairwise-correlations" title="Permalink to this headline">¶</a></h4>
+<h4><span class="section-number">11.5.1.6. </span>Question 5. Make a DataFrame with pairwise correlations {-}<a class="headerlink" href="#question-5-make-a-dataframe-with-pairwise-correlations" title="Permalink to this headline">¶</a></h4>
 <p>Make a pandas DataFrame containing the pairwise correlations between the different datasets</p>
 <ul class="simple">
 <li><p>one DataFrame for the promoters</p></li>
@@ -941,7 +981,7 @@ By the way, for help you are allowed (=encouraged) to use Google as well!</p>
 <p>Hint: you can do this by using the <code class="docutils literal notranslate"><span class="pre">corr()</span></code> method for a pandas DataFrame</p>
 </div>
 <div class="section" id="question-6-plot-a-heatmap-displaying-the-pairwise-correlations">
-<h4>Question 6. Plot a heatmap displaying the pairwise correlations {-}<a class="headerlink" href="#question-6-plot-a-heatmap-displaying-the-pairwise-correlations" title="Permalink to this headline">¶</a></h4>
+<h4><span class="section-number">11.5.1.7. </span>Question 6. Plot a heatmap displaying the pairwise correlations {-}<a class="headerlink" href="#question-6-plot-a-heatmap-displaying-the-pairwise-correlations" title="Permalink to this headline">¶</a></h4>
 <p>Plot a heatmap that displays the correlation coefficients obtained in the DataFrame above.</p>
 <ul class="simple">
 <li><p>Make one heatmap for the promoters</p></li>
@@ -963,8 +1003,8 @@ By the way, for help you are allowed (=encouraged) to use Google as well!</p>
     
     <div class='prev-next-bottom'>
         
-    <a class='left-prev' id="prev-link" href="pandas.html" title="previous page">Introduction to pandas DataFrames</a>
-    <a class='right-next' id="next-link" href="footprints.html" title="next page">Creating a DNAseI footprint profile</a>
+    <a class='left-prev' id="prev-link" href="pandas.html" title="previous page"><span class="section-number">10. </span>Introduction to pandas DataFrames</a>
+    <a class='right-next' id="next-link" href="footprints.html" title="next page"><span class="section-number">12. </span>Creating a DNAseI footprint profile</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">
