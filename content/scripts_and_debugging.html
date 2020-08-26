@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>8. Scripts and debugging &#8212; NWI-BM066A Computation for Biologists</title>
+    <title>7. Scripts and debugging &#8212; NWI-BM066A Computation for Biologists</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
     <link href="../_static/css/index.css" rel="stylesheet">
     <link rel="stylesheet" href="../_static/sphinx-book-theme.css" type="text/css" />
@@ -30,7 +30,7 @@
     <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="9. Functions and modules" href="functions_modules_style.html" />
+    <link rel="next" title="8. Functions and modules" href="functions_modules_style.html" />
     <link rel="prev" title="6. Files" href="files.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -79,97 +79,55 @@
   <a class="reference internal" href="lists.html">
    2. Lists
   </a>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="lists_exercises.html">
-     2.2.1. Exercises: lists
-    </a>
-   </li>
-  </ul>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="control_flow.html">
    3. Control flow
   </a>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="control_flow_exercises.html">
-     3.1.1. Exercises: control flow
-    </a>
-   </li>
-  </ul>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="loops.html">
    4. Loops
   </a>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="loops_exercises.html">
-     4.1.1.
-     <strong>
-      Exercises
-     </strong>
-     : loops
-    </a>
-   </li>
-  </ul>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="dictionaries.html">
    5. Dictionaries
   </a>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="dictionaries_exercises.html">
-     5.2.1. Exercises: dictionaries
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="dictionaries_exercises.html#exercises-putting-it-all-together">
-     5.2.2. Exercises: Putting it all together
-    </a>
-   </li>
-  </ul>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="files.html">
    6. Files
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="files.html#exercises-putting-it-all-together">
-   7. Exercises: putting it all together
-  </a>
- </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   8. Scripts and debugging
+   7. Scripts and debugging
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="functions_modules_style.html">
-   9. Functions and modules
+   8. Functions and modules
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="pandas.html">
-   10. Introduction to pandas DataFrames
+   9. Introduction to pandas DataFrames
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="visualization.html">
-   11. Visualization
+   10. Visualization
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="dnase_motifs.html">
+   11. Motifs in DNase I peaks
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="footprints.html">
    12. Creating a DNAseI footprint profile
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="dnase_motifs.html">
-   13. Motifs in DNase I peaks
   </a>
  </li>
 </ul>
@@ -244,80 +202,80 @@
             <ul class="nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#exercises-scripts">
-   8.1. Exercises: scripts
+   7.1. Exercises: scripts
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#exercise-7-1-copying-the-files-required-for-the-exercises">
-     8.1.1. Exercise 7.1: Copying the files required for the exercises
+     7.1.1. Exercise 7.1: Copying the files required for the exercises
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#exercise-7-2-comparing-the-jupyter-notebook-with-running-scripts-from-the-command-line">
-     8.1.2. Exercise 7.2: Comparing the Jupyter notebook with running scripts from the command line
+     7.1.2. Exercise 7.2: Comparing the Jupyter notebook with running scripts from the command line
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#exercise-7-3-permanence-of-python-variables-in-memory">
-     8.1.3. Exercise 7.3: Permanence of Python variables in memory
+     7.1.3. Exercise 7.3: Permanence of Python variables in memory
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#exercises-debugging">
-   8.2. Exercises: debugging
+   7.2. Exercises: debugging
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#exercise-7-4">
-     8.2.1. Exercise 7.4
+     7.2.1. Exercise 7.4
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#questions">
-       8.2.1.1. Questions
+       7.2.1.1. Questions
       </a>
      </li>
     </ul>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#exercise-7-5">
-     8.2.2. Exercise 7.5
+     7.2.2. Exercise 7.5
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#id1">
-       8.2.2.1. Questions
+       7.2.2.1. Questions
       </a>
      </li>
     </ul>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#exercise-7-6">
-     8.2.3. Exercise 7.6
+     7.2.3. Exercise 7.6
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#expected-output">
-       8.2.3.1. Expected output
+       7.2.3.1. Expected output
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#question-assignment">
-       8.2.3.2. Question/assignment:
+       7.2.3.2. Question/assignment:
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#hints">
-       8.2.3.3. Hints:
+       7.2.3.3. Hints:
       </a>
      </li>
     </ul>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#exercise-7-7-bonus-fun-but-non-trivial">
-     8.2.4. Exercise 7.7 (bonus; fun but non-trivial)
+     7.2.4. Exercise 7.7 (bonus; fun but non-trivial)
     </a>
    </li>
   </ul>
@@ -333,11 +291,11 @@
               <div>
                 
   <div class="section" id="scripts-and-debugging">
-<h1><span class="section-number">8. </span>Scripts and debugging<a class="headerlink" href="#scripts-and-debugging" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">7. </span>Scripts and debugging<a class="headerlink" href="#scripts-and-debugging" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="exercises-scripts">
-<h2><span class="section-number">8.1. </span>Exercises: scripts<a class="headerlink" href="#exercises-scripts" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">7.1. </span>Exercises: scripts<a class="headerlink" href="#exercises-scripts" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="exercise-7-1-copying-the-files-required-for-the-exercises">
-<h3><span class="section-number">8.1.1. </span>Exercise 7.1: Copying the files required for the exercises<a class="headerlink" href="#exercise-7-1-copying-the-files-required-for-the-exercises" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">7.1.1. </span>Exercise 7.1: Copying the files required for the exercises<a class="headerlink" href="#exercise-7-1-copying-the-files-required-for-the-exercises" title="Permalink to this headline">¶</a></h3>
 <p>Open a terminal from the Jupyter “Home” page in your webbrowser (the view of your home directory), by clicking on “Terminal” in the “New” pull down menu.</p>
 <p>If you haven’t already done so, first create a folder/directory named <code class="docutils literal notranslate"><span class="pre">cfb_2020</span></code> in your network folder for this course:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>cd                # go to root of your home directory
@@ -360,7 +318,7 @@ The Linux command “cp” copies files and directories.</p>
 Validate that you are in the correct directory using the command <code class="docutils literal notranslate"><span class="pre">pwd</span></code> as above.</p>
 </div>
 <div class="section" id="exercise-7-2-comparing-the-jupyter-notebook-with-running-scripts-from-the-command-line">
-<h3><span class="section-number">8.1.2. </span>Exercise 7.2: Comparing the Jupyter notebook with running scripts from the command line<a class="headerlink" href="#exercise-7-2-comparing-the-jupyter-notebook-with-running-scripts-from-the-command-line" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">7.1.2. </span>Exercise 7.2: Comparing the Jupyter notebook with running scripts from the command line<a class="headerlink" href="#exercise-7-2-comparing-the-jupyter-notebook-with-running-scripts-from-the-command-line" title="Permalink to this headline">¶</a></h3>
 <p>Open a new Python3 Jupyter-notebook for these exercises. Copy the following code into a cell and execute the cell:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>print(&quot;Hello&quot;)
 my_number = 1
@@ -390,7 +348,7 @@ Put the same three lines of code in this text file. Then, rename the text file t
 </ol>
 </div>
 <div class="section" id="exercise-7-3-permanence-of-python-variables-in-memory">
-<h3><span class="section-number">8.1.3. </span>Exercise 7.3: Permanence of Python variables in memory<a class="headerlink" href="#exercise-7-3-permanence-of-python-variables-in-memory" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">7.1.3. </span>Exercise 7.3: Permanence of Python variables in memory<a class="headerlink" href="#exercise-7-3-permanence-of-python-variables-in-memory" title="Permalink to this headline">¶</a></h3>
 <p>Copy the following code to a cell in a <em><strong>Jupyter notebook</strong></em> and execute the cell.</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>my_number = 42
 </pre></div>
@@ -419,9 +377,9 @@ python exercise3b.py
 </div>
 </div>
 <div class="section" id="exercises-debugging">
-<h2><span class="section-number">8.2. </span>Exercises: debugging<a class="headerlink" href="#exercises-debugging" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">7.2. </span>Exercises: debugging<a class="headerlink" href="#exercises-debugging" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="exercise-7-4">
-<h3><span class="section-number">8.2.1. </span>Exercise 7.4<a class="headerlink" href="#exercise-7-4" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">7.2.1. </span>Exercise 7.4<a class="headerlink" href="#exercise-7-4" title="Permalink to this headline">¶</a></h3>
 <p>The purpose of the following code is to count how often each TF in the network is a target of a TF in the network (it also counts if a TF regulates itself).
 In other words, how many TFs in the network bind in the promoter of a given TF.</p>
 <ul class="simple">
@@ -432,7 +390,7 @@ In other words, how many TFs in the network bind in the promoter of a given TF.<
 <li><p>Execute the Python script from the command line with <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">my_exercise4.py</span></code>.</p></li>
 </ul>
 <div class="section" id="questions">
-<h4><span class="section-number">8.2.1.1. </span>Questions<a class="headerlink" href="#questions" title="Permalink to this headline">¶</a></h4>
+<h4><span class="section-number">7.2.1.1. </span>Questions<a class="headerlink" href="#questions" title="Permalink to this headline">¶</a></h4>
 <ol class="simple">
 <li><p>What is the purpose of this code? (This should be obvious from the short description given above and the code itself)</p></li>
 <li><p>What is the input and what is the expected output?
@@ -516,7 +474,7 @@ However, some are mistakes that do not produce runtime errors that produce an in
 </div>
 </div>
 <div class="section" id="exercise-7-5">
-<h3><span class="section-number">8.2.2. </span>Exercise 7.5<a class="headerlink" href="#exercise-7-5" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">7.2.2. </span>Exercise 7.5<a class="headerlink" href="#exercise-7-5" title="Permalink to this headline">¶</a></h3>
 <p>The following code (provided in the file <code class="docutils literal notranslate"><span class="pre">exercise5.py</span></code>)
 tests whether a particular TF of interest directly regulates itself (in other words, if a TF binds in its own promoter).
 The name of the TF of interest is assigned to the variable <code class="docutils literal notranslate"><span class="pre">my_tf_of_interest</span></code>.</p>
@@ -531,7 +489,7 @@ The name of the TF of interest is assigned to the variable <code class="docutils
 <p>to screen (with “my_tf_of_interest” replaced by the actual TF name), depending on whether there is a self-regulation relationship encoded in the
 <code class="docutils literal notranslate"><span class="pre">hsc_network</span></code> dictionary variable or not.</p>
 <div class="section" id="id1">
-<h4><span class="section-number">8.2.2.1. </span>Questions<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h4>
+<h4><span class="section-number">7.2.2.1. </span>Questions<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h4>
 <ol class="simple">
 <li><p>This script contains a bug (otherwise it wouldn’t be a question here). Can you identify the bug without running the code (try for at least 10 minutes)?</p></li>
 <li><p>Run the code as a script from the command line in a terminal.
@@ -581,7 +539,7 @@ If not, how would you adapt the code (extend or change it) so that it does produ
 </div>
 </div>
 <div class="section" id="exercise-7-6">
-<h3><span class="section-number">8.2.3. </span>Exercise 7.6<a class="headerlink" href="#exercise-7-6" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">7.2.3. </span>Exercise 7.6<a class="headerlink" href="#exercise-7-6" title="Permalink to this headline">¶</a></h3>
 <p>This exercise focuses on problems that may arise when an input file does not have the formatting you expect, contains errors or otherwise unexpected events.</p>
 <p>For small networks it is feasible to type your network directly as a dictionary, like in the example above.
 In other realistic scenarios, the network file is produced by another analysis (either your own Python script or another program), and you would like
@@ -637,7 +595,7 @@ The code contained in it is as follows:</p>
 </div>
 <p>Run the script from the command line in a terminal. You can view the network file by clicking on it in the Jupyter file browser.</p>
 <div class="section" id="expected-output">
-<h4><span class="section-number">8.2.3.1. </span>Expected output<a class="headerlink" href="#expected-output" title="Permalink to this headline">¶</a></h4>
+<h4><span class="section-number">7.2.3.1. </span>Expected output<a class="headerlink" href="#expected-output" title="Permalink to this headline">¶</a></h4>
 <p>If the script functions correctly, the desired output is:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Source TF:	 Erg 	Number of targets:	 6
 Source TF:	 Eto2 	Number of targets:	 1
@@ -654,7 +612,7 @@ Source TF:	 Zfpm1 	Number of targets:	 1
 </div>
 </div>
 <div class="section" id="question-assignment">
-<h4><span class="section-number">8.2.3.2. </span>Question/assignment:<a class="headerlink" href="#question-assignment" title="Permalink to this headline">¶</a></h4>
+<h4><span class="section-number">7.2.3.2. </span>Question/assignment:<a class="headerlink" href="#question-assignment" title="Permalink to this headline">¶</a></h4>
 <p>The script <code class="docutils literal notranslate"><span class="pre">exercise6.py</span></code> makes three assumptions about the input file that are not valid (the input file violates the assumption).</p>
 <p>Describe at least three assumptions that this script makes about the input file and provide a script that produces the desired output.</p>
 <p>For example, describe the assumptions as specifically as in the following examples (this is just an example, not relevant to this script):</p>
@@ -665,7 +623,7 @@ Source TF:	 Zfpm1 	Number of targets:	 1
 <p><strong>NOTE</strong> You have the change the Python script; you are <strong>NOT</strong> allowed to change the input file!</p>
 </div>
 <div class="section" id="hints">
-<h4><span class="section-number">8.2.3.3. </span>Hints:<a class="headerlink" href="#hints" title="Permalink to this headline">¶</a></h4>
+<h4><span class="section-number">7.2.3.3. </span>Hints:<a class="headerlink" href="#hints" title="Permalink to this headline">¶</a></h4>
 <ol class="simple">
 <li><p>Use <code class="docutils literal notranslate"><span class="pre">if</span></code> statements to check whether a specific assumption that you require for correct execution is satisfied.
 For instance, you can use an <code class="docutils literal notranslate"><span class="pre">if</span></code> statement to check the length of a list, or whether a key is present in the dictionary.</p></li>
@@ -675,7 +633,7 @@ For instance, you can use an <code class="docutils literal notranslate"><span cl
 </div>
 </div>
 <div class="section" id="exercise-7-7-bonus-fun-but-non-trivial">
-<h3><span class="section-number">8.2.4. </span>Exercise 7.7 (bonus; fun but non-trivial)<a class="headerlink" href="#exercise-7-7-bonus-fun-but-non-trivial" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">7.2.4. </span>Exercise 7.7 (bonus; fun but non-trivial)<a class="headerlink" href="#exercise-7-7-bonus-fun-but-non-trivial" title="Permalink to this headline">¶</a></h3>
 <p>Implement the boolean network dynamics from the <a class="reference external" href="https://www.ncbi.nlm.nih.gov/pubmed/23813012">Bonzanni et al paper</a>.</p>
 <p>Create an additional dictionary that represents the state of each interaction (a square in Figure 1 from Bonzanni et al).</p>
 <p>Take into account that some interactions are inhibitory (flat arrow head) and some are excitatory/activating (pointy arrow head).</p>
@@ -695,7 +653,7 @@ For instance, you can use an <code class="docutils literal notranslate"><span cl
     <div class='prev-next-bottom'>
         
     <a class='left-prev' id="prev-link" href="files.html" title="previous page"><span class="section-number">6. </span>Files</a>
-    <a class='right-next' id="next-link" href="functions_modules_style.html" title="next page"><span class="section-number">9. </span>Functions and modules</a>
+    <a class='right-next' id="next-link" href="functions_modules_style.html" title="next page"><span class="section-number">8. </span>Functions and modules</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">

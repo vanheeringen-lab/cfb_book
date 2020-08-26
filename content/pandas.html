@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>10. Introduction to pandas DataFrames &#8212; NWI-BM066A Computation for Biologists</title>
+    <title>9. Introduction to pandas DataFrames &#8212; NWI-BM066A Computation for Biologists</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
     <link href="../_static/css/index.css" rel="stylesheet">
     <link rel="stylesheet" href="../_static/sphinx-book-theme.css" type="text/css" />
@@ -30,8 +30,8 @@
     <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="11. Visualization" href="visualization.html" />
-    <link rel="prev" title="9. Functions and modules" href="functions_modules_style.html" />
+    <link rel="next" title="10. Visualization" href="visualization.html" />
+    <link rel="prev" title="8. Functions and modules" href="functions_modules_style.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="docsearch:language" content="en">
@@ -79,58 +79,21 @@
   <a class="reference internal" href="lists.html">
    2. Lists
   </a>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="lists_exercises.html">
-     2.2.1. Exercises: lists
-    </a>
-   </li>
-  </ul>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="control_flow.html">
    3. Control flow
   </a>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="control_flow_exercises.html">
-     3.1.1. Exercises: control flow
-    </a>
-   </li>
-  </ul>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="loops.html">
    4. Loops
   </a>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="loops_exercises.html">
-     4.1.1.
-     <strong>
-      Exercises
-     </strong>
-     : loops
-    </a>
-   </li>
-  </ul>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="dictionaries.html">
    5. Dictionaries
   </a>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="dictionaries_exercises.html">
-     5.2.1. Exercises: dictionaries
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="dictionaries_exercises.html#exercises-putting-it-all-together">
-     5.2.2. Exercises: Putting it all together
-    </a>
-   </li>
-  </ul>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="files.html">
@@ -138,38 +101,33 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="files.html#exercises-putting-it-all-together">
-   7. Exercises: putting it all together
-  </a>
- </li>
- <li class="toctree-l1">
   <a class="reference internal" href="scripts_and_debugging.html">
-   8. Scripts and debugging
+   7. Scripts and debugging
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="functions_modules_style.html">
-   9. Functions and modules
+   8. Functions and modules
   </a>
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   10. Introduction to pandas DataFrames
+   9. Introduction to pandas DataFrames
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="visualization.html">
-   11. Visualization
+   10. Visualization
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="dnase_motifs.html">
+   11. Motifs in DNase I peaks
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="footprints.html">
    12. Creating a DNAseI footprint profile
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="dnase_motifs.html">
-   13. Motifs in DNase I peaks
   </a>
  </li>
 </ul>
@@ -244,17 +202,17 @@
             <ul class="nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#importing-the-pandas-module">
-   10.1. Importing the pandas module
+   9.1. Importing the pandas module
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#creating-a-pandas-dataframe-from-lists">
-   10.2. Creating a pandas DataFrame from lists
+   9.2. Creating a pandas DataFrame from lists
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#creating-a-pandas-dataframe-using-a-dictionary">
-   10.3. Creating a pandas DataFrame using a
+   9.3. Creating a pandas DataFrame using a
    <code class="docutils literal notranslate">
     <span class="pre">
      dictionary
@@ -264,17 +222,17 @@
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#merging-pandas-dataframes">
-   10.4. Merging pandas DataFrames
+   9.4. Merging pandas DataFrames
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#merging-dataframes-on-column-values">
-   10.5. Merging DataFrames on column values
+   9.5. Merging DataFrames on column values
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#merging-dataframes-concat">
-   10.6. Merging DataFrames:
+   9.6. Merging DataFrames:
    <code class="docutils literal notranslate">
     <span class="pre">
      concat
@@ -284,7 +242,7 @@
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#merging-dataframes-merge">
-   10.7. Merging DataFrames:
+   9.7. Merging DataFrames:
    <code class="docutils literal notranslate">
     <span class="pre">
      merge
@@ -294,17 +252,17 @@
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#tab-completion-and-help">
-   10.8. Tab completion and help
+   9.8. Tab completion and help
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#sorting-a-dataframe">
-   10.9. Sorting a DataFrame
+   9.9. Sorting a DataFrame
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#using-to-obtain-dataframe-columns-or-rows">
-   10.10. Using
+   9.10. Using
    <code class="docutils literal notranslate">
     <span class="pre">
      [
@@ -318,7 +276,7 @@
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#removing-missing-values-or-nans">
-   10.11. Removing missing values or
+   9.11. Removing missing values or
    <code class="docutils literal notranslate">
     <span class="pre">
      NaN
@@ -329,7 +287,7 @@
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#basic-calculations">
-   10.12. Basic calculations
+   9.12. Basic calculations
   </a>
  </li>
 </ul>
@@ -343,7 +301,7 @@
               <div>
                 
   <div class="section" id="introduction-to-pandas-dataframes">
-<h1><span class="section-number">10. </span>Introduction to pandas DataFrames<a class="headerlink" href="#introduction-to-pandas-dataframes" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">9. </span>Introduction to pandas DataFrames<a class="headerlink" href="#introduction-to-pandas-dataframes" title="Permalink to this headline">¶</a></h1>
 <p>In this tutorial you are going to use the module <code class="docutils literal notranslate"><span class="pre">pandas</span></code>.
 We will focus on DataFrames, a convenient object type used in pandas.
 This tutorial has no exercises, but serves as an introduction to pandas.
@@ -351,7 +309,7 @@ It will illustrate what you can do with pandas DataFrames.
 If you want more information on pandas, a (quick) tutorial is found here:</p>
 <p><a class="reference external" href="http://pandas.pydata.org/pandas-docs/stable/10min.html">http://pandas.pydata.org/pandas-docs/stable/10min.html</a></p>
 <div class="section" id="importing-the-pandas-module">
-<h2><span class="section-number">10.1. </span>Importing the pandas module<a class="headerlink" href="#importing-the-pandas-module" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">9.1. </span>Importing the pandas module<a class="headerlink" href="#importing-the-pandas-module" title="Permalink to this headline">¶</a></h2>
 <p>We start by importing the pandas module, for which we use the following command:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -363,7 +321,7 @@ If you want more information on pandas, a (quick) tutorial is found here:</p>
 <p>Note that we imported the <code class="docutils literal notranslate"><span class="pre">pandas</span></code> module and renamed it to <code class="docutils literal notranslate"><span class="pre">pd</span></code>. This allows us to use all <code class="docutils literal notranslate"><span class="pre">pandas</span></code> functionality using <code class="docutils literal notranslate"><span class="pre">pd</span></code> (instead of <code class="docutils literal notranslate"><span class="pre">pandas</span></code>). This is very common: it saves typing since <code class="docutils literal notranslate"><span class="pre">pd</span></code> is shorter than <code class="docutils literal notranslate"><span class="pre">pandas</span></code>.</p>
 </div>
 <div class="section" id="creating-a-pandas-dataframe-from-lists">
-<h2><span class="section-number">10.2. </span>Creating a pandas DataFrame from lists<a class="headerlink" href="#creating-a-pandas-dataframe-from-lists" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">9.2. </span>Creating a pandas DataFrame from lists<a class="headerlink" href="#creating-a-pandas-dataframe-from-lists" title="Permalink to this headline">¶</a></h2>
 <p>Here we will create a pandas DataFrame containing the following columns:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -782,7 +740,7 @@ If you want more information on pandas, a (quick) tutorial is found here:</p>
 </ul>
 </div>
 <div class="section" id="creating-a-pandas-dataframe-using-a-dictionary">
-<h2><span class="section-number">10.3. </span>Creating a pandas DataFrame using a <code class="docutils literal notranslate"><span class="pre">dictionary</span></code><a class="headerlink" href="#creating-a-pandas-dataframe-using-a-dictionary" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">9.3. </span>Creating a pandas DataFrame using a <code class="docutils literal notranslate"><span class="pre">dictionary</span></code><a class="headerlink" href="#creating-a-pandas-dataframe-using-a-dictionary" title="Permalink to this headline">¶</a></h2>
 <p>We can also create a pandas DataFrame from a dictionary. The dictionary should contain <em>column names as keys</em> and <em>lists as values</em> for the columns. To show this in action, we will use the three following lists:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -842,12 +800,12 @@ If you want more information on pandas, a (quick) tutorial is found here:</p>
 </div>
 </div>
 <div class="section" id="merging-pandas-dataframes">
-<h2><span class="section-number">10.4. </span>Merging pandas DataFrames<a class="headerlink" href="#merging-pandas-dataframes" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">9.4. </span>Merging pandas DataFrames<a class="headerlink" href="#merging-pandas-dataframes" title="Permalink to this headline">¶</a></h2>
 <p>Look at the DataFrames using print (or by just typing the DataFrame name followed by Enter)</p>
 <p>In case we would have very long DataFrames, can use <code class="docutils literal notranslate"><span class="pre">df.head()</span></code> (where <code class="docutils literal notranslate"><span class="pre">df</span></code> is your DataFrame name)</p>
 </div>
 <div class="section" id="merging-dataframes-on-column-values">
-<h2><span class="section-number">10.5. </span>Merging DataFrames on column values<a class="headerlink" href="#merging-dataframes-on-column-values" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">9.5. </span>Merging DataFrames on column values<a class="headerlink" href="#merging-dataframes-on-column-values" title="Permalink to this headline">¶</a></h2>
 <p>We now have 3 types of data in our 3 DataFrames:</p>
 <ul class="simple">
 <li><p>ChIP-seq peaks (<code class="docutils literal notranslate"><span class="pre">df_peaks</span></code>)</p></li>
@@ -858,7 +816,7 @@ If you want more information on pandas, a (quick) tutorial is found here:</p>
 <p>So let us try to merge these pieces of data</p>
 </div>
 <div class="section" id="merging-dataframes-concat">
-<h2><span class="section-number">10.6. </span>Merging DataFrames: <code class="docutils literal notranslate"><span class="pre">concat</span></code><a class="headerlink" href="#merging-dataframes-concat" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">9.6. </span>Merging DataFrames: <code class="docutils literal notranslate"><span class="pre">concat</span></code><a class="headerlink" href="#merging-dataframes-concat" title="Permalink to this headline">¶</a></h2>
 <p>Using the command <code class="docutils literal notranslate"><span class="pre">concat</span></code> we can concatenate multiple DataFrames.
 Let us do this with the 2 ChIP-seq peaks DataFrames:</p>
 <div class="cell docutils container">
@@ -872,7 +830,7 @@ Let us do this with the 2 ChIP-seq peaks DataFrames:</p>
 <p>Next, we merge the ChIP-seq peaks with the gene identifier mappings, using the <code class="docutils literal notranslate"><span class="pre">merge</span></code> function</p>
 </div>
 <div class="section" id="merging-dataframes-merge">
-<h2><span class="section-number">10.7. </span>Merging DataFrames: <code class="docutils literal notranslate"><span class="pre">merge</span></code><a class="headerlink" href="#merging-dataframes-merge" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">9.7. </span>Merging DataFrames: <code class="docutils literal notranslate"><span class="pre">merge</span></code><a class="headerlink" href="#merging-dataframes-merge" title="Permalink to this headline">¶</a></h2>
 <p>Here we will merge the three different DataFrames (<code class="docutils literal notranslate"><span class="pre">df_peaks</span></code>, <code class="docutils literal notranslate"><span class="pre">df_genes</span></code>, <code class="docutils literal notranslate"><span class="pre">df_expr</span></code>) using the gene identifiers. Note that we have two different gene identifiers (RefSeq and ENSEMBL).</p>
 <p>First, we merge <code class="docutils literal notranslate"><span class="pre">df_peaks</span></code> with <code class="docutils literal notranslate"><span class="pre">df_genes</span></code>.</p>
 <div class="cell docutils container">
@@ -901,7 +859,7 @@ Our DataFrame now has the ENSEMBL gene identifiers, so we can also merge the <co
 </div>
 </div>
 <div class="section" id="tab-completion-and-help">
-<h2><span class="section-number">10.8. </span>Tab completion and help<a class="headerlink" href="#tab-completion-and-help" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">9.8. </span>Tab completion and help<a class="headerlink" href="#tab-completion-and-help" title="Permalink to this headline">¶</a></h2>
 <p>Now that we have merged our data, we can do several neat things.</p>
 <p>Because <code class="docutils literal notranslate"><span class="pre">df_all</span></code> is a pandas DataFrame, it automatically inherits DataFrame methods.</p>
 <p>You can get an idea if you type:</p>
@@ -917,7 +875,7 @@ Our DataFrame now has the ENSEMBL gene identifiers, so we can also merge the <co
 <p>This HELP menu gives you information about the function. type ‘q’ or &lt;ESC&gt; to leave the HELP</p>
 </div>
 <div class="section" id="sorting-a-dataframe">
-<h2><span class="section-number">10.9. </span>Sorting a DataFrame<a class="headerlink" href="#sorting-a-dataframe" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">9.9. </span>Sorting a DataFrame<a class="headerlink" href="#sorting-a-dataframe" title="Permalink to this headline">¶</a></h2>
 <p>Let us try it out:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1541,7 +1499,7 @@ Our DataFrame now has the ENSEMBL gene identifiers, so we can also merge the <co
 <p>Note that these commands did not replace the original DataFrame <code class="docutils literal notranslate"><span class="pre">df_all</span></code>!</p>
 </div>
 <div class="section" id="using-to-obtain-dataframe-columns-or-rows">
-<h2><span class="section-number">10.10. </span>Using <code class="docutils literal notranslate"><span class="pre">[</span> <span class="pre">]</span></code> to obtain DataFrame columns or rows<a class="headerlink" href="#using-to-obtain-dataframe-columns-or-rows" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">9.10. </span>Using <code class="docutils literal notranslate"><span class="pre">[</span> <span class="pre">]</span></code> to obtain DataFrame columns or rows<a class="headerlink" href="#using-to-obtain-dataframe-columns-or-rows" title="Permalink to this headline">¶</a></h2>
 <p>Using <code class="docutils literal notranslate"><span class="pre">[</span> <span class="pre">]</span></code> we can obtain specific parts of the DataFrame.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1890,7 +1848,7 @@ Name: 2, dtype: object
 </div>
 </div>
 <div class="section" id="removing-missing-values-or-nans">
-<h2><span class="section-number">10.11. </span>Removing missing values or <code class="docutils literal notranslate"><span class="pre">NaN</span></code>s.<a class="headerlink" href="#removing-missing-values-or-nans" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">9.11. </span>Removing missing values or <code class="docutils literal notranslate"><span class="pre">NaN</span></code>s.<a class="headerlink" href="#removing-missing-values-or-nans" title="Permalink to this headline">¶</a></h2>
 <p>In many cases DataFrames contains <code class="docutils literal notranslate"><span class="pre">NaN</span></code>, missing values, and you often have to remove them.</p>
 <p>We have several such <code class="docutils literal notranslate"><span class="pre">NaN</span></code>s in <code class="docutils literal notranslate"><span class="pre">df_all</span></code>.</p>
 <p>We can obtain a <code class="docutils literal notranslate"><span class="pre">boolean</span></code> (True/False) for the column called ‘sample1’ like this:</p>
@@ -2454,7 +2412,7 @@ Name: sample1, dtype: bool
 </div>
 </div>
 <div class="section" id="basic-calculations">
-<h2><span class="section-number">10.12. </span>Basic calculations<a class="headerlink" href="#basic-calculations" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">9.12. </span>Basic calculations<a class="headerlink" href="#basic-calculations" title="Permalink to this headline">¶</a></h2>
 <p>There are a lot of methods that allows you to do basic calculation on DataFrames.</p>
 <p>As an illustration we will calculate the pairwise correlations between the columns <code class="docutils literal notranslate"><span class="pre">sample1</span></code>, <code class="docutils literal notranslate"><span class="pre">sample2</span></code>, <code class="docutils literal notranslate"><span class="pre">sample3</span></code>, and <code class="docutils literal notranslate"><span class="pre">sample4</span></code>.</p>
 <p>We take the appropriate columns first</p>
@@ -2542,8 +2500,8 @@ Name: sample1, dtype: bool
     
     <div class='prev-next-bottom'>
         
-    <a class='left-prev' id="prev-link" href="functions_modules_style.html" title="previous page"><span class="section-number">9. </span>Functions and modules</a>
-    <a class='right-next' id="next-link" href="visualization.html" title="next page"><span class="section-number">11. </span>Visualization</a>
+    <a class='left-prev' id="prev-link" href="functions_modules_style.html" title="previous page"><span class="section-number">8. </span>Functions and modules</a>
+    <a class='right-next' id="next-link" href="visualization.html" title="next page"><span class="section-number">10. </span>Visualization</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">

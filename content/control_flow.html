@@ -30,8 +30,8 @@
     <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="3.1.1. Exercises: control flow" href="control_flow_exercises.html" />
-    <link rel="prev" title="2.2.1. Exercises: lists" href="lists_exercises.html" />
+    <link rel="next" title="4. Loops" href="loops.html" />
+    <link rel="prev" title="2. Lists" href="lists.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="docsearch:language" content="en">
@@ -79,58 +79,21 @@
   <a class="reference internal" href="lists.html">
    2. Lists
   </a>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="lists_exercises.html">
-     2.2.1. Exercises: lists
-    </a>
-   </li>
-  </ul>
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
    3. Control flow
   </a>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="control_flow_exercises.html">
-     3.1.1. Exercises: control flow
-    </a>
-   </li>
-  </ul>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="loops.html">
    4. Loops
   </a>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="loops_exercises.html">
-     4.1.1.
-     <strong>
-      Exercises
-     </strong>
-     : loops
-    </a>
-   </li>
-  </ul>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="dictionaries.html">
    5. Dictionaries
   </a>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="dictionaries_exercises.html">
-     5.2.1. Exercises: dictionaries
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="dictionaries_exercises.html#exercises-putting-it-all-together">
-     5.2.2. Exercises: Putting it all together
-    </a>
-   </li>
-  </ul>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="files.html">
@@ -138,38 +101,33 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="files.html#exercises-putting-it-all-together">
-   7. Exercises: putting it all together
-  </a>
- </li>
- <li class="toctree-l1">
   <a class="reference internal" href="scripts_and_debugging.html">
-   8. Scripts and debugging
+   7. Scripts and debugging
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="functions_modules_style.html">
-   9. Functions and modules
+   8. Functions and modules
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="pandas.html">
-   10. Introduction to pandas DataFrames
+   9. Introduction to pandas DataFrames
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="visualization.html">
-   11. Visualization
+   10. Visualization
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="dnase_motifs.html">
+   11. Motifs in DNase I peaks
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="footprints.html">
    12. Creating a DNAseI footprint profile
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="dnase_motifs.html">
-   13. Motifs in DNase I peaks
   </a>
  </li>
 </ul>
@@ -243,8 +201,18 @@
         <nav id="bd-toc-nav">
             <ul class="nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#introduction-to-control-flow">
+   3.1. Introduction to control flow
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#glossary-of-control-flow-terms">
-   3.1. Glossary of control flow terms
+   3.2. Glossary of control flow terms
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercises-control-flow">
+   3.3. Exercises: control flow
   </a>
  </li>
 </ul>
@@ -259,6 +227,8 @@
                 
   <div class="section" id="control-flow">
 <h1><span class="section-number">3. </span>Control flow<a class="headerlink" href="#control-flow" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="introduction-to-control-flow">
+<h2><span class="section-number">3.1. </span>Introduction to control flow<a class="headerlink" href="#introduction-to-control-flow" title="Permalink to this headline">¶</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">if</span></code> statement is used to <strong>check a condition</strong>: if the condition is true, we run a block of statements (called the if-block), next we can test another condition (<code class="docutils literal notranslate"><span class="pre">elif</span></code>, short for “else if”) and we process another block of statements (called the elif-block). Lastly, we can use an <code class="docutils literal notranslate"><span class="pre">else</span></code> clause, which is optional.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -400,8 +370,9 @@ n &lt; some_number
 </div>
 </div>
 </div>
+</div>
 <div class="section" id="glossary-of-control-flow-terms">
-<h2><span class="section-number">3.1. </span>Glossary of control flow terms<a class="headerlink" href="#glossary-of-control-flow-terms" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">3.2. </span>Glossary of control flow terms<a class="headerlink" href="#glossary-of-control-flow-terms" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">if</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">elif</span></code></p></li>
@@ -417,7 +388,51 @@ n &lt; some_number
 <li><p><code class="docutils literal notranslate"><span class="pre">&lt;=</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">!=</span></code></p></li>
 </ul>
-<div class="toctree-wrapper compound">
+</div>
+<div class="section" id="exercises-control-flow">
+<h2><span class="section-number">3.3. </span>Exercises: control flow<a class="headerlink" href="#exercises-control-flow" title="Permalink to this headline">¶</a></h2>
+<p><strong>Exercise 4.1</strong></p>
+<p>Here are two variables containing sequences:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="s1">&#39;GCTAGGCAGGTGCAGGGGTAG&#39;</span>
+<span class="n">b</span> <span class="o">=</span> <span class="s1">&#39;GGCAGATAGGACAGTGAGGGACATAGACCATAGACGANCATGACTTAG&#39;</span>
+</pre></div>
+</div>
+<p>Write a block of statements that provides an answer to the question whether:</p>
+<ul class="simple">
+<li><p>the sequence of <code class="docutils literal notranslate"><span class="pre">a</span></code> is the same as the sequence of <code class="docutils literal notranslate"><span class="pre">b</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">a</span></code> is longer than <code class="docutils literal notranslate"><span class="pre">b</span></code>, shorter than <code class="docutils literal notranslate"><span class="pre">b</span></code>, or the same length as <code class="docutils literal notranslate"><span class="pre">b</span></code></p></li>
+<li><p>which of the sequences (if any) contains an <code class="docutils literal notranslate"><span class="pre">'N'</span></code></p></li>
+</ul>
+<p><strong>Exercise 4.2</strong></p>
+<p>Take the following DNA sequence.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">dna</span> <span class="o">=</span> <span class="s2">&quot;TTGCATGTCAATCGATCGGATTGGTTGATTTATCCCGA&quot;</span>
+</pre></div>
+</div>
+<p>Write code that will print <code class="docutils literal notranslate"><span class="pre">*</span></code> if there is a stop codon in this sequence (TAA, TAG or TGA).</p>
+<p><strong>Exercise 4.3</strong></p>
+<p>Read the description and methods of the UCSC CpG island track: https://genome.ucsc.edu/cgi-bin/hgTrackUi?g=cpgIslandSuper.</p>
+<p>Write the code that will test if a sequence is a CpG island. You can test your code with the following sequences (only the first is a CpG island):</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1">#chr15:74022901-74023101</span>
+<span class="n">seq1</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;AAGTGCGACATCAGCGCAGAGATCCAGCAGCGACAGGAGGAG&quot;</span>
+        <span class="s2">&quot;CTGGACGCCATGACGCAGGCGCTGCAGGAGCAGGATAGTGCC&quot;</span>
+        <span class="s2">&quot;TTTGGCGCGGTTCACGCGCAGATGCACGCGGCCGTCGGCCAG&quot;</span>
+        <span class="s2">&quot;CTGGGCCGCGCGCGTGCCGAGACCGAGGAGCTGATCCGCGAG&quot;</span>
+        <span class="s2">&quot;CGCGTGCGCCAGGTGGTAGCTCACGTGCGGGCGT&quot;</span><span class="p">)</span>
+
+<span class="c1">#chr15:74022838-74023029</span>
+<span class="n">seq2</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;CGAGGATGTTCCAAGCCGCTGTGCTGCTCGTGCGCGCTCCTT&quot;</span>
+        <span class="s2">&quot;GACAGCAGCCACAGTGAGCTCAAGTGCGACATCAGCGCAGAG&quot;</span>
+        <span class="s2">&quot;ATCCAGCAGCGACAGGAGGAGCTGGACGCCATGACGCAGGCG&quot;</span>
+        <span class="s2">&quot;CTGCAGGAGCAGGATAGTGCCTTTGGCGCGGTTCACGCGCAG&quot;</span>
+        <span class="s2">&quot;ATGCACGCGGCCGTCGGCCAGCTG&quot;</span><span class="p">)</span>
+
+<span class="c1">#chr15:74022489-74022698 </span>
+<span class="n">seq3</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;AGATGTGTGGAAGGGTGCACCCCACGATGCTCACCTGGTGCT&quot;</span>
+        <span class="s2">&quot;TCCTCGGTGGGGAAGGGAAATTCAGAAGTGGTGGAAAGAGAT&quot;</span>
+        <span class="s2">&quot;GATTGTCGTTTCGTATATCTTTGTATTGTTTCCCGGATGTTG&quot;</span>
+        <span class="s2">&quot;AAATTGTTACTGTAGTAACTTTTTATACTCATGTGTTATTGG&quot;</span>
+        <span class="s2">&quot;TAGTTTGGATACTATCACCATAACCACAAACACTGAATTAGG&quot;</span><span class="p">)</span>
+</pre></div>
 </div>
 </div>
 </div>
@@ -431,8 +446,8 @@ n &lt; some_number
     
     <div class='prev-next-bottom'>
         
-    <a class='left-prev' id="prev-link" href="lists_exercises.html" title="previous page"><span class="section-number">2.2.1. </span>Exercises: lists</a>
-    <a class='right-next' id="next-link" href="control_flow_exercises.html" title="next page"><span class="section-number">3.1.1. </span>Exercises: control flow</a>
+    <a class='left-prev' id="prev-link" href="lists.html" title="previous page"><span class="section-number">2. </span>Lists</a>
+    <a class='right-next' id="next-link" href="loops.html" title="next page"><span class="section-number">4. </span>Loops</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">

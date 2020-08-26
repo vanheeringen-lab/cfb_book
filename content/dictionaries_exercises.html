@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>5.2.1. Exercises: dictionaries &#8212; NWI-BM066A Computation for Biologists</title>
+    <title>Exercises: dictionaries &#8212; NWI-BM066A Computation for Biologists</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
     <link href="../_static/css/index.css" rel="stylesheet">
     <link rel="stylesheet" href="../_static/sphinx-book-theme.css" type="text/css" />
@@ -30,8 +30,6 @@
     <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="6. Files" href="files.html" />
-    <link rel="prev" title="5. Dictionaries" href="dictionaries.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="docsearch:language" content="en">
@@ -69,7 +67,7 @@
   </a>
  </li>
 </ul>
-<ul class="current nav sidenav_l1">
+<ul class="nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="first_exercises.html">
    1. First exercises
@@ -90,22 +88,10 @@
    4. Loops
   </a>
  </li>
- <li class="toctree-l1 current active">
+ <li class="toctree-l1">
   <a class="reference internal" href="dictionaries.html">
    5. Dictionaries
   </a>
-  <ul class="current">
-   <li class="toctree-l2 current active">
-    <a class="current reference internal" href="#">
-     5.2.1. Exercises: dictionaries
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="#exercises-putting-it-all-together">
-     5.2.2. Exercises: Putting it all together
-    </a>
-   </li>
-  </ul>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="files.html">
@@ -113,38 +99,33 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="files.html#exercises-putting-it-all-together">
-   7. Exercises: putting it all together
-  </a>
- </li>
- <li class="toctree-l1">
   <a class="reference internal" href="scripts_and_debugging.html">
-   8. Scripts and debugging
+   7. Scripts and debugging
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="functions_modules_style.html">
-   9. Functions and modules
+   8. Functions and modules
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="pandas.html">
-   10. Introduction to pandas DataFrames
+   9. Introduction to pandas DataFrames
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="visualization.html">
-   11. Visualization
+   10. Visualization
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="dnase_motifs.html">
+   11. Motifs in DNase I peaks
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="footprints.html">
    12. Creating a DNAseI footprint profile
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="dnase_motifs.html">
-   13. Motifs in DNase I peaks
   </a>
  </li>
 </ul>
@@ -219,62 +200,62 @@
             <ul class="nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#exercise-5-1">
-   5.2.1.1. Exercise 5.1
+   Exercise 5.1
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#exercise-5-2">
-   5.2.1.2. Exercise 5.2
+   Exercise 5.2
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#exercise-5-3">
-   5.2.1.3. Exercise 5.3
+   Exercise 5.3
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#exercise-5-4">
-   5.2.1.4. Exercise 5.4
+   Exercise 5.4
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#exercise-5-5">
-   5.2.1.5. Exercise 5.5
+   Exercise 5.5
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#exercise-5-6">
-   5.2.1.6. Exercise 5.6
+   Exercise 5.6
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#exercise-5-7">
-   5.2.1.7. Exercise 5.7
+   Exercise 5.7
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#exercise-5-8">
-   5.2.1.8. Exercise 5.8
+   Exercise 5.8
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#exercise-5-9">
-   5.2.1.9. Exercise 5.9
+   Exercise 5.9
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#exercise-5-10">
-   5.2.1.10. Exercise 5.10
+   Exercise 5.10
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#exercise-5-11">
-   5.2.1.11. Exercise 5.11
+   Exercise 5.11
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#exercise-5-12">
-   5.2.1.12. Exercise 5.12
+   Exercise 5.12
   </a>
  </li>
 </ul>
@@ -288,49 +269,49 @@
               <div>
                 
   <div class="section" id="exercises-dictionaries">
-<h1><span class="section-number">5.2.1. </span>Exercises: dictionaries<a class="headerlink" href="#exercises-dictionaries" title="Permalink to this headline">¶</a></h1>
+<h1>Exercises: dictionaries<a class="headerlink" href="#exercises-dictionaries" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="exercise-5-1">
-<h2><span class="section-number">5.2.1.1. </span>Exercise 5.1<a class="headerlink" href="#exercise-5-1" title="Permalink to this headline">¶</a></h2>
+<h2>Exercise 5.1<a class="headerlink" href="#exercise-5-1" title="Permalink to this headline">¶</a></h2>
 <p>Study the following code:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">my_dictionary</span> <span class="o">=</span> <span class="p">{}</span> <span class="c1"># initialize empty dictionary. NOTE the curly brackets (as opposed to SQUARE brackets to initialize an empty list)</span>
 <span class="n">my_dictionary</span><span class="p">[</span><span class="s1">&#39;green&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;color&#39;</span> <span class="c1"># key = &#39;green&#39;, value = &#39;color&#39;</span>
 <span class="n">my_dictionary</span><span class="p">[</span><span class="s1">&#39;volvo&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;car&#39;</span>  <span class="c1"># key = &#39;volvo&#39;, value = &#39;car&#39;</span>
 <span class="n">my_dictionary</span><span class="p">[</span><span class="s1">&#39;number_of_fingers&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">10</span> <span class="c1"># key = &#39;number_of_fingers&#39;, value = 10. Note, value is a number (not a string, so no quotes &#39;&#39;)! </span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;dictionary:&quot;</span><span class="p">,</span><span class="n">my_dictionary</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;value associated with key &#39;volvo&#39;:&quot;</span><span class="p">,</span><span class="n">my_dictionary</span><span class="p">[</span><span class="s1">&#39;volvo&#39;</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;dictionary:&quot;</span><span class="p">,</span> <span class="n">my_dictionary</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;value associated with key &#39;volvo&#39;:&quot;</span><span class="p">,</span> <span class="n">my_dictionary</span><span class="p">[</span><span class="s1">&#39;volvo&#39;</span><span class="p">])</span>
 </pre></div>
 </div>
 <ol class="simple">
-<li><p>Modify this code such that the dictionary also contains the key/value pair (‘opel’,’car’).</p></li>
-<li><p>Modify this code to add a key/value pair to the dictionary where 10 is the <strong>key</strong> and <strong>‘number_of_fingers’</strong> is the value (so the reverse of key/value pair that is already in the dictionary.</p></li>
+<li><p>Modify this code such that the dictionary also contains the key/value pair (‘opel’, ‘car’).</p></li>
+<li><p>Modify this code to add a key/value pair to the dictionary where <code class="docutils literal notranslate"><span class="pre">10</span></code> is the <em>key</em> and <code class="docutils literal notranslate"><span class="pre">'number_of_fingers'</span></code> is the <em>value</em> (so the reverse of key/value pair that is already in the dictionary.</p></li>
 </ol>
 <p>Verify your code by running it and checking the output.</p>
 </div>
 <div class="section" id="exercise-5-2">
-<h2><span class="section-number">5.2.1.2. </span>Exercise 5.2<a class="headerlink" href="#exercise-5-2" title="Permalink to this headline">¶</a></h2>
+<h2>Exercise 5.2<a class="headerlink" href="#exercise-5-2" title="Permalink to this headline">¶</a></h2>
 <p>You can also initialize a dictionary as follows:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">my_dictionary</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;A&#39;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="s1">&#39;B&#39;</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span><span class="s1">&#39;C&#39;</span><span class="p">:</span><span class="mi">3</span><span class="p">}</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;dictionary:&quot;</span><span class="p">,</span><span class="n">my_dictionary</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;value associated with key &#39;A&#39;:&quot;</span><span class="p">,</span><span class="n">my_dictionary</span><span class="p">[</span><span class="s1">&#39;A&#39;</span><span class="p">])</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">my_dictionary</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;A&#39;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;B&#39;</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;C&#39;</span><span class="p">:</span><span class="mi">3</span><span class="p">}</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;dictionary:&quot;</span><span class="p">,</span> <span class="n">my_dictionary</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;value associated with key &#39;A&#39;:&quot;</span><span class="p">,</span> <span class="n">my_dictionary</span><span class="p">[</span><span class="s1">&#39;A&#39;</span><span class="p">])</span>
 </pre></div>
 </div>
 <p>Use this syntax to create the dictionary from the previous exercise.</p>
 </div>
 <div class="section" id="exercise-5-3">
-<h2><span class="section-number">5.2.1.3. </span>Exercise 5.3<a class="headerlink" href="#exercise-5-3" title="Permalink to this headline">¶</a></h2>
+<h2>Exercise 5.3<a class="headerlink" href="#exercise-5-3" title="Permalink to this headline">¶</a></h2>
 <p>I want the following code to print the value associated with the key ‘B’. However, the code contains an error.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">my_dictionary</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;A&#39;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="s1">&#39;B&#39;</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span><span class="s1">&#39;C&#39;</span><span class="p">:</span><span class="mi">3</span><span class="p">}</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;value associated with key &#39;A&#39;:&quot;</span><span class="p">,</span><span class="n">my_dictionary</span><span class="p">[</span><span class="n">B</span><span class="p">])</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">my_dictionary</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;A&#39;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;B&#39;</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;C&#39;</span><span class="p">:</span><span class="mi">3</span><span class="p">}</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;value associated with key &#39;A&#39;:&quot;</span><span class="p">,</span> <span class="n">my_dictionary</span><span class="p">[</span><span class="n">B</span><span class="p">])</span>
 </pre></div>
 </div>
 <p>Run the code and see if you can find where the error is and correct it so that it does print the value associated with key ‘B’.</p>
 </div>
 <div class="section" id="exercise-5-4">
-<h2><span class="section-number">5.2.1.4. </span>Exercise 5.4<a class="headerlink" href="#exercise-5-4" title="Permalink to this headline">¶</a></h2>
+<h2>Exercise 5.4<a class="headerlink" href="#exercise-5-4" title="Permalink to this headline">¶</a></h2>
 <p>Study and run the following code:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">my_dictionary</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;A&#39;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="s1">&#39;B&#39;</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span><span class="s1">&#39;C&#39;</span><span class="p">:</span><span class="mi">3</span><span class="p">}</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">my_dictionary</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;A&#39;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;B&#39;</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;C&#39;</span><span class="p">:</span><span class="mi">3</span><span class="p">}</span>
 <span class="n">my_dictionary</span><span class="p">[</span><span class="s1">&#39;A&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">5</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;value associated with key &#39;A&#39;:&quot;</span><span class="p">,</span><span class="n">my_dictionary</span><span class="p">[</span><span class="s1">&#39;A&#39;</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;value associated with key &#39;A&#39;:&quot;</span><span class="p">,</span> <span class="n">my_dictionary</span><span class="p">[</span><span class="s1">&#39;A&#39;</span><span class="p">])</span>
 </pre></div>
 </div>
 <ol class="simple">
@@ -338,26 +319,26 @@
 </ol>
 </div>
 <div class="section" id="exercise-5-5">
-<h2><span class="section-number">5.2.1.5. </span>Exercise 5.5<a class="headerlink" href="#exercise-5-5" title="Permalink to this headline">¶</a></h2>
+<h2>Exercise 5.5<a class="headerlink" href="#exercise-5-5" title="Permalink to this headline">¶</a></h2>
 <p>Glossary for this exercise:</p>
 <ul class="simple">
 <li><p><em><strong>target gene</strong></em> : The genes in whose promoter a given binds. For instance, in the mouse ES cell network, NANOG binds in the promoter of SOX2, and therefore we call SOX2 a target gene of NANOG. Vice versa, SOX2 binds in the promoter of NANOG, so NANOG is also a target gene of SOX2.</p></li>
 </ul>
 <p>You are now going to write Python code to store the Muscle network in a dictionary. Create a dictionary variable that contains all the regulatory relationships between the TFs in the Muscle network. The keys of the dictionary should be the names of the TFs. The value for each <code class="docutils literal notranslate"><span class="pre">key</span></code> (representing a TF) should be a list that contains the <em><strong>target genes</strong></em> of that TF. At the end of your code, print the dictionary.</p>
 <p>Hint: you can create a dictionary with a list as a value for a key as follows:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">my_dictionary</span> <span class="o">=</span> <span class="p">{</span> <span class="s1">&#39;cars&#39;</span> <span class="p">:</span> <span class="p">[</span><span class="s1">&#39;opel&#39;</span><span class="p">,</span><span class="s1">&#39;volvo&#39;</span><span class="p">,</span><span class="s1">&#39;subaru&#39;</span><span class="p">]</span> <span class="p">}</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;dictionary:&#39;</span><span class="p">,</span><span class="n">my_dictionary</span><span class="p">[</span><span class="s1">&#39;cars&#39;</span><span class="p">])</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">my_dictionary</span> <span class="o">=</span> <span class="p">{</span> <span class="s1">&#39;cars&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;opel&#39;</span><span class="p">,</span> <span class="s1">&#39;volvo&#39;</span><span class="p">,</span> <span class="s1">&#39;subaru&#39;</span><span class="p">]</span> <span class="p">}</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;dictionary:&#39;</span><span class="p">,</span> <span class="n">my_dictionary</span><span class="p">[</span><span class="s1">&#39;cars&#39;</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="exercise-5-6">
-<h2><span class="section-number">5.2.1.6. </span>Exercise 5.6<a class="headerlink" href="#exercise-5-6" title="Permalink to this headline">¶</a></h2>
+<h2>Exercise 5.6<a class="headerlink" href="#exercise-5-6" title="Permalink to this headline">¶</a></h2>
 <p>Study and run the following code:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">my_dictionary</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;A&#39;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="s1">&#39;B&#39;</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span><span class="s1">&#39;C&#39;</span><span class="p">:</span><span class="mi">3</span><span class="p">}</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">my_dictionary</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;A&#39;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;B&#39;</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;C&#39;</span><span class="p">:</span><span class="mi">3</span><span class="p">}</span>
 
 <span class="k">for</span> <span class="n">variable_1</span> <span class="ow">in</span> <span class="n">my_dictionary</span><span class="p">:</span>
     <span class="n">variable_2</span> <span class="o">=</span> <span class="n">my_dictionary</span><span class="p">[</span><span class="n">variable_1</span><span class="p">]</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;variable_1:&#39;</span><span class="p">,</span><span class="n">variable_1</span><span class="p">,</span> <span class="s1">&#39;variable_2&#39;</span><span class="p">,</span> <span class="n">variable_2</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;variable_1:&#39;</span><span class="p">,</span> <span class="n">variable_1</span><span class="p">,</span> <span class="s1">&#39;variable_2&#39;</span><span class="p">,</span> <span class="n">variable_2</span><span class="p">)</span>
 </pre></div>
 </div>
 <ol class="simple">
@@ -368,15 +349,15 @@
 </ol>
 </div>
 <div class="section" id="exercise-5-7">
-<h2><span class="section-number">5.2.1.7. </span>Exercise 5.7<a class="headerlink" href="#exercise-5-7" title="Permalink to this headline">¶</a></h2>
+<h2>Exercise 5.7<a class="headerlink" href="#exercise-5-7" title="Permalink to this headline">¶</a></h2>
 <p>Now adapt the code from exercise 5.6 so that it adds 4 to each value retrieved from the dictionary and prints this to the screen, together with the key.
-Use the more appropriate variable names instead of <em>variable_1</em> and <em>variable_2</em>.</p>
+Use the more appropriate variable names instead of <code class="docutils literal notranslate"><span class="pre">variable_1</span></code> and <code class="docutils literal notranslate"><span class="pre">variable_2</span></code>.</p>
 <p><strong>NOTE</strong> You are not allowed to change the dictionary itself in the process.</p>
 </div>
 <div class="section" id="exercise-5-8">
-<h2><span class="section-number">5.2.1.8. </span>Exercise 5.8<a class="headerlink" href="#exercise-5-8" title="Permalink to this headline">¶</a></h2>
+<h2>Exercise 5.8<a class="headerlink" href="#exercise-5-8" title="Permalink to this headline">¶</a></h2>
 <p>The dictionary <code class="docutils literal notranslate"><span class="pre">esrrb</span></code> contains the number of Esrrb peaks per chromosome from an Esrrb ChIP-seq experiment (Chen et al. 2008, 13;133(6):1106-17, PMID 18555785).</p>
-<p>The dictionary ‘chrsizes’ contains the length (bp) of each chromosome in the mouse genome (mm9).</p>
+<p>The dictionary <code class="docutils literal notranslate"><span class="pre">chrsizes</span></code> contains the length (bp) of each chromosome in the mouse genome (mm9).</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">esrrb</span> <span class="o">=</span> <span class="p">{</span>
     <span class="s1">&#39;chr1&#39;</span><span class="p">:</span> <span class="mi">1160</span><span class="p">,</span> 
     <span class="s1">&#39;chr10&#39;</span><span class="p">:</span> <span class="mi">1171</span><span class="p">,</span> 
@@ -426,19 +407,19 @@ Use the more appropriate variable names instead of <em>variable_1</em> and <em>v
 </pre></div>
 </div>
 <ol class="simple">
-<li><p>What is the python command to obtain the number of peaks on chr6?</p></li>
+<li><p>What is the Python command to obtain the number of peaks on chr6?</p></li>
 <li><p>The number of peaks for chr11 contains a typo. This should be 1878. Correct this in the dictionary</p></li>
 <li><p>Write a statement that answers the question whether chrX is present in <code class="docutils literal notranslate"><span class="pre">esrrb</span></code>.</p></li>
-<li><p>Expand the code of 3. so that the correct key-value pair is inserted in Esrrb in case chrX is missing (chrX has 180 peaks)</p></li>
+<li><p>Expand the code of <strong>3</strong> so that the correct key-value pair is inserted in <code class="docutils literal notranslate"><span class="pre">esrrb</span></code> in case chrX is missing (chrX has 180 peaks)</p></li>
 <li><p>Get the number of peaks for chrY. What’s going on here?</p></li>
 <li><p>Using the two dictionaries above, calculate the peak density (number of peaks per bp) for chr15. <strong>Do not manually type the numeric data</strong></p></li>
 <li><p>Write a loop that will print the peak density for each chromosome.</p></li>
 </ol>
 </div>
 <div class="section" id="exercise-5-9">
-<h2><span class="section-number">5.2.1.9. </span>Exercise 5.9<a class="headerlink" href="#exercise-5-9" title="Permalink to this headline">¶</a></h2>
+<h2>Exercise 5.9<a class="headerlink" href="#exercise-5-9" title="Permalink to this headline">¶</a></h2>
 <ol class="simple">
-<li><p>Using the keys and values of the dictionary “cod2aa”, make a new dictionary (e.g. “aa2cod”) that does the reverse of cod2aa: mapping amino acids to codons. Here is your starting point:</p></li>
+<li><p>Using the keys and values of the dictionary <code class="docutils literal notranslate"><span class="pre">cod2aa</span></code>, make a new dictionary (e.g. <code class="docutils literal notranslate"><span class="pre">aa2cod</span></code>) that does the reverse of <code class="docutils literal notranslate"><span class="pre">cod2aa</span></code>: mapping amino acids to codons. Here is your starting point:</p></li>
 </ol>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">cod2aa</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;TTG&#39;</span><span class="p">:</span> <span class="s1">&#39;Leu&#39;</span><span class="p">,</span> <span class="s1">&#39;AGC&#39;</span><span class="p">:</span> <span class="s1">&#39;Ser&#39;</span><span class="p">,</span> <span class="s1">&#39;CTA&#39;</span><span class="p">:</span> <span class="s1">&#39;Leu&#39;</span><span class="p">,</span> <span class="s1">&#39;ACT&#39;</span><span class="p">:</span> <span class="s1">&#39;Thr&#39;</span><span class="p">}</span>
 </pre></div>
@@ -448,7 +429,7 @@ Use the more appropriate variable names instead of <em>variable_1</em> and <em>v
 </ol>
 </div>
 <div class="section" id="exercise-5-10">
-<h2><span class="section-number">5.2.1.10. </span>Exercise 5.10<a class="headerlink" href="#exercise-5-10" title="Permalink to this headline">¶</a></h2>
+<h2>Exercise 5.10<a class="headerlink" href="#exercise-5-10" title="Permalink to this headline">¶</a></h2>
 <p>For these excercises you will use a dictionary with codons as keys as amino acids as values.
 Create this by running this command (using copy-paste):</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">codons</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;aaa&#39;</span><span class="p">:</span> <span class="s1">&#39;K&#39;</span><span class="p">,</span> <span class="s1">&#39;aac&#39;</span><span class="p">:</span> <span class="s1">&#39;N&#39;</span><span class="p">,</span> <span class="s1">&#39;aag&#39;</span><span class="p">:</span> <span class="s1">&#39;K&#39;</span><span class="p">,</span> <span class="s1">&#39;aat&#39;</span><span class="p">:</span> <span class="s1">&#39;N&#39;</span><span class="p">,</span> <span class="s1">&#39;aca&#39;</span><span class="p">:</span> <span class="s1">&#39;T&#39;</span><span class="p">,</span> <span class="s1">&#39;acc&#39;</span><span class="p">:</span> <span class="s1">&#39;T&#39;</span><span class="p">,</span> <span class="s1">&#39;acg&#39;</span><span class="p">:</span> <span class="s1">&#39;T&#39;</span><span class="p">,</span> <span class="s1">&#39;act&#39;</span><span class="p">:</span> <span class="s1">&#39;T&#39;</span><span class="p">,</span> <span class="s1">&#39;aga&#39;</span><span class="p">:</span> <span class="s1">&#39;R&#39;</span><span class="p">,</span> <span class="s1">&#39;agc&#39;</span><span class="p">:</span> <span class="s1">&#39;S&#39;</span><span class="p">,</span> <span class="s1">&#39;agg&#39;</span><span class="p">:</span> <span class="s1">&#39;R&#39;</span><span class="p">,</span> <span class="s1">&#39;agt&#39;</span><span class="p">:</span> <span class="s1">&#39;S&#39;</span><span class="p">,</span> <span class="s1">&#39;ata&#39;</span><span class="p">:</span> <span class="s1">&#39;I&#39;</span><span class="p">,</span> <span class="s1">&#39;atc&#39;</span><span class="p">:</span> <span class="s1">&#39;I&#39;</span><span class="p">,</span> <span class="s1">&#39;atg&#39;</span><span class="p">:</span> <span class="s1">&#39;M&#39;</span><span class="p">,</span> <span class="s1">&#39;att&#39;</span><span class="p">:</span> <span class="s1">&#39;I&#39;</span><span class="p">,</span> <span class="s1">&#39;caa&#39;</span><span class="p">:</span> <span class="s1">&#39;Q&#39;</span><span class="p">,</span> <span class="s1">&#39;cac&#39;</span><span class="p">:</span> <span class="s1">&#39;H&#39;</span><span class="p">,</span> <span class="s1">&#39;cag&#39;</span><span class="p">:</span> <span class="s1">&#39;Q&#39;</span><span class="p">,</span> <span class="s1">&#39;cat&#39;</span><span class="p">:</span> <span class="s1">&#39;H&#39;</span><span class="p">,</span> <span class="s1">&#39;cca&#39;</span><span class="p">:</span> <span class="s1">&#39;P&#39;</span><span class="p">,</span> <span class="s1">&#39;ccc&#39;</span><span class="p">:</span> <span class="s1">&#39;P&#39;</span><span class="p">,</span> <span class="s1">&#39;ccg&#39;</span><span class="p">:</span> <span class="s1">&#39;P&#39;</span><span class="p">,</span> <span class="s1">&#39;cct&#39;</span><span class="p">:</span> <span class="s1">&#39;P&#39;</span><span class="p">,</span> <span class="s1">&#39;cga&#39;</span><span class="p">:</span> <span class="s1">&#39;R&#39;</span><span class="p">,</span> <span class="s1">&#39;cgc&#39;</span><span class="p">:</span> <span class="s1">&#39;R&#39;</span><span class="p">,</span> <span class="s1">&#39;cgg&#39;</span><span class="p">:</span> <span class="s1">&#39;R&#39;</span><span class="p">,</span> <span class="s1">&#39;cgt&#39;</span><span class="p">:</span> <span class="s1">&#39;R&#39;</span><span class="p">,</span> <span class="s1">&#39;cta&#39;</span><span class="p">:</span> <span class="s1">&#39;L&#39;</span><span class="p">,</span> <span class="s1">&#39;ctc&#39;</span><span class="p">:</span> <span class="s1">&#39;L&#39;</span><span class="p">,</span> <span class="s1">&#39;ctg&#39;</span><span class="p">:</span> <span class="s1">&#39;L&#39;</span><span class="p">,</span> <span class="s1">&#39;ctt&#39;</span><span class="p">:</span> <span class="s1">&#39;L&#39;</span><span class="p">,</span> <span class="s1">&#39;gaa&#39;</span><span class="p">:</span> <span class="s1">&#39;E&#39;</span><span class="p">,</span> <span class="s1">&#39;gac&#39;</span><span class="p">:</span> <span class="s1">&#39;D&#39;</span><span class="p">,</span> <span class="s1">&#39;gag&#39;</span><span class="p">:</span> <span class="s1">&#39;E&#39;</span><span class="p">,</span> <span class="s1">&#39;gat&#39;</span><span class="p">:</span> <span class="s1">&#39;D&#39;</span><span class="p">,</span> <span class="s1">&#39;gca&#39;</span><span class="p">:</span> <span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="s1">&#39;gcc&#39;</span><span class="p">:</span> <span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="s1">&#39;gcg&#39;</span><span class="p">:</span> <span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="s1">&#39;gct&#39;</span><span class="p">:</span> <span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="s1">&#39;gga&#39;</span><span class="p">:</span> <span class="s1">&#39;G&#39;</span><span class="p">,</span> <span class="s1">&#39;ggc&#39;</span><span class="p">:</span> <span class="s1">&#39;G&#39;</span><span class="p">,</span> <span class="s1">&#39;ggg&#39;</span><span class="p">:</span> <span class="s1">&#39;G&#39;</span><span class="p">,</span> <span class="s1">&#39;ggt&#39;</span><span class="p">:</span> <span class="s1">&#39;G&#39;</span><span class="p">,</span> <span class="s1">&#39;gta&#39;</span><span class="p">:</span> <span class="s1">&#39;V&#39;</span><span class="p">,</span> <span class="s1">&#39;gtc&#39;</span><span class="p">:</span> <span class="s1">&#39;V&#39;</span><span class="p">,</span> <span class="s1">&#39;gtg&#39;</span><span class="p">:</span> <span class="s1">&#39;V&#39;</span><span class="p">,</span> <span class="s1">&#39;gtt&#39;</span><span class="p">:</span> <span class="s1">&#39;V&#39;</span><span class="p">,</span> <span class="s1">&#39;taa&#39;</span><span class="p">:</span> <span class="s1">&#39;*&#39;</span><span class="p">,</span> <span class="s1">&#39;tac&#39;</span><span class="p">:</span> <span class="s1">&#39;Y&#39;</span><span class="p">,</span> <span class="s1">&#39;tag&#39;</span><span class="p">:</span> <span class="s1">&#39;*&#39;</span><span class="p">,</span> <span class="s1">&#39;tat&#39;</span><span class="p">:</span> <span class="s1">&#39;Y&#39;</span><span class="p">,</span> <span class="s1">&#39;tca&#39;</span><span class="p">:</span> <span class="s1">&#39;S&#39;</span><span class="p">,</span> <span class="s1">&#39;tcc&#39;</span><span class="p">:</span> <span class="s1">&#39;S&#39;</span><span class="p">,</span> <span class="s1">&#39;tcg&#39;</span><span class="p">:</span> <span class="s1">&#39;S&#39;</span><span class="p">,</span> <span class="s1">&#39;tct&#39;</span><span class="p">:</span> <span class="s1">&#39;S&#39;</span><span class="p">,</span> <span class="s1">&#39;tga&#39;</span><span class="p">:</span> <span class="s1">&#39;*&#39;</span><span class="p">,</span> <span class="s1">&#39;tgc&#39;</span><span class="p">:</span> <span class="s1">&#39;C&#39;</span><span class="p">,</span> <span class="s1">&#39;tgg&#39;</span><span class="p">:</span> <span class="s1">&#39;W&#39;</span><span class="p">,</span> <span class="s1">&#39;tgt&#39;</span><span class="p">:</span> <span class="s1">&#39;C&#39;</span><span class="p">,</span> <span class="s1">&#39;tta&#39;</span><span class="p">:</span> <span class="s1">&#39;L&#39;</span><span class="p">,</span> <span class="s1">&#39;ttc&#39;</span><span class="p">:</span> <span class="s1">&#39;F&#39;</span><span class="p">,</span> <span class="s1">&#39;ttg&#39;</span><span class="p">:</span> <span class="s1">&#39;L&#39;</span><span class="p">,</span> <span class="s1">&#39;ttt&#39;</span><span class="p">:</span> <span class="s1">&#39;F&#39;</span><span class="p">}</span>
@@ -457,15 +438,15 @@ Create this by running this command (using copy-paste):</p>
 <ol class="simple">
 <li><p>Provide the Python code that uses a loop to print for each codon its sequence and the amino acid it encodes (e.g. “aaa encodes K”).</p></li>
 <li><p>Extend this code so that that it only prints the codon sequence if it encodes a stop codon.</p></li>
-<li><p>Create an empty list named ‘leu’ using <code class="docutils literal notranslate"><span class="pre">[]</span></code>. Loop through the <code class="docutils literal notranslate"><span class="pre">codon</span></code> dictionary and add all codons for ‘L’ (leucine) to the list ‘leu’. After running your code, ‘leu’ should contain 6 codons.</p></li>
+<li><p>Create an empty list named <code class="docutils literal notranslate"><span class="pre">leu</span></code> using <code class="docutils literal notranslate"><span class="pre">[]</span></code>. Loop through the <code class="docutils literal notranslate"><span class="pre">codon</span></code> dictionary and add all codons for ‘L’ (leucine) to the list <code class="docutils literal notranslate"><span class="pre">leu</span></code>. After running your code, <code class="docutils literal notranslate"><span class="pre">leu</span></code> should contain 6 codons.</p></li>
 </ol>
 </div>
 <div class="section" id="exercise-5-11">
-<h2><span class="section-number">5.2.1.11. </span>Exercise 5.11<a class="headerlink" href="#exercise-5-11" title="Permalink to this headline">¶</a></h2>
+<h2>Exercise 5.11<a class="headerlink" href="#exercise-5-11" title="Permalink to this headline">¶</a></h2>
 <p>Extend your code from <strong>4.11</strong> to print the protein sequence encoded by the longest ORF.</p>
 </div>
 <div class="section" id="exercise-5-12">
-<h2><span class="section-number">5.2.1.12. </span>Exercise 5.12<a class="headerlink" href="#exercise-5-12" title="Permalink to this headline">¶</a></h2>
+<h2>Exercise 5.12<a class="headerlink" href="#exercise-5-12" title="Permalink to this headline">¶</a></h2>
 <p>In this exercise you will compare the behaviour of lists and dictionaries with respect to indexing.</p>
 <p>Study and run the following example:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">my_list</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;A&#39;</span><span class="p">,</span><span class="s1">&#39;B&#39;</span><span class="p">,</span><span class="s1">&#39;C&#39;</span><span class="p">]</span> <span class="c1"># initialize the list</span>
@@ -473,12 +454,12 @@ Create this by running this command (using copy-paste):</p>
                   <span class="mi">1</span> <span class="p">:</span> <span class="s1">&#39;B&#39;</span><span class="p">,</span>
                   <span class="mi">2</span> <span class="p">:</span> <span class="s1">&#39;C&#39;</span> <span class="p">}</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;0:&quot;</span><span class="p">,</span><span class="n">my_list</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">my_dictionary</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;1:&quot;</span><span class="p">,</span><span class="n">my_list</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">my_dictionary</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;2:&quot;</span><span class="p">,</span><span class="n">my_list</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">my_dictionary</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;0:&quot;</span><span class="p">,</span> <span class="n">my_list</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">my_dictionary</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;1:&quot;</span><span class="p">,</span> <span class="n">my_list</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">my_dictionary</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;2:&quot;</span><span class="p">,</span> <span class="n">my_list</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">my_dictionary</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
 </pre></div>
 </div>
-<p>You should see that for any given index (0,1 and 2), <em>my_list</em> and <em>my_dictionary</em> return the same value.</p>
+<p>You should see that for any given index (0, 1 and 2), <code class="docutils literal notranslate"><span class="pre">my_list</span></code> and <code class="docutils literal notranslate"><span class="pre">my_dictionary</span></code> return the same value.</p>
 <p>Now run the following example:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">my_list</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;A&#39;</span><span class="p">,</span><span class="s1">&#39;B&#39;</span><span class="p">,</span><span class="s1">&#39;C&#39;</span><span class="p">]</span> <span class="c1"># initialize the list</span>
 <span class="n">my_dictionary</span> <span class="o">=</span> <span class="p">{</span> <span class="mi">0</span> <span class="p">:</span> <span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="c1"># init the dictionary</span>
@@ -502,11 +483,11 @@ Create this by running this command (using copy-paste):</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">mylist</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span>
 </pre></div>
 </div>
-<p>contains the value ‘F’, and as a result “print(my_list[5])” actually prints the letter F to screen.</p>
+<p>contains the value <code class="docutils literal notranslate"><span class="pre">'F'</span></code>, and as a result <code class="docutils literal notranslate"><span class="pre">print(my_list[5])</span></code> actually prints the letter F to screen.</p>
 <p>Hint: you need to initialize the list in such a way that 5 is a valid index for the list.</p>
 <ol class="simple">
 <li><p>Question: what is the minimum length of the list required to accomplish this?</p></li>
-<li><p>Question: Why is not possible to define a list (for instance, <em>my_list</em>) with only 4 items that still produces a value for index 5 (<em>my_list[5]</em>)?</p></li>
+<li><p>Question: Why is not possible to define a list (for instance, <code class="docutils literal notranslate"><span class="pre">my_list</span></code>) with only 4 items that still produces a value for index 5 (<code class="docutils literal notranslate"><span class="pre">my_list[5]</span></code>)?</p></li>
 <li><p>Question: Suppose you have a consecutive list of indices (or integer keys) 0,1,2,3,4,…,100 and corresponding values.
 Which type of variable is more efficient to store and access these keys and values: a list or a dictionary?</p></li>
 <li><p>Question: Suppose you have a sparse and non-consecutive list of 4 integers (for instance 1,2,10000 and 2000000) and associated values (for instance ‘A’,’B’,’C’ and ‘D’). Which type of variable is more efficient to store and access this particular combination of keys and values together: a list or a dictionary? Explain why!</p></li>
@@ -514,9 +495,9 @@ Which type of variable is more efficient to store and access these keys and valu
 </div>
 </div>
 <div class="section" id="exercises-putting-it-all-together">
-<h1><span class="section-number">5.2.2. </span>Exercises: Putting it all together<a class="headerlink" href="#exercises-putting-it-all-together" title="Permalink to this headline">¶</a></h1>
+<h1>Exercises: Putting it all together<a class="headerlink" href="#exercises-putting-it-all-together" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="exercise-5-13">
-<h2><span class="section-number">5.2.2.1. </span>Exercise 5.13<a class="headerlink" href="#exercise-5-13" title="Permalink to this headline">¶</a></h2>
+<h2>Exercise 5.13<a class="headerlink" href="#exercise-5-13" title="Permalink to this headline">¶</a></h2>
 <ol class="simple">
 <li><p>You are now going to write Python code to store a transcription factor regulatory network (Neph et al., Cell 2012) in a dictionary. Create a dictionary variable that contains all the regulatory relationships between the TFs in the Skeletal Muscle network shown below. The keys of the dictionary should be the names of the TFs. The value for each <code class="docutils literal notranslate"><span class="pre">key</span></code> (representing a TF) should be a <code class="docutils literal notranslate"><span class="pre">list</span></code> that contains the <em><strong>target genes</strong></em> of that TF. At the end of your code, print the dictionary.</p></li>
 </ol>
@@ -546,7 +527,7 @@ Which type of variable is more efficient to store and access these keys and valu
 </div>
 </div>
 <div class="section" id="exercise-5-14">
-<h2><span class="section-number">5.2.2.2. </span>Exercise 5.14<a class="headerlink" href="#exercise-5-14" title="Permalink to this headline">¶</a></h2>
+<h2>Exercise 5.14<a class="headerlink" href="#exercise-5-14" title="Permalink to this headline">¶</a></h2>
 <p>The purpose of this exercise is to simulate in a very simplified and not necessarily realistic way the dynamics of a regulatory network.</p>
 <p>Your program should have the following components:</p>
 <ul>
@@ -581,8 +562,6 @@ You will thus need a third <em>nested</em> <code class="docutils literal notrans
     
     <div class='prev-next-bottom'>
         
-    <a class='left-prev' id="prev-link" href="dictionaries.html" title="previous page"><span class="section-number">5. </span>Dictionaries</a>
-    <a class='right-next' id="next-link" href="files.html" title="next page"><span class="section-number">6. </span>Files</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">

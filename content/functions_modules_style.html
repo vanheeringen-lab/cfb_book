@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>9. Functions and modules &#8212; NWI-BM066A Computation for Biologists</title>
+    <title>8. Functions and modules &#8212; NWI-BM066A Computation for Biologists</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
     <link href="../_static/css/index.css" rel="stylesheet">
     <link rel="stylesheet" href="../_static/sphinx-book-theme.css" type="text/css" />
@@ -30,8 +30,8 @@
     <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="10. Introduction to pandas DataFrames" href="pandas.html" />
-    <link rel="prev" title="8. Scripts and debugging" href="scripts_and_debugging.html" />
+    <link rel="next" title="9. Introduction to pandas DataFrames" href="pandas.html" />
+    <link rel="prev" title="7. Scripts and debugging" href="scripts_and_debugging.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="docsearch:language" content="en">
@@ -79,58 +79,21 @@
   <a class="reference internal" href="lists.html">
    2. Lists
   </a>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="lists_exercises.html">
-     2.2.1. Exercises: lists
-    </a>
-   </li>
-  </ul>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="control_flow.html">
    3. Control flow
   </a>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="control_flow_exercises.html">
-     3.1.1. Exercises: control flow
-    </a>
-   </li>
-  </ul>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="loops.html">
    4. Loops
   </a>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="loops_exercises.html">
-     4.1.1.
-     <strong>
-      Exercises
-     </strong>
-     : loops
-    </a>
-   </li>
-  </ul>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="dictionaries.html">
    5. Dictionaries
   </a>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="dictionaries_exercises.html">
-     5.2.1. Exercises: dictionaries
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="dictionaries_exercises.html#exercises-putting-it-all-together">
-     5.2.2. Exercises: Putting it all together
-    </a>
-   </li>
-  </ul>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="files.html">
@@ -138,38 +101,33 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="files.html#exercises-putting-it-all-together">
-   7. Exercises: putting it all together
-  </a>
- </li>
- <li class="toctree-l1">
   <a class="reference internal" href="scripts_and_debugging.html">
-   8. Scripts and debugging
+   7. Scripts and debugging
   </a>
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   9. Functions and modules
+   8. Functions and modules
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="pandas.html">
-   10. Introduction to pandas DataFrames
+   9. Introduction to pandas DataFrames
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="visualization.html">
-   11. Visualization
+   10. Visualization
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="dnase_motifs.html">
+   11. Motifs in DNase I peaks
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="footprints.html">
    12. Creating a DNAseI footprint profile
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="dnase_motifs.html">
-   13. Motifs in DNase I peaks
   </a>
  </li>
 </ul>
@@ -244,32 +202,32 @@
             <ul class="nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#functions">
-   9.1. Functions
+   8.1. Functions
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#function-parameters">
-     9.1.1. Function Parameters
+     8.1.1. Function Parameters
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#local-variables">
-     9.1.2. Local Variables
+     8.1.2. Local Variables
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#default-argument-values">
-     9.1.3. Default Argument Values
+     8.1.3. Default Argument Values
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#keyword-arguments">
-     9.1.4. Keyword Arguments
+     8.1.4. Keyword Arguments
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#the-return-statement">
-     9.1.5. The
+     8.1.5. The
      <code class="docutils literal notranslate">
       <span class="pre">
        return
@@ -282,7 +240,7 @@
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#exercises-functions">
-   9.2.
+   8.2.
    <strong>
     Exercises
    </strong>
@@ -291,7 +249,7 @@
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#exercise-8-1-hamming-distance">
-     9.2.1.
+     8.2.1.
      <strong>
       Exercise 8.1
      </strong>
@@ -300,19 +258,19 @@
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#exercise-8-2-find-exact-motif-matches">
-     9.2.2. Exercise 8.2 Find exact motif matches
+     8.2.2. Exercise 8.2 Find exact motif matches
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#docstrings-documenting-your-functions">
-   9.3. DocStrings - documenting your functions
+   8.3. DocStrings - documenting your functions
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#exercises">
-   9.4.
+   8.4.
    <strong>
     Exercises
    </strong>
@@ -320,7 +278,7 @@
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#exercise-8-3-translation">
-     9.4.1.
+     8.4.1.
      <strong>
       Exercise 8.3
      </strong>
@@ -329,7 +287,7 @@
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#exercise-8-4-fasta-files">
-     9.4.2.
+     8.4.2.
      <strong>
       Exercise 8.4
      </strong>
@@ -338,7 +296,7 @@
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#exercise-8-5-motif-conversion">
-     9.4.3.
+     8.4.3.
      <strong>
       Exercise 8.5
      </strong>
@@ -349,24 +307,24 @@
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#modules">
-   9.5. Modules
+   8.5. Modules
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#the-from-import-statement">
-     9.5.1. The from … import statement
+     8.5.1. The from … import statement
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#multiple-imports">
-     9.5.2. Multiple imports
+     8.5.2. Multiple imports
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id1">
-   9.6.
+   8.6.
    <strong>
     Exercises
    </strong>
@@ -374,7 +332,7 @@
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#exercise-8-6-reading-the-command-line-arguments">
-     9.6.1.
+     8.6.1.
      <strong>
       Exercise 8.6
      </strong>
@@ -383,7 +341,7 @@
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#exercise-8-7-fasta-statistics">
-     9.6.2.
+     8.6.2.
      <strong>
       Exercise 8.7
      </strong>
@@ -394,17 +352,17 @@
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#coding-style">
-   9.7. Coding style
+   8.7. Coding style
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#using-available-modules-argparse">
-   9.8. Using available modules: argparse
+   8.8. Using available modules: argparse
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#exercises-putting-it-all-together">
-   9.9.
+   8.9.
    <strong>
     Exercises
    </strong>
@@ -413,7 +371,7 @@
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#exercise-8-8-motif-scanning">
-     9.9.1.
+     8.9.1.
      <strong>
       Exercise 8.8
      </strong>
@@ -422,12 +380,12 @@
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#test-data">
-       9.9.1.1. Test data
+       8.9.1.1. Test data
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#extension-optional">
-       9.9.1.2. Extension (optional)
+       8.9.1.2. Extension (optional)
       </a>
      </li>
     </ul>
@@ -445,9 +403,9 @@
               <div>
                 
   <div class="section" id="functions-and-modules">
-<h1><span class="section-number">9. </span>Functions and modules<a class="headerlink" href="#functions-and-modules" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">8. </span>Functions and modules<a class="headerlink" href="#functions-and-modules" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="functions">
-<h2><span class="section-number">9.1. </span>Functions<a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">8.1. </span>Functions<a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h2>
 <p>Functions are reusable pieces of programs. They allow you to give a name to a block of statements,
 allowing you to run that block using the specified name anywhere in your program and any number of
 times. This is known as <em>calling</em> the function. We have already used many built-in functions such
@@ -493,7 +451,7 @@ T 17
 <p>Notice that we can call the same function twice which means we do not have to write the same code
 again.</p>
 <div class="section" id="function-parameters">
-<h3><span class="section-number">9.1.1. </span>Function Parameters<a class="headerlink" href="#function-parameters" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">8.1.1. </span>Function Parameters<a class="headerlink" href="#function-parameters" title="Permalink to this headline">¶</a></h3>
 <p>The function <code class="docutils literal notranslate"><span class="pre">print_nuc_count</span></code> as defined above takes no arguments.
 Therefore, there are no parameters declared in the parentheses in the function definition.
 Often, we want to supply some information to the function in the form of arguments,
@@ -551,7 +509,7 @@ In the second case, we call the function with a variable as argument.
 <code class="docutils literal notranslate"><span class="pre">print_nuc_count(dna)</span></code> causes the value of argument <code class="docutils literal notranslate"><span class="pre">dna</span></code> to be assigned to parameter <code class="docutils literal notranslate"><span class="pre">seq</span></code>. The <code class="docutils literal notranslate"><span class="pre">print_nuc_count</span></code> function works the same way in both cases.</p>
 </div>
 <div class="section" id="local-variables">
-<h3><span class="section-number">9.1.2. </span>Local Variables<a class="headerlink" href="#local-variables" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">8.1.2. </span>Local Variables<a class="headerlink" href="#local-variables" title="Permalink to this headline">¶</a></h3>
 <p>When you declare variables inside a function definition, they are not related in any way to other
 variables with the same names used outside the function - i.e. variable names are <em>local</em> to the
 function. This is called the <em>scope</em> of the variable. All variables have the scope of the block
@@ -589,7 +547,7 @@ confirming that it is actually unaffected by the local assignment within the pre
 function.</p>
 </div>
 <div class="section" id="default-argument-values">
-<h3><span class="section-number">9.1.3. </span>Default Argument Values<a class="headerlink" href="#default-argument-values" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">8.1.3. </span>Default Argument Values<a class="headerlink" href="#default-argument-values" title="Permalink to this headline">¶</a></h3>
 <p>For some functions, you may want to make some parameters <em>optional</em> and use default values in case
 the user does not want to provide values for them. This is done with the help of default argument
 values. You can specify default argument values for parameters by appending to the parameter name
@@ -629,7 +587,7 @@ For example, <code class="docutils literal notranslate"><span class="pre">def</s
 </div></blockquote>
 </div>
 <div class="section" id="keyword-arguments">
-<h3><span class="section-number">9.1.4. </span>Keyword Arguments<a class="headerlink" href="#keyword-arguments" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">8.1.4. </span>Keyword Arguments<a class="headerlink" href="#keyword-arguments" title="Permalink to this headline">¶</a></h3>
 <p>If you have some functions with many parameters and you want to specify only some of them, then you
 can give values for such parameters by naming them - this is called <em>keyword arguments</em> - we use
 the name (keyword) instead of the position (which we have been using all along) to specify the
@@ -669,7 +627,7 @@ that we are specifying the value for parameter <code class="docutils literal not
 before <code class="docutils literal notranslate"><span class="pre">c</span></code> in the function definition.</p>
 </div>
 <div class="section" id="the-return-statement">
-<h3><span class="section-number">9.1.5. </span>The <code class="docutils literal notranslate"><span class="pre">return</span></code> statement<a class="headerlink" href="#the-return-statement" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">8.1.5. </span>The <code class="docutils literal notranslate"><span class="pre">return</span></code> statement<a class="headerlink" href="#the-return-statement" title="Permalink to this headline">¶</a></h3>
 <p>The <code class="docutils literal notranslate"><span class="pre">return</span></code> statement is used to <em>return</em> from a function i.e. break out of the function. We can
 optionally <em>return a value</em> from the function as well.</p>
 <div class="cell docutils container">
@@ -723,9 +681,9 @@ functionality, so use this built-in function whenever possible.</p>
 </div>
 </div>
 <div class="section" id="exercises-functions">
-<h2><span class="section-number">9.2. </span><strong>Exercises</strong>: functions<a class="headerlink" href="#exercises-functions" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">8.2. </span><strong>Exercises</strong>: functions<a class="headerlink" href="#exercises-functions" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="exercise-8-1-hamming-distance">
-<h3><span class="section-number">9.2.1. </span><strong>Exercise 8.1</strong> Hamming distance {-}<a class="headerlink" href="#exercise-8-1-hamming-distance" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">8.2.1. </span><strong>Exercise 8.1</strong> Hamming distance {-}<a class="headerlink" href="#exercise-8-1-hamming-distance" title="Permalink to this headline">¶</a></h3>
 <p>Write a function called <code class="docutils literal notranslate"><span class="pre">hamming</span></code> that takes two strings <code class="docutils literal notranslate"><span class="pre">s</span></code> and <code class="docutils literal notranslate"><span class="pre">t</span></code> of equal length as arguments and computes the number of differences between them.
 The function should return the number of of symbols that differ in <code class="docutils literal notranslate"><span class="pre">s</span></code> and <code class="docutils literal notranslate"><span class="pre">t</span></code>.</p>
 <div class="cell docutils container">
@@ -756,7 +714,7 @@ The function should return the number of of symbols that differ in <code class="
 </div>
 </div>
 <div class="section" id="exercise-8-2-find-exact-motif-matches">
-<h3><span class="section-number">9.2.2. </span>Exercise 8.2 Find exact motif matches<a class="headerlink" href="#exercise-8-2-find-exact-motif-matches" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">8.2.2. </span>Exercise 8.2 Find exact motif matches<a class="headerlink" href="#exercise-8-2-find-exact-motif-matches" title="Permalink to this headline">¶</a></h3>
 <p>Given two strings <code class="docutils literal notranslate"><span class="pre">s</span></code> and <code class="docutils literal notranslate"><span class="pre">t</span></code>, <code class="docutils literal notranslate"><span class="pre">t</span></code> is a substring of <code class="docutils literal notranslate"><span class="pre">s</span></code> if <code class="docutils literal notranslate"><span class="pre">t</span></code>
 is contained as a contiguous collection of symbols in <code class="docutils literal notranslate"><span class="pre">s</span></code> (as a result,
 <code class="docutils literal notranslate"><span class="pre">t</span></code> must be no longer than <code class="docutils literal notranslate"><span class="pre">s</span></code>).
@@ -799,7 +757,7 @@ and returns a <code class="docutils literal notranslate"><span class="pre">list<
 </div>
 </div>
 <div class="section" id="docstrings-documenting-your-functions">
-<h2><span class="section-number">9.3. </span>DocStrings - documenting your functions<a class="headerlink" href="#docstrings-documenting-your-functions" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">8.3. </span>DocStrings - documenting your functions<a class="headerlink" href="#docstrings-documenting-your-functions" title="Permalink to this headline">¶</a></h2>
 <p>Python has a nifty feature called <em>documentation strings</em>,
 usually referred to by its shorter name <em>docstrings</em>.
 DocStrings are an important tool that you should make use of since it helps to
@@ -858,7 +816,7 @@ The <code class="docutils literal notranslate"><span class="pre">pydoc</span></c
 <p><strong>From now on, <em>all</em>  your functions should be documented using a docstring!</strong></p>
 </div>
 <div class="section" id="exercises">
-<h2><span class="section-number">9.4. </span><strong>Exercises</strong><a class="headerlink" href="#exercises" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">8.4. </span><strong>Exercises</strong><a class="headerlink" href="#exercises" title="Permalink to this headline">¶</a></h2>
 <p>For all exercises below follow these 5 steps:</p>
 <ol class="simple">
 <li><p>Describe three test cases, including input and expected output, that test normal behavior of your function.</p></li>
@@ -872,7 +830,7 @@ Update the function if needed.</p></li>
 <p>Be sure to document using your code using comments and
 include docstrings for all functions definitions.</p>
 <div class="section" id="exercise-8-3-translation">
-<h3><span class="section-number">9.4.1. </span><strong>Exercise 8.3</strong> Translation {-}<a class="headerlink" href="#exercise-8-3-translation" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">8.4.1. </span><strong>Exercise 8.3</strong> Translation {-}<a class="headerlink" href="#exercise-8-3-translation" title="Permalink to this headline">¶</a></h3>
 <p>Write a function that converts a mRNA sequence (in using the A,C,G,T alphabet) into
 a protein sequence.
 You can use the codon table that was used in exercises 5.10.</p>
@@ -882,7 +840,7 @@ You can use the codon table that was used in exercises 5.10.</p>
 <p>Test the function using other test cases (step 5):</p>
 </div>
 <div class="section" id="exercise-8-4-fasta-files">
-<h3><span class="section-number">9.4.2. </span><strong>Exercise 8.4</strong> FASTA files {-}<a class="headerlink" href="#exercise-8-4-fasta-files" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">8.4.2. </span><strong>Exercise 8.4</strong> FASTA files {-}<a class="headerlink" href="#exercise-8-4-fasta-files" title="Permalink to this headline">¶</a></h3>
 <p>The <a class="reference external" href="https://en.wikipedia.org/wiki/FASTA_format">FASTA format</a> is a widely used text format to represent nucleotide or peptide sequences.
 Write a function that reads a multiple sequence FASTA file.
 The function should take the file name as an argument and return a dictionary
@@ -895,7 +853,7 @@ You can create text files from the jupyter window (<code class="docutils literal
 <p>Test the function using other test cases (step 5):</p>
 </div>
 <div class="section" id="exercise-8-5-motif-conversion">
-<h3><span class="section-number">9.4.3. </span><strong>Exercise 8.5</strong> Motif conversion {-}<a class="headerlink" href="#exercise-8-5-motif-conversion" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">8.4.3. </span><strong>Exercise 8.5</strong> Motif conversion {-}<a class="headerlink" href="#exercise-8-5-motif-conversion" title="Permalink to this headline">¶</a></h3>
 <p>Write a function that converts a consensus sequence into a positional weight matrix.
 The consensus sequence can be composed of symbols from the <a class="reference external" href="http://www.bioinformatics.org/sms2/iupac.html">IUPAC DNA code</a>.
 The positional weight matrix should be a two-dimensional list.
@@ -907,7 +865,7 @@ Every element in the first list is a list containing the relative frequencies of
 </div>
 </div>
 <div class="section" id="modules">
-<h2><span class="section-number">9.5. </span>Modules<a class="headerlink" href="#modules" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">8.5. </span>Modules<a class="headerlink" href="#modules" title="Permalink to this headline">¶</a></h2>
 <p>Python functions can be stored together in a <em>module</em>. A module, a collection of functions with a certain theme, can be <em>imported</em> by another program to make use of its functionality. This is how we can
 use the Python standard library as well. First, we will see how to use the standard library
 modules.</p>
@@ -943,14 +901,14 @@ to use.</p>
 in this case we will have <code class="docutils literal notranslate"><span class="pre">'module_using_sys.py'</span></code> as <code class="docutils literal notranslate"><span class="pre">sys.argv[0]</span></code>, <code class="docutils literal notranslate"><span class="pre">'we'</span></code> as <code class="docutils literal notranslate"><span class="pre">sys.argv[1]</span></code>,
 <code class="docutils literal notranslate"><span class="pre">'are'</span></code> as <code class="docutils literal notranslate"><span class="pre">sys.argv[2]</span></code> and <code class="docutils literal notranslate"><span class="pre">'arguments'</span></code> as <code class="docutils literal notranslate"><span class="pre">sys.argv[3]</span></code>.</p>
 <div class="section" id="the-from-import-statement">
-<h3><span class="section-number">9.5.1. </span>The from … import statement<a class="headerlink" href="#the-from-import-statement" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">8.5.1. </span>The from … import statement<a class="headerlink" href="#the-from-import-statement" title="Permalink to this headline">¶</a></h3>
 <p>If you want to directly import the <code class="docutils literal notranslate"><span class="pre">argv</span></code> variable into your program
 (to avoid typing the <code class="docutils literal notranslate"><span class="pre">sys.</span></code>everytime for it),
 then you can use the <code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">sys</span> <span class="pre">import</span> <span class="pre">argv</span></code> statement.</p>
 <p>In general, the <code class="docutils literal notranslate"><span class="pre">import</span></code> statement is better since your program will avoid name clashes and will be more readable.</p>
 </div>
 <div class="section" id="multiple-imports">
-<h3><span class="section-number">9.5.2. </span>Multiple imports<a class="headerlink" href="#multiple-imports" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">8.5.2. </span>Multiple imports<a class="headerlink" href="#multiple-imports" title="Permalink to this headline">¶</a></h3>
 <p>You can import from many different modules. Imports are <strong>always</strong> put at the top of the file.</p>
 <p>File <code class="docutils literal notranslate"><span class="pre">module_using_imports.py</span></code>:</p>
 <p>Command:</p>
@@ -970,9 +928,9 @@ then you can use the <code class="docutils literal notranslate"><span class="pre
 </div>
 </div>
 <div class="section" id="id1">
-<h2><span class="section-number">9.6. </span><strong>Exercises</strong><a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">8.6. </span><strong>Exercises</strong><a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="exercise-8-6-reading-the-command-line-arguments">
-<h3><span class="section-number">9.6.1. </span><strong>Exercise 8.6</strong> Reading the command line arguments {-}<a class="headerlink" href="#exercise-8-6-reading-the-command-line-arguments" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">8.6.1. </span><strong>Exercise 8.6</strong> Reading the command line arguments {-}<a class="headerlink" href="#exercise-8-6-reading-the-command-line-arguments" title="Permalink to this headline">¶</a></h3>
 <p>Make a script called <code class="docutils literal notranslate"><span class="pre">nuc_arg.py</span></code> that prints the nucleotide content of a sequence that you give as argument on the command line.
 For example, this command:</p>
 <p>should print the following output:</p>
@@ -984,14 +942,14 @@ For example, this command:</p>
 <p>Now you can edit the script <code class="docutils literal notranslate"><span class="pre">nuc_arg.py</span></code>.</p>
 </div>
 <div class="section" id="exercise-8-7-fasta-statistics">
-<h3><span class="section-number">9.6.2. </span><strong>Exercise 8.7</strong> FASTA statistics {-}<a class="headerlink" href="#exercise-8-7-fasta-statistics" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">8.6.2. </span><strong>Exercise 8.7</strong> FASTA statistics {-}<a class="headerlink" href="#exercise-8-7-fasta-statistics" title="Permalink to this headline">¶</a></h3>
 <p>Write a script called <code class="docutils literal notranslate"><span class="pre">nuc_fasta.py</span></code>.
 This script should accept the name of a FASTA file as argument, read the FASTA sequences in that file and print the nucleotide content of all the sequences.
 The script should print the <code class="docutils literal notranslate"><span class="pre">ID</span></code> of every sequence followed by the nucleotide content of that sequence.</p>
 </div>
 </div>
 <div class="section" id="coding-style">
-<h2><span class="section-number">9.7. </span>Coding style<a class="headerlink" href="#coding-style" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">8.7. </span>Coding style<a class="headerlink" href="#coding-style" title="Permalink to this headline">¶</a></h2>
 <p>In general Python programmers follow a set of style guidelines.
 These are described in <a class="reference external" href="https://www.python.org/dev/peps/pep-0008/">PEP 0008</a>.
 We will highlight a selection of the most important ones here.
@@ -1027,7 +985,7 @@ In addition, in the exam you will get points for following this coding style.</p
 </ul>
 </div>
 <div class="section" id="using-available-modules-argparse">
-<h2><span class="section-number">9.8. </span>Using available modules: argparse<a class="headerlink" href="#using-available-modules-argparse" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">8.8. </span>Using available modules: argparse<a class="headerlink" href="#using-available-modules-argparse" title="Permalink to this headline">¶</a></h2>
 <p>The Python standard library,
 which is included with every Python version,
 contains a lot of useful modules (see <a class="reference external" href="https://docs.python.org/3/library/">here</a>)
@@ -1049,9 +1007,9 @@ This is a very useful module for scripts that take (a lot of) command-line argum
 We will use the argparse module in our final assignment for today.</p>
 </div>
 <div class="section" id="exercises-putting-it-all-together">
-<h2><span class="section-number">9.9. </span><strong>Exercises</strong>: putting it all together<a class="headerlink" href="#exercises-putting-it-all-together" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">8.9. </span><strong>Exercises</strong>: putting it all together<a class="headerlink" href="#exercises-putting-it-all-together" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="exercise-8-8-motif-scanning">
-<h3><span class="section-number">9.9.1. </span><strong>Exercise 8.8</strong> motif scanning {-}<a class="headerlink" href="#exercise-8-8-motif-scanning" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">8.9.1. </span><strong>Exercise 8.8</strong> motif scanning {-}<a class="headerlink" href="#exercise-8-8-motif-scanning" title="Permalink to this headline">¶</a></h3>
 <p>Write a command-line Python script that scans a FASTA file with a IUPAC consensus sequence.
 As an optional argument to the script, a use should be able to specify a number of mismatches.
 It should be possible to specify these arguments on the command line, use the <code class="docutils literal notranslate"><span class="pre">argparse</span></code> module.
@@ -1066,7 +1024,7 @@ As output, the script should print, for every match, the ID of the sequence and 
 <p>Start small.
 It is better to have a working script that has limited functionality but works well, then a script that tries to do everything and fails.</p>
 <div class="section" id="test-data">
-<h4><span class="section-number">9.9.1.1. </span>Test data<a class="headerlink" href="#test-data" title="Permalink to this headline">¶</a></h4>
+<h4><span class="section-number">8.9.1.1. </span>Test data<a class="headerlink" href="#test-data" title="Permalink to this headline">¶</a></h4>
 <p>Two examples of consensus sequences and FASTA files (for c-Myc and STAT3 from <a class="reference external" href="http://dx.doi.org/10.1016/j.cell.2008.04.043">Chen et al. 2008</a>) are located in <code class="docutils literal notranslate"><span class="pre">/scratch/cfb/consensus_motif</span></code>.</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">consensus.txt</span></code></p></li>
@@ -1075,7 +1033,7 @@ It is better to have a working script that has limited functionality but works w
 </ul>
 </div>
 <div class="section" id="extension-optional">
-<h4><span class="section-number">9.9.1.2. </span>Extension (optional)<a class="headerlink" href="#extension-optional" title="Permalink to this headline">¶</a></h4>
+<h4><span class="section-number">8.9.1.2. </span>Extension (optional)<a class="headerlink" href="#extension-optional" title="Permalink to this headline">¶</a></h4>
 <p>Implement the ‘Match’ algorithm from <a class="reference external" href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC169193/">Kel et al. 2003</a> to scan for matches to a positional weight matrix.</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">log</span></code> function can be imported from the <code class="docutils literal notranslate"><span class="pre">math</span></code> module. See the definition of this function <a class="reference external" href="https://docs.python.org/3/library/math.html#math.log">here</a>.</p>
 </div>
@@ -1092,8 +1050,8 @@ It is better to have a working script that has limited functionality but works w
     
     <div class='prev-next-bottom'>
         
-    <a class='left-prev' id="prev-link" href="scripts_and_debugging.html" title="previous page"><span class="section-number">8. </span>Scripts and debugging</a>
-    <a class='right-next' id="next-link" href="pandas.html" title="next page"><span class="section-number">10. </span>Introduction to pandas DataFrames</a>
+    <a class='left-prev' id="prev-link" href="scripts_and_debugging.html" title="previous page"><span class="section-number">7. </span>Scripts and debugging</a>
+    <a class='right-next' id="next-link" href="pandas.html" title="next page"><span class="section-number">9. </span>Introduction to pandas DataFrames</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">
