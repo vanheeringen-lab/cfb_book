@@ -91,43 +91,53 @@
   </a>
  </li>
  <li class="toctree-l1">
+  <a class="reference internal" href="functions_modules.html">
+   5. Functions and modules
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="dictionaries.html">
-   5. Dictionaries
+   6. Dictionaries
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="extra_exercises.html">
+   7. Assembling the pieces
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="files.html">
-   6. Files
+   8. Files
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="scripts_and_debugging.html">
-   7. Scripts and debugging
+  <a class="reference internal" href="scripts.html">
+   9. Scripts
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="functions_modules_style.html">
-   8. Functions and modules
+  <a class="reference internal" href="debugging.html">
+   10. Debugging
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="pandas.html">
-   9. Introduction to pandas DataFrames
+   11. Introduction to pandas DataFrames
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="visualization.html">
-   10. Visualization
+   12. Visualization
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="dnase_motifs.html">
-   11. Motifs in DNase I peaks
+   13. Motifs in DNase I peaks
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="footprints.html">
-   12. Creating a DNAseI footprint profile
+   14. Creating a DNAseI footprint profile
   </a>
  </li>
 </ul>
@@ -229,7 +239,7 @@
 <h1><span class="section-number">1. </span>First exercises<a class="headerlink" href="#first-exercises" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="exercises-integer-int-and-string-str-variables">
 <h2><span class="section-number">1.1. </span>Exercises: integer (int) and string (str) variables<a class="headerlink" href="#exercises-integer-int-and-string-str-variables" title="Permalink to this headline">¶</a></h2>
-<p><strong>Exercise 2.1</strong></p>
+<p><strong>Exercise 1.1</strong></p>
 <p>Consider the following code:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">10</span>
 <span class="n">b</span> <span class="o">=</span> <span class="mi">4</span>
@@ -241,12 +251,12 @@
 <li><p>Question: What is the value of <code class="docutils literal notranslate"><span class="pre">c</span></code> that is printed?</p></li>
 <li><p>Modify the value that is assigned to variable <code class="docutils literal notranslate"><span class="pre">b</span></code> in such a way that the value of <code class="docutils literal notranslate"><span class="pre">c</span></code> printed to screen is <code class="docutils literal notranslate"><span class="pre">16</span></code>.</p></li>
 </ol>
-<p><strong>Exercise 2.2</strong></p>
+<p><strong>Exercise 1.2</strong></p>
 <p>Create two variables <code class="docutils literal notranslate"><span class="pre">a</span></code> and <code class="docutils literal notranslate"><span class="pre">b</span></code>, and assign them the values 4 and 20 respectively. Create a new variable <code class="docutils literal notranslate"><span class="pre">c</span></code> that is the sum of these two variables. Your code should produce the following output by printing the value of the variable <code class="docutils literal notranslate"><span class="pre">c</span></code> to the screen:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">+</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">24</span>
 </pre></div>
 </div>
-<p><strong>Exercise 2.3</strong></p>
+<p><strong>Exercise 1.3</strong></p>
 <p>Run the following code:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">10</span>
 <span class="n">b</span> <span class="o">=</span> <span class="mi">4</span>
@@ -270,7 +280,7 @@
 <ol class="simple">
 <li><p>Question: Why does the value of the variable <em>c</em> not change between the first and the second print statement (in line 4 and line 6 respectively)?</p></li>
 </ol>
-<p><strong>Exercise 2.4</strong></p>
+<p><strong>Exercise 1.4</strong></p>
 <p>Run the following code (make sure to write it <em>exactly</em> as shown here):</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="s1">&#39;10&#39;</span>
 <span class="n">b</span> <span class="o">=</span> <span class="s1">&#39;4&#39;</span>
@@ -289,7 +299,7 @@
 <span class="nb">print</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
 </pre></div>
 </div>
-<p><strong>Exercise 2.5</strong></p>
+<p><strong>Exercise 1.5</strong></p>
 <p>Have a look at the following code (do not run it yet):</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">10</span>
 <span class="n">b</span> <span class="o">=</span> <span class="s1">&#39;4&#39;</span>
@@ -339,7 +349,7 @@
 </div>
 </div>
 </div>
-<p>Similarly, you can use <code class="docutils literal notranslate"><span class="pre">upper</span></code> to convert a string to all uppercase. These methods create a <em>new</em> string, they leave the string you use to call the method unchanged.</p>
+<p>Similarly, you can use <code class="docutils literal notranslate"><span class="pre">upper()</span></code> to convert a string to all uppercase. These methods create a <em>new</em> string, they leave the string you use to call the method unchanged.</p>
 <p>Here is a list of useful string methods. For a complete overview you can check the <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#string-methods">Python string documentation</a>.</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">upper()</span></code> - Returns a string in uppercase</p></li>
@@ -353,7 +363,7 @@
 </div>
 <div class="section" id="exercises-strings">
 <h2><span class="section-number">1.3. </span>Exercises: strings<a class="headerlink" href="#exercises-strings" title="Permalink to this headline">¶</a></h2>
-<p><strong>Exercise 2.6</strong></p>
+<p><strong>Exercise 1.6</strong></p>
 <p>You are going to analyze the following sequence in more detail using Python:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">GCTTGACAGGTAGACAGGACCCATAGACAGGATAGACAGGTAGACAGGGATAGACAGGGATAGCCAGATAGACGATAGCGATGATAC</span>
 </pre></div>
@@ -365,7 +375,7 @@ Provide answers + code to the following questions:</p>
 <li><p>What is the 40th base of this sequence?</p></li>
 <li><p>Is there a C in the sequence starting at base position 44 and ending at position 53? (let Python tell you)</p></li>
 </ol>
-<p><strong>Exercise 2.7</strong></p>
+<p><strong>Exercise 1.7</strong></p>
 <p>Given the following input:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">seq1</span> <span class="o">=</span> <span class="s2">&quot;ATG&quot;</span>
 <span class="n">seq2</span> <span class="o">=</span> <span class="s2">&quot;GATTACA&quot;</span>
@@ -376,7 +386,7 @@ Provide answers + code to the following questions:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Total</span> <span class="n">length</span><span class="p">:</span> <span class="mi">11</span>
 </pre></div>
 </div>
-<p><strong>Exercise 2.8</strong></p>
+<p><strong>Exercise 1.8</strong></p>
 <p>An open reading frame is a sequence of DNA that starts with the start codon ATG and ends with a stop codon (TAA, TAG or TGA). Take the following DNA sequence.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">dna</span> <span class="o">=</span> <span class="s2">&quot;TTGCATGTCAATCGATCGGATTGGTTGATTTATCCCGA&quot;</span>
 </pre></div>
@@ -392,12 +402,12 @@ Provide answers + code to the following questions:</p>
 <ol class="simple">
 <li><p>Does the code that you wrote for 1) also work for this sequence? If not, write code that will print the ORF of a DNA sequence (only with the TGA stop codon) that works with either of this sequences.</p></li>
 </ol>
-<p><strong>Exercise 2.9</strong></p>
+<p><strong>Exercise 1.9</strong></p>
 <p>Write code that will print the GC content of a sequence. This is the fraction of a sequence that is either C or G. When you use string <code class="docutils literal notranslate"><span class="pre">dna</span></code> from <strong>2.7</strong> it should print the following:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">GC</span> <span class="n">content</span><span class="p">:</span> <span class="mi">42</span><span class="o">%</span>
 </pre></div>
 </div>
-<p><strong>Exercise 2.10</strong></p>
+<p><strong>Exercise 1.10</strong></p>
 <p>Write code that will print a sequence in lower-case with the ORF (start ATG, stop TGA) in upper-case.</p>
 <p>For instance, the following sequence:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">dna</span> <span class="o">=</span> <span class="s2">&quot;TTGCATGTCAATCGATCGGATTGGTTGATTTATCCCGA&quot;</span>

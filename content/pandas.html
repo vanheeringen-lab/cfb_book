@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>9. Introduction to pandas DataFrames &#8212; NWI-BM066A Computation for Biologists</title>
+    <title>11. Introduction to pandas DataFrames &#8212; NWI-BM066A Computation for Biologists</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
     <link href="../_static/css/index.css" rel="stylesheet">
     <link rel="stylesheet" href="../_static/sphinx-book-theme.css" type="text/css" />
@@ -30,8 +30,8 @@
     <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="10. Visualization" href="visualization.html" />
-    <link rel="prev" title="8. Functions and modules" href="functions_modules_style.html" />
+    <link rel="next" title="12. Visualization" href="visualization.html" />
+    <link rel="prev" title="10. Debugging" href="debugging.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="docsearch:language" content="en">
@@ -91,43 +91,53 @@
   </a>
  </li>
  <li class="toctree-l1">
+  <a class="reference internal" href="functions_modules.html">
+   5. Functions and modules
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="dictionaries.html">
-   5. Dictionaries
+   6. Dictionaries
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="extra_exercises.html">
+   7. Assembling the pieces
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="files.html">
-   6. Files
+   8. Files
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="scripts_and_debugging.html">
-   7. Scripts and debugging
+  <a class="reference internal" href="scripts.html">
+   9. Scripts
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="functions_modules_style.html">
-   8. Functions and modules
+  <a class="reference internal" href="debugging.html">
+   10. Debugging
   </a>
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   9. Introduction to pandas DataFrames
+   11. Introduction to pandas DataFrames
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="visualization.html">
-   10. Visualization
+   12. Visualization
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="dnase_motifs.html">
-   11. Motifs in DNase I peaks
+   13. Motifs in DNase I peaks
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="footprints.html">
-   12. Creating a DNAseI footprint profile
+   14. Creating a DNAseI footprint profile
   </a>
  </li>
 </ul>
@@ -202,17 +212,17 @@
             <ul class="nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#importing-the-pandas-module">
-   9.1. Importing the pandas module
+   11.1. Importing the pandas module
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#creating-a-pandas-dataframe-from-lists">
-   9.2. Creating a pandas DataFrame from lists
+   11.2. Creating a pandas DataFrame from lists
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#creating-a-pandas-dataframe-using-a-dictionary">
-   9.3. Creating a pandas DataFrame using a
+   11.3. Creating a pandas DataFrame using a
    <code class="docutils literal notranslate">
     <span class="pre">
      dictionary
@@ -222,17 +232,17 @@
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#merging-pandas-dataframes">
-   9.4. Merging pandas DataFrames
+   11.4. Merging pandas DataFrames
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#merging-dataframes-on-column-values">
-   9.5. Merging DataFrames on column values
+   11.5. Merging DataFrames on column values
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#merging-dataframes-concat">
-   9.6. Merging DataFrames:
+   11.6. Merging DataFrames:
    <code class="docutils literal notranslate">
     <span class="pre">
      concat
@@ -242,7 +252,7 @@
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#merging-dataframes-merge">
-   9.7. Merging DataFrames:
+   11.7. Merging DataFrames:
    <code class="docutils literal notranslate">
     <span class="pre">
      merge
@@ -252,17 +262,17 @@
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#tab-completion-and-help">
-   9.8. Tab completion and help
+   11.8. Tab completion and help
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#sorting-a-dataframe">
-   9.9. Sorting a DataFrame
+   11.9. Sorting a DataFrame
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#using-to-obtain-dataframe-columns-or-rows">
-   9.10. Using
+   11.10. Using
    <code class="docutils literal notranslate">
     <span class="pre">
      [
@@ -276,7 +286,7 @@
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#removing-missing-values-or-nans">
-   9.11. Removing missing values or
+   11.11. Removing missing values or
    <code class="docutils literal notranslate">
     <span class="pre">
      NaN
@@ -287,7 +297,7 @@
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#basic-calculations">
-   9.12. Basic calculations
+   11.12. Basic calculations
   </a>
  </li>
 </ul>
@@ -301,16 +311,19 @@
               <div>
                 
   <div class="section" id="introduction-to-pandas-dataframes">
-<h1><span class="section-number">9. </span>Introduction to pandas DataFrames<a class="headerlink" href="#introduction-to-pandas-dataframes" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">11. </span>Introduction to pandas DataFrames<a class="headerlink" href="#introduction-to-pandas-dataframes" title="Permalink to this headline">¶</a></h1>
 <p>In this tutorial you are going to use the module <code class="docutils literal notranslate"><span class="pre">pandas</span></code>.
-We will focus on DataFrames, a convenient object type used in pandas.
-This tutorial has no exercises, but serves as an introduction to pandas.
-It will illustrate what you can do with pandas DataFrames.
-If you want more information on pandas, a (quick) tutorial is found here:</p>
+We will focus on DataFrames, a convenient object type used in pandas.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This tutorial has no exercises, but serves as an introduction to pandas.
+It will illustrate what you can do with pandas DataFrames.</p>
+</div>
+<p>If you want more information on pandas, a (quick) tutorial is found here:</p>
 <p><a class="reference external" href="http://pandas.pydata.org/pandas-docs/stable/10min.html">http://pandas.pydata.org/pandas-docs/stable/10min.html</a></p>
 <div class="section" id="importing-the-pandas-module">
-<h2><span class="section-number">9.1. </span>Importing the pandas module<a class="headerlink" href="#importing-the-pandas-module" title="Permalink to this headline">¶</a></h2>
-<p>We start by importing the pandas module, for which we use the following command:</p>
+<h2><span class="section-number">11.1. </span>Importing the pandas module<a class="headerlink" href="#importing-the-pandas-module" title="Permalink to this headline">¶</a></h2>
+<p>We start by importing the <code class="docutils literal notranslate"><span class="pre">pandas</span></code> module, for which we use the following command:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -321,21 +334,14 @@ If you want more information on pandas, a (quick) tutorial is found here:</p>
 <p>Note that we imported the <code class="docutils literal notranslate"><span class="pre">pandas</span></code> module and renamed it to <code class="docutils literal notranslate"><span class="pre">pd</span></code>. This allows us to use all <code class="docutils literal notranslate"><span class="pre">pandas</span></code> functionality using <code class="docutils literal notranslate"><span class="pre">pd</span></code> (instead of <code class="docutils literal notranslate"><span class="pre">pandas</span></code>). This is very common: it saves typing since <code class="docutils literal notranslate"><span class="pre">pd</span></code> is shorter than <code class="docutils literal notranslate"><span class="pre">pandas</span></code>.</p>
 </div>
 <div class="section" id="creating-a-pandas-dataframe-from-lists">
-<h2><span class="section-number">9.2. </span>Creating a pandas DataFrame from lists<a class="headerlink" href="#creating-a-pandas-dataframe-from-lists" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">11.2. </span>Creating a pandas DataFrame from lists<a class="headerlink" href="#creating-a-pandas-dataframe-from-lists" title="Permalink to this headline">¶</a></h2>
 <p>Here we will create a pandas DataFrame containing the following columns:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">chr_exp1</span> <span class="o">=</span> <span class="p">[</span>
-    <span class="s2">&quot;chr1&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;chr11&quot;</span><span class="p">,</span> 
-    <span class="s2">&quot;chr11&quot;</span><span class="p">,</span> 
-    <span class="s2">&quot;chr11&quot;</span><span class="p">,</span> <span class="s2">&quot;chr13&quot;</span><span class="p">,</span> <span class="s2">&quot;chr15&quot;</span><span class="p">,</span> <span class="s2">&quot;chr17&quot;</span><span class="p">,</span> <span class="s2">&quot;chr17&quot;</span><span class="p">,</span> <span class="s2">&quot;chr19&quot;</span><span class="p">,</span> <span class="s2">&quot;chr19&quot;</span><span class="p">,</span> <span class="s2">&quot;chr2&quot;</span><span class="p">,</span> <span class="s2">&quot;chr2&quot;</span><span class="p">,</span> <span class="s2">&quot;chr3&quot;</span><span class="p">,</span> <span class="s2">&quot;chr4&quot;</span><span class="p">,</span> <span class="s2">&quot;chr4&quot;</span><span class="p">,</span> <span class="s2">&quot;chr4&quot;</span><span class="p">,</span> <span class="s2">&quot;chr5&quot;</span><span class="p">,</span> <span class="s2">&quot;chr5&quot;</span><span class="p">,</span> <span class="s2">&quot;chr6&quot;</span><span class="p">,</span> <span class="s2">&quot;chr6&quot;</span><span class="p">]</span>
-
-<span class="n">start_exp1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">43232415</span><span class="p">,</span> <span class="mi">74459412</span><span class="p">,</span> <span class="mi">77774406</span><span class="p">,</span> <span class="mi">131780211</span><span class="p">,</span> <span class="mi">20806034</span><span class="p">,</span> <span class="mi">66795152</span><span class="p">,</span> <span class="mi">7590368</span><span class="p">,</span> <span class="mi">26903451</span><span class="p">,</span> <span class="mi">36705003</span><span class="p">,</span> <span class="mi">53761044</span><span class="p">,</span> <span class="mi">74880854</span><span class="p">,</span> <span class="mi">203102822</span><span class="p">,</span> <span class="mi">14988512</span><span class="p">,</span> <span class="mi">4543357</span><span class="p">,</span> <span class="mi">16077241</span><span class="p">,</span> <span class="mi">20851791</span><span class="p">,</span> <span class="mi">130970429</span><span class="p">,</span> <span class="mi">131563056</span><span class="p">,</span> <span class="mi">111888063</span><span class="p">,</span> <span class="mi">143889976</span><span class="p">]</span>
-
-<span class="n">end_exp1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">43233415</span><span class="p">,</span> <span class="mi">74460412</span><span class="p">,</span> <span class="mi">77775406</span><span class="p">,</span> <span class="mi">131781211</span><span class="p">,</span> <span class="mi">20807034</span><span class="p">,</span> <span class="mi">66796152</span><span class="p">,</span> <span class="mi">7591368</span><span class="p">,</span> <span class="mi">26904451</span><span class="p">,</span> <span class="mi">36706003</span><span class="p">,</span> <span class="mi">53762044</span><span class="p">,</span> <span class="mi">74881854</span><span class="p">,</span> <span class="mi">203103822</span><span class="p">,</span> <span class="mi">14989512</span><span class="p">,</span> <span class="mi">4544357</span><span class="p">,</span> <span class="mi">16078241</span><span class="p">,</span> <span class="mi">20852791</span><span class="p">,</span> <span class="mi">130971429</span><span class="p">,</span> <span class="mi">131564056</span><span class="p">,</span> <span class="mi">111889063</span><span class="p">,</span> <span class="mi">143890976</span><span class="p">]</span>
-
-<span class="n">refseq_exp1</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;NM_024097&quot;</span><span class="p">,</span><span class="s2">&quot;NM_001098638&quot;</span><span class="p">,</span><span class="s2">&quot;NM_003251&quot;</span><span class="p">,</span><span class="s2">&quot;NM_016522&quot;</span><span class="p">,</span><span class="s2">&quot;NM_001110221&quot;</span><span class="p">,</span><span class="s2">&quot;NR_002441&quot;</span><span class="p">,</span><span class="s2">&quot;NM_001126112&quot;</span><span class="p">,</span><span class="s2">&quot;NM_005165&quot;</span><span class="p">,</span><span class="s2">&quot;NM_007145&quot;</span><span class="p">,</span><span class="s2">&quot;NM_173856&quot;</span><span class="p">,</span><span class="s2">&quot;NM_004263&quot;</span><span class="p">,</span><span class="s2">&quot;NM_003352&quot;</span><span class="p">,</span><span class="s2">&quot;NR_046253&quot;</span><span class="p">,</span><span class="s2">&quot;NR_037888&quot;</span><span class="p">,</span><span class="s2">&quot;NM_006017&quot;</span><span class="p">,</span><span class="s2">&quot;NM_147181&quot;</span><span class="p">,</span><span class="s2">&quot;NM_001164386&quot;</span><span class="p">,</span><span class="s2">&quot;NM_001142599&quot;</span><span class="p">,</span><span class="s2">&quot;NM_001164283&quot;</span><span class="p">,</span><span class="s2">&quot;NR_027113&quot;</span><span class="p">]</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">chrom</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;chr6&#39;</span><span class="p">,</span> <span class="s1">&#39;chr11&#39;</span><span class="p">,</span> <span class="s1">&#39;chr3&#39;</span><span class="p">,</span> <span class="s1">&#39;chr2&#39;</span><span class="p">,</span> <span class="s1">&#39;chr17&#39;</span><span class="p">,</span> <span class="s1">&#39;chr17&#39;</span><span class="p">]</span>
+<span class="n">start</span> <span class="o">=</span> <span class="p">[</span><span class="mi">143889976</span><span class="p">,</span> <span class="mi">77774406</span><span class="p">,</span> <span class="mi">14988512</span><span class="p">,</span> <span class="mi">203102822</span><span class="p">,</span> <span class="mi">7590368</span><span class="p">,</span> <span class="mi">26903451</span><span class="p">]</span>
+<span class="n">end</span> <span class="o">=</span> <span class="p">[</span><span class="mi">143890976</span><span class="p">,</span> <span class="mi">77775406</span><span class="p">,</span> <span class="mi">14989512</span><span class="p">,</span> <span class="mi">203103822</span><span class="p">,</span> <span class="mi">7591368</span><span class="p">,</span> <span class="mi">26904451</span><span class="p">]</span>
+<span class="n">refseq</span> <span class="o">=</span><span class="p">[</span><span class="s1">&#39;NR_027113&#39;</span><span class="p">,</span> <span class="s1">&#39;NM_003251&#39;</span><span class="p">,</span> <span class="s1">&#39;NR_046253&#39;</span><span class="p">,</span> <span class="s1">&#39;NM_003352&#39;</span><span class="p">,</span> <span class="s1">&#39;NM_001126112&#39;</span><span class="p">,</span> <span class="s1">&#39;NM_005165&#39;</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -343,52 +349,38 @@ If you want more information on pandas, a (quick) tutorial is found here:</p>
 <p>In this case we create an empty DataFrame first, and we fill it up with the individual columns.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">df_peaks_exp1</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">df_peaks</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span>
 
-<span class="n">df_peaks_exp1</span><span class="p">[</span><span class="s1">&#39;chr&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">chr_exp1</span>
-<span class="n">df_peaks_exp1</span><span class="p">[</span><span class="s1">&#39;start&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">start_exp1</span>
-<span class="n">df_peaks_exp1</span><span class="p">[</span><span class="s1">&#39;end&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">end_exp1</span>
-<span class="n">df_peaks_exp1</span><span class="p">[</span><span class="s1">&#39;refseq&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">refseq_exp1</span>
+<span class="n">df_peaks</span><span class="p">[</span><span class="s1">&#39;chrom&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">chrom</span>
+<span class="n">df_peaks</span><span class="p">[</span><span class="s1">&#39;start&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">start</span>
+<span class="n">df_peaks</span><span class="p">[</span><span class="s1">&#39;end&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">end</span>
+<span class="n">df_peaks</span><span class="p">[</span><span class="s1">&#39;nearest_gene&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">refseq</span>
 </pre></div>
 </div>
 </div>
 </div>
-<p>You can check what your DataFrame looks like using  <code class="docutils literal notranslate"><span class="pre">print()</span></code>, or simply type <code class="docutils literal notranslate"><span class="pre">df_peaks_exp1</span></code>. The latter only works in a Jupyter notebook, but the advantage is that you get a nicely formatted table!</p>
+<p>You can check what your DataFrame looks like using  <code class="docutils literal notranslate"><span class="pre">print()</span></code>, or simply type <code class="docutils literal notranslate"><span class="pre">df_peaks</span></code>. The latter only works in a Jupyter notebook, but the advantage is that you get a nicely formatted table!</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">df_peaks_exp1</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">df_peaks</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>      chr      start        end        refseq
-0    chr1   43232415   43233415     NM_024097
-1   chr11   74459412   74460412  NM_001098638
-2   chr11   77774406   77775406     NM_003251
-3   chr11  131780211  131781211     NM_016522
-4   chr13   20806034   20807034  NM_001110221
-5   chr15   66795152   66796152     NR_002441
-6   chr17    7590368    7591368  NM_001126112
-7   chr17   26903451   26904451     NM_005165
-8   chr19   36705003   36706003     NM_007145
-9   chr19   53761044   53762044     NM_173856
-10   chr2   74880854   74881854     NM_004263
-11   chr2  203102822  203103822     NM_003352
-12   chr3   14988512   14989512     NR_046253
-13   chr4    4543357    4544357     NR_037888
-14   chr4   16077241   16078241     NM_006017
-15   chr4   20851791   20852791     NM_147181
-16   chr5  130970429  130971429  NM_001164386
-17   chr5  131563056  131564056  NM_001142599
-18   chr6  111888063  111889063  NM_001164283
-19   chr6  143889976  143890976     NR_027113
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>   chrom      start        end  nearest_gene
+0   chr6  143889976  143890976     NR_027113
+1  chr11   77774406   77775406     NM_003251
+2   chr3   14988512   14989512     NR_046253
+3   chr2  203102822  203103822     NM_003352
+4  chr17    7590368    7591368  NM_001126112
+5  chr17   26903451   26904451     NM_005165
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">df_peaks_exp1</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">df_peaks</span>
 </pre></div>
 </div>
 </div>
@@ -411,152 +403,54 @@ If you want more information on pandas, a (quick) tutorial is found here:</p>
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>chr</th>
+      <th>chrom</th>
       <th>start</th>
       <th>end</th>
-      <th>refseq</th>
+      <th>nearest_gene</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <th>0</th>
-      <td>chr1</td>
-      <td>43232415</td>
-      <td>43233415</td>
-      <td>NM_024097</td>
+      <td>chr6</td>
+      <td>143889976</td>
+      <td>143890976</td>
+      <td>NR_027113</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>chr11</td>
-      <td>74459412</td>
-      <td>74460412</td>
-      <td>NM_001098638</td>
-    </tr>
-    <tr>
-      <th>2</th>
       <td>chr11</td>
       <td>77774406</td>
       <td>77775406</td>
       <td>NM_003251</td>
     </tr>
     <tr>
-      <th>3</th>
-      <td>chr11</td>
-      <td>131780211</td>
-      <td>131781211</td>
-      <td>NM_016522</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>chr13</td>
-      <td>20806034</td>
-      <td>20807034</td>
-      <td>NM_001110221</td>
-    </tr>
-    <tr>
-      <th>5</th>
-      <td>chr15</td>
-      <td>66795152</td>
-      <td>66796152</td>
-      <td>NR_002441</td>
-    </tr>
-    <tr>
-      <th>6</th>
-      <td>chr17</td>
-      <td>7590368</td>
-      <td>7591368</td>
-      <td>NM_001126112</td>
-    </tr>
-    <tr>
-      <th>7</th>
-      <td>chr17</td>
-      <td>26903451</td>
-      <td>26904451</td>
-      <td>NM_005165</td>
-    </tr>
-    <tr>
-      <th>8</th>
-      <td>chr19</td>
-      <td>36705003</td>
-      <td>36706003</td>
-      <td>NM_007145</td>
-    </tr>
-    <tr>
-      <th>9</th>
-      <td>chr19</td>
-      <td>53761044</td>
-      <td>53762044</td>
-      <td>NM_173856</td>
-    </tr>
-    <tr>
-      <th>10</th>
-      <td>chr2</td>
-      <td>74880854</td>
-      <td>74881854</td>
-      <td>NM_004263</td>
-    </tr>
-    <tr>
-      <th>11</th>
-      <td>chr2</td>
-      <td>203102822</td>
-      <td>203103822</td>
-      <td>NM_003352</td>
-    </tr>
-    <tr>
-      <th>12</th>
+      <th>2</th>
       <td>chr3</td>
       <td>14988512</td>
       <td>14989512</td>
       <td>NR_046253</td>
     </tr>
     <tr>
-      <th>13</th>
-      <td>chr4</td>
-      <td>4543357</td>
-      <td>4544357</td>
-      <td>NR_037888</td>
+      <th>3</th>
+      <td>chr2</td>
+      <td>203102822</td>
+      <td>203103822</td>
+      <td>NM_003352</td>
     </tr>
     <tr>
-      <th>14</th>
-      <td>chr4</td>
-      <td>16077241</td>
-      <td>16078241</td>
-      <td>NM_006017</td>
+      <th>4</th>
+      <td>chr17</td>
+      <td>7590368</td>
+      <td>7591368</td>
+      <td>NM_001126112</td>
     </tr>
     <tr>
-      <th>15</th>
-      <td>chr4</td>
-      <td>20851791</td>
-      <td>20852791</td>
-      <td>NM_147181</td>
-    </tr>
-    <tr>
-      <th>16</th>
-      <td>chr5</td>
-      <td>130970429</td>
-      <td>130971429</td>
-      <td>NM_001164386</td>
-    </tr>
-    <tr>
-      <th>17</th>
-      <td>chr5</td>
-      <td>131563056</td>
-      <td>131564056</td>
-      <td>NM_001142599</td>
-    </tr>
-    <tr>
-      <th>18</th>
-      <td>chr6</td>
-      <td>111888063</td>
-      <td>111889063</td>
-      <td>NM_001164283</td>
-    </tr>
-    <tr>
-      <th>19</th>
-      <td>chr6</td>
-      <td>143889976</td>
-      <td>143890976</td>
-      <td>NR_027113</td>
+      <th>5</th>
+      <td>chr17</td>
+      <td>26903451</td>
+      <td>26904451</td>
+      <td>NM_005165</td>
     </tr>
   </tbody>
 </table>
@@ -565,25 +459,25 @@ If you want more information on pandas, a (quick) tutorial is found here:</p>
 <p>We make a second DataFrame, which corresponds to a second experiment (‘exp2’)</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">chr_exp2</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;chr6_dbb_hap3&quot;</span><span class="p">,</span> <span class="s2">&quot;chr6_mann_hap4&quot;</span><span class="p">,</span> <span class="s2">&quot;chr6_qbl_hap6&quot;</span><span class="p">,</span> <span class="s2">&quot;chr6_qbl_hap6&quot;</span><span class="p">,</span> <span class="s2">&quot;chr6_ssto_hap7&quot;</span><span class="p">,</span> <span class="s2">&quot;chr7&quot;</span><span class="p">,</span> <span class="s2">&quot;chr9&quot;</span><span class="p">,</span> <span class="s2">&quot;chrX&quot;</span><span class="p">,</span> <span class="s2">&quot;chrX&quot;</span><span class="p">,</span> <span class="s2">&quot;chrX&quot;</span><span class="p">]</span>
-<span class="n">start_exp2</span> <span class="o">=</span> <span class="p">[</span><span class="mi">4324541</span><span class="p">,</span> <span class="mi">1932656</span><span class="p">,</span> <span class="mi">3218006</span><span class="p">,</span> <span class="mi">4038208</span><span class="p">,</span> <span class="mi">3038042</span><span class="p">,</span> <span class="mi">98029927</span><span class="p">,</span> <span class="mi">90497271</span><span class="p">,</span> <span class="mi">71496641</span><span class="p">,</span> <span class="mi">73506544</span><span class="p">,</span> <span class="mi">152162171</span><span class="p">]</span>
-<span class="n">end_exp2</span> <span class="o">=</span> <span class="p">[</span><span class="mi">4325541</span><span class="p">,</span> <span class="mi">1933656</span><span class="p">,</span> <span class="mi">3219006</span><span class="p">,</span> <span class="mi">4039208</span><span class="p">,</span> <span class="mi">3039042</span><span class="p">,</span> <span class="mi">98030927</span><span class="p">,</span> <span class="mi">90498271</span><span class="p">,</span> <span class="mi">71497641</span><span class="p">,</span> <span class="mi">73507544</span><span class="p">,</span> <span class="mi">152163171</span><span class="p">]</span>
-<span class="n">refseq_exp2</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;NM_002121&quot;</span><span class="p">,</span><span class="s2">&quot;NR_072994&quot;</span><span class="p">,</span><span class="s2">&quot;NR_031601&quot;</span><span class="p">,</span><span class="s2">&quot;NM_001290043&quot;</span><span class="p">,</span><span class="s2">&quot;NM_002441&quot;</span><span class="p">,</span><span class="s2">&quot;NM_018842&quot;</span><span class="p">,</span><span class="s2">&quot;NM_178828&quot;</span><span class="p">,</span><span class="s2">&quot;NM_001007&quot;</span><span class="p">,</span><span class="s2">&quot;NR_030258&quot;</span><span class="p">,</span><span class="s2">&quot;NM_001184924&quot;</span><span class="p">]</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">chr_exp2</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;chr6_dbb_hap3&quot;</span><span class="p">,</span> <span class="s2">&quot;chr7&quot;</span><span class="p">,</span> <span class="s2">&quot;chr9&quot;</span><span class="p">,</span> <span class="s2">&quot;chrX&quot;</span><span class="p">,</span> <span class="s2">&quot;chrX&quot;</span><span class="p">,</span> <span class="s2">&quot;chrX&quot;</span><span class="p">]</span>
+<span class="n">start_exp2</span> <span class="o">=</span> <span class="p">[</span><span class="mi">4324541</span><span class="p">,</span> <span class="mi">98029927</span><span class="p">,</span> <span class="mi">90497271</span><span class="p">,</span> <span class="mi">71496641</span><span class="p">,</span> <span class="mi">73506544</span><span class="p">,</span> <span class="mi">152162171</span><span class="p">]</span>
+<span class="n">end_exp2</span> <span class="o">=</span> <span class="p">[</span><span class="mi">4325541</span><span class="p">,</span> <span class="mi">98030927</span><span class="p">,</span> <span class="mi">90498271</span><span class="p">,</span> <span class="mi">71497641</span><span class="p">,</span> <span class="mi">73507544</span><span class="p">,</span> <span class="mi">152163171</span><span class="p">]</span>
+<span class="n">refseq_exp2</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;NM_002121&quot;</span><span class="p">,</span> <span class="s2">&quot;NM_018842&quot;</span><span class="p">,</span> <span class="s2">&quot;NM_178828&quot;</span><span class="p">,</span> <span class="s2">&quot;NM_001007&quot;</span><span class="p">,</span> <span class="s2">&quot;NR_030258&quot;</span><span class="p">,</span> <span class="s2">&quot;NM_001184924&quot;</span><span class="p">]</span>
 
 <span class="n">df_peaks_exp2</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span>
-<span class="n">df_peaks_exp2</span><span class="p">[</span><span class="s1">&#39;chr&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">chr_exp2</span>
+<span class="n">df_peaks_exp2</span><span class="p">[</span><span class="s1">&#39;chrom&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">chr_exp2</span>
 <span class="n">df_peaks_exp2</span><span class="p">[</span><span class="s1">&#39;start&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">start_exp2</span>
 <span class="n">df_peaks_exp2</span><span class="p">[</span><span class="s1">&#39;end&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">end_exp2</span>
-<span class="n">df_peaks_exp2</span><span class="p">[</span><span class="s1">&#39;refseq&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">refseq_exp2</span>
+<span class="n">df_peaks_exp2</span><span class="p">[</span><span class="s1">&#39;nearest_gene&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">refseq_exp2</span>
 </pre></div>
 </div>
 </div>
 </div>
 <p>Look at both DataFrames. The <code class="docutils literal notranslate"><span class="pre">head()</span></code> function shows the first five rows of a DataFrame.</p>
-<p>They have the same column layout (<code class="docutils literal notranslate"><span class="pre">chr</span></code>, <code class="docutils literal notranslate"><span class="pre">start</span></code>, <code class="docutils literal notranslate"><span class="pre">end</span></code>, <code class="docutils literal notranslate"><span class="pre">refseq</span></code>).</p>
+<p>They have the same column layout (<code class="docutils literal notranslate"><span class="pre">chrom</span></code>, <code class="docutils literal notranslate"><span class="pre">start</span></code>, <code class="docutils literal notranslate"><span class="pre">end</span></code>, <code class="docutils literal notranslate"><span class="pre">refseq</span></code>).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">df_peaks_exp1</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">df_peaks</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -606,47 +500,47 @@ If you want more information on pandas, a (quick) tutorial is found here:</p>
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>chr</th>
+      <th>chrom</th>
       <th>start</th>
       <th>end</th>
-      <th>refseq</th>
+      <th>nearest_gene</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <th>0</th>
-      <td>chr1</td>
-      <td>43232415</td>
-      <td>43233415</td>
-      <td>NM_024097</td>
+      <td>chr6</td>
+      <td>143889976</td>
+      <td>143890976</td>
+      <td>NR_027113</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>chr11</td>
-      <td>74459412</td>
-      <td>74460412</td>
-      <td>NM_001098638</td>
-    </tr>
-    <tr>
-      <th>2</th>
       <td>chr11</td>
       <td>77774406</td>
       <td>77775406</td>
       <td>NM_003251</td>
     </tr>
     <tr>
+      <th>2</th>
+      <td>chr3</td>
+      <td>14988512</td>
+      <td>14989512</td>
+      <td>NR_046253</td>
+    </tr>
+    <tr>
       <th>3</th>
-      <td>chr11</td>
-      <td>131780211</td>
-      <td>131781211</td>
-      <td>NM_016522</td>
+      <td>chr2</td>
+      <td>203102822</td>
+      <td>203103822</td>
+      <td>NM_003352</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>chr13</td>
-      <td>20806034</td>
-      <td>20807034</td>
-      <td>NM_001110221</td>
+      <td>chr17</td>
+      <td>7590368</td>
+      <td>7591368</td>
+      <td>NM_001126112</td>
     </tr>
   </tbody>
 </table>
@@ -677,10 +571,10 @@ If you want more information on pandas, a (quick) tutorial is found here:</p>
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>chr</th>
+      <th>chrom</th>
       <th>start</th>
       <th>end</th>
-      <th>refseq</th>
+      <th>nearest_gene</th>
     </tr>
   </thead>
   <tbody>
@@ -693,31 +587,31 @@ If you want more information on pandas, a (quick) tutorial is found here:</p>
     </tr>
     <tr>
       <th>1</th>
-      <td>chr6_mann_hap4</td>
-      <td>1932656</td>
-      <td>1933656</td>
-      <td>NR_072994</td>
+      <td>chr7</td>
+      <td>98029927</td>
+      <td>98030927</td>
+      <td>NM_018842</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>chr6_qbl_hap6</td>
-      <td>3218006</td>
-      <td>3219006</td>
-      <td>NR_031601</td>
+      <td>chr9</td>
+      <td>90497271</td>
+      <td>90498271</td>
+      <td>NM_178828</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>chr6_qbl_hap6</td>
-      <td>4038208</td>
-      <td>4039208</td>
-      <td>NM_001290043</td>
+      <td>chrX</td>
+      <td>71496641</td>
+      <td>71497641</td>
+      <td>NM_001007</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>chr6_ssto_hap7</td>
-      <td>3038042</td>
-      <td>3039042</td>
-      <td>NM_002441</td>
+      <td>chrX</td>
+      <td>73506544</td>
+      <td>73507544</td>
+      <td>NR_030258</td>
     </tr>
   </tbody>
 </table>
@@ -727,7 +621,7 @@ If you want more information on pandas, a (quick) tutorial is found here:</p>
 <p>For both DataFrames we can add an additional column indicating from which experiment the data comes (‘exp1’ or ‘exp2’)</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">df_peaks_exp1</span><span class="p">[</span><span class="s1">&#39;exp&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;exp1&#39;</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">df_peaks</span><span class="p">[</span><span class="s1">&#39;exp&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;exp1&#39;</span>
 <span class="n">df_peaks_exp2</span><span class="p">[</span><span class="s1">&#39;exp&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;exp2&#39;</span>
 </pre></div>
 </div>
@@ -740,15 +634,26 @@ If you want more information on pandas, a (quick) tutorial is found here:</p>
 </ul>
 </div>
 <div class="section" id="creating-a-pandas-dataframe-using-a-dictionary">
-<h2><span class="section-number">9.3. </span>Creating a pandas DataFrame using a <code class="docutils literal notranslate"><span class="pre">dictionary</span></code><a class="headerlink" href="#creating-a-pandas-dataframe-using-a-dictionary" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">11.3. </span>Creating a pandas DataFrame using a <code class="docutils literal notranslate"><span class="pre">dictionary</span></code><a class="headerlink" href="#creating-a-pandas-dataframe-using-a-dictionary" title="Permalink to this headline">¶</a></h2>
 <p>We can also create a pandas DataFrame from a dictionary. The dictionary should contain <em>column names as keys</em> and <em>lists as values</em> for the columns. To show this in action, we will use the three following lists:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">refseq</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;NM_001007&quot;</span><span class="p">,</span><span class="s2">&quot;NM_001098638&quot;</span><span class="p">,</span><span class="s2">&quot;NM_001110221&quot;</span><span class="p">,</span><span class="s2">&quot;NM_001126112&quot;</span><span class="p">,</span><span class="s2">&quot;NM_001142599&quot;</span><span class="p">,</span><span class="s2">&quot;NM_001164283&quot;</span><span class="p">,</span><span class="s2">&quot;NM_001164386&quot;</span><span class="p">,</span><span class="s2">&quot;NM_001184924&quot;</span><span class="p">,</span><span class="s2">&quot;NM_001290043&quot;</span><span class="p">,</span><span class="s2">&quot;NM_002121&quot;</span><span class="p">,</span><span class="s2">&quot;NM_002441&quot;</span><span class="p">,</span><span class="s2">&quot;NM_003251&quot;</span><span class="p">,</span><span class="s2">&quot;NM_003352&quot;</span><span class="p">,</span><span class="s2">&quot;NM_004263&quot;</span><span class="p">,</span><span class="s2">&quot;NM_005165&quot;</span><span class="p">,</span><span class="s2">&quot;NM_006017&quot;</span><span class="p">,</span><span class="s2">&quot;NM_007145&quot;</span><span class="p">,</span><span class="s2">&quot;NM_016522&quot;</span><span class="p">,</span><span class="s2">&quot;NM_018842&quot;</span><span class="p">,</span><span class="s2">&quot;NM_024097&quot;</span><span class="p">,</span><span class="s2">&quot;NM_147181&quot;</span><span class="p">,</span><span class="s2">&quot;NM_173856&quot;</span><span class="p">,</span><span class="s2">&quot;NM_178828&quot;</span><span class="p">]</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">refseq</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;NM_001007&quot;</span><span class="p">,</span> <span class="s2">&quot;NM_001098638&quot;</span><span class="p">,</span> <span class="s2">&quot;NM_001110221&quot;</span><span class="p">,</span> <span class="s2">&quot;NM_001126112&quot;</span><span class="p">,</span> <span class="s2">&quot;NM_001142599&quot;</span><span class="p">,</span> 
+          <span class="s2">&quot;NM_001164283&quot;</span><span class="p">,</span> <span class="s2">&quot;NM_001164386&quot;</span><span class="p">,</span> <span class="s2">&quot;NM_001184924&quot;</span><span class="p">,</span> <span class="s2">&quot;NM_001290043&quot;</span><span class="p">,</span><span class="s2">&quot;NM_002121&quot;</span><span class="p">,</span>
+          <span class="s2">&quot;NM_002441&quot;</span><span class="p">,</span> <span class="s2">&quot;NM_003251&quot;</span><span class="p">,</span> <span class="s2">&quot;NM_003352&quot;</span><span class="p">,</span> <span class="s2">&quot;NM_004263&quot;</span><span class="p">,</span> <span class="s2">&quot;NM_005165&quot;</span><span class="p">,</span> <span class="s2">&quot;NM_006017&quot;</span><span class="p">,</span>
+          <span class="s2">&quot;NM_007145&quot;</span><span class="p">,</span> <span class="s2">&quot;NM_016522&quot;</span><span class="p">,</span> <span class="s2">&quot;NM_018842&quot;</span><span class="p">,</span> <span class="s2">&quot;NM_024097&quot;</span><span class="p">,</span> <span class="s2">&quot;NM_147181&quot;</span><span class="p">,</span> <span class="s2">&quot;NM_173856&quot;</span><span class="p">,</span>
+          <span class="s2">&quot;NM_178828&quot;</span><span class="p">]</span>
 
-<span class="n">ensembl</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;ENSG00000198034&quot;</span><span class="p">,</span><span class="s2">&quot;ENSG00000166439&quot;</span><span class="p">,</span><span class="s2">&quot;ENSG00000121742&quot;</span><span class="p">,</span><span class="s2">&quot;ENSG00000141510&quot;</span><span class="p">,</span><span class="s2">&quot;ENSG00000072682&quot;</span><span class="p">,</span><span class="s2">&quot;ENSG00000056972&quot;</span><span class="p">,</span><span class="s2">&quot;ENSG00000158987&quot;</span><span class="p">,</span><span class="s2">&quot;ENSG00000198883&quot;</span><span class="p">,</span><span class="s2">&quot;ENSG00000225967&quot;</span><span class="p">,</span><span class="s2">&quot;ENSG00000237710&quot;</span><span class="p">,</span><span class="s2">&quot;ENSG00000235569&quot;</span><span class="p">,</span><span class="s2">&quot;ENSG00000151365&quot;</span><span class="p">,</span><span class="s2">&quot;ENSG00000116030&quot;</span><span class="p">,</span><span class="s2">&quot;ENSG00000135622&quot;</span><span class="p">,</span><span class="s2">&quot;ENSG00000109107&quot;</span><span class="p">,</span><span class="s2">&quot;ENSG00000007062&quot;</span><span class="p">,</span><span class="s2">&quot;ENSG00000167635&quot;</span><span class="p">,</span><span class="s2">&quot;ENSG00000182667&quot;</span><span class="p">,</span><span class="s2">&quot;ENSG00000006453&quot;</span><span class="p">,</span><span class="s2">&quot;ENSG00000164008&quot;</span><span class="p">,</span><span class="s2">&quot;ENSG00000185774&quot;</span><span class="p">,</span><span class="s2">&quot;ENSG00000196131&quot;</span><span class="p">,</span><span class="s2">&quot;ENSG00000177992&quot;</span><span class="p">]</span>
+<span class="n">ensembl</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;ENSG00000198034&quot;</span><span class="p">,</span> <span class="s2">&quot;ENSG00000166439&quot;</span><span class="p">,</span> <span class="s2">&quot;ENSG00000121742&quot;</span><span class="p">,</span> <span class="s2">&quot;ENSG00000141510&quot;</span><span class="p">,</span>
+           <span class="s2">&quot;ENSG00000072682&quot;</span><span class="p">,</span> <span class="s2">&quot;ENSG00000056972&quot;</span><span class="p">,</span> <span class="s2">&quot;ENSG00000158987&quot;</span><span class="p">,</span> <span class="s2">&quot;ENSG00000198883&quot;</span><span class="p">,</span>
+           <span class="s2">&quot;ENSG00000225967&quot;</span><span class="p">,</span> <span class="s2">&quot;ENSG00000237710&quot;</span><span class="p">,</span> <span class="s2">&quot;ENSG00000235569&quot;</span><span class="p">,</span> <span class="s2">&quot;ENSG00000151365&quot;</span><span class="p">,</span>
+           <span class="s2">&quot;ENSG00000116030&quot;</span><span class="p">,</span> <span class="s2">&quot;ENSG00000135622&quot;</span><span class="p">,</span> <span class="s2">&quot;ENSG00000109107&quot;</span><span class="p">,</span> <span class="s2">&quot;ENSG00000007062&quot;</span><span class="p">,</span>
+           <span class="s2">&quot;ENSG00000167635&quot;</span><span class="p">,</span> <span class="s2">&quot;ENSG00000182667&quot;</span><span class="p">,</span> <span class="s2">&quot;ENSG00000006453&quot;</span><span class="p">,</span> <span class="s2">&quot;ENSG00000164008&quot;</span><span class="p">,</span>
+           <span class="s2">&quot;ENSG00000185774&quot;</span><span class="p">,</span> <span class="s2">&quot;ENSG00000196131&quot;</span><span class="p">,</span> <span class="s2">&quot;ENSG00000177992&quot;</span><span class="p">]</span>
 
-<span class="n">genename</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;RPS4X&quot;</span><span class="p">,</span><span class="s2">&quot;RNF169&quot;</span><span class="p">,</span><span class="s2">&quot;GJB6&quot;</span><span class="p">,</span><span class="s2">&quot;TP53&quot;</span><span class="p">,</span><span class="s2">&quot;P4HA2&quot;</span><span class="p">,</span><span class="s2">&quot;TRAF3IP2&quot;</span><span class="p">,</span><span class="s2">&quot;RAPGEF6&quot;</span><span class="p">,</span><span class="s2">&quot;PNMA5&quot;</span><span class="p">,</span><span class="s2">&quot;TAP2&quot;</span><span class="p">,</span><span class="s2">&quot;HLA-DPB1&quot;</span><span class="p">,</span><span class="s2">&quot;MSH5&quot;</span><span class="p">,</span><span class="s2">&quot;THRSP&quot;</span><span class="p">,</span><span class="s2">&quot;SUMO1&quot;</span><span class="p">,</span><span class="s2">&quot;SEMA4F&quot;</span><span class="p">,</span><span class="s2">&quot;ALDOC&quot;</span><span class="p">,</span><span class="s2">&quot;PROM1&quot;</span><span class="p">,</span><span class="s2">&quot;ZNF146&quot;</span><span class="p">,</span><span class="s2">&quot;NTM&quot;</span><span class="p">,</span><span class="s2">&quot;BAIAP2L1&quot;</span><span class="p">,</span><span class="s2">&quot;C1orf50&quot;</span><span class="p">,</span><span class="s2">&quot;KCNIP4&quot;</span><span class="p">,</span><span class="s2">&quot;VN1R2&quot;</span><span class="p">,</span><span class="s2">&quot;SPATA31E1&quot;</span><span class="p">]</span>
+<span class="n">genename</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;RPS4X&quot;</span><span class="p">,</span> <span class="s2">&quot;RNF169&quot;</span><span class="p">,</span> <span class="s2">&quot;GJB6&quot;</span><span class="p">,</span> <span class="s2">&quot;TP53&quot;</span><span class="p">,</span> <span class="s2">&quot;P4HA2&quot;</span><span class="p">,</span> <span class="s2">&quot;TRAF3IP2&quot;</span><span class="p">,</span> <span class="s2">&quot;RAPGEF6&quot;</span><span class="p">,</span> <span class="s2">&quot;PNMA5&quot;</span><span class="p">,</span> 
+            <span class="s2">&quot;TAP2&quot;</span><span class="p">,</span> <span class="s2">&quot;HLA-DPB1&quot;</span><span class="p">,</span> <span class="s2">&quot;MSH5&quot;</span><span class="p">,</span> <span class="s2">&quot;THRSP&quot;</span><span class="p">,</span> <span class="s2">&quot;SUMO1&quot;</span><span class="p">,</span> <span class="s2">&quot;SEMA4F&quot;</span><span class="p">,</span> <span class="s2">&quot;ALDOC&quot;</span><span class="p">,</span> <span class="s2">&quot;PROM1&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;ZNF146&quot;</span><span class="p">,</span> <span class="s2">&quot;NTM&quot;</span><span class="p">,</span> <span class="s2">&quot;BAIAP2L1&quot;</span><span class="p">,</span> <span class="s2">&quot;C1orf50&quot;</span><span class="p">,</span> <span class="s2">&quot;KCNIP4&quot;</span><span class="p">,</span> <span class="s2">&quot;VN1R2&quot;</span><span class="p">,</span> <span class="s2">&quot;SPATA31E1&quot;</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -759,7 +664,8 @@ If you want more information on pandas, a (quick) tutorial is found here:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">dict_genes</span> <span class="o">=</span> <span class="p">{</span>
     <span class="s1">&#39;refseq&#39;</span><span class="p">:</span> <span class="n">refseq</span><span class="p">,</span>
     <span class="s1">&#39;ensembl&#39;</span><span class="p">:</span> <span class="n">ensembl</span><span class="p">,</span>
-    <span class="s1">&#39;genename&#39;</span><span class="p">:</span> <span class="n">genename</span><span class="p">}</span>
+    <span class="s1">&#39;genename&#39;</span><span class="p">:</span> <span class="n">genename</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 </div>
@@ -773,113 +679,10 @@ If you want more information on pandas, a (quick) tutorial is found here:</p>
 </div>
 </div>
 <p>Look at the resulting DataFrame called <code class="docutils literal notranslate"><span class="pre">df_genes</span></code>. This DataFrame will help us to map RefSeq to ENSEMBL gene identifiers.</p>
-<p>Next, we create another DataFrame with gene expression values</p>
-<p>Again, we will use a dictionary for this.</p>
+<p>The first three rows.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ensembl_1</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;ENSG00000237710&quot;</span><span class="p">,</span> <span class="s2">&quot;ENSG00000182667&quot;</span><span class="p">,</span> <span class="s2">&quot;ENSG00000121742&quot;</span><span class="p">,</span> <span class="s2">&quot;ENSG00000158987&quot;</span><span class="p">,</span> <span class="s2">&quot;ENSG00000196131&quot;</span><span class="p">,</span> <span class="s2">&quot;ENSG00000151365&quot;</span><span class="p">,</span> <span class="s2">&quot;ENSG00000056972&quot;</span><span class="p">,</span> <span class="s2">&quot;ENSG00000235569&quot;</span><span class="p">,</span> <span class="s2">&quot;ENSG00000006453&quot;</span><span class="p">,</span> <span class="s2">&quot;ENSG00000198883&quot;</span><span class="p">,</span> <span class="s2">&quot;ENSG00000225967&quot;</span><span class="p">,</span> <span class="s2">&quot;ENSG00000166439&quot;</span><span class="p">,</span> <span class="s2">&quot;ENSG00000135622&quot;</span><span class="p">,</span> <span class="s2">&quot;ENSG00000007062&quot;</span><span class="p">,</span> <span class="s2">&quot;ENSG00000109107&quot;</span><span class="p">,</span> <span class="s2">&quot;ENSG00000167635&quot;</span><span class="p">,</span> <span class="s2">&quot;ENSG00000164008&quot;</span><span class="p">,</span> <span class="s2">&quot;ENSG00000141510&quot;</span><span class="p">,</span> <span class="s2">&quot;ENSG00000177992&quot;</span><span class="p">]</span>
-
-<span class="n">sample_1</span> <span class="o">=</span> <span class="p">[</span><span class="kc">None</span><span class="p">,</span> <span class="mf">1.686</span><span class="p">,</span> <span class="mf">0.063</span><span class="p">,</span> <span class="mf">4.222</span><span class="p">,</span> <span class="mf">0.021</span><span class="p">,</span> <span class="mf">0.026</span><span class="p">,</span> <span class="mf">8.169</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="mf">16.159</span><span class="p">,</span> <span class="mf">0.08</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="mf">3.972</span><span class="p">,</span> <span class="mf">0.844</span><span class="p">,</span> <span class="mf">26.208</span><span class="p">,</span> <span class="mf">18.218</span><span class="p">,</span> <span class="mf">91.049</span><span class="p">,</span> <span class="mf">3.828</span><span class="p">,</span> <span class="mf">58.697</span><span class="p">,</span> <span class="mf">0.024</span><span class="p">]</span>
-
-<span class="n">sample_2</span> <span class="o">=</span> <span class="p">[</span><span class="kc">None</span><span class="p">,</span> <span class="mf">1.159</span><span class="p">,</span> <span class="mf">0.011</span><span class="p">,</span> <span class="mf">4.291</span><span class="p">,</span> <span class="mf">0.004</span><span class="p">,</span> <span class="mf">0.013</span><span class="p">,</span> <span class="mf">0.306</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="mf">12.671</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="mf">6.983</span><span class="p">,</span> <span class="mf">5.352</span><span class="p">,</span> <span class="mf">14.336</span><span class="p">,</span> <span class="mf">5.333</span><span class="p">,</span> <span class="mf">60.28</span><span class="p">,</span> <span class="mf">5.137</span><span class="p">,</span> <span class="mf">47.569</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
-
-<span class="n">sample_3</span> <span class="o">=</span> <span class="p">[</span><span class="kc">None</span><span class="p">,</span> <span class="mf">6.865</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">4.727</span><span class="p">,</span> <span class="mf">0.039</span><span class="p">,</span> <span class="mf">0.023</span><span class="p">,</span> <span class="mf">10.459</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="mf">0.225</span><span class="p">,</span> <span class="mf">0.011</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="mf">7.007</span><span class="p">,</span> <span class="mf">3.402</span><span class="p">,</span> <span class="mf">6.076</span><span class="p">,</span> <span class="mf">18.445</span><span class="p">,</span> <span class="mf">28.716</span><span class="p">,</span> <span class="mf">4.128</span><span class="p">,</span> <span class="mf">34.299</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
-
-<span class="n">sample_4</span> <span class="o">=</span> <span class="p">[</span><span class="kc">None</span><span class="p">,</span> <span class="mf">15.691</span><span class="p">,</span> <span class="mf">2.16</span><span class="p">,</span> <span class="mf">5.284</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">0.181</span><span class="p">,</span> <span class="mf">1.428</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="mf">0.184</span><span class="p">,</span> <span class="mf">0.395</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="mf">11.842</span><span class="p">,</span> <span class="mf">4.186</span><span class="p">,</span> <span class="mf">6.01</span><span class="p">,</span> <span class="mf">131.013</span><span class="p">,</span> <span class="mf">25.126</span><span class="p">,</span> <span class="mf">9.933</span><span class="p">,</span> <span class="mf">28.18</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">dict_expr</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;ensembl&#39;</span><span class="p">:</span> <span class="n">ensembl_1</span><span class="p">,</span> <span class="s1">&#39;sample1&#39;</span><span class="p">:</span> <span class="n">sample_1</span><span class="p">,</span> <span class="s1">&#39;sample2&#39;</span><span class="p">:</span> <span class="n">sample_2</span><span class="p">,</span> <span class="s1">&#39;sample3&#39;</span><span class="p">:</span> <span class="n">sample_3</span><span class="p">,</span> <span class="s1">&#39;sample4&#39;</span><span class="p">:</span> <span class="n">sample_4</span><span class="p">}</span>
-<span class="n">df_expr</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">dict_expr</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="section" id="merging-pandas-dataframes">
-<h2><span class="section-number">9.4. </span>Merging pandas DataFrames<a class="headerlink" href="#merging-pandas-dataframes" title="Permalink to this headline">¶</a></h2>
-<p>Look at the DataFrames using print (or by just typing the DataFrame name followed by Enter)</p>
-<p>In case we would have very long DataFrames, can use <code class="docutils literal notranslate"><span class="pre">df.head()</span></code> (where <code class="docutils literal notranslate"><span class="pre">df</span></code> is your DataFrame name)</p>
-</div>
-<div class="section" id="merging-dataframes-on-column-values">
-<h2><span class="section-number">9.5. </span>Merging DataFrames on column values<a class="headerlink" href="#merging-dataframes-on-column-values" title="Permalink to this headline">¶</a></h2>
-<p>We now have 3 types of data in our 3 DataFrames:</p>
-<ul class="simple">
-<li><p>ChIP-seq peaks (<code class="docutils literal notranslate"><span class="pre">df_peaks</span></code>)</p></li>
-<li><p>A RefSeq to ENSEMBL gene identifier mapping (<code class="docutils literal notranslate"><span class="pre">df_genes</span></code>)</p></li>
-<li><p>Expression values of genes in 4 samples, with ENSEMBL identifiers (<code class="docutils literal notranslate"><span class="pre">df_expr</span></code>)</p></li>
-</ul>
-<p>This is a typical example for any (bioinformatical) analysis in which you want to incorporate different data types, often from different sources. You need to merge them if you want to do anything useful. Pandas DataFrames can be of big help here.</p>
-<p>So let us try to merge these pieces of data</p>
-</div>
-<div class="section" id="merging-dataframes-concat">
-<h2><span class="section-number">9.6. </span>Merging DataFrames: <code class="docutils literal notranslate"><span class="pre">concat</span></code><a class="headerlink" href="#merging-dataframes-concat" title="Permalink to this headline">¶</a></h2>
-<p>Using the command <code class="docutils literal notranslate"><span class="pre">concat</span></code> we can concatenate multiple DataFrames.
-Let us do this with the 2 ChIP-seq peaks DataFrames:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">df_peaks</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">df_peaks_exp1</span><span class="p">,</span> <span class="n">df_peaks_exp2</span><span class="p">])</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>Check out the result, and note how the <code class="docutils literal notranslate"><span class="pre">exp</span></code> column still allows us to distinghuish the two experiments.</p>
-<p>Next, we merge the ChIP-seq peaks with the gene identifier mappings, using the <code class="docutils literal notranslate"><span class="pre">merge</span></code> function</p>
-</div>
-<div class="section" id="merging-dataframes-merge">
-<h2><span class="section-number">9.7. </span>Merging DataFrames: <code class="docutils literal notranslate"><span class="pre">merge</span></code><a class="headerlink" href="#merging-dataframes-merge" title="Permalink to this headline">¶</a></h2>
-<p>Here we will merge the three different DataFrames (<code class="docutils literal notranslate"><span class="pre">df_peaks</span></code>, <code class="docutils literal notranslate"><span class="pre">df_genes</span></code>, <code class="docutils literal notranslate"><span class="pre">df_expr</span></code>) using the gene identifiers. Note that we have two different gene identifiers (RefSeq and ENSEMBL).</p>
-<p>First, we merge <code class="docutils literal notranslate"><span class="pre">df_peaks</span></code> with <code class="docutils literal notranslate"><span class="pre">df_genes</span></code>.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">df_genes_peaks</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">df_genes</span><span class="p">,</span> <span class="n">df_peaks</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="s1">&#39;refseq&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>Check the resulting DataFrame.
-Our DataFrame now has the ENSEMBL gene identifiers, so we can also merge the <code class="docutils literal notranslate"><span class="pre">df_expr</span></code>.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">df_genes_peaks_expr</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">df_genes_peaks</span><span class="p">,</span> <span class="n">df_expr</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="s1">&#39;ensembl&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>For convenience, we will use a shorter name for our merged DataFrame</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">df_all</span>  <span class="o">=</span> <span class="n">df_genes_peaks_expr</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="section" id="tab-completion-and-help">
-<h2><span class="section-number">9.8. </span>Tab completion and help<a class="headerlink" href="#tab-completion-and-help" title="Permalink to this headline">¶</a></h2>
-<p>Now that we have merged our data, we can do several neat things.</p>
-<p>Because <code class="docutils literal notranslate"><span class="pre">df_all</span></code> is a pandas DataFrame, it automatically inherits DataFrame methods.</p>
-<p>You can get an idea if you type:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>df_all.
-</pre></div>
-</div>
-<p>And then hit the left &lt;Tab&gt; key.</p>
-<p>Notice that you get a lot of options….</p>
-<p>Suppose you want to know how the <code class="docutils literal notranslate"><span class="pre">sort_values()</span></code> method for a DataFrame works. You can type:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>df_all.sort_values?
-</pre></div>
-</div>
-<p>This HELP menu gives you information about the function. type ‘q’ or &lt;ESC&gt; to leave the HELP</p>
-</div>
-<div class="section" id="sorting-a-dataframe">
-<h2><span class="section-number">9.9. </span>Sorting a DataFrame<a class="headerlink" href="#sorting-a-dataframe" title="Permalink to this headline">¶</a></h2>
-<p>Let us try it out:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">df_all</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s1">&#39;chr&#39;</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">df_genes</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -905,10 +708,761 @@ Our DataFrame now has the ENSEMBL gene identifiers, so we can also merge the <co
       <th>refseq</th>
       <th>ensembl</th>
       <th>genename</th>
-      <th>chr</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>NM_001007</td>
+      <td>ENSG00000198034</td>
+      <td>RPS4X</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>NM_001098638</td>
+      <td>ENSG00000166439</td>
+      <td>RNF169</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>NM_001110221</td>
+      <td>ENSG00000121742</td>
+      <td>GJB6</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>The last three rows.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">df_genes</span><span class="o">.</span><span class="n">tail</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>refseq</th>
+      <th>ensembl</th>
+      <th>genename</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>20</th>
+      <td>NM_147181</td>
+      <td>ENSG00000185774</td>
+      <td>KCNIP4</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>NM_173856</td>
+      <td>ENSG00000196131</td>
+      <td>VN1R2</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>NM_178828</td>
+      <td>ENSG00000177992</td>
+      <td>SPATA31E1</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Or three random rows.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">df_genes</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>refseq</th>
+      <th>ensembl</th>
+      <th>genename</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>5</th>
+      <td>NM_001164283</td>
+      <td>ENSG00000056972</td>
+      <td>TRAF3IP2</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>NM_001290043</td>
+      <td>ENSG00000225967</td>
+      <td>TAP2</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>NM_173856</td>
+      <td>ENSG00000196131</td>
+      <td>VN1R2</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Next, we create another DataFrame with gene expression values</p>
+<p>Here, we will use the dictionary method to create a <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> without creating explicitly creating the dictrionary.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ensembl_1</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;ENSG00000237710&quot;</span><span class="p">,</span> <span class="s2">&quot;ENSG00000182667&quot;</span><span class="p">,</span> <span class="s2">&quot;ENSG00000121742&quot;</span><span class="p">,</span> <span class="s2">&quot;ENSG00000158987&quot;</span><span class="p">,</span> 
+             <span class="s2">&quot;ENSG00000196131&quot;</span><span class="p">,</span> <span class="s2">&quot;ENSG00000151365&quot;</span><span class="p">,</span> <span class="s2">&quot;ENSG00000056972&quot;</span><span class="p">,</span> <span class="s2">&quot;ENSG00000235569&quot;</span><span class="p">,</span> 
+             <span class="s2">&quot;ENSG00000006453&quot;</span><span class="p">,</span> <span class="s2">&quot;ENSG00000198883&quot;</span><span class="p">,</span> <span class="s2">&quot;ENSG00000225967&quot;</span><span class="p">,</span> <span class="s2">&quot;ENSG00000166439&quot;</span><span class="p">,</span> 
+             <span class="s2">&quot;ENSG00000135622&quot;</span><span class="p">,</span> <span class="s2">&quot;ENSG00000007062&quot;</span><span class="p">,</span> <span class="s2">&quot;ENSG00000109107&quot;</span><span class="p">,</span> <span class="s2">&quot;ENSG00000167635&quot;</span><span class="p">,</span> 
+             <span class="s2">&quot;ENSG00000164008&quot;</span><span class="p">,</span> <span class="s2">&quot;ENSG00000141510&quot;</span><span class="p">,</span> <span class="s2">&quot;ENSG00000177992&quot;</span><span class="p">]</span>
+
+<span class="n">sample_1</span> <span class="o">=</span> <span class="p">[</span><span class="kc">None</span><span class="p">,</span> <span class="mf">1.686</span><span class="p">,</span> <span class="mf">0.063</span><span class="p">,</span> <span class="mf">4.222</span><span class="p">,</span> <span class="mf">0.021</span><span class="p">,</span> <span class="mf">0.026</span><span class="p">,</span> <span class="mf">8.169</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="mf">16.159</span><span class="p">,</span> <span class="mf">0.08</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> 
+            <span class="mf">3.972</span><span class="p">,</span> <span class="mf">0.844</span><span class="p">,</span> <span class="mf">26.208</span><span class="p">,</span> <span class="mf">18.218</span><span class="p">,</span> <span class="mf">91.049</span><span class="p">,</span> <span class="mf">3.828</span><span class="p">,</span> <span class="mf">58.697</span><span class="p">,</span> <span class="mf">0.024</span><span class="p">]</span>
+
+<span class="n">sample_2</span> <span class="o">=</span> <span class="p">[</span><span class="kc">None</span><span class="p">,</span> <span class="mf">1.159</span><span class="p">,</span> <span class="mf">0.011</span><span class="p">,</span> <span class="mf">4.291</span><span class="p">,</span> <span class="mf">0.004</span><span class="p">,</span> <span class="mf">0.013</span><span class="p">,</span> <span class="mf">0.306</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="mf">12.671</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> 
+            <span class="mf">6.983</span><span class="p">,</span> <span class="mf">5.352</span><span class="p">,</span> <span class="mf">14.336</span><span class="p">,</span> <span class="mf">5.333</span><span class="p">,</span> <span class="mf">60.28</span><span class="p">,</span> <span class="mf">5.137</span><span class="p">,</span> <span class="mf">47.569</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+
+<span class="n">sample_3</span> <span class="o">=</span> <span class="p">[</span><span class="kc">None</span><span class="p">,</span> <span class="mf">6.865</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">4.727</span><span class="p">,</span> <span class="mf">0.039</span><span class="p">,</span> <span class="mf">0.023</span><span class="p">,</span> <span class="mf">10.459</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="mf">0.225</span><span class="p">,</span> <span class="mf">0.011</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> 
+            <span class="mf">7.007</span><span class="p">,</span> <span class="mf">3.402</span><span class="p">,</span> <span class="mf">6.076</span><span class="p">,</span> <span class="mf">18.445</span><span class="p">,</span> <span class="mf">28.716</span><span class="p">,</span> <span class="mf">4.128</span><span class="p">,</span> <span class="mf">34.299</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+
+<span class="n">sample_4</span> <span class="o">=</span> <span class="p">[</span><span class="kc">None</span><span class="p">,</span> <span class="mf">15.691</span><span class="p">,</span> <span class="mf">2.16</span><span class="p">,</span> <span class="mf">5.284</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">0.181</span><span class="p">,</span> <span class="mf">1.428</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="mf">0.184</span><span class="p">,</span> <span class="mf">0.395</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> 
+            <span class="mf">11.842</span><span class="p">,</span> <span class="mf">4.186</span><span class="p">,</span> <span class="mf">6.01</span><span class="p">,</span> <span class="mf">131.013</span><span class="p">,</span> <span class="mf">25.126</span><span class="p">,</span> <span class="mf">9.933</span><span class="p">,</span> <span class="mf">28.18</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># The next code could all be written on one line. However, to improve readability</span>
+<span class="c1"># we write in this manner.</span>
+<span class="n">df_expr</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span>
+    <span class="p">{</span>
+        <span class="s1">&#39;ensembl&#39;</span><span class="p">:</span> <span class="n">ensembl_1</span><span class="p">,</span> 
+        <span class="s1">&#39;sample1&#39;</span><span class="p">:</span> <span class="n">sample_1</span><span class="p">,</span> 
+        <span class="s1">&#39;sample2&#39;</span><span class="p">:</span> <span class="n">sample_2</span><span class="p">,</span> 
+        <span class="s1">&#39;sample3&#39;</span><span class="p">:</span> <span class="n">sample_3</span><span class="p">,</span> 
+        <span class="s1">&#39;sample4&#39;</span><span class="p">:</span> <span class="n">sample_4</span>
+    <span class="p">}</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="merging-pandas-dataframes">
+<h2><span class="section-number">11.4. </span>Merging pandas DataFrames<a class="headerlink" href="#merging-pandas-dataframes" title="Permalink to this headline">¶</a></h2>
+<p>Look at the DataFrames using print (or by just typing the DataFrame name followed by Enter)</p>
+<p>In the case where you would have very large DataFrames, can always use <code class="docutils literal notranslate"><span class="pre">df.head()</span></code> (where <code class="docutils literal notranslate"><span class="pre">df</span></code> is your DataFrame name)</p>
+</div>
+<div class="section" id="merging-dataframes-on-column-values">
+<h2><span class="section-number">11.5. </span>Merging DataFrames on column values<a class="headerlink" href="#merging-dataframes-on-column-values" title="Permalink to this headline">¶</a></h2>
+<p>We now have 3 types of data in our 3 DataFrames:</p>
+<ul class="simple">
+<li><p>ChIP-seq peaks (<code class="docutils literal notranslate"><span class="pre">df_peaks</span></code>)</p></li>
+<li><p>A RefSeq to ENSEMBL gene identifier mapping (<code class="docutils literal notranslate"><span class="pre">df_genes</span></code>)</p></li>
+<li><p>Expression values of genes in 4 samples, with ENSEMBL identifiers (<code class="docutils literal notranslate"><span class="pre">df_expr</span></code>)</p></li>
+</ul>
+<p>This is a typical example for any (bioinformatical) analysis in which you want to incorporate different data types, often from different sources. You need to merge them if you want to do anything useful. Pandas DataFrames can be of big help here.</p>
+<p>So let us try to merge these pieces of data</p>
+</div>
+<div class="section" id="merging-dataframes-concat">
+<h2><span class="section-number">11.6. </span>Merging DataFrames: <code class="docutils literal notranslate"><span class="pre">concat</span></code><a class="headerlink" href="#merging-dataframes-concat" title="Permalink to this headline">¶</a></h2>
+<p>Using the command <code class="docutils literal notranslate"><span class="pre">concat()</span></code> we can concatenate multiple DataFrames.
+Let us do this with the 2 ChIP-seq peaks DataFrames:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">df_all_peaks</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">df_peaks</span><span class="p">,</span> <span class="n">df_peaks_exp2</span><span class="p">])</span>
+<span class="n">df_all_peaks</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>chrom</th>
       <th>start</th>
       <th>end</th>
+      <th>nearest_gene</th>
       <th>exp</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>chr6</td>
+      <td>143889976</td>
+      <td>143890976</td>
+      <td>NR_027113</td>
+      <td>exp1</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>chr11</td>
+      <td>77774406</td>
+      <td>77775406</td>
+      <td>NM_003251</td>
+      <td>exp1</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>chr3</td>
+      <td>14988512</td>
+      <td>14989512</td>
+      <td>NR_046253</td>
+      <td>exp1</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>chr2</td>
+      <td>203102822</td>
+      <td>203103822</td>
+      <td>NM_003352</td>
+      <td>exp1</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>chr17</td>
+      <td>7590368</td>
+      <td>7591368</td>
+      <td>NM_001126112</td>
+      <td>exp1</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>chr17</td>
+      <td>26903451</td>
+      <td>26904451</td>
+      <td>NM_005165</td>
+      <td>exp1</td>
+    </tr>
+    <tr>
+      <th>0</th>
+      <td>chr6_dbb_hap3</td>
+      <td>4324541</td>
+      <td>4325541</td>
+      <td>NM_002121</td>
+      <td>exp2</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>chr7</td>
+      <td>98029927</td>
+      <td>98030927</td>
+      <td>NM_018842</td>
+      <td>exp2</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>chr9</td>
+      <td>90497271</td>
+      <td>90498271</td>
+      <td>NM_178828</td>
+      <td>exp2</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>chrX</td>
+      <td>71496641</td>
+      <td>71497641</td>
+      <td>NM_001007</td>
+      <td>exp2</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>chrX</td>
+      <td>73506544</td>
+      <td>73507544</td>
+      <td>NR_030258</td>
+      <td>exp2</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>chrX</td>
+      <td>152162171</td>
+      <td>152163171</td>
+      <td>NM_001184924</td>
+      <td>exp2</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Check out the result, and note how the <code class="docutils literal notranslate"><span class="pre">exp</span></code> column still allows us to distinghuish the two experiments.</p>
+<p>You can use <code class="docutils literal notranslate"><span class="pre">concat()</span></code> to combine two DataFrames vertically (<code class="docutils literal notranslate"><span class="pre">axis=0</span></code>) or horizontally (<code class="docutils literal notranslate"><span class="pre">axis=1</span></code>).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">df_peaks</span><span class="p">,</span> <span class="n">df_peaks_exp2</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>chrom</th>
+      <th>start</th>
+      <th>end</th>
+      <th>nearest_gene</th>
+      <th>exp</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>chr6</td>
+      <td>143889976</td>
+      <td>143890976</td>
+      <td>NR_027113</td>
+      <td>exp1</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>chr11</td>
+      <td>77774406</td>
+      <td>77775406</td>
+      <td>NM_003251</td>
+      <td>exp1</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>chr3</td>
+      <td>14988512</td>
+      <td>14989512</td>
+      <td>NR_046253</td>
+      <td>exp1</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>chr2</td>
+      <td>203102822</td>
+      <td>203103822</td>
+      <td>NM_003352</td>
+      <td>exp1</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>chr17</td>
+      <td>7590368</td>
+      <td>7591368</td>
+      <td>NM_001126112</td>
+      <td>exp1</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>chr17</td>
+      <td>26903451</td>
+      <td>26904451</td>
+      <td>NM_005165</td>
+      <td>exp1</td>
+    </tr>
+    <tr>
+      <th>0</th>
+      <td>chr6_dbb_hap3</td>
+      <td>4324541</td>
+      <td>4325541</td>
+      <td>NM_002121</td>
+      <td>exp2</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>chr7</td>
+      <td>98029927</td>
+      <td>98030927</td>
+      <td>NM_018842</td>
+      <td>exp2</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>chr9</td>
+      <td>90497271</td>
+      <td>90498271</td>
+      <td>NM_178828</td>
+      <td>exp2</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>chrX</td>
+      <td>71496641</td>
+      <td>71497641</td>
+      <td>NM_001007</td>
+      <td>exp2</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>chrX</td>
+      <td>73506544</td>
+      <td>73507544</td>
+      <td>NR_030258</td>
+      <td>exp2</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>chrX</td>
+      <td>152162171</td>
+      <td>152163171</td>
+      <td>NM_001184924</td>
+      <td>exp2</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">df_peaks</span><span class="p">,</span> <span class="n">df_peaks_exp2</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>chrom</th>
+      <th>start</th>
+      <th>end</th>
+      <th>nearest_gene</th>
+      <th>exp</th>
+      <th>chrom</th>
+      <th>start</th>
+      <th>end</th>
+      <th>nearest_gene</th>
+      <th>exp</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>chr6</td>
+      <td>143889976</td>
+      <td>143890976</td>
+      <td>NR_027113</td>
+      <td>exp1</td>
+      <td>chr6_dbb_hap3</td>
+      <td>4324541</td>
+      <td>4325541</td>
+      <td>NM_002121</td>
+      <td>exp2</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>chr11</td>
+      <td>77774406</td>
+      <td>77775406</td>
+      <td>NM_003251</td>
+      <td>exp1</td>
+      <td>chr7</td>
+      <td>98029927</td>
+      <td>98030927</td>
+      <td>NM_018842</td>
+      <td>exp2</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>chr3</td>
+      <td>14988512</td>
+      <td>14989512</td>
+      <td>NR_046253</td>
+      <td>exp1</td>
+      <td>chr9</td>
+      <td>90497271</td>
+      <td>90498271</td>
+      <td>NM_178828</td>
+      <td>exp2</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>chr2</td>
+      <td>203102822</td>
+      <td>203103822</td>
+      <td>NM_003352</td>
+      <td>exp1</td>
+      <td>chrX</td>
+      <td>71496641</td>
+      <td>71497641</td>
+      <td>NM_001007</td>
+      <td>exp2</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>chr17</td>
+      <td>7590368</td>
+      <td>7591368</td>
+      <td>NM_001126112</td>
+      <td>exp1</td>
+      <td>chrX</td>
+      <td>73506544</td>
+      <td>73507544</td>
+      <td>NR_030258</td>
+      <td>exp2</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>chr17</td>
+      <td>26903451</td>
+      <td>26904451</td>
+      <td>NM_005165</td>
+      <td>exp1</td>
+      <td>chrX</td>
+      <td>152162171</td>
+      <td>152163171</td>
+      <td>NM_001184924</td>
+      <td>exp2</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>The <a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.concat.html">documentation</a> contains more examples.</p>
+<p>In the above case, we want to simply combine two DataFrames by concatenating, i.e. simply adding the rows of two DataFrames together. You can also join two DataFrames in other ways. The <code class="docutils literal notranslate"><span class="pre">df_peaks</span></code> DataFrame has a <code class="docutils literal notranslate"><span class="pre">nearest_gene</span></code> column. This is a RefSeq gene identifier that is also present in the <code class="docutils literal notranslate"><span class="pre">df_genes</span></code> DataFrame. If we would like to annotate the genes in <code class="docutils literal notranslate"><span class="pre">df_peaks</span></code>, we would only need the relevant columns for the genes that are in <code class="docutils literal notranslate"><span class="pre">df_peaks</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">df_peaks</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">df_genes</span><span class="p">,</span> <span class="n">left_on</span><span class="o">=</span><span class="s2">&quot;nearest_gene&quot;</span><span class="p">,</span> <span class="n">right_on</span><span class="o">=</span><span class="s2">&quot;refseq&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>chrom</th>
+      <th>start</th>
+      <th>end</th>
+      <th>nearest_gene</th>
+      <th>exp</th>
+      <th>refseq</th>
+      <th>ensembl</th>
+      <th>genename</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>chr11</td>
+      <td>77774406</td>
+      <td>77775406</td>
+      <td>NM_003251</td>
+      <td>exp1</td>
+      <td>NM_003251</td>
+      <td>ENSG00000151365</td>
+      <td>THRSP</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>chr2</td>
+      <td>203102822</td>
+      <td>203103822</td>
+      <td>NM_003352</td>
+      <td>exp1</td>
+      <td>NM_003352</td>
+      <td>ENSG00000116030</td>
+      <td>SUMO1</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>chr17</td>
+      <td>7590368</td>
+      <td>7591368</td>
+      <td>NM_001126112</td>
+      <td>exp1</td>
+      <td>NM_001126112</td>
+      <td>ENSG00000141510</td>
+      <td>TP53</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>chr17</td>
+      <td>26903451</td>
+      <td>26904451</td>
+      <td>NM_005165</td>
+      <td>exp1</td>
+      <td>NM_005165</td>
+      <td>ENSG00000109107</td>
+      <td>ALDOC</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Next, we merge the ChIP-seq peaks with the gene identifier mappings, using the <code class="docutils literal notranslate"><span class="pre">merge</span></code> function</p>
+</div>
+<div class="section" id="merging-dataframes-merge">
+<h2><span class="section-number">11.7. </span>Merging DataFrames: <code class="docutils literal notranslate"><span class="pre">merge</span></code><a class="headerlink" href="#merging-dataframes-merge" title="Permalink to this headline">¶</a></h2>
+<p>Here we will merge the three different DataFrames (<code class="docutils literal notranslate"><span class="pre">df_peaks</span></code>, <code class="docutils literal notranslate"><span class="pre">df_genes</span></code>, <code class="docutils literal notranslate"><span class="pre">df_expr</span></code>) using the gene identifiers. Note that we have two different gene identifiers (RefSeq and ENSEMBL).</p>
+<p>First, we merge <code class="docutils literal notranslate"><span class="pre">df_peaks</span></code> with <code class="docutils literal notranslate"><span class="pre">df_genes</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">df_genes_peaks</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">df_peaks</span><span class="p">,</span> <span class="n">df_genes</span><span class="p">,</span> <span class="n">left_on</span><span class="o">=</span><span class="s1">&#39;nearest_gene&#39;</span><span class="p">,</span> <span class="n">right_on</span><span class="o">=</span><span class="s1">&#39;refseq&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Check the resulting DataFrame. For every row in <code class="docutils literal notranslate"><span class="pre">df_peaks</span></code>, a row from <code class="docutils literal notranslate"><span class="pre">df_genes</span></code> has been added if the <code class="docutils literal notranslate"><span class="pre">refseq</span></code> identifier matches the identifier specified in <code class="docutils literal notranslate"><span class="pre">nearest_gene</span></code>.</p>
+<p>Our DataFrame now has the ENSEMBL gene identifiers, so we can also merge the <code class="docutils literal notranslate"><span class="pre">df_expr</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">df_genes_peaks_expr</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">df_genes_peaks</span><span class="p">,</span> <span class="n">df_expr</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="s1">&#39;ensembl&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Note that here the name of the columns that will be used for merging is the same in <code class="docutils literal notranslate"><span class="pre">df_genes_peaks</span></code> and <code class="docutils literal notranslate"><span class="pre">df_exp</span></code>, so we can use the <code class="docutils literal notranslate"><span class="pre">on='ensembl'</span></code> argument.</p>
+<p>For convenience, we will use a shorter name for our merged DataFrame</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">df_all</span> <span class="o">=</span> <span class="n">df_genes_peaks_expr</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="tab-completion-and-help">
+<h2><span class="section-number">11.8. </span>Tab completion and help<a class="headerlink" href="#tab-completion-and-help" title="Permalink to this headline">¶</a></h2>
+<p>Now that we have merged our data, we can do several neat things.</p>
+<p>Because <code class="docutils literal notranslate"><span class="pre">df_all</span></code> is a pandas DataFrame, it automatically inherits DataFrame methods.</p>
+<p>You can get an idea if you type:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>df_all.
+</pre></div>
+</div>
+<p>And then hit the left <code class="docutils literal notranslate"><span class="pre">&lt;Tab&gt;</span></code> key.</p>
+<p>Notice that you get a lot of options….</p>
+<p>Suppose you want to know how the <code class="docutils literal notranslate"><span class="pre">sort_values()</span></code> method for a DataFrame works. You can type:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>df_all.sort_values?
+</pre></div>
+</div>
+<p>This HELP menu gives you information about the function. type <code class="docutils literal notranslate"><span class="pre">q</span></code> or <code class="docutils literal notranslate"><span class="pre">&lt;ESC&gt;</span></code> to leave the HELP.</p>
+</div>
+<div class="section" id="sorting-a-dataframe">
+<h2><span class="section-number">11.9. </span>Sorting a DataFrame<a class="headerlink" href="#sorting-a-dataframe" title="Permalink to this headline">¶</a></h2>
+<p>Let us try it out:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">df_all</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s1">&#39;chrom&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>chrom</th>
+      <th>start</th>
+      <th>end</th>
+      <th>nearest_gene</th>
+      <th>exp</th>
+      <th>refseq</th>
+      <th>ensembl</th>
+      <th>genename</th>
       <th>sample1</th>
       <th>sample2</th>
       <th>sample3</th>
@@ -917,56 +1471,15 @@ Our DataFrame now has the ENSEMBL gene identifiers, so we can also merge the <co
   </thead>
   <tbody>
     <tr>
-      <th>16</th>
-      <td>NM_024097</td>
-      <td>ENSG00000164008</td>
-      <td>C1orf50</td>
-      <td>chr1</td>
-      <td>43232415</td>
-      <td>43233415</td>
-      <td>exp1</td>
-      <td>3.828</td>
-      <td>5.137</td>
-      <td>4.128</td>
-      <td>9.933</td>
-    </tr>
-    <tr>
       <th>0</th>
-      <td>NM_001098638</td>
-      <td>ENSG00000166439</td>
-      <td>RNF169</td>
-      <td>chr11</td>
-      <td>74459412</td>
-      <td>74460412</td>
-      <td>exp1</td>
-      <td>3.972</td>
-      <td>6.983</td>
-      <td>7.007</td>
-      <td>11.842</td>
-    </tr>
-    <tr>
-      <th>14</th>
-      <td>NM_016522</td>
-      <td>ENSG00000182667</td>
-      <td>NTM</td>
-      <td>chr11</td>
-      <td>131780211</td>
-      <td>131781211</td>
-      <td>exp1</td>
-      <td>1.686</td>
-      <td>1.159</td>
-      <td>6.865</td>
-      <td>15.691</td>
-    </tr>
-    <tr>
-      <th>9</th>
-      <td>NM_003251</td>
-      <td>ENSG00000151365</td>
-      <td>THRSP</td>
       <td>chr11</td>
       <td>77774406</td>
       <td>77775406</td>
+      <td>NM_003251</td>
       <td>exp1</td>
+      <td>NM_003251</td>
+      <td>ENSG00000151365</td>
+      <td>THRSP</td>
       <td>0.026</td>
       <td>0.013</td>
       <td>0.023</td>
@@ -974,213 +1487,33 @@ Our DataFrame now has the ENSEMBL gene identifiers, so we can also merge the <co
     </tr>
     <tr>
       <th>1</th>
-      <td>NM_001110221</td>
-      <td>ENSG00000121742</td>
-      <td>GJB6</td>
-      <td>chr13</td>
-      <td>20806034</td>
-      <td>20807034</td>
-      <td>exp1</td>
-      <td>0.063</td>
-      <td>0.011</td>
-      <td>0.000</td>
-      <td>2.160</td>
-    </tr>
-    <tr>
-      <th>11</th>
-      <td>NM_005165</td>
-      <td>ENSG00000109107</td>
-      <td>ALDOC</td>
-      <td>chr17</td>
-      <td>26903451</td>
-      <td>26904451</td>
-      <td>exp1</td>
-      <td>18.218</td>
-      <td>5.333</td>
-      <td>18.445</td>
-      <td>131.013</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>NM_001126112</td>
-      <td>ENSG00000141510</td>
-      <td>TP53</td>
       <td>chr17</td>
       <td>7590368</td>
       <td>7591368</td>
+      <td>NM_001126112</td>
       <td>exp1</td>
+      <td>NM_001126112</td>
+      <td>ENSG00000141510</td>
+      <td>TP53</td>
       <td>58.697</td>
       <td>47.569</td>
       <td>34.299</td>
       <td>28.180</td>
     </tr>
     <tr>
-      <th>17</th>
-      <td>NM_173856</td>
-      <td>ENSG00000196131</td>
-      <td>VN1R2</td>
-      <td>chr19</td>
-      <td>53761044</td>
-      <td>53762044</td>
+      <th>2</th>
+      <td>chr17</td>
+      <td>26903451</td>
+      <td>26904451</td>
+      <td>NM_005165</td>
       <td>exp1</td>
-      <td>0.021</td>
-      <td>0.004</td>
-      <td>0.039</td>
-      <td>0.000</td>
-    </tr>
-    <tr>
-      <th>13</th>
-      <td>NM_007145</td>
-      <td>ENSG00000167635</td>
-      <td>ZNF146</td>
-      <td>chr19</td>
-      <td>36705003</td>
-      <td>36706003</td>
-      <td>exp1</td>
-      <td>91.049</td>
-      <td>60.280</td>
-      <td>28.716</td>
-      <td>25.126</td>
-    </tr>
-    <tr>
-      <th>10</th>
-      <td>NM_004263</td>
-      <td>ENSG00000135622</td>
-      <td>SEMA4F</td>
-      <td>chr2</td>
-      <td>74880854</td>
-      <td>74881854</td>
-      <td>exp1</td>
-      <td>0.844</td>
-      <td>5.352</td>
-      <td>3.402</td>
-      <td>4.186</td>
-    </tr>
-    <tr>
-      <th>12</th>
-      <td>NM_006017</td>
-      <td>ENSG00000007062</td>
-      <td>PROM1</td>
-      <td>chr4</td>
-      <td>16077241</td>
-      <td>16078241</td>
-      <td>exp1</td>
-      <td>26.208</td>
-      <td>14.336</td>
-      <td>6.076</td>
-      <td>6.010</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>NM_001164386</td>
-      <td>ENSG00000158987</td>
-      <td>RAPGEF6</td>
-      <td>chr5</td>
-      <td>130970429</td>
-      <td>130971429</td>
-      <td>exp1</td>
-      <td>4.222</td>
-      <td>4.291</td>
-      <td>4.727</td>
-      <td>5.284</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>NM_001164283</td>
-      <td>ENSG00000056972</td>
-      <td>TRAF3IP2</td>
-      <td>chr6</td>
-      <td>111888063</td>
-      <td>111889063</td>
-      <td>exp1</td>
-      <td>8.169</td>
-      <td>0.306</td>
-      <td>10.459</td>
-      <td>1.428</td>
-    </tr>
-    <tr>
-      <th>7</th>
-      <td>NM_002121</td>
-      <td>ENSG00000237710</td>
-      <td>HLA-DPB1</td>
-      <td>chr6_dbb_hap3</td>
-      <td>4324541</td>
-      <td>4325541</td>
-      <td>exp2</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>6</th>
-      <td>NM_001290043</td>
-      <td>ENSG00000225967</td>
-      <td>TAP2</td>
-      <td>chr6_qbl_hap6</td>
-      <td>4038208</td>
-      <td>4039208</td>
-      <td>exp2</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>8</th>
-      <td>NM_002441</td>
-      <td>ENSG00000235569</td>
-      <td>MSH5</td>
-      <td>chr6_ssto_hap7</td>
-      <td>3038042</td>
-      <td>3039042</td>
-      <td>exp2</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>15</th>
-      <td>NM_018842</td>
-      <td>ENSG00000006453</td>
-      <td>BAIAP2L1</td>
-      <td>chr7</td>
-      <td>98029927</td>
-      <td>98030927</td>
-      <td>exp2</td>
-      <td>16.159</td>
-      <td>12.671</td>
-      <td>0.225</td>
-      <td>0.184</td>
-    </tr>
-    <tr>
-      <th>18</th>
-      <td>NM_178828</td>
-      <td>ENSG00000177992</td>
-      <td>SPATA31E1</td>
-      <td>chr9</td>
-      <td>90497271</td>
-      <td>90498271</td>
-      <td>exp2</td>
-      <td>0.024</td>
-      <td>0.000</td>
-      <td>0.000</td>
-      <td>0.000</td>
-    </tr>
-    <tr>
-      <th>5</th>
-      <td>NM_001184924</td>
-      <td>ENSG00000198883</td>
-      <td>PNMA5</td>
-      <td>chrX</td>
-      <td>152162171</td>
-      <td>152163171</td>
-      <td>exp2</td>
-      <td>0.080</td>
-      <td>0.000</td>
-      <td>0.011</td>
-      <td>0.395</td>
+      <td>NM_005165</td>
+      <td>ENSG00000109107</td>
+      <td>ALDOC</td>
+      <td>18.218</td>
+      <td>5.333</td>
+      <td>18.445</td>
+      <td>131.013</td>
     </tr>
   </tbody>
 </table>
@@ -1212,13 +1545,14 @@ Our DataFrame now has the ENSEMBL gene identifiers, so we can also merge the <co
   <thead>
     <tr style="text-align: right;">
       <th></th>
+      <th>chrom</th>
+      <th>start</th>
+      <th>end</th>
+      <th>nearest_gene</th>
+      <th>exp</th>
       <th>refseq</th>
       <th>ensembl</th>
       <th>genename</th>
-      <th>chr</th>
-      <th>start</th>
-      <th>end</th>
-      <th>exp</th>
       <th>sample1</th>
       <th>sample2</th>
       <th>sample3</th>
@@ -1227,270 +1561,49 @@ Our DataFrame now has the ENSEMBL gene identifiers, so we can also merge the <co
   </thead>
   <tbody>
     <tr>
-      <th>8</th>
-      <td>NM_002441</td>
-      <td>ENSG00000235569</td>
-      <td>MSH5</td>
-      <td>chr6_ssto_hap7</td>
-      <td>3038042</td>
-      <td>3039042</td>
-      <td>exp2</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>6</th>
-      <td>NM_001290043</td>
-      <td>ENSG00000225967</td>
-      <td>TAP2</td>
-      <td>chr6_qbl_hap6</td>
-      <td>4038208</td>
-      <td>4039208</td>
-      <td>exp2</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>7</th>
-      <td>NM_002121</td>
-      <td>ENSG00000237710</td>
-      <td>HLA-DPB1</td>
-      <td>chr6_dbb_hap3</td>
-      <td>4324541</td>
-      <td>4325541</td>
-      <td>exp2</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>NM_001126112</td>
-      <td>ENSG00000141510</td>
-      <td>TP53</td>
+      <th>1</th>
       <td>chr17</td>
       <td>7590368</td>
       <td>7591368</td>
+      <td>NM_001126112</td>
       <td>exp1</td>
+      <td>NM_001126112</td>
+      <td>ENSG00000141510</td>
+      <td>TP53</td>
       <td>58.697</td>
       <td>47.569</td>
       <td>34.299</td>
       <td>28.180</td>
     </tr>
     <tr>
-      <th>12</th>
-      <td>NM_006017</td>
-      <td>ENSG00000007062</td>
-      <td>PROM1</td>
-      <td>chr4</td>
-      <td>16077241</td>
-      <td>16078241</td>
-      <td>exp1</td>
-      <td>26.208</td>
-      <td>14.336</td>
-      <td>6.076</td>
-      <td>6.010</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>NM_001110221</td>
-      <td>ENSG00000121742</td>
-      <td>GJB6</td>
-      <td>chr13</td>
-      <td>20806034</td>
-      <td>20807034</td>
-      <td>exp1</td>
-      <td>0.063</td>
-      <td>0.011</td>
-      <td>0.000</td>
-      <td>2.160</td>
-    </tr>
-    <tr>
-      <th>11</th>
-      <td>NM_005165</td>
-      <td>ENSG00000109107</td>
-      <td>ALDOC</td>
+      <th>2</th>
       <td>chr17</td>
       <td>26903451</td>
       <td>26904451</td>
+      <td>NM_005165</td>
       <td>exp1</td>
+      <td>NM_005165</td>
+      <td>ENSG00000109107</td>
+      <td>ALDOC</td>
       <td>18.218</td>
       <td>5.333</td>
       <td>18.445</td>
       <td>131.013</td>
     </tr>
     <tr>
-      <th>13</th>
-      <td>NM_007145</td>
-      <td>ENSG00000167635</td>
-      <td>ZNF146</td>
-      <td>chr19</td>
-      <td>36705003</td>
-      <td>36706003</td>
-      <td>exp1</td>
-      <td>91.049</td>
-      <td>60.280</td>
-      <td>28.716</td>
-      <td>25.126</td>
-    </tr>
-    <tr>
-      <th>16</th>
-      <td>NM_024097</td>
-      <td>ENSG00000164008</td>
-      <td>C1orf50</td>
-      <td>chr1</td>
-      <td>43232415</td>
-      <td>43233415</td>
-      <td>exp1</td>
-      <td>3.828</td>
-      <td>5.137</td>
-      <td>4.128</td>
-      <td>9.933</td>
-    </tr>
-    <tr>
-      <th>17</th>
-      <td>NM_173856</td>
-      <td>ENSG00000196131</td>
-      <td>VN1R2</td>
-      <td>chr19</td>
-      <td>53761044</td>
-      <td>53762044</td>
-      <td>exp1</td>
-      <td>0.021</td>
-      <td>0.004</td>
-      <td>0.039</td>
-      <td>0.000</td>
-    </tr>
-    <tr>
       <th>0</th>
-      <td>NM_001098638</td>
-      <td>ENSG00000166439</td>
-      <td>RNF169</td>
-      <td>chr11</td>
-      <td>74459412</td>
-      <td>74460412</td>
-      <td>exp1</td>
-      <td>3.972</td>
-      <td>6.983</td>
-      <td>7.007</td>
-      <td>11.842</td>
-    </tr>
-    <tr>
-      <th>10</th>
-      <td>NM_004263</td>
-      <td>ENSG00000135622</td>
-      <td>SEMA4F</td>
-      <td>chr2</td>
-      <td>74880854</td>
-      <td>74881854</td>
-      <td>exp1</td>
-      <td>0.844</td>
-      <td>5.352</td>
-      <td>3.402</td>
-      <td>4.186</td>
-    </tr>
-    <tr>
-      <th>9</th>
-      <td>NM_003251</td>
-      <td>ENSG00000151365</td>
-      <td>THRSP</td>
       <td>chr11</td>
       <td>77774406</td>
       <td>77775406</td>
+      <td>NM_003251</td>
       <td>exp1</td>
+      <td>NM_003251</td>
+      <td>ENSG00000151365</td>
+      <td>THRSP</td>
       <td>0.026</td>
       <td>0.013</td>
       <td>0.023</td>
       <td>0.181</td>
-    </tr>
-    <tr>
-      <th>18</th>
-      <td>NM_178828</td>
-      <td>ENSG00000177992</td>
-      <td>SPATA31E1</td>
-      <td>chr9</td>
-      <td>90497271</td>
-      <td>90498271</td>
-      <td>exp2</td>
-      <td>0.024</td>
-      <td>0.000</td>
-      <td>0.000</td>
-      <td>0.000</td>
-    </tr>
-    <tr>
-      <th>15</th>
-      <td>NM_018842</td>
-      <td>ENSG00000006453</td>
-      <td>BAIAP2L1</td>
-      <td>chr7</td>
-      <td>98029927</td>
-      <td>98030927</td>
-      <td>exp2</td>
-      <td>16.159</td>
-      <td>12.671</td>
-      <td>0.225</td>
-      <td>0.184</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>NM_001164283</td>
-      <td>ENSG00000056972</td>
-      <td>TRAF3IP2</td>
-      <td>chr6</td>
-      <td>111888063</td>
-      <td>111889063</td>
-      <td>exp1</td>
-      <td>8.169</td>
-      <td>0.306</td>
-      <td>10.459</td>
-      <td>1.428</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>NM_001164386</td>
-      <td>ENSG00000158987</td>
-      <td>RAPGEF6</td>
-      <td>chr5</td>
-      <td>130970429</td>
-      <td>130971429</td>
-      <td>exp1</td>
-      <td>4.222</td>
-      <td>4.291</td>
-      <td>4.727</td>
-      <td>5.284</td>
-    </tr>
-    <tr>
-      <th>14</th>
-      <td>NM_016522</td>
-      <td>ENSG00000182667</td>
-      <td>NTM</td>
-      <td>chr11</td>
-      <td>131780211</td>
-      <td>131781211</td>
-      <td>exp1</td>
-      <td>1.686</td>
-      <td>1.159</td>
-      <td>6.865</td>
-      <td>15.691</td>
-    </tr>
-    <tr>
-      <th>5</th>
-      <td>NM_001184924</td>
-      <td>ENSG00000198883</td>
-      <td>PNMA5</td>
-      <td>chrX</td>
-      <td>152162171</td>
-      <td>152163171</td>
-      <td>exp2</td>
-      <td>0.080</td>
-      <td>0.000</td>
-      <td>0.011</td>
-      <td>0.395</td>
     </tr>
   </tbody>
 </table>
@@ -1499,7 +1612,7 @@ Our DataFrame now has the ENSEMBL gene identifiers, so we can also merge the <co
 <p>Note that these commands did not replace the original DataFrame <code class="docutils literal notranslate"><span class="pre">df_all</span></code>!</p>
 </div>
 <div class="section" id="using-to-obtain-dataframe-columns-or-rows">
-<h2><span class="section-number">9.10. </span>Using <code class="docutils literal notranslate"><span class="pre">[</span> <span class="pre">]</span></code> to obtain DataFrame columns or rows<a class="headerlink" href="#using-to-obtain-dataframe-columns-or-rows" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">11.10. </span>Using <code class="docutils literal notranslate"><span class="pre">[</span> <span class="pre">]</span></code> to obtain DataFrame columns or rows<a class="headerlink" href="#using-to-obtain-dataframe-columns-or-rows" title="Permalink to this headline">¶</a></h2>
 <p>Using <code class="docutils literal notranslate"><span class="pre">[</span> <span class="pre">]</span></code> we can obtain specific parts of the DataFrame.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1508,25 +1621,9 @@ Our DataFrame now has the ENSEMBL gene identifiers, so we can also merge the <co
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>0        RNF169
-1          GJB6
-2          TP53
-3      TRAF3IP2
-4       RAPGEF6
-5         PNMA5
-6          TAP2
-7      HLA-DPB1
-8          MSH5
-9         THRSP
-10       SEMA4F
-11        ALDOC
-12        PROM1
-13       ZNF146
-14          NTM
-15     BAIAP2L1
-16      C1orf50
-17        VN1R2
-18    SPATA31E1
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>0    THRSP
+1     TP53
+2    ALDOC
 Name: genename, dtype: object
 </pre></div>
 </div>
@@ -1565,98 +1662,18 @@ Name: genename, dtype: object
   <tbody>
     <tr>
       <th>0</th>
-      <td>RNF169</td>
-      <td>exp1</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>GJB6</td>
-      <td>exp1</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>TP53</td>
-      <td>exp1</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>TRAF3IP2</td>
-      <td>exp1</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>RAPGEF6</td>
-      <td>exp1</td>
-    </tr>
-    <tr>
-      <th>5</th>
-      <td>PNMA5</td>
-      <td>exp2</td>
-    </tr>
-    <tr>
-      <th>6</th>
-      <td>TAP2</td>
-      <td>exp2</td>
-    </tr>
-    <tr>
-      <th>7</th>
-      <td>HLA-DPB1</td>
-      <td>exp2</td>
-    </tr>
-    <tr>
-      <th>8</th>
-      <td>MSH5</td>
-      <td>exp2</td>
-    </tr>
-    <tr>
-      <th>9</th>
       <td>THRSP</td>
       <td>exp1</td>
     </tr>
     <tr>
-      <th>10</th>
-      <td>SEMA4F</td>
+      <th>1</th>
+      <td>TP53</td>
       <td>exp1</td>
     </tr>
     <tr>
-      <th>11</th>
+      <th>2</th>
       <td>ALDOC</td>
       <td>exp1</td>
-    </tr>
-    <tr>
-      <th>12</th>
-      <td>PROM1</td>
-      <td>exp1</td>
-    </tr>
-    <tr>
-      <th>13</th>
-      <td>ZNF146</td>
-      <td>exp1</td>
-    </tr>
-    <tr>
-      <th>14</th>
-      <td>NTM</td>
-      <td>exp1</td>
-    </tr>
-    <tr>
-      <th>15</th>
-      <td>BAIAP2L1</td>
-      <td>exp2</td>
-    </tr>
-    <tr>
-      <th>16</th>
-      <td>C1orf50</td>
-      <td>exp1</td>
-    </tr>
-    <tr>
-      <th>17</th>
-      <td>VN1R2</td>
-      <td>exp1</td>
-    </tr>
-    <tr>
-      <th>18</th>
-      <td>SPATA31E1</td>
-      <td>exp2</td>
     </tr>
   </tbody>
 </table>
@@ -1672,17 +1689,18 @@ Name: genename, dtype: object
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>refseq         NM_001126112
-ensembl     ENSG00000141510
-genename               TP53
-chr                   chr17
-start               7590368
-end                 7591368
-exp                    exp1
-sample1              58.697
-sample2              47.569
-sample3              34.299
-sample4               28.18
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>chrom                     chr17
+start                  26903451
+end                    26904451
+nearest_gene          NM_005165
+exp                        exp1
+refseq                NM_005165
+ensembl         ENSG00000109107
+genename                  ALDOC
+sample1                  18.218
+sample2                   5.333
+sample3                  18.445
+sample4                 131.013
 Name: 2, dtype: object
 </pre></div>
 </div>
@@ -1714,13 +1732,14 @@ Name: 2, dtype: object
   <thead>
     <tr style="text-align: right;">
       <th></th>
+      <th>chrom</th>
+      <th>start</th>
+      <th>end</th>
+      <th>nearest_gene</th>
+      <th>exp</th>
       <th>refseq</th>
       <th>ensembl</th>
       <th>genename</th>
-      <th>chr</th>
-      <th>start</th>
-      <th>end</th>
-      <th>exp</th>
       <th>sample1</th>
       <th>sample2</th>
       <th>sample3</th>
@@ -1730,45 +1749,18 @@ Name: 2, dtype: object
   <tbody>
     <tr>
       <th>2</th>
-      <td>NM_001126112</td>
-      <td>ENSG00000141510</td>
-      <td>TP53</td>
       <td>chr17</td>
-      <td>7590368</td>
-      <td>7591368</td>
+      <td>26903451</td>
+      <td>26904451</td>
+      <td>NM_005165</td>
       <td>exp1</td>
-      <td>58.697</td>
-      <td>47.569</td>
-      <td>34.299</td>
-      <td>28.180</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>NM_001164283</td>
-      <td>ENSG00000056972</td>
-      <td>TRAF3IP2</td>
-      <td>chr6</td>
-      <td>111888063</td>
-      <td>111889063</td>
-      <td>exp1</td>
-      <td>8.169</td>
-      <td>0.306</td>
-      <td>10.459</td>
-      <td>1.428</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>NM_001164386</td>
-      <td>ENSG00000158987</td>
-      <td>RAPGEF6</td>
-      <td>chr5</td>
-      <td>130970429</td>
-      <td>130971429</td>
-      <td>exp1</td>
-      <td>4.222</td>
-      <td>4.291</td>
-      <td>4.727</td>
-      <td>5.284</td>
+      <td>NM_005165</td>
+      <td>ENSG00000109107</td>
+      <td>ALDOC</td>
+      <td>18.218</td>
+      <td>5.333</td>
+      <td>18.445</td>
+      <td>131.013</td>
     </tr>
   </tbody>
 </table>
@@ -1802,45 +1794,25 @@ Name: 2, dtype: object
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>start</th>
-      <th>end</th>
       <th>exp</th>
+      <th>refseq</th>
+      <th>ensembl</th>
+      <th>genename</th>
       <th>sample1</th>
       <th>sample2</th>
       <th>sample3</th>
-      <th>sample4</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <th>2</th>
-      <td>7590368</td>
-      <td>7591368</td>
       <td>exp1</td>
-      <td>58.697</td>
-      <td>47.569</td>
-      <td>34.299</td>
-      <td>28.180</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>111888063</td>
-      <td>111889063</td>
-      <td>exp1</td>
-      <td>8.169</td>
-      <td>0.306</td>
-      <td>10.459</td>
-      <td>1.428</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>130970429</td>
-      <td>130971429</td>
-      <td>exp1</td>
-      <td>4.222</td>
-      <td>4.291</td>
-      <td>4.727</td>
-      <td>5.284</td>
+      <td>NM_005165</td>
+      <td>ENSG00000109107</td>
+      <td>ALDOC</td>
+      <td>18.218</td>
+      <td>5.333</td>
+      <td>18.445</td>
     </tr>
   </tbody>
 </table>
@@ -1848,10 +1820,10 @@ Name: 2, dtype: object
 </div>
 </div>
 <div class="section" id="removing-missing-values-or-nans">
-<h2><span class="section-number">9.11. </span>Removing missing values or <code class="docutils literal notranslate"><span class="pre">NaN</span></code>s.<a class="headerlink" href="#removing-missing-values-or-nans" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">11.11. </span>Removing missing values or <code class="docutils literal notranslate"><span class="pre">NaN</span></code>s.<a class="headerlink" href="#removing-missing-values-or-nans" title="Permalink to this headline">¶</a></h2>
 <p>In many cases DataFrames contains <code class="docutils literal notranslate"><span class="pre">NaN</span></code>, missing values, and you often have to remove them.</p>
 <p>We have several such <code class="docutils literal notranslate"><span class="pre">NaN</span></code>s in <code class="docutils literal notranslate"><span class="pre">df_all</span></code>.</p>
-<p>We can obtain a <code class="docutils literal notranslate"><span class="pre">boolean</span></code> (True/False) for the column called ‘sample1’ like this:</p>
+<p>We can obtain a <code class="docutils literal notranslate"><span class="pre">boolean</span></code> (<code class="docutils literal notranslate"><span class="pre">True</span></code>/<code class="docutils literal notranslate"><span class="pre">False</span></code>) for the column called <code class="docutils literal notranslate"><span class="pre">sample1</span></code> like this:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">df_all</span><span class="p">[</span><span class="s1">&#39;sample1&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span>
@@ -1859,25 +1831,9 @@ Name: 2, dtype: object
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>0     False
-1     False
-2     False
-3     False
-4     False
-5     False
-6      True
-7      True
-8      True
-9     False
-10    False
-11    False
-12    False
-13    False
-14    False
-15    False
-16    False
-17    False
-18    False
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>0    False
+1    False
+2    False
 Name: sample1, dtype: bool
 </pre></div>
 </div>
@@ -1891,25 +1847,9 @@ Name: sample1, dtype: bool
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>0      True
-1      True
-2      True
-3      True
-4      True
-5      True
-6     False
-7     False
-8     False
-9      True
-10     True
-11     True
-12     True
-13     True
-14     True
-15     True
-16     True
-17     True
-18     True
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>0    True
+1    True
+2    True
 Name: sample1, dtype: bool
 </pre></div>
 </div>
@@ -1941,13 +1881,14 @@ Name: sample1, dtype: bool
   <thead>
     <tr style="text-align: right;">
       <th></th>
+      <th>chrom</th>
+      <th>start</th>
+      <th>end</th>
+      <th>nearest_gene</th>
+      <th>exp</th>
       <th>refseq</th>
       <th>ensembl</th>
       <th>genename</th>
-      <th>chr</th>
-      <th>start</th>
-      <th>end</th>
-      <th>exp</th>
       <th>sample1</th>
       <th>sample2</th>
       <th>sample3</th>
@@ -1957,227 +1898,48 @@ Name: sample1, dtype: bool
   <tbody>
     <tr>
       <th>0</th>
-      <td>NM_001098638</td>
-      <td>ENSG00000166439</td>
-      <td>RNF169</td>
-      <td>chr11</td>
-      <td>74459412</td>
-      <td>74460412</td>
-      <td>exp1</td>
-      <td>3.972</td>
-      <td>6.983</td>
-      <td>7.007</td>
-      <td>11.842</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>NM_001110221</td>
-      <td>ENSG00000121742</td>
-      <td>GJB6</td>
-      <td>chr13</td>
-      <td>20806034</td>
-      <td>20807034</td>
-      <td>exp1</td>
-      <td>0.063</td>
-      <td>0.011</td>
-      <td>0.000</td>
-      <td>2.160</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>NM_001126112</td>
-      <td>ENSG00000141510</td>
-      <td>TP53</td>
-      <td>chr17</td>
-      <td>7590368</td>
-      <td>7591368</td>
-      <td>exp1</td>
-      <td>58.697</td>
-      <td>47.569</td>
-      <td>34.299</td>
-      <td>28.180</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>NM_001164283</td>
-      <td>ENSG00000056972</td>
-      <td>TRAF3IP2</td>
-      <td>chr6</td>
-      <td>111888063</td>
-      <td>111889063</td>
-      <td>exp1</td>
-      <td>8.169</td>
-      <td>0.306</td>
-      <td>10.459</td>
-      <td>1.428</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>NM_001164386</td>
-      <td>ENSG00000158987</td>
-      <td>RAPGEF6</td>
-      <td>chr5</td>
-      <td>130970429</td>
-      <td>130971429</td>
-      <td>exp1</td>
-      <td>4.222</td>
-      <td>4.291</td>
-      <td>4.727</td>
-      <td>5.284</td>
-    </tr>
-    <tr>
-      <th>5</th>
-      <td>NM_001184924</td>
-      <td>ENSG00000198883</td>
-      <td>PNMA5</td>
-      <td>chrX</td>
-      <td>152162171</td>
-      <td>152163171</td>
-      <td>exp2</td>
-      <td>0.080</td>
-      <td>0.000</td>
-      <td>0.011</td>
-      <td>0.395</td>
-    </tr>
-    <tr>
-      <th>9</th>
-      <td>NM_003251</td>
-      <td>ENSG00000151365</td>
-      <td>THRSP</td>
       <td>chr11</td>
       <td>77774406</td>
       <td>77775406</td>
+      <td>NM_003251</td>
       <td>exp1</td>
+      <td>NM_003251</td>
+      <td>ENSG00000151365</td>
+      <td>THRSP</td>
       <td>0.026</td>
       <td>0.013</td>
       <td>0.023</td>
       <td>0.181</td>
     </tr>
     <tr>
-      <th>10</th>
-      <td>NM_004263</td>
-      <td>ENSG00000135622</td>
-      <td>SEMA4F</td>
-      <td>chr2</td>
-      <td>74880854</td>
-      <td>74881854</td>
+      <th>1</th>
+      <td>chr17</td>
+      <td>7590368</td>
+      <td>7591368</td>
+      <td>NM_001126112</td>
       <td>exp1</td>
-      <td>0.844</td>
-      <td>5.352</td>
-      <td>3.402</td>
-      <td>4.186</td>
+      <td>NM_001126112</td>
+      <td>ENSG00000141510</td>
+      <td>TP53</td>
+      <td>58.697</td>
+      <td>47.569</td>
+      <td>34.299</td>
+      <td>28.180</td>
     </tr>
     <tr>
-      <th>11</th>
-      <td>NM_005165</td>
-      <td>ENSG00000109107</td>
-      <td>ALDOC</td>
+      <th>2</th>
       <td>chr17</td>
       <td>26903451</td>
       <td>26904451</td>
+      <td>NM_005165</td>
       <td>exp1</td>
+      <td>NM_005165</td>
+      <td>ENSG00000109107</td>
+      <td>ALDOC</td>
       <td>18.218</td>
       <td>5.333</td>
       <td>18.445</td>
       <td>131.013</td>
-    </tr>
-    <tr>
-      <th>12</th>
-      <td>NM_006017</td>
-      <td>ENSG00000007062</td>
-      <td>PROM1</td>
-      <td>chr4</td>
-      <td>16077241</td>
-      <td>16078241</td>
-      <td>exp1</td>
-      <td>26.208</td>
-      <td>14.336</td>
-      <td>6.076</td>
-      <td>6.010</td>
-    </tr>
-    <tr>
-      <th>13</th>
-      <td>NM_007145</td>
-      <td>ENSG00000167635</td>
-      <td>ZNF146</td>
-      <td>chr19</td>
-      <td>36705003</td>
-      <td>36706003</td>
-      <td>exp1</td>
-      <td>91.049</td>
-      <td>60.280</td>
-      <td>28.716</td>
-      <td>25.126</td>
-    </tr>
-    <tr>
-      <th>14</th>
-      <td>NM_016522</td>
-      <td>ENSG00000182667</td>
-      <td>NTM</td>
-      <td>chr11</td>
-      <td>131780211</td>
-      <td>131781211</td>
-      <td>exp1</td>
-      <td>1.686</td>
-      <td>1.159</td>
-      <td>6.865</td>
-      <td>15.691</td>
-    </tr>
-    <tr>
-      <th>15</th>
-      <td>NM_018842</td>
-      <td>ENSG00000006453</td>
-      <td>BAIAP2L1</td>
-      <td>chr7</td>
-      <td>98029927</td>
-      <td>98030927</td>
-      <td>exp2</td>
-      <td>16.159</td>
-      <td>12.671</td>
-      <td>0.225</td>
-      <td>0.184</td>
-    </tr>
-    <tr>
-      <th>16</th>
-      <td>NM_024097</td>
-      <td>ENSG00000164008</td>
-      <td>C1orf50</td>
-      <td>chr1</td>
-      <td>43232415</td>
-      <td>43233415</td>
-      <td>exp1</td>
-      <td>3.828</td>
-      <td>5.137</td>
-      <td>4.128</td>
-      <td>9.933</td>
-    </tr>
-    <tr>
-      <th>17</th>
-      <td>NM_173856</td>
-      <td>ENSG00000196131</td>
-      <td>VN1R2</td>
-      <td>chr19</td>
-      <td>53761044</td>
-      <td>53762044</td>
-      <td>exp1</td>
-      <td>0.021</td>
-      <td>0.004</td>
-      <td>0.039</td>
-      <td>0.000</td>
-    </tr>
-    <tr>
-      <th>18</th>
-      <td>NM_178828</td>
-      <td>ENSG00000177992</td>
-      <td>SPATA31E1</td>
-      <td>chr9</td>
-      <td>90497271</td>
-      <td>90498271</td>
-      <td>exp2</td>
-      <td>0.024</td>
-      <td>0.000</td>
-      <td>0.000</td>
-      <td>0.000</td>
     </tr>
   </tbody>
 </table>
@@ -2210,13 +1972,14 @@ Name: sample1, dtype: bool
   <thead>
     <tr style="text-align: right;">
       <th></th>
+      <th>chrom</th>
+      <th>start</th>
+      <th>end</th>
+      <th>nearest_gene</th>
+      <th>exp</th>
       <th>refseq</th>
       <th>ensembl</th>
       <th>genename</th>
-      <th>chr</th>
-      <th>start</th>
-      <th>end</th>
-      <th>exp</th>
       <th>sample1</th>
       <th>sample2</th>
       <th>sample3</th>
@@ -2226,185 +1989,48 @@ Name: sample1, dtype: bool
   <tbody>
     <tr>
       <th>0</th>
-      <td>NM_001098638</td>
-      <td>ENSG00000166439</td>
-      <td>RNF169</td>
-      <td>chr11</td>
-      <td>74459412</td>
-      <td>74460412</td>
-      <td>exp1</td>
-      <td>3.972</td>
-      <td>6.983</td>
-      <td>7.007</td>
-      <td>11.842</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>NM_001110221</td>
-      <td>ENSG00000121742</td>
-      <td>GJB6</td>
-      <td>chr13</td>
-      <td>20806034</td>
-      <td>20807034</td>
-      <td>exp1</td>
-      <td>0.063</td>
-      <td>0.011</td>
-      <td>0.000</td>
-      <td>2.160</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>NM_001126112</td>
-      <td>ENSG00000141510</td>
-      <td>TP53</td>
-      <td>chr17</td>
-      <td>7590368</td>
-      <td>7591368</td>
-      <td>exp1</td>
-      <td>58.697</td>
-      <td>47.569</td>
-      <td>34.299</td>
-      <td>28.180</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>NM_001164283</td>
-      <td>ENSG00000056972</td>
-      <td>TRAF3IP2</td>
-      <td>chr6</td>
-      <td>111888063</td>
-      <td>111889063</td>
-      <td>exp1</td>
-      <td>8.169</td>
-      <td>0.306</td>
-      <td>10.459</td>
-      <td>1.428</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>NM_001164386</td>
-      <td>ENSG00000158987</td>
-      <td>RAPGEF6</td>
-      <td>chr5</td>
-      <td>130970429</td>
-      <td>130971429</td>
-      <td>exp1</td>
-      <td>4.222</td>
-      <td>4.291</td>
-      <td>4.727</td>
-      <td>5.284</td>
-    </tr>
-    <tr>
-      <th>9</th>
-      <td>NM_003251</td>
-      <td>ENSG00000151365</td>
-      <td>THRSP</td>
       <td>chr11</td>
       <td>77774406</td>
       <td>77775406</td>
+      <td>NM_003251</td>
       <td>exp1</td>
+      <td>NM_003251</td>
+      <td>ENSG00000151365</td>
+      <td>THRSP</td>
       <td>0.026</td>
       <td>0.013</td>
       <td>0.023</td>
       <td>0.181</td>
     </tr>
     <tr>
-      <th>10</th>
-      <td>NM_004263</td>
-      <td>ENSG00000135622</td>
-      <td>SEMA4F</td>
-      <td>chr2</td>
-      <td>74880854</td>
-      <td>74881854</td>
+      <th>1</th>
+      <td>chr17</td>
+      <td>7590368</td>
+      <td>7591368</td>
+      <td>NM_001126112</td>
       <td>exp1</td>
-      <td>0.844</td>
-      <td>5.352</td>
-      <td>3.402</td>
-      <td>4.186</td>
+      <td>NM_001126112</td>
+      <td>ENSG00000141510</td>
+      <td>TP53</td>
+      <td>58.697</td>
+      <td>47.569</td>
+      <td>34.299</td>
+      <td>28.180</td>
     </tr>
     <tr>
-      <th>11</th>
-      <td>NM_005165</td>
-      <td>ENSG00000109107</td>
-      <td>ALDOC</td>
+      <th>2</th>
       <td>chr17</td>
       <td>26903451</td>
       <td>26904451</td>
+      <td>NM_005165</td>
       <td>exp1</td>
+      <td>NM_005165</td>
+      <td>ENSG00000109107</td>
+      <td>ALDOC</td>
       <td>18.218</td>
       <td>5.333</td>
       <td>18.445</td>
       <td>131.013</td>
-    </tr>
-    <tr>
-      <th>12</th>
-      <td>NM_006017</td>
-      <td>ENSG00000007062</td>
-      <td>PROM1</td>
-      <td>chr4</td>
-      <td>16077241</td>
-      <td>16078241</td>
-      <td>exp1</td>
-      <td>26.208</td>
-      <td>14.336</td>
-      <td>6.076</td>
-      <td>6.010</td>
-    </tr>
-    <tr>
-      <th>13</th>
-      <td>NM_007145</td>
-      <td>ENSG00000167635</td>
-      <td>ZNF146</td>
-      <td>chr19</td>
-      <td>36705003</td>
-      <td>36706003</td>
-      <td>exp1</td>
-      <td>91.049</td>
-      <td>60.280</td>
-      <td>28.716</td>
-      <td>25.126</td>
-    </tr>
-    <tr>
-      <th>14</th>
-      <td>NM_016522</td>
-      <td>ENSG00000182667</td>
-      <td>NTM</td>
-      <td>chr11</td>
-      <td>131780211</td>
-      <td>131781211</td>
-      <td>exp1</td>
-      <td>1.686</td>
-      <td>1.159</td>
-      <td>6.865</td>
-      <td>15.691</td>
-    </tr>
-    <tr>
-      <th>16</th>
-      <td>NM_024097</td>
-      <td>ENSG00000164008</td>
-      <td>C1orf50</td>
-      <td>chr1</td>
-      <td>43232415</td>
-      <td>43233415</td>
-      <td>exp1</td>
-      <td>3.828</td>
-      <td>5.137</td>
-      <td>4.128</td>
-      <td>9.933</td>
-    </tr>
-    <tr>
-      <th>17</th>
-      <td>NM_173856</td>
-      <td>ENSG00000196131</td>
-      <td>VN1R2</td>
-      <td>chr19</td>
-      <td>53761044</td>
-      <td>53762044</td>
-      <td>exp1</td>
-      <td>0.021</td>
-      <td>0.004</td>
-      <td>0.039</td>
-      <td>0.000</td>
     </tr>
   </tbody>
 </table>
@@ -2412,7 +2038,7 @@ Name: sample1, dtype: bool
 </div>
 </div>
 <div class="section" id="basic-calculations">
-<h2><span class="section-number">9.12. </span>Basic calculations<a class="headerlink" href="#basic-calculations" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">11.12. </span>Basic calculations<a class="headerlink" href="#basic-calculations" title="Permalink to this headline">¶</a></h2>
 <p>There are a lot of methods that allows you to do basic calculation on DataFrames.</p>
 <p>As an illustration we will calculate the pairwise correlations between the columns <code class="docutils literal notranslate"><span class="pre">sample1</span></code>, <code class="docutils literal notranslate"><span class="pre">sample2</span></code>, <code class="docutils literal notranslate"><span class="pre">sample3</span></code>, and <code class="docutils literal notranslate"><span class="pre">sample4</span></code>.</p>
 <p>We take the appropriate columns first</p>
@@ -2459,29 +2085,29 @@ Name: sample1, dtype: bool
     <tr>
       <th>sample1</th>
       <td>1.000000</td>
-      <td>0.978523</td>
-      <td>0.862957</td>
-      <td>0.253552</td>
+      <td>0.978971</td>
+      <td>0.966614</td>
+      <td>-0.011258</td>
     </tr>
     <tr>
       <th>sample2</th>
-      <td>0.978523</td>
+      <td>0.978971</td>
       <td>1.000000</td>
-      <td>0.853166</td>
-      <td>0.159854</td>
+      <td>0.894017</td>
+      <td>-0.215006</td>
     </tr>
     <tr>
       <th>sample3</th>
-      <td>0.862957</td>
-      <td>0.853166</td>
+      <td>0.966614</td>
+      <td>0.894017</td>
       <td>1.000000</td>
-      <td>0.501015</td>
+      <td>0.245337</td>
     </tr>
     <tr>
       <th>sample4</th>
-      <td>0.253552</td>
-      <td>0.159854</td>
-      <td>0.501015</td>
+      <td>-0.011258</td>
+      <td>-0.215006</td>
+      <td>0.245337</td>
       <td>1.000000</td>
     </tr>
   </tbody>
@@ -2500,8 +2126,8 @@ Name: sample1, dtype: bool
     
     <div class='prev-next-bottom'>
         
-    <a class='left-prev' id="prev-link" href="functions_modules_style.html" title="previous page"><span class="section-number">8. </span>Functions and modules</a>
-    <a class='right-next' id="next-link" href="visualization.html" title="next page"><span class="section-number">10. </span>Visualization</a>
+    <a class='left-prev' id="prev-link" href="debugging.html" title="previous page"><span class="section-number">10. </span>Debugging</a>
+    <a class='right-next' id="next-link" href="visualization.html" title="next page"><span class="section-number">12. </span>Visualization</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">

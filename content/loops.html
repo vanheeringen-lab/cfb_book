@@ -30,7 +30,7 @@
     <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="5. Dictionaries" href="dictionaries.html" />
+    <link rel="next" title="5. Functions and modules" href="functions_modules.html" />
     <link rel="prev" title="3. Control flow" href="control_flow.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -91,43 +91,53 @@
   </a>
  </li>
  <li class="toctree-l1">
+  <a class="reference internal" href="functions_modules.html">
+   5. Functions and modules
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="dictionaries.html">
-   5. Dictionaries
+   6. Dictionaries
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="extra_exercises.html">
+   7. Assembling the pieces
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="files.html">
-   6. Files
+   8. Files
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="scripts_and_debugging.html">
-   7. Scripts and debugging
+  <a class="reference internal" href="scripts.html">
+   9. Scripts
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="functions_modules_style.html">
-   8. Functions and modules
+  <a class="reference internal" href="debugging.html">
+   10. Debugging
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="pandas.html">
-   9. Introduction to pandas DataFrames
+   11. Introduction to pandas DataFrames
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="visualization.html">
-   10. Visualization
+   12. Visualization
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="dnase_motifs.html">
-   11. Motifs in DNase I peaks
+   13. Motifs in DNase I peaks
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="footprints.html">
-   12. Creating a DNAseI footprint profile
+   14. Creating a DNAseI footprint profile
   </a>
  </li>
 </ul>
@@ -265,8 +275,8 @@ G
 </div>
 </div>
 </div>
-<p>This loop traverses the string (‘s’) and displays each letter (‘base’) on a line by itself. The loop condition is index &lt; len(s), so when index is equal to the length of the string, the condition is false, and the body of the loop is not executed. The last character accessed is the one with the index len(s)-1, which is the last character in the string.</p>
-<p>Both indexing and the function <code class="docutils literal notranslate"><span class="pre">len</span></code> also work on a <code class="docutils literal notranslate"><span class="pre">list</span></code>, so we could do the same if ‘s’ were a <code class="docutils literal notranslate"><span class="pre">list</span></code>:</p>
+<p>This loop traverses the string (<code class="docutils literal notranslate"><span class="pre">s</span></code>) and displays each letter (<code class="docutils literal notranslate"><span class="pre">base</span></code>) on a line by itself. The loop condition is <code class="docutils literal notranslate"><span class="pre">index</span> <span class="pre">&lt;</span> <span class="pre">len(s)</span></code>, so when index is equal to the length of the string, the condition is false, and the body of the loop is not executed. The last character accessed is the one with the index <code class="docutils literal notranslate"><span class="pre">len(s)</span> <span class="pre">-</span> <span class="pre">1</span></code>, which is the last character in the string.</p>
+<p>Both indexing and the function <code class="docutils literal notranslate"><span class="pre">len</span></code> also work on a <code class="docutils literal notranslate"><span class="pre">list</span></code>, so we could do the same if <code class="docutils literal notranslate"><span class="pre">s</span></code> were a <code class="docutils literal notranslate"><span class="pre">list</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
@@ -339,7 +349,7 @@ G
 </div>
 </div>
 </div>
-<p>Please look carefully at this code for what is done in each step !</p>
+<p>Please look carefully at this code to see what is done in each step!</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">for</span></code> statement is another looping statement which iterates over a sequence of objects i.e. go through each item in a sequence. <code class="docutils literal notranslate"><span class="pre">for</span></code> works also works on a <code class="docutils literal notranslate"><span class="pre">list</span></code> and a <code class="docutils literal notranslate"><span class="pre">string</span></code>. Here are some examples:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -378,7 +388,7 @@ HEK293
 </div>
 </div>
 </div>
-<p>The <code class="docutils literal notranslate"><span class="pre">range</span></code> function is convenient to create a sequence of integers, while you can specify the beginning, end and step-size of your integers. The result is a <code class="docutils literal notranslate"><span class="pre">list</span></code>. By default it starts at 0. For example:</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">range()</span></code> function is convenient to create a sequence of integers, while you can specify the beginning, end and step-size of your integers. You can convert the result to a <code class="docutils literal notranslate"><span class="pre">list</span></code>. By default it starts at 0. For example:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
@@ -451,6 +461,9 @@ HEK293
 3
 6
 9
+</pre></div>
+</div>
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>
 12
 15
 18
@@ -635,6 +648,7 @@ HEK293
 </pre></div>
 </div>
 <p><strong>Exercise 4.8</strong></p>
+<p>The goal of this exercise is to write Python code to print the longest open reading frame (ORF). For this exercise you can assume that the sequence in the correct frame, you don’t have to check all three frames! Note that generally the uracils (U) in mRNA sequences are represented by thymines (T).</p>
 <p>Regard the following sequence (copy-paste):</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">seq</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;catattctggaggagcctcccctcctcatgccttcttgcctcttgtctcttagatttg</span><span class="se">\</span>
 <span class="s2">gtcgtattgggcgcctggtcaccagggctgcttttaactctggtaaagtggatattgttgccatcaat</span><span class="se">\</span>
@@ -664,7 +678,7 @@ HEK293
     <div class='prev-next-bottom'>
         
     <a class='left-prev' id="prev-link" href="control_flow.html" title="previous page"><span class="section-number">3. </span>Control flow</a>
-    <a class='right-next' id="next-link" href="dictionaries.html" title="next page"><span class="section-number">5. </span>Dictionaries</a>
+    <a class='right-next' id="next-link" href="functions_modules.html" title="next page"><span class="section-number">5. </span>Functions and modules</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">

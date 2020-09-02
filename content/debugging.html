@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>Scripts and debugging &#8212; NWI-BM066A Computation for Biologists</title>
+    <title>10. Debugging &#8212; NWI-BM066A Computation for Biologists</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
     <link href="../_static/css/index.css" rel="stylesheet">
     <link rel="stylesheet" href="../_static/sphinx-book-theme.css" type="text/css" />
@@ -30,6 +30,8 @@
     <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="11. Introduction to pandas DataFrames" href="pandas.html" />
+    <link rel="prev" title="9. Scripts" href="scripts.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="docsearch:language" content="en">
@@ -67,7 +69,7 @@
   </a>
  </li>
 </ul>
-<ul class="nav sidenav_l1">
+<ul class="current nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="first_exercises.html">
    1. First exercises
@@ -113,8 +115,8 @@
    9. Scripts
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="debugging.html">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    10. Debugging
   </a>
  </li>
@@ -180,7 +182,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/content/scripts_and_debugging.ipynb"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/content/debugging.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
@@ -209,104 +211,9 @@
         <nav id="bd-toc-nav">
             <ul class="nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#exercises-scripts">
-   Exercises: scripts
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-7-1-copying-the-files-required-for-the-exercises">
-     Exercise 7.1: Copying the files required for the exercises
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-7-2-comparing-the-jupyter-notebook-with-running-scripts-from-the-command-line">
-     Exercise 7.2: Comparing the Jupyter notebook with running scripts from the command line
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-7-3-permanence-of-python-variables-in-memory">
-     Exercise 7.3: Permanence of Python variables in memory
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#using-script-withs-variable-input">
-   Using script withs variable input
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#exercises-using-sys-argv">
-   Exercises using
-   <code class="docutils literal notranslate">
-    <span class="pre">
-     sys.argv
-    </span>
-   </code>
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#using-available-modules-argparse">
-   Using available modules: argparse
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#exercises-putting-it-all-together">
-   Exercises: putting it all together
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#exercises-debugging">
-   Exercises: debugging
+   10.1. Exercises: debugging
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-7-7">
-     Exercise 7.7
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#questions">
-       Questions
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-7-8">
-     Exercise 7.8
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id1">
-       Questions
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id2">
-     Exercise 7.8
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#expected-output">
-       Expected output
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#question-assignment">
-       Question/assignment:
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#hints">
-       Hints:
-      </a>
-     </li>
-    </ul>
-   </li>
-  </ul>
  </li>
 </ul>
 
@@ -318,198 +225,11 @@
         
               <div>
                 
-  <div class="section" id="scripts-and-debugging">
-<h1>Scripts and debugging<a class="headerlink" href="#scripts-and-debugging" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="exercises-scripts">
-<h2>Exercises: scripts<a class="headerlink" href="#exercises-scripts" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="exercise-7-1-copying-the-files-required-for-the-exercises">
-<h3>Exercise 7.1: Copying the files required for the exercises<a class="headerlink" href="#exercise-7-1-copying-the-files-required-for-the-exercises" title="Permalink to this headline">¶</a></h3>
-<p>Open a terminal from the Jupyter “Home” page in your webbrowser (the view of your home directory), by clicking on “Terminal” in the “New” pull down menu.</p>
-<p>If you haven’t already done so, first create a folder/directory named <code class="docutils literal notranslate"><span class="pre">cfb_2020</span></code> in your network folder for this course:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>cd                # go to root of your home directory
-mkdir cfb_2020    # mkdir creates a directory
-cd cfb_2020       # change directory
-pwd               # print current working directory. 
-                  # In my case, the result is: /home/kalbers/cfb_2018
-</pre></div>
-</div>
-<p>Now we are going the copy the files and scripts necessary to perform these exercises to the “cfb_2018” directory.
-The Linux command “cp” copies files and directories.</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>cp -rp /scratch/cfb/scripts_and_debugging ~/cfb_2020/
-</pre></div>
-</div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>The <code class="docutils literal notranslate"><span class="pre">~</span></code> refers to the root of your homedirectory (whatever your username is), and the directory <code class="docutils literal notranslate"><span class="pre">cfb_2020</span></code> has to exist for this particular copy command to work.</p>
-</div>
-<p>Now change directory (using <code class="docutils literal notranslate"><span class="pre">cd</span></code>) to the directory <code class="docutils literal notranslate"><span class="pre">~/cfb_2020/scripts_and_debugging</span></code>.
-Validate that you are in the correct directory using the command <code class="docutils literal notranslate"><span class="pre">pwd</span></code> as above.</p>
-</div>
-<div class="section" id="exercise-7-2-comparing-the-jupyter-notebook-with-running-scripts-from-the-command-line">
-<h3>Exercise 7.2: Comparing the Jupyter notebook with running scripts from the command line<a class="headerlink" href="#exercise-7-2-comparing-the-jupyter-notebook-with-running-scripts-from-the-command-line" title="Permalink to this headline">¶</a></h3>
-<p>Open a new Python3 Jupyter-notebook for these exercises. Copy the following code into a cell and execute the cell:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello&quot;</span><span class="p">)</span>
-<span class="n">my_number</span> <span class="o">=</span> <span class="mi">1</span>
-<span class="n">my_number</span>
-</pre></div>
-</div>
-<p>Questions:</p>
-<ol class="simple">
-<li><p>Describe the exact output.</p></li>
-<li><p>Which of the three lines in the above code produce output?</p></li>
-<li><p>Is this output formatted in the same way?</p></li>
-</ol>
-<p>Now create a new text file by clicking “Text File” in the “New” drop-down menu in the file-browser tab-page of your Jupyter notebook.
-Make sure to first go the correct subdirectory (<code class="docutils literal notranslate"><span class="pre">~/cfb_2020/scripts_and_debugging</span></code>) by clicking on the respective subdirectories in the
-Jupyter file browser window.
-Put the same three lines of code in this text file. Then, rename the text file to “exercise2.py” by clicking on the file name at the top of the screen.
-(The default file name is “untitled.txt”).</p>
-<p>If everything went well, the word “print” should now have the color green, and the text “Hello” should be colored red. This is called <em>syntax highlighting</em>.</p>
-<p>Now, run the script from the command line in the terminal window as follows:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>python exercise2.py
-</pre></div>
-</div>
-<p>Questions:</p>
-<ol class="simple">
-<li><p>Is the output of the script printed to the terminal window exactly the same as the output printed to screen when executing the cell in a Jupyter notebook?</p></li>
-<li><p>How does a Jupyter-notebook differ from a script in terms of outputing information to the screen?</p></li>
-</ol>
-</div>
-<div class="section" id="exercise-7-3-permanence-of-python-variables-in-memory">
-<h3>Exercise 7.3: Permanence of Python variables in memory<a class="headerlink" href="#exercise-7-3-permanence-of-python-variables-in-memory" title="Permalink to this headline">¶</a></h3>
-<p>Copy the following code to a cell in a <em><strong>Jupyter notebook</strong></em> and execute the cell.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">my_number</span> <span class="o">=</span> <span class="mi">42</span>
-</pre></div>
-</div>
-<p>Copy the following code to a <em><strong>new</strong></em> cell below the previous one in the same Jupyter notebook, and execute the cell:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;my_number:&quot;</span><span class="p">,</span> <span class="n">my_number</span><span class="p">)</span>
-</pre></div>
-</div>
-<p>Question:</p>
-<ol class="simple">
-<li><p>What is the output of the second cell in the Jupyter notebook?</p></li>
-</ol>
-<p>Next, create a Python script called <code class="docutils literal notranslate"><span class="pre">exercise3a.py</span></code> with exactly the same code as the first cell (i.e. <code class="docutils literal notranslate"><span class="pre">my_number</span> <span class="pre">=</span> <span class="pre">42</span></code>).
-Create a second Python script called <code class="docutils literal notranslate"><span class="pre">exercise3b.py</span></code> with exactly the same code as the second cell (<code class="docutils literal notranslate"><span class="pre">print(&quot;my_number:&quot;,</span> <span class="pre">my_number)</span></code>).</p>
-<p>Now go to your Terminal and execute the first script and the second script in that order:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>python exercise3a.py
-python exercise3b.py
-</pre></div>
-</div>
-<p>Questions:</p>
-<ol class="simple">
-<li><p>Does executing the first script produce an error message? If not, what is the output printed to the screen? If yes, why?</p></li>
-<li><p>Does executing the second script produce an error message? If not, what is the output printed to the screen? If yes, why?</p></li>
-<li><p>What is the state of the Python memory when it starts to execute a Python script?</p></li>
-</ol>
-</div>
-</div>
-<div class="section" id="using-script-withs-variable-input">
-<h2>Using script withs variable input<a class="headerlink" href="#using-script-withs-variable-input" title="Permalink to this headline">¶</a></h2>
-<p>Create the a file called <code class="docutils literal notranslate"><span class="pre">module_using_sys.py</span></code> with the following contents:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sys</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;The command line arguments are:&#39;</span><span class="p">)</span>
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
-</pre></div>
-</div>
-<p>Let’s run this program from the shell.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ python module_using_sys.py we are arguments
-</pre></div>
-</div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">The</span> <span class="n">command</span> <span class="n">line</span> <span class="n">arguments</span> <span class="n">are</span><span class="p">:</span>
-<span class="n">module_using_sys</span><span class="o">.</span><span class="n">py</span>
-<span class="n">we</span>
-<span class="n">are</span>
-<span class="n">arguments</span>
-</pre></div>
-</div>
-<p>The <code class="docutils literal notranslate"><span class="pre">argv</span></code> variable in the <code class="docutils literal notranslate"><span class="pre">sys</span></code> module contains everything that you have typed on the command line. The <code class="docutils literal notranslate"><span class="pre">sys.argv</span></code> variable is a <em>list</em> of strings. Specifically, the <code class="docutils literal notranslate"><span class="pre">sys.argv</span></code> contains the list of <em>command line arguments</em> i.e. the arguments passed to your program using the command line.</p>
-<p>Here, when we execute <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">module_using_sys.py</span> <span class="pre">we</span> <span class="pre">are</span> <span class="pre">arguments</span></code>, we run the module
-<code class="docutils literal notranslate"><span class="pre">module_using_sys.py</span></code> with the <code class="docutils literal notranslate"><span class="pre">python</span></code> command and the other things that follow are arguments
-passed to the program. Python stores the command line arguments in the <code class="docutils literal notranslate"><span class="pre">sys.argv</span></code> variable for us
-to use.</p>
-<p>Remember, the name of the script running is always the first argument in the <code class="docutils literal notranslate"><span class="pre">sys.argv</span></code> list. So,
-in this case we will have <code class="docutils literal notranslate"><span class="pre">'module_using_sys.py'</span></code> as <code class="docutils literal notranslate"><span class="pre">sys.argv[0]</span></code>, <code class="docutils literal notranslate"><span class="pre">'we'</span></code> as <code class="docutils literal notranslate"><span class="pre">sys.argv[1]</span></code>,
-<code class="docutils literal notranslate"><span class="pre">'are'</span></code> as <code class="docutils literal notranslate"><span class="pre">sys.argv[2]</span></code> and <code class="docutils literal notranslate"><span class="pre">'arguments'</span></code> as <code class="docutils literal notranslate"><span class="pre">sys.argv[3]</span></code>.</p>
-</div>
-<div class="section" id="exercises-using-sys-argv">
-<h2>Exercises using <code class="docutils literal notranslate"><span class="pre">sys.argv</span></code><a class="headerlink" href="#exercises-using-sys-argv" title="Permalink to this headline">¶</a></h2>
-<p><strong>Exercise 7.4: Reading the command line arguments</strong></p>
-<p>Make a script called <code class="docutils literal notranslate"><span class="pre">nuc_arg.py</span></code> that prints the nucleotide content of a sequence that you give as argument on the command line.
-For example, this command:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ python nuc_arg.py TGACTCA
-</pre></div>
-</div>
-<p>should print the following output:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">2</span> <span class="mi">2</span> <span class="mi">1</span> <span class="mi">2</span>
-</pre></div>
-</div>
-<p><em>Hint:</em> if you want, you can use the nucleotide count function from the lecture.</p>
-<p>Copy this script to a new file:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ cp nuc_script.py nuc_arg.py
-</pre></div>
-</div>
-<p>Now you can edit the script <code class="docutils literal notranslate"><span class="pre">nuc_arg.py</span></code>.</p>
-<p><strong>Exercise 7.5: FASTA statistics</strong></p>
-<p>Write a script called <code class="docutils literal notranslate"><span class="pre">nuc_fasta.py</span></code>.
-This script should accept the name of a FASTA file as argument, read the FASTA sequences in that file and print the nucleotide content of all the sequences.
-The script should print the <code class="docutils literal notranslate"><span class="pre">ID</span></code> of every sequence followed by the nucleotide content of that sequence.</p>
-</div>
-<div class="section" id="using-available-modules-argparse">
-<h2>Using available modules: argparse<a class="headerlink" href="#using-available-modules-argparse" title="Permalink to this headline">¶</a></h2>
-<p>The Python standard library,
-which is included with every Python version,
-contains a lot of useful modules (see <a class="reference external" href="https://docs.python.org/3/library/">here</a>)
-In addition, there are many third-party modules available.
-Some of these we will use in this course, such as <a class="reference external" href="http://pandas.pydata.org/">pandas</a> for data analysis and <a class="reference external" href="http://matplotlib.org/">matplotlib</a> for making figures.
-However, it is not possible to exhaustively cover all these modules in this course.
-Therefore, it is very useful to be able to search for modules and for examples and tutorials on how to use tese modules.
-With the subjects covered so far, you have should have enough understanding of basic Python principles.</p>
-<p>Let’s take an example, the <code class="docutils literal notranslate"><span class="pre">argparse</span></code> module.
-This is a very useful module for scripts that take (a lot of) command-line arguments. Some examples on how to use this module:</p>
-<p>https://docs.python.org/3/howto/argparse.html</p>
-<ul class="simple">
-<li><p><a class="reference external" href="https://docs.python.org/3/howto/argparse.html">https://docs.python.org/3/howto/argparse.html</a></p></li>
-<li><p><a class="reference external" href="http://www.pythonforbeginners.com/argparse/argparse-tutorial">http://www.pythonforbeginners.com/argparse/argparse-tutorial</a></p></li>
-<li><p><a class="reference external" href="https://pymotw.com/3/argparse/">https://pymotw.com/3/argparse/</a></p></li>
-<li><p><a class="reference external" href="https://mkaz.tech/code/python-argparse-cookbook/">https://mkaz.tech/code/python-argparse-cookbook/</a></p></li>
-</ul>
-<p>Have a look, Google it, try it out!
-We will use the argparse module in our final assignment for today.</p>
-</div>
-<div class="section" id="exercises-putting-it-all-together">
-<h2>Exercises: putting it all together<a class="headerlink" href="#exercises-putting-it-all-together" title="Permalink to this headline">¶</a></h2>
-<p><strong>Exercise 7.6: motif scanning</strong></p>
-<p>Write a command-line Python script that scans a FASTA file with a IUPAC consensus sequence.
-As an optional argument to the script, a use should be able to specify a number of mismatches.
-It should be possible to specify these arguments on the command line, use the <code class="docutils literal notranslate"><span class="pre">argparse</span></code> module.
-As output, the script should print, for every match, the ID of the sequence and the position of the match within the sequence.</p>
-<p>Take care of the following:</p>
-<ul class="simple">
-<li><p>Comment your code</p></li>
-<li><p>Use functions</p></li>
-<li><p>Follow the style guide</p></li>
-<li><p>Test your code</p></li>
-</ul>
-<p>Start small.
-It is better to have a working script that has limited functionality but works well, then a script that tries to do everything and fails.</p>
-<p><strong>Test data</strong></p>
-<p>Two examples of consensus sequences and FASTA files (for c-Myc and STAT3 from <a class="reference external" href="http://dx.doi.org/10.1016/j.cell.2008.04.043">Chen et al. 2008</a>) are located in <code class="docutils literal notranslate"><span class="pre">/scratch/cfb/consensus_motif</span></code>.</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">consensus.txt</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">c-Myc.fa</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">STAT3.fa</span></code></p></li>
-</ul>
-<p><strong>Extension (optional!)</strong></p>
-<p>Implement the ‘Match’ algorithm from <a class="reference external" href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC169193/">Kel et al. 2003</a> to scan for matches to a positional weight matrix.</p>
-<p>The <code class="docutils literal notranslate"><span class="pre">log</span></code> function can be imported from the <code class="docutils literal notranslate"><span class="pre">math</span></code> module. See the definition of this function <a class="reference external" href="https://docs.python.org/3/library/math.html#math.log">here</a>.</p>
-</div>
+  <div class="section" id="debugging">
+<h1><span class="section-number">10. </span>Debugging<a class="headerlink" href="#debugging" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="exercises-debugging">
-<h2>Exercises: debugging<a class="headerlink" href="#exercises-debugging" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="exercise-7-7">
-<h3>Exercise 7.7<a class="headerlink" href="#exercise-7-7" title="Permalink to this headline">¶</a></h3>
+<h2><span class="section-number">10.1. </span>Exercises: debugging<a class="headerlink" href="#exercises-debugging" title="Permalink to this headline">¶</a></h2>
+<p><strong>Exercise 10.1</strong></p>
 <p>The purpose of the following code is to count how often each TF in the network is a target of a TF in the network (it also counts if a TF regulates itself).
 In other words, how many TFs in the network bind in the promoter of a given TF.</p>
 <ul class="simple">
@@ -519,8 +239,7 @@ In other words, how many TFs in the network bind in the promoter of a given TF.<
 <li><p>Every time you change the file, save it.</p></li>
 <li><p>Execute the Python script from the command line with <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">my_exercise4.py</span></code>.</p></li>
 </ul>
-<div class="section" id="questions">
-<h4>Questions<a class="headerlink" href="#questions" title="Permalink to this headline">¶</a></h4>
+<p><strong>Questions</strong></p>
 <ol class="simple">
 <li><p>What is the purpose of this code? (This should be obvious from the short description given above and the code itself)</p></li>
 <li><p>What is the input and what is the expected output?
@@ -601,10 +320,7 @@ However, some are mistakes that do not produce runtime errors that produce an in
 </div>
 </div>
 </div>
-</div>
-</div>
-<div class="section" id="exercise-7-8">
-<h3>Exercise 7.8<a class="headerlink" href="#exercise-7-8" title="Permalink to this headline">¶</a></h3>
+<p><strong>Exercise 10.2</strong></p>
 <p>The following code (provided in the file <code class="docutils literal notranslate"><span class="pre">exercise5.py</span></code>)
 tests whether a particular TF of interest directly regulates itself (in other words, if a TF binds in its own promoter).
 The name of the TF of interest is assigned to the variable <code class="docutils literal notranslate"><span class="pre">my_tf_of_interest</span></code>.</p>
@@ -618,8 +334,7 @@ The name of the TF of interest is assigned to the variable <code class="docutils
 </div>
 <p>to screen (with “my_tf_of_interest” replaced by the actual TF name), depending on whether there is a self-regulation relationship encoded in the
 <code class="docutils literal notranslate"><span class="pre">hsc_network</span></code> dictionary variable or not.</p>
-<div class="section" id="id1">
-<h4>Questions<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h4>
+<p><strong>Questions</strong></p>
 <ol class="simple">
 <li><p>This script contains a bug (otherwise it wouldn’t be a question here). Can you identify the bug without running the code (try for at least 10 minutes)?</p></li>
 <li><p>Run the code as a script from the command line in a terminal.
@@ -666,10 +381,7 @@ If not, how would you adapt the code (extend or change it) so that it does produ
 </div>
 </div>
 </div>
-</div>
-</div>
-<div class="section" id="id2">
-<h3>Exercise 7.8<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<p><strong>Exercise 10.3</strong></p>
 <p>This exercise focuses on problems that may arise when an input file does not have the formatting you expect, contains errors or otherwise unexpected events.</p>
 <p>For small networks it is feasible to type your network directly as a dictionary, like in the example above.
 In other realistic scenarios, the network file is produced by another analysis (either your own Python script or another program), and you would like
@@ -724,8 +436,7 @@ The code contained in it is as follows:</p>
 </div>
 </div>
 <p>Run the script from the command line in a terminal. You can view the network file by clicking on it in the Jupyter file browser.</p>
-<div class="section" id="expected-output">
-<h4>Expected output<a class="headerlink" href="#expected-output" title="Permalink to this headline">¶</a></h4>
+<p><strong>Expected output</strong></p>
 <p>If the script functions correctly, the desired output is:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Source TF:	 Erg 	Number of targets:	 6
 Source TF:	 Eto2 	Number of targets:	 1
@@ -740,9 +451,7 @@ Source TF:	 Smad6 	Number of targets:	 1
 Source TF:	 Zfpm1 	Number of targets:	 1
 </pre></div>
 </div>
-</div>
-<div class="section" id="question-assignment">
-<h4>Question/assignment:<a class="headerlink" href="#question-assignment" title="Permalink to this headline">¶</a></h4>
+<p><strong>Question/assignment:</strong></p>
 <p>The script <code class="docutils literal notranslate"><span class="pre">exercise6.py</span></code> makes three assumptions about the input file that are not valid (the input file violates the assumption).</p>
 <p>Describe at least three assumptions that this script makes about the input file and provide a script that produces the desired output.</p>
 <p>For example, describe the assumptions as specifically as in the following examples (this is just an example, not relevant to this script):</p>
@@ -754,17 +463,13 @@ Source TF:	 Zfpm1 	Number of targets:	 1
 <p class="admonition-title">Note</p>
 <p>You have the change the Python script; you are <strong>NOT</strong> allowed to change the input file!</p>
 </div>
-</div>
-<div class="section" id="hints">
-<h4>Hints:<a class="headerlink" href="#hints" title="Permalink to this headline">¶</a></h4>
+<p><strong>Hints:</strong></p>
 <ol class="simple">
 <li><p>Use <code class="docutils literal notranslate"><span class="pre">if</span></code> statements to check whether a specific assumption that you require for correct execution is satisfied.
 For instance, you can use an <code class="docutils literal notranslate"><span class="pre">if</span></code> statement to check the length of a list, or whether a key is present in the dictionary.</p></li>
 <li><p>Add <code class="docutils literal notranslate"><span class="pre">print()</span></code> statements to understand what each line is doing and what the value is of a variable.</p></li>
 <li><p>You are allowed to change the input file to understand where the problem is, but you have to provide code that produces the correct output for the original input file.</p></li>
 </ol>
-</div>
-</div>
 </div>
 </div>
 
@@ -777,6 +482,8 @@ For instance, you can use an <code class="docutils literal notranslate"><span cl
     
     <div class='prev-next-bottom'>
         
+    <a class='left-prev' id="prev-link" href="scripts.html" title="previous page"><span class="section-number">9. </span>Scripts</a>
+    <a class='right-next' id="next-link" href="pandas.html" title="next page"><span class="section-number">11. </span>Introduction to pandas DataFrames</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">

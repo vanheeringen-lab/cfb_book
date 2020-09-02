@@ -180,7 +180,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/content/functions_modules_style.ipynb"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/content/extra_functions_modules_style.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
@@ -286,6 +286,16 @@
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#coding-style">
    Coding style
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#using-available-modules-argparse">
+   Using available modules: argparse
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercises-putting-it-all-together">
+   Exercises: putting it all together
   </a>
  </li>
 </ul>
@@ -947,6 +957,55 @@ In addition, in the exam you will get points for following this coding style.</p
 <li><p>Use meaningful variable names</p></li>
 <li><p>Variable, function and module names are all-lowercase. Underscores can be used if it improves readability.</p></li>
 </ul>
+</div>
+<div class="section" id="using-available-modules-argparse">
+<h2>Using available modules: argparse<a class="headerlink" href="#using-available-modules-argparse" title="Permalink to this headline">¶</a></h2>
+<p>The Python standard library,
+which is included with every Python version,
+contains a lot of useful modules (see <a class="reference external" href="https://docs.python.org/3/library/">here</a>)
+In addition, there are many third-party modules available.
+Some of these we will use in this course, such as <a class="reference external" href="http://pandas.pydata.org/">pandas</a> for data analysis and <a class="reference external" href="http://matplotlib.org/">matplotlib</a> for making figures.
+However, it is not possible to exhaustively cover all these modules in this course.
+Therefore, it is very useful to be able to search for modules and for examples and tutorials on how to use tese modules.
+With the subjects covered so far, you have should have enough understanding of basic Python principles.</p>
+<p>Let’s take an example, the <code class="docutils literal notranslate"><span class="pre">argparse</span></code> module.
+This is a very useful module for scripts that take (a lot of) command-line arguments. Some examples on how to use this module:</p>
+<p>https://docs.python.org/3/howto/argparse.html</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://docs.python.org/3/howto/argparse.html">https://docs.python.org/3/howto/argparse.html</a></p></li>
+<li><p><a class="reference external" href="http://www.pythonforbeginners.com/argparse/argparse-tutorial">http://www.pythonforbeginners.com/argparse/argparse-tutorial</a></p></li>
+<li><p><a class="reference external" href="https://pymotw.com/3/argparse/">https://pymotw.com/3/argparse/</a></p></li>
+<li><p><a class="reference external" href="https://mkaz.tech/code/python-argparse-cookbook/">https://mkaz.tech/code/python-argparse-cookbook/</a></p></li>
+</ul>
+<p>Have a look, Google it, try it out!
+We will use the argparse module in our final assignment for today.</p>
+</div>
+<div class="section" id="exercises-putting-it-all-together">
+<h2>Exercises: putting it all together<a class="headerlink" href="#exercises-putting-it-all-together" title="Permalink to this headline">¶</a></h2>
+<p><strong>Exercise 8.8: motif scanning</strong></p>
+<p>Write a command-line Python script that scans a FASTA file with a IUPAC consensus sequence.
+As an optional argument to the script, a use should be able to specify a number of mismatches.
+It should be possible to specify these arguments on the command line, use the <code class="docutils literal notranslate"><span class="pre">argparse</span></code> module.
+As output, the script should print, for every match, the ID of the sequence and the position of the match within the sequence.</p>
+<p>Take care of the following:</p>
+<ul class="simple">
+<li><p>Comment your code</p></li>
+<li><p>Use functions</p></li>
+<li><p>Follow the style guide</p></li>
+<li><p>Test your code</p></li>
+</ul>
+<p>Start small.
+It is better to have a working script that has limited functionality but works well, then a script that tries to do everything and fails.</p>
+<p><strong>Test data</strong></p>
+<p>Two examples of consensus sequences and FASTA files (for c-Myc and STAT3 from <a class="reference external" href="http://dx.doi.org/10.1016/j.cell.2008.04.043">Chen et al. 2008</a>) are located in <code class="docutils literal notranslate"><span class="pre">/scratch/cfb/consensus_motif</span></code>.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">consensus.txt</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">c-Myc.fa</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">STAT3.fa</span></code></p></li>
+</ul>
+<p><strong>Extension (optional!)</strong></p>
+<p>Implement the ‘Match’ algorithm from <a class="reference external" href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC169193/">Kel et al. 2003</a> to scan for matches to a positional weight matrix.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">log</span></code> function can be imported from the <code class="docutils literal notranslate"><span class="pre">math</span></code> module. See the definition of this function <a class="reference external" href="https://docs.python.org/3/library/math.html#math.log">here</a>.</p>
 </div>
 </div>
 
