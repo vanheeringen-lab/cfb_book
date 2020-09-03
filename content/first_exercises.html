@@ -316,6 +316,51 @@
 </div>
 <div class="section" id="working-with-strings">
 <h2><span class="section-number">1.2. </span>Working with strings<a class="headerlink" href="#working-with-strings" title="Permalink to this headline">¶</a></h2>
+<p>As you have seen, you can combine strings using the <code class="docutils literal notranslate"><span class="pre">+</span></code> operator.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">first_part</span> <span class="o">=</span> <span class="s2">&quot;this is &quot;</span>
+<span class="n">second_part</span> <span class="o">=</span> <span class="s2">&quot;a long string&quot;</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">first_part</span> <span class="o">+</span> <span class="n">second_part</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>this is a long string
+</pre></div>
+</div>
+</div>
+</div>
+<p>If you want to access specific parts of a string you can use <code class="docutils literal notranslate"><span class="pre">[</span></code> and <code class="docutils literal notranslate"><span class="pre">]</span></code> with a number in between.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">msg</span> <span class="o">=</span> <span class="s2">&quot;hello there!&quot;</span>
+<span class="n">msg</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>&#39;e&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>You’ll see that <code class="docutils literal notranslate"><span class="pre">[1]</span></code> selects the second character of the string <code class="docutils literal notranslate"><span class="pre">&quot;hello</span> <span class="pre">there!&quot;</span></code>. Why the second and not the first? This is because Python, like many other programming language, starts counting at <code class="docutils literal notranslate"><span class="pre">0</span></code>.</p>
+<p>There is a more extended version, where you create a <em>slice</em>. In this case you specify <code class="docutils literal notranslate"><span class="pre">[start:end]</span></code>. This looks as follows:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">msg</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">5</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>&#39;hello&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Here you see that you can take a <em>substring</em> of <code class="docutils literal notranslate"><span class="pre">string</span></code>. In other words, you select a smaller part of a <code class="docutils literal notranslate"><span class="pre">string</span></code>.</p>
 <p>You can convert a number, such as an <code class="docutils literal notranslate"><span class="pre">int</span></code> or <code class="docutils literal notranslate"><span class="pre">float</span></code> to a string with the <code class="docutils literal notranslate"><span class="pre">str()</span></code> method.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
