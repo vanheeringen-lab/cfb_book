@@ -5,3 +5,10 @@ author: Simon van Heeringen, Arjen Brinkman, Kees Albers
 latex:
   latex_documents:
     targetname: book.tex
+
+repository:
+  url: https://github.com/vanheeringen-lab/cfb_book
+  html:
+    use_repository_button: true
+    use_issues_button: true
+    use_edit_page_button: true
