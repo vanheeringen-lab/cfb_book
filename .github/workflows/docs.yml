@@ -27,7 +27,7 @@ jobs:
         # won't work without a nojekyll file
         run: |
           jupyter-book build .
-          touch build/.nojekyll
+          touch _build/html/.nojekyll
 
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@releases/v3
