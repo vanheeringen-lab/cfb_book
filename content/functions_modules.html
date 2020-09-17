@@ -790,8 +790,8 @@ The square root of 16 is 4.0
 
 Today is 2020-09-17
 
-Here you have a pseudo-random number: 0.3053365795242152
-Or a random integer between 0 and 10: 7
+Here you have a pseudo-random number: 0.36468796931045466
+Or a random integer between 0 and 10: 5
 </pre></div>
 </div>
 </div>
@@ -807,7 +807,13 @@ Or a random integer between 0 and 10: 7
 <p><strong>Exercise 5.3</strong></p>
 <p>Write a function <code class="docutils literal notranslate"><span class="pre">random_sequence()</span></code> that generates a string with a random DNA sequence of length <code class="docutils literal notranslate"><span class="pre">length</span></code>. The <code class="docutils literal notranslate"><span class="pre">length</span></code> argument should have a default value of <code class="docutils literal notranslate"><span class="pre">100</span></code>. All nucleotides should have an equal chance of occurring.</p>
 <p><strong>Exercise 5.4</strong></p>
-<p>Adapt your function <code class="docutils literal notranslate"><span class="pre">random_sequence()</span></code> and add an optional argument <code class="docutils literal notranslate"><span class="pre">gc</span></code>, which determines the total fraction of G + C in the sequence. This means that if you call <code class="docutils literal notranslate"><span class="pre">random_sequence(length=100,</span> <span class="pre">gc=40)</span></code> that 40 out of the 100 characters of the returned string should be a G or a C.</p>
+<p>Adapt your function <code class="docutils literal notranslate"><span class="pre">random_sequence()</span></code> and add an optional argument <code class="docutils literal notranslate"><span class="pre">gc</span></code>, which determines the total fraction of G + C in the sequence. This means that if you call <code class="docutils literal notranslate"><span class="pre">random_sequence(length=100,</span> <span class="pre">gc=40)</span></code> that 40 out of the 100 characters of the returned string should be a G or a C. The default GC% should be 50%. Note that there are multiple solutions possible. Hint: check the following functions from the <code class="docutils literal notranslate"><span class="pre">random</span></code> module:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">randint()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">random()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">choice()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">shuffle()</span></code></p></li>
+</ul>
 <p><strong>Exercise 5.5</strong></p>
 <p>Write a function <code class="docutils literal notranslate"><span class="pre">list_fasta()</span></code> that returns a list of all FASTA files in a directory. The first argument to <code class="docutils literal notranslate"><span class="pre">list_fasta()</span></code> should be the directory. For this exercise you can assume that FASTA files have a <code class="docutils literal notranslate"><span class="pre">.fa</span></code>, a <code class="docutils literal notranslate"><span class="pre">.fsa</span></code> or a <code class="docutils literal notranslate"><span class="pre">.fasta</span></code> extension.</p>
 </div>
