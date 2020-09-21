@@ -1,0 +1,893 @@
+
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>5. Functions and modules &#8212; NWI-BM066A Computation for Biologists</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
+    <link href="../_static/css/index.css" rel="stylesheet">
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/spanels-index--0afa1ebdab0bb23b98b56d34c23d9f57.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/spanels-variables--ffc7f74dcb1b9eecba2dbcbc22818714.css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/sphinx-book-theme.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="6. Dictionaries" href="dictionaries.html" />
+    <link rel="prev" title="4. Loops" href="loops.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="docsearch:language" content="en">
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../index.html">
+  
+  
+  <h1 class="site-logo" id="site-title">NWI-BM066A Computation for Biologists</h1>
+  
+</a>
+</div>
+
+<form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="01_introduction.html">
+   Introduction
+  </a>
+ </li>
+</ul>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="first_exercises.html">
+   1. First exercises
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="lists.html">
+   2. Lists
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="control_flow.html">
+   3. Control flow
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="loops.html">
+   4. Loops
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   5. Functions and modules
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="dictionaries.html">
+   6. Dictionaries
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="extra_exercises.html">
+   7. Assembling the pieces
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="files.html">
+   8. Files
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="scripts.html">
+   9. Scripts
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="debugging.html">
+   10. Debugging
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="pandas.html">
+   11. Introduction to pandas DataFrames
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="visualization.html">
+   12. Visualization
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="dnase_motifs.html">
+   13. Motifs in DNase I peaks
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="footprints.html">
+   14. Creating a DNAseI footprint profile
+  </a>
+ </li>
+</ul>
+
+</nav>
+
+ <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        <div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/content/functions_modules.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+    
+</div>
+        <!-- Source interaction buttons -->
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/vanheeringen-lab/cfb_book/master?urlpath=tree/content/functions_modules.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        <a class="colab-button" href="https://colab.research.google.com/github/vanheeringen-lab/cfb_book/blob/master/content/functions_modules.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
+                    src="../_static/images/logo_colab.png"
+                    alt="Interact on Colab">Colab</button></a>
+        
+        
+    </div>
+</div>
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#functions">
+   5.1. Functions
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#function-parameters">
+     5.1.1. Function Parameters
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#local-variables">
+     5.1.2. Local Variables
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#default-argument-values">
+     5.1.3. Default Argument Values
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#keyword-arguments">
+     5.1.4. Keyword Arguments
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-return-statement">
+     5.1.5. The
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       return
+      </span>
+     </code>
+     statement
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#docstrings-documenting-your-functions">
+   5.2. DocStrings - documenting your functions
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercises">
+   5.3. Exercises
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#modules">
+   5.4. Modules
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-from-import-statement">
+     5.4.1. The from … import statement
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#multiple-imports">
+     5.4.2. Multiple imports
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id1">
+   5.5. Exercises
+  </a>
+ </li>
+</ul>
+
+        </nav>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="functions-and-modules">
+<h1><span class="section-number">5. </span>Functions and modules<a class="headerlink" href="#functions-and-modules" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="functions">
+<h2><span class="section-number">5.1. </span>Functions<a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h2>
+<p>Functions are reusable pieces of programs. They allow you to give a name to a block of statements,
+allowing you to run that block using the specified name anywhere in your program and any number of
+times. This is known as <em>calling</em> the function. We have already used many built-in functions such
+as <code class="docutils literal notranslate"><span class="pre">print()</span></code>, <code class="docutils literal notranslate"><span class="pre">len()</span></code> and <code class="docutils literal notranslate"><span class="pre">range()</span></code>.</p>
+<p>The function concept is probably <em>the</em> most important building block of any non-trivial software
+(in any programming language), so we will explore various aspects of functions in this chapter.</p>
+<p>Functions are defined using the <code class="docutils literal notranslate"><span class="pre">def</span></code> keyword. After this keyword comes an <em>identifier</em> name for
+the function, followed by a pair of parentheses which may enclose some names of variables, and by
+the final colon that ends the line. Next follows the block of statements that are part of this
+function. An example will show that this is actually very simple.
+Here we define a function called <code class="docutils literal notranslate"><span class="pre">print_nuc_count()</span></code> using the syntax as explained above.
+Run the example to see the output.</p>
+<p>Example:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">print_nuc_count</span><span class="p">():</span>
+    <span class="n">dna</span> <span class="o">=</span> <span class="s2">&quot;AGCTTTTCATTCTGACTGCAACGGGCAATATGTCTCTGTGTGGATTAAAAAAAG&quot;</span>
+
+    <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="s2">&quot;ACGT&quot;</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">dna</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="n">n</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">()</span>
+
+<span class="n">print_nuc_count</span><span class="p">()</span>
+<span class="n">print_nuc_count</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A 16
+C 9
+G 12
+T 17
+
+A 16
+C 9
+G 12
+T 17
+</pre></div>
+</div>
+</div>
+</div>
+<p>Notice that we can call the same function twice which means we do not have to write the same code
+again.</p>
+<div class="section" id="function-parameters">
+<h3><span class="section-number">5.1.1. </span>Function Parameters<a class="headerlink" href="#function-parameters" title="Permalink to this headline">¶</a></h3>
+<p>The function <code class="docutils literal notranslate"><span class="pre">print_nuc_count</span></code> as defined above takes no arguments.
+Therefore, there are no parameters declared in the parentheses in the function definition.
+Often, we want to supply some information to the function in the form of arguments,
+so that the function can <em>do</em> something utilising those values.
+In that case we specify parameters in the function definition.
+These are basically just variable names that define the input to the function
+so that we can pass in different values to it and get back corresponding results.
+The values of these variables are defined when we call the function and are already assigned values
+when the function runs.
+Parameters are specified within the pair of parentheses in the function definition, separated by
+commas. When we call the function, we supply the arguments in the same way.</p>
+<blockquote>
+<div><p><strong>The difference between arguments and parameters</strong></p>
+<p>Note the terminology used -
+the names given in the function definition are called <em>parameters</em>
+whereas the values you supply in the function call are called <em>arguments</em>.</p>
+</div></blockquote>
+<p>The function we defined above is not very useful.
+We usually don’t want to count the number of nucleotides in the same sequence again and again.
+We will define a function that takes one argument, called <code class="docutils literal notranslate"><span class="pre">seq</span></code>, which is used to determine the number of nucleotides.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">print_nuc_count</span><span class="p">(</span><span class="n">seq</span><span class="p">):</span>
+
+    <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="s2">&quot;ACGT&quot;</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">seq</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="n">n</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">()</span>
+
+<span class="n">print_nuc_count</span><span class="p">(</span><span class="s2">&quot;ACCGGGTTT&quot;</span><span class="p">)</span>
+
+<span class="n">dna</span> <span class="o">=</span> <span class="s2">&quot;GACTGGATAGAGTAG&quot;</span>
+<span class="n">print_nuc_count</span><span class="p">(</span><span class="n">dna</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A 1
+C 2
+G 3
+T 3
+
+A 5
+C 1
+G 6
+T 3
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>How It Works</strong></p>
+<p>The first time we call the function <code class="docutils literal notranslate"><span class="pre">print_nuc_count</span></code>,
+we directly supply the sequence as arguments.
+In the second case, we call the function with a variable as argument.
+<code class="docutils literal notranslate"><span class="pre">print_nuc_count(dna)</span></code> causes the value of argument <code class="docutils literal notranslate"><span class="pre">dna</span></code> to be assigned to parameter <code class="docutils literal notranslate"><span class="pre">seq</span></code>. The <code class="docutils literal notranslate"><span class="pre">print_nuc_count</span></code> function works the same way in both cases.</p>
+</div>
+<div class="section" id="local-variables">
+<h3><span class="section-number">5.1.2. </span>Local Variables<a class="headerlink" href="#local-variables" title="Permalink to this headline">¶</a></h3>
+<p>When you declare variables inside a function definition, they are not related in any way to other
+variables with the same names used outside the function - i.e. variable names are <em>local</em> to the
+function. This is called the <em>scope</em> of the variable. All variables have the scope of the block
+they are declared in starting from the point of definition of the name.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">50</span>
+
+<span class="k">def</span> <span class="nf">func</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;x is&#39;</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="mi">2</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Changed local x to&#39;</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+
+<span class="n">func</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;x is still&#39;</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>x is 50
+Changed local x to 2
+x is still 50
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>How It Works</strong></p>
+<p>The first time that we print the <em>value</em> of the name <em>x</em> with the first line in the function’s
+body, Python uses the value of the parameter declared in the main block, above the function
+definition.</p>
+<p>Next, we assign the value <code class="docutils literal notranslate"><span class="pre">2</span></code> to <code class="docutils literal notranslate"><span class="pre">x</span></code>. The name <code class="docutils literal notranslate"><span class="pre">x</span></code> is local to our function.  So, when we change
+the value of <code class="docutils literal notranslate"><span class="pre">x</span></code> in the function, the <code class="docutils literal notranslate"><span class="pre">x</span></code> defined in the main block remains unaffected.</p>
+<p>With the last <code class="docutils literal notranslate"><span class="pre">print</span></code> statement, we display the value of <code class="docutils literal notranslate"><span class="pre">x</span></code> as defined in the main block, thereby
+confirming that it is actually unaffected by the local assignment within the previously called
+function.</p>
+</div>
+<div class="section" id="default-argument-values">
+<h3><span class="section-number">5.1.3. </span>Default Argument Values<a class="headerlink" href="#default-argument-values" title="Permalink to this headline">¶</a></h3>
+<p>For some functions, you may want to make some parameters <em>optional</em> and use default values in case
+the user does not want to provide values for them. This is done with the help of default argument
+values. You can specify default argument values for parameters by appending to the parameter name
+in the function definition the assignment operator (<code class="docutils literal notranslate"><span class="pre">=</span></code>) followed by the default value.</p>
+<p>Note that the default argument value should be a constant.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">say</span><span class="p">(</span><span class="n">message</span><span class="p">,</span> <span class="n">times</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">message</span> <span class="o">*</span> <span class="n">times</span><span class="p">)</span>
+
+<span class="n">say</span><span class="p">(</span><span class="s1">&#39;Hello&#39;</span><span class="p">)</span>
+<span class="n">say</span><span class="p">(</span><span class="s1">&#39;World&#39;</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hello
+WorldWorldWorldWorldWorld
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>How It Works</strong></p>
+<p>The function named <code class="docutils literal notranslate"><span class="pre">say</span></code> is used to print a string as many times as specified. If we don’t supply a
+value, then by default, the string is printed just once. We achieve this by specifying a default
+argument value of <code class="docutils literal notranslate"><span class="pre">1</span></code> to the parameter <code class="docutils literal notranslate"><span class="pre">times</span></code>.</p>
+<p>In the first usage of <code class="docutils literal notranslate"><span class="pre">say</span></code>, we supply only the string and it prints the string once. In the second
+usage of <code class="docutils literal notranslate"><span class="pre">say</span></code>, we supply both the string and an argument <code class="docutils literal notranslate"><span class="pre">5</span></code> stating that we want to <em>say</em> the
+string message 5 times.</p>
+<blockquote>
+<div><p><strong>Caution</strong></p>
+<p>Only those parameters which are at the end of the parameter list can be given default argument
+values i.e. you cannot have a parameter with a default argument value preceding a parameter without
+a default argument value in the function’s parameter list.</p>
+<p>This is because the values are assigned to the parameters by position.
+For example, <code class="docutils literal notranslate"><span class="pre">def</span> <span class="pre">func(a,</span> <span class="pre">b=5)</span></code> is valid, but <code class="docutils literal notranslate"><span class="pre">def</span> <span class="pre">func(a=5,</span> <span class="pre">b)</span></code> is <em>not valid</em>.</p>
+</div></blockquote>
+</div>
+<div class="section" id="keyword-arguments">
+<h3><span class="section-number">5.1.4. </span>Keyword Arguments<a class="headerlink" href="#keyword-arguments" title="Permalink to this headline">¶</a></h3>
+<p>If you have some functions with many parameters and you want to specify only some of them, then you
+can give values for such parameters by naming them - this is called <em>keyword arguments</em> - we use
+the name (keyword) instead of the position (which we have been using all along) to specify the
+arguments to the function.</p>
+<p>There are two advantages - one, using the function is easier since we do not need to worry about
+the order of the arguments. Two, we can give values to only those parameters to which we want to,
+provided that the other parameters have default argument values.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">func</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="mi">10</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;a is&#39;</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="s1">&#39;and b is&#39;</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="s1">&#39;and c is&#39;</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span>
+
+<span class="n">func</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">7</span><span class="p">)</span>
+<span class="n">func</span><span class="p">(</span><span class="mi">25</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="mi">24</span><span class="p">)</span>
+<span class="n">func</span><span class="p">(</span><span class="n">c</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">a</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>a is 3 and b is 7 and c is 10
+a is 25 and b is 5 and c is 24
+a is 100 and b is 5 and c is 50
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>How It Works</strong></p>
+<p>The function named <code class="docutils literal notranslate"><span class="pre">func</span></code> has one parameter without a default argument value, followed by two
+parameters with default argument values.</p>
+<p>In the first usage, <code class="docutils literal notranslate"><span class="pre">func(3,</span> <span class="pre">7)</span></code>, the parameter <code class="docutils literal notranslate"><span class="pre">a</span></code> gets the value <code class="docutils literal notranslate"><span class="pre">3</span></code>, the parameter <code class="docutils literal notranslate"><span class="pre">b</span></code> gets the
+value <code class="docutils literal notranslate"><span class="pre">7</span></code> and <code class="docutils literal notranslate"><span class="pre">c</span></code> gets the default value of <code class="docutils literal notranslate"><span class="pre">10</span></code>.</p>
+<p>In the second usage <code class="docutils literal notranslate"><span class="pre">func(25,</span> <span class="pre">c=24)</span></code>, the variable <code class="docutils literal notranslate"><span class="pre">a</span></code> gets the value of 25 due to the position of
+the argument. Then, the parameter <code class="docutils literal notranslate"><span class="pre">c</span></code> gets the value of <code class="docutils literal notranslate"><span class="pre">24</span></code> due to naming i.e. keyword
+arguments. The variable <code class="docutils literal notranslate"><span class="pre">b</span></code> gets the default value of <code class="docutils literal notranslate"><span class="pre">5</span></code>.</p>
+<p>In the third usage <code class="docutils literal notranslate"><span class="pre">func(c=50,</span> <span class="pre">a=100)</span></code>, we use keyword arguments for all specified values. Notice
+that we are specifying the value for parameter <code class="docutils literal notranslate"><span class="pre">c</span></code> before that for <code class="docutils literal notranslate"><span class="pre">a</span></code> even though <code class="docutils literal notranslate"><span class="pre">a</span></code> is defined
+before <code class="docutils literal notranslate"><span class="pre">c</span></code> in the function definition.</p>
+</div>
+<div class="section" id="the-return-statement">
+<h3><span class="section-number">5.1.5. </span>The <code class="docutils literal notranslate"><span class="pre">return</span></code> statement<a class="headerlink" href="#the-return-statement" title="Permalink to this headline">¶</a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">return</span></code> statement is used to <em>return</em> from a function i.e. break out of the function. We can
+optionally <em>return a value</em> from the function as well.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">maximum</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="n">y</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">x</span>
+    <span class="k">elif</span> <span class="n">x</span> <span class="o">==</span> <span class="n">y</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s1">&#39;The numbers are equal&#39;</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">y</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">maximum</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>How It Works</strong></p>
+<p>The <code class="docutils literal notranslate"><span class="pre">maximum</span></code> function returns the maximum of the parameters, in this case the numbers supplied to
+the function. It uses a simple <code class="docutils literal notranslate"><span class="pre">if..else</span></code> statement to find the greater value and then <em>returns</em>
+that value.</p>
+<p>Note that a <code class="docutils literal notranslate"><span class="pre">return</span></code> statement without a value is equivalent to <code class="docutils literal notranslate"><span class="pre">return</span> <span class="pre">None</span></code>. <code class="docutils literal notranslate"><span class="pre">None</span></code> is a special
+type in Python that represents nothingness. For example, it is used to indicate that a variable has
+no value if it has a value of <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
+<p>Every function implicitly contains a <code class="docutils literal notranslate"><span class="pre">return</span> <span class="pre">None</span></code> statement at the end unless you have written
+your own <code class="docutils literal notranslate"><span class="pre">return</span></code> statement. You can see this by running <code class="docutils literal notranslate"><span class="pre">print(some_function())</span></code> where the function
+<code class="docutils literal notranslate"><span class="pre">some_function</span></code> does not use the <code class="docutils literal notranslate"><span class="pre">return</span></code> statement such as:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">some_function</span><span class="p">():</span>
+    <span class="k">pass</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">some_function</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>None
+</pre></div>
+</div>
+</div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">pass</span></code> statement is used in Python to indicate an empty block of statements.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>There is a built-in function called <code class="docutils literal notranslate"><span class="pre">max()</span></code> that already implements the ‘find maximum’
+functionality, so use this built-in function whenever possible.</p>
+</div>
+</div>
+</div>
+<div class="section" id="docstrings-documenting-your-functions">
+<h2><span class="section-number">5.2. </span>DocStrings - documenting your functions<a class="headerlink" href="#docstrings-documenting-your-functions" title="Permalink to this headline">¶</a></h2>
+<p>Python has a nifty feature called <em>documentation strings</em>,
+usually referred to by its shorter name <em>docstrings</em>.
+DocStrings are an important tool that you should make use of since it helps to
+document the program better and makes it easier to understand.
+We can even get the docstring back from,
+say a function, when the program is actually running!</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Please note the function below is not optimal, and would not be implemented like this.</span>
+<span class="c1"># We would use a data type called &#39;dictionary&#39;, which is discussed in the next chapter.</span>
+
+<span class="k">def</span> <span class="nf">count_nuc</span><span class="p">(</span><span class="n">dna</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Returns the nucleotide content of a sequence.</span>
+
+<span class="sd">    Accepts a string dna that should contain only &quot;ACGT&quot; characters.&quot;&quot;&quot;</span>
+    <span class="c1"># Initalize empty variables</span>
+    <span class="n">a</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">c</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">g</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">t</span> <span class="o">=</span> <span class="mi">0</span>
+
+    <span class="k">for</span> <span class="n">nuc</span> <span class="ow">in</span> <span class="n">dna</span><span class="o">.</span><span class="n">lower</span><span class="p">():</span>
+        <span class="k">if</span> <span class="n">nuc</span> <span class="o">==</span> <span class="s2">&quot;a&quot;</span><span class="p">:</span>
+            <span class="n">a</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="k">elif</span> <span class="n">nuc</span> <span class="o">==</span> <span class="s2">&quot;c&quot;</span><span class="p">:</span>
+            <span class="n">c</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="k">elif</span> <span class="n">nuc</span> <span class="o">==</span> <span class="s2">&quot;g&quot;</span><span class="p">:</span>
+            <span class="n">g</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="k">elif</span> <span class="n">nuc</span> <span class="o">==</span> <span class="s2">&quot;t&quot;</span><span class="p">:</span>
+            <span class="n">t</span> <span class="o">+=</span> <span class="mi">1</span>
+
+    <span class="k">return</span> <span class="n">a</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">g</span><span class="p">,</span> <span class="n">t</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">count_nuc</span><span class="p">(</span><span class="s2">&quot;GATTACA&quot;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Help:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">count_nuc</span><span class="o">.</span><span class="vm">__doc__</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(3, 1, 1, 2)
+
+Help:
+Returns the nucleotide content of a sequence.
+
+    Accepts a string dna that should contain only &quot;ACGT&quot; characters.
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>How It Works</strong></p>
+<p>A string on the first logical line of a function is the <em>docstring</em> for that function.
+The convention followed for a docstring is a multi-line string where the first line starts with a
+capital letter and ends with a dot. Then the second line is blank followed by any detailed
+explanation starting from the third line. You are <em>strongly advised</em> to follow this convention for
+all your docstrings for all your non-trivial functions.</p>
+<p>We can access the docstring of the <code class="docutils literal notranslate"><span class="pre">count_nuc</span></code> function using the <code class="docutils literal notranslate"><span class="pre">__doc__</span></code> (notice the <em>double
+underscores</em>) attribute (name belonging to) of the function.</p>
+<p>If you have used <code class="docutils literal notranslate"><span class="pre">help()</span></code> in Python, then you have already seen the
+usage of docstrings! What it does is just fetch the <code class="docutils literal notranslate"><span class="pre">__doc__</span></code>
+attribute of that function and displays it in a neat manner for
+you. You can try it out on the function above - just include <code class="docutils literal notranslate"><span class="pre">help(count_nuc)</span></code> in your
+program. Remember to press the <code class="docutils literal notranslate"><span class="pre">q</span></code> key to exit <code class="docutils literal notranslate"><span class="pre">help</span></code>.</p>
+<p>Automated tools can retrieve the documentation from your program in this manner.
+Therefore, we <em>strongly recommend</em> that you use docstrings for any non-trivial function that you write.
+The <code class="docutils literal notranslate"><span class="pre">pydoc</span></code> command that comes with your Python distribution works similarly to <code class="docutils literal notranslate"><span class="pre">help()</span></code> using docstrings.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>From now on, for this course, <strong>all</strong> your functions have to be documented using a docstring!</p>
+</div>
+</div>
+<div class="section" id="exercises">
+<h2><span class="section-number">5.3. </span>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">¶</a></h2>
+<p><strong>Exercise 5.1</strong></p>
+<p>Write a function called <code class="docutils literal notranslate"><span class="pre">median()</span></code> that takes a list of numbers as an argument and returns the median as a <code class="docutils literal notranslate"><span class="pre">float</span></code> (see definition <a class="reference external" href="https://en.wikipedia.org/wiki/Median">here</a>).</p>
+<p><strong>Exercise 5.2</strong></p>
+<p>Write a function called <code class="docutils literal notranslate"><span class="pre">sequence_type()</span></code> that takes one argument, a <code class="docutils literal notranslate"><span class="pre">string</span></code>. The function should return a <code class="docutils literal notranslate"><span class="pre">string</span></code> with one of three values: <code class="docutils literal notranslate"><span class="pre">&quot;dna&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;protein&quot;</span></code> or <code class="docutils literal notranslate"><span class="pre">&quot;other&quot;</span></code>. This should depend on the input. If the input only contains A, C, T, G or N it should return <code class="docutils literal notranslate"><span class="pre">&quot;dna&quot;</span></code>. If the input contains only valid one-letter IUPAC amino acid symbols (see below) it should return <code class="docutils literal notranslate"><span class="pre">&quot;protein&quot;</span></code>. In all other cases it should return <code class="docutils literal notranslate"><span class="pre">&quot;other&quot;</span></code>. The function should work, regardless of the input being upper-case, lower-case or a mix.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Theoretically, a sequencing consisting of A, C, G and T can be an amino acid sequence consisting of Alanines, Cysteines, Glycines and Threonines. However, you can ignore this possibility for this exercise.</p>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Amino</span> <span class="n">Acid</span> <span class="n">Code</span><span class="p">:</span>  <span class="n">Three</span> <span class="n">letter</span> <span class="n">Code</span><span class="p">:</span>  <span class="n">Amino</span> <span class="n">Acid</span><span class="p">:</span>
+<span class="o">----------------</span>  <span class="o">------------------</span>  <span class="o">-----------</span>
+<span class="n">A</span><span class="o">.................</span><span class="n">Ala</span><span class="o">.................</span><span class="n">Alanine</span>
+<span class="n">B</span><span class="o">.................</span><span class="n">Asx</span><span class="o">.................</span><span class="n">Aspartic</span> <span class="n">acid</span> <span class="ow">or</span> <span class="n">Asparagine</span>
+<span class="n">C</span><span class="o">.................</span><span class="n">Cys</span><span class="o">.................</span><span class="n">Cysteine</span>
+<span class="n">D</span><span class="o">.................</span><span class="n">Asp</span><span class="o">.................</span><span class="n">Aspartic</span> <span class="n">Acid</span>
+<span class="n">E</span><span class="o">.................</span><span class="n">Glu</span><span class="o">.................</span><span class="n">Glutamic</span> <span class="n">Acid</span>
+<span class="n">F</span><span class="o">.................</span><span class="n">Phe</span><span class="o">.................</span><span class="n">Phenylalanine</span>
+<span class="n">G</span><span class="o">.................</span><span class="n">Gly</span><span class="o">.................</span><span class="n">Glycine</span>
+<span class="n">H</span><span class="o">.................</span><span class="n">His</span><span class="o">.................</span><span class="n">Histidine</span>
+<span class="n">I</span><span class="o">.................</span><span class="n">Ile</span><span class="o">.................</span><span class="n">Isoleucine</span>
+<span class="n">K</span><span class="o">.................</span><span class="n">Lys</span><span class="o">.................</span><span class="n">Lysine</span>
+<span class="n">L</span><span class="o">.................</span><span class="n">Leu</span><span class="o">.................</span><span class="n">Leucine</span>
+<span class="n">M</span><span class="o">.................</span><span class="n">Met</span><span class="o">.................</span><span class="n">Methionine</span>
+<span class="n">N</span><span class="o">.................</span><span class="n">Asn</span><span class="o">.................</span><span class="n">Asparagine</span>
+<span class="n">P</span><span class="o">.................</span><span class="n">Pro</span><span class="o">.................</span><span class="n">Proline</span>
+<span class="n">Q</span><span class="o">.................</span><span class="n">Gln</span><span class="o">.................</span><span class="n">Glutamine</span>
+<span class="n">R</span><span class="o">.................</span><span class="n">Arg</span><span class="o">.................</span><span class="n">Arginine</span>
+<span class="n">S</span><span class="o">.................</span><span class="n">Ser</span><span class="o">.................</span><span class="n">Serine</span>
+<span class="n">T</span><span class="o">.................</span><span class="n">Thr</span><span class="o">.................</span><span class="n">Threonine</span>
+<span class="n">V</span><span class="o">.................</span><span class="n">Val</span><span class="o">.................</span><span class="n">Valine</span>
+<span class="n">W</span><span class="o">.................</span><span class="n">Trp</span><span class="o">.................</span><span class="n">Tryptophan</span>
+<span class="n">X</span><span class="o">.................</span><span class="n">Xaa</span><span class="o">.................</span><span class="n">Any</span> <span class="n">amino</span> <span class="n">acid</span>
+<span class="n">Y</span><span class="o">.................</span><span class="n">Tyr</span><span class="o">.................</span><span class="n">Tyrosine</span>
+<span class="n">Z</span><span class="o">.................</span><span class="n">Glx</span><span class="o">.................</span><span class="n">Glutamine</span> <span class="ow">or</span> <span class="n">Glutamic</span> <span class="n">acid</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="modules">
+<h2><span class="section-number">5.4. </span>Modules<a class="headerlink" href="#modules" title="Permalink to this headline">¶</a></h2>
+<p>Python functions can be stored together in a <em>module</em>. A module, a collection of functions with a certain theme, can be <em>imported</em> by another program to make use of its functionality. This is how we can
+use the Python standard library as well. First, we will see how to use the standard library
+modules.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">16</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4.0
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>How It Works</strong></p>
+<p>First, we <em>import</em> the <code class="docutils literal notranslate"><span class="pre">math</span></code> module using the <code class="docutils literal notranslate"><span class="pre">import</span></code> statement. Basically, this translates to us
+telling Python that we want to use this module. The <code class="docutils literal notranslate"><span class="pre">math</span></code> module contains mathematical functionality.</p>
+<p>When Python executes the <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">math</span></code> statement, it looks for the <code class="docutils literal notranslate"><span class="pre">math</span></code> module. In this case, it is
+one of the built-in modules, and hence Python knows where to find it.</p>
+<p>If it was not a compiled module i.e. a module written in Python, then the Python interpreter will
+search for it in the directories listed in its <code class="docutils literal notranslate"><span class="pre">sys.path</span></code> variable. If the module is found, then
+the statements in the body of that module are run and the module is made <em>available</em> for you
+to use. Note that the initialization is done only the <em>first</em> time that we import a module.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">sqrt()</span></code> function in the <code class="docutils literal notranslate"><span class="pre">sys</span></code> module is accessed using the dotted notation i.e. <code class="docutils literal notranslate"><span class="pre">sys.sqrt()</span></code>. It
+clearly indicates that this name is part of the <code class="docutils literal notranslate"><span class="pre">sys</span></code> module. Another advantage of this approach is
+that the name does not clash with any <code class="docutils literal notranslate"><span class="pre">sqrt</span></code> variable used in your program.</p>
+<p>There are many more functions defined in the <code class="docutils literal notranslate"><span class="pre">math</span></code> module.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">pow</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">()</span>
+
+<span class="n">result</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="mf">2.71828183</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">isclose</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>32.0
+
+1.0000000005668856
+True
+</pre></div>
+</div>
+</div>
+</div>
+<p>All the functions in the module are described <a class="reference external" href="https://docs.python.org/3/library/math.html">here</a>.</p>
+<div class="section" id="the-from-import-statement">
+<h3><span class="section-number">5.4.1. </span>The from … import statement<a class="headerlink" href="#the-from-import-statement" title="Permalink to this headline">¶</a></h3>
+<p>If you want to directly import the <code class="docutils literal notranslate"><span class="pre">sqrt</span></code> function into your program
+(to avoid typing the <code class="docutils literal notranslate"><span class="pre">math.</span></code>everytime for it),
+then you can use the <code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">math</span> <span class="pre">import</span> <span class="pre">sqrt</span></code> statement.</p>
+<p>In general, the <code class="docutils literal notranslate"><span class="pre">import</span></code> statement is better since your program will avoid name clashes and will be more readable.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">sqrt</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Square root of 16 is&quot;</span><span class="p">,</span> <span class="n">sqrt</span><span class="p">(</span><span class="mi">16</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Square root of 16 is 4.0
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="multiple-imports">
+<h3><span class="section-number">5.4.2. </span>Multiple imports<a class="headerlink" href="#multiple-imports" title="Permalink to this headline">¶</a></h3>
+<p>You can import from many different modules.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">random</span>
+<span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">date</span>
+<span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">sqrt</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="s2">&quot;.&quot;</span><span class="p">))</span>  <span class="c1"># Show files in &quot;.&quot;, the current directory</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The current directory is: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">()))</span>
+<span class="nb">print</span><span class="p">()</span>
+
+<span class="n">n</span> <span class="o">=</span> <span class="mi">16</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The square root of </span><span class="si">{}</span><span class="s2"> is </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">sqrt</span><span class="p">(</span><span class="n">n</span><span class="p">)))</span>
+<span class="nb">print</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Today is </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">date</span><span class="o">.</span><span class="n">today</span><span class="p">()))</span>
+<span class="nb">print</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Here you have a pseudo-random number:&quot;</span><span class="p">,</span> <span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Or a random integer between 0 and 10:&quot;</span><span class="p">,</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;01_introduction.md&#39;, &#39;files.ipynb&#39;, &#39;dnase_motifs.ipynb&#39;, &#39;functions_modules.ipynb&#39;, &#39;pandas.ipynb&#39;, &#39;loops.ipynb&#39;, &#39;debugging.ipynb&#39;, &#39;extra_exercises.ipynb&#39;, &#39;scripts.ipynb&#39;, &#39;lists.ipynb&#39;, &#39;img&#39;, &#39;first_exercises.ipynb&#39;, &#39;visualization.ipynb&#39;, &#39;dictionaries.ipynb&#39;, &#39;testfile.txt&#39;, &#39;footprints.ipynb&#39;, &#39;control_flow.ipynb&#39;]
+The current directory is: /home/runner/work/cfb_book/cfb_book/content
+
+The square root of 16 is 4.0
+
+Today is 2020-09-21
+
+Here you have a pseudo-random number: 0.9399810870866133
+Or a random integer between 0 and 10: 5
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In this book, we use the <code class="docutils literal notranslate"><span class="pre">import</span></code> statements in the cells where they’re needed. However, in general, imports are <strong>always</strong> put at the <strong>top</strong> of the file.</p>
+</div>
+</div>
+</div>
+<div class="section" id="id1">
+<h2><span class="section-number">5.5. </span>Exercises<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p><strong>Exercise 5.3</strong></p>
+<p>Write a function <code class="docutils literal notranslate"><span class="pre">random_sequence()</span></code> that generates a string with a random DNA sequence of length <code class="docutils literal notranslate"><span class="pre">length</span></code>. The <code class="docutils literal notranslate"><span class="pre">length</span></code> argument should have a default value of <code class="docutils literal notranslate"><span class="pre">100</span></code>. All nucleotides should have an equal chance of occurring.</p>
+<p><strong>Exercise 5.4</strong></p>
+<p>Adapt your function <code class="docutils literal notranslate"><span class="pre">random_sequence()</span></code> and add an optional argument <code class="docutils literal notranslate"><span class="pre">gc</span></code>, which determines the total fraction of G + C in the sequence. This means that if you call <code class="docutils literal notranslate"><span class="pre">random_sequence(length=100,</span> <span class="pre">gc=40)</span></code> that 40 out of the 100 characters of the returned string should be a G or a C.</p>
+<p><strong>Exercise 5.5</strong></p>
+<p>Write a function <code class="docutils literal notranslate"><span class="pre">list_fasta()</span></code> that returns a list of all FASTA files in a directory. The first argument to <code class="docutils literal notranslate"><span class="pre">list_fasta()</span></code> should be the directory. For this exercise you can assume that FASTA files have a <code class="docutils literal notranslate"><span class="pre">.fa</span></code>, a <code class="docutils literal notranslate"><span class="pre">.fsa</span></code> or a <code class="docutils literal notranslate"><span class="pre">.fasta</span></code> extension.</p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./content"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="loops.html" title="previous page"><span class="section-number">4. </span>Loops</a>
+    <a class='right-next' id="next-link" href="dictionaries.html" title="next page"><span class="section-number">6. </span>Dictionaries</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Simon van Heeringen, Arjen Brinkman, Kees Albers<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    <script src="../_static/js/index.js"></script>
+    
+  </body>
+</html>

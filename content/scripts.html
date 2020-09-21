@@ -1,0 +1,516 @@
+
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>9. Scripts &#8212; NWI-BM066A Computation for Biologists</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
+    <link href="../_static/css/index.css" rel="stylesheet">
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/spanels-index--0afa1ebdab0bb23b98b56d34c23d9f57.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/spanels-variables--ffc7f74dcb1b9eecba2dbcbc22818714.css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/sphinx-book-theme.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="10. Debugging" href="debugging.html" />
+    <link rel="prev" title="8. Files" href="files.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="docsearch:language" content="en">
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../index.html">
+  
+  
+  <h1 class="site-logo" id="site-title">NWI-BM066A Computation for Biologists</h1>
+  
+</a>
+</div>
+
+<form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="01_introduction.html">
+   Introduction
+  </a>
+ </li>
+</ul>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="first_exercises.html">
+   1. First exercises
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="lists.html">
+   2. Lists
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="control_flow.html">
+   3. Control flow
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="loops.html">
+   4. Loops
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="functions_modules.html">
+   5. Functions and modules
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="dictionaries.html">
+   6. Dictionaries
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="extra_exercises.html">
+   7. Assembling the pieces
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="files.html">
+   8. Files
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   9. Scripts
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="debugging.html">
+   10. Debugging
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="pandas.html">
+   11. Introduction to pandas DataFrames
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="visualization.html">
+   12. Visualization
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="dnase_motifs.html">
+   13. Motifs in DNase I peaks
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="footprints.html">
+   14. Creating a DNAseI footprint profile
+  </a>
+ </li>
+</ul>
+
+</nav>
+
+ <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        <div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/content/scripts.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+    
+</div>
+        <!-- Source interaction buttons -->
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/vanheeringen-lab/cfb_book/master?urlpath=tree/content/scripts.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        <a class="colab-button" href="https://colab.research.google.com/github/vanheeringen-lab/cfb_book/blob/master/content/scripts.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
+                    src="../_static/images/logo_colab.png"
+                    alt="Interact on Colab">Colab</button></a>
+        
+        
+    </div>
+</div>
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercises-scripts">
+   9.1. Exercises: scripts
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#using-script-withs-variable-input">
+   9.2. Using script withs variable input
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercises-using-sys-argv">
+   9.3. Exercises using
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     sys.argv
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#using-available-modules-argparse">
+   9.4. Using available modules: argparse
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercises-putting-it-all-together">
+   9.5. Exercises: putting it all together
+  </a>
+ </li>
+</ul>
+
+        </nav>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="scripts">
+<h1><span class="section-number">9. </span>Scripts<a class="headerlink" href="#scripts" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="exercises-scripts">
+<h2><span class="section-number">9.1. </span>Exercises: scripts<a class="headerlink" href="#exercises-scripts" title="Permalink to this headline">¶</a></h2>
+<p><strong>Exercise 9.1: Copying the files required for the exercises</strong></p>
+<p>Open a terminal from the Jupyter “Home” page in your webbrowser (the view of your home directory), by clicking on “Terminal” in the “New” pull down menu.</p>
+<p>If you haven’t already done so, first create a folder/directory named <code class="docutils literal notranslate"><span class="pre">cfb_2020</span></code> in your network folder for this course:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>cd                # go to root of your home directory
+mkdir cfb_2020    # mkdir creates a directory
+cd cfb_2020       # change directory
+pwd               # print current working directory. 
+                  # In my case, the result is: /home/kalbers/cfb_2018
+</pre></div>
+</div>
+<p>Now we are going the copy the files and scripts necessary to perform these exercises to the “cfb_2018” directory.
+The Linux command “cp” copies files and directories.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>cp -rp /scratch/cfb/scripts_and_debugging ~/cfb_2020/
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">~</span></code> refers to the root of your homedirectory (whatever your username is), and the directory <code class="docutils literal notranslate"><span class="pre">cfb_2020</span></code> has to exist for this particular copy command to work.</p>
+</div>
+<p>Now change directory (using <code class="docutils literal notranslate"><span class="pre">cd</span></code>) to the directory <code class="docutils literal notranslate"><span class="pre">~/cfb_2020/scripts_and_debugging</span></code>.
+Validate that you are in the correct directory using the command <code class="docutils literal notranslate"><span class="pre">pwd</span></code> as above.</p>
+<p><strong>Exercise 9.2: Comparing the Jupyter notebook with running scripts from the command line</strong></p>
+<p>Open a new Python3 Jupyter-notebook for these exercises. Copy the following code into a cell and execute the cell:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello&quot;</span><span class="p">)</span>
+<span class="n">my_number</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">my_number</span>
+</pre></div>
+</div>
+<p>Questions:</p>
+<ol class="simple">
+<li><p>Describe the exact output.</p></li>
+<li><p>Which of the three lines in the above code produce output?</p></li>
+<li><p>Is this output formatted in the same way?</p></li>
+</ol>
+<p>Now create a new text file by clicking “Text File” in the “New” drop-down menu in the file-browser tab-page of your Jupyter notebook.
+Make sure to first go the correct subdirectory (<code class="docutils literal notranslate"><span class="pre">~/cfb_2020/scripts_and_debugging</span></code>) by clicking on the respective subdirectories in the
+Jupyter file browser window.
+Put the same three lines of code in this text file. Then, rename the text file to “exercise2.py” by clicking on the file name at the top of the screen.
+(The default file name is “untitled.txt”).</p>
+<p>If everything went well, the word “print” should now have the color green, and the text “Hello” should be colored red. This is called <em>syntax highlighting</em>.</p>
+<p>Now, run the script from the command line in the terminal window as follows:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>python exercise2.py
+</pre></div>
+</div>
+<p>Questions:</p>
+<ol class="simple">
+<li><p>Is the output of the script printed to the terminal window exactly the same as the output printed to screen when executing the cell in a Jupyter notebook?</p></li>
+<li><p>How does a Jupyter-notebook differ from a script in terms of outputing information to the screen?</p></li>
+</ol>
+<p><strong>Exercise 9.3: Permanence of Python variables in memory</strong></p>
+<p>Copy the following code to a cell in a <em><strong>Jupyter notebook</strong></em> and execute the cell.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">my_number</span> <span class="o">=</span> <span class="mi">42</span>
+</pre></div>
+</div>
+<p>Copy the following code to a <em><strong>new</strong></em> cell below the previous one in the same Jupyter notebook, and execute the cell:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;my_number:&quot;</span><span class="p">,</span> <span class="n">my_number</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Question:</p>
+<ol class="simple">
+<li><p>What is the output of the second cell in the Jupyter notebook?</p></li>
+</ol>
+<p>Next, create a Python script called <code class="docutils literal notranslate"><span class="pre">exercise3a.py</span></code> with exactly the same code as the first cell (i.e. <code class="docutils literal notranslate"><span class="pre">my_number</span> <span class="pre">=</span> <span class="pre">42</span></code>).
+Create a second Python script called <code class="docutils literal notranslate"><span class="pre">exercise3b.py</span></code> with exactly the same code as the second cell (<code class="docutils literal notranslate"><span class="pre">print(&quot;my_number:&quot;,</span> <span class="pre">my_number)</span></code>).</p>
+<p>Now go to your Terminal and execute the first script and the second script in that order:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>python exercise3a.py
+python exercise3b.py
+</pre></div>
+</div>
+<p>Questions:</p>
+<ol class="simple">
+<li><p>Does executing the first script produce an error message? If not, what is the output printed to the screen? If yes, why?</p></li>
+<li><p>Does executing the second script produce an error message? If not, what is the output printed to the screen? If yes, why?</p></li>
+<li><p>What is the state of the Python memory when it starts to execute a Python script?</p></li>
+</ol>
+</div>
+<div class="section" id="using-script-withs-variable-input">
+<h2><span class="section-number">9.2. </span>Using script withs variable input<a class="headerlink" href="#using-script-withs-variable-input" title="Permalink to this headline">¶</a></h2>
+<p>Create the a file called <code class="docutils literal notranslate"><span class="pre">module_using_sys.py</span></code> with the following contents:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sys</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;The command line arguments are:&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Let’s run this program from the shell.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ python module_using_sys.py we are arguments
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">The</span> <span class="n">command</span> <span class="n">line</span> <span class="n">arguments</span> <span class="n">are</span><span class="p">:</span>
+<span class="n">module_using_sys</span><span class="o">.</span><span class="n">py</span>
+<span class="n">we</span>
+<span class="n">are</span>
+<span class="n">arguments</span>
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">argv</span></code> variable in the <code class="docutils literal notranslate"><span class="pre">sys</span></code> module contains everything that you have typed on the command line. The <code class="docutils literal notranslate"><span class="pre">sys.argv</span></code> variable is a <code class="docutils literal notranslate"><span class="pre">list</span></code> of <code class="docutils literal notranslate"><span class="pre">string</span></code>s. Specifically, the <code class="docutils literal notranslate"><span class="pre">sys.argv</span></code> contains the list of <em>command line arguments</em> i.e. the arguments passed to your program using the command line.</p>
+<p>Here, when we execute <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">module_using_sys.py</span> <span class="pre">we</span> <span class="pre">are</span> <span class="pre">arguments</span></code>, we run the module
+<code class="docutils literal notranslate"><span class="pre">module_using_sys.py</span></code> with the <code class="docutils literal notranslate"><span class="pre">python</span></code> command and the other things that follow are arguments
+passed to the program. Python stores the command line arguments in the <code class="docutils literal notranslate"><span class="pre">sys.argv</span></code> variable for us
+to use.</p>
+<p>Remember, the name of the script running is always the first argument in the <code class="docutils literal notranslate"><span class="pre">sys.argv</span></code> list. So,
+in this case we will have <code class="docutils literal notranslate"><span class="pre">'module_using_sys.py'</span></code> as <code class="docutils literal notranslate"><span class="pre">sys.argv[0]</span></code>, <code class="docutils literal notranslate"><span class="pre">'we'</span></code> as <code class="docutils literal notranslate"><span class="pre">sys.argv[1]</span></code>,
+<code class="docutils literal notranslate"><span class="pre">'are'</span></code> as <code class="docutils literal notranslate"><span class="pre">sys.argv[2]</span></code> and <code class="docutils literal notranslate"><span class="pre">'arguments'</span></code> as <code class="docutils literal notranslate"><span class="pre">sys.argv[3]</span></code>.</p>
+</div>
+<div class="section" id="exercises-using-sys-argv">
+<h2><span class="section-number">9.3. </span>Exercises using <code class="docutils literal notranslate"><span class="pre">sys.argv</span></code><a class="headerlink" href="#exercises-using-sys-argv" title="Permalink to this headline">¶</a></h2>
+<p><strong>Exercise 9.4: Reading the command line arguments</strong></p>
+<p>Make a script called <code class="docutils literal notranslate"><span class="pre">nuc_arg.py</span></code> that prints the nucleotide content of a sequence that you give as argument on the command line.
+For example, this command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ python nuc_arg.py TGACTCA
+</pre></div>
+</div>
+<p>should print the following output:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">2</span> <span class="mi">2</span> <span class="mi">1</span> <span class="mi">2</span>
+</pre></div>
+</div>
+<p><em>Hint:</em> if you want, you can use the nucleotide count function from the lecture.</p>
+<p>Copy this script to a new file:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ cp nuc_script.py nuc_arg.py
+</pre></div>
+</div>
+<p>Now you can edit the script <code class="docutils literal notranslate"><span class="pre">nuc_arg.py</span></code>.</p>
+<p><strong>Exercise 9.5: FASTA statistics</strong></p>
+<p>Write a script called <code class="docutils literal notranslate"><span class="pre">nuc_fasta.py</span></code>.
+This script should accept the name of a FASTA file as argument, read the FASTA sequences in that file and print the nucleotide content of all the sequences.
+The script should print the <code class="docutils literal notranslate"><span class="pre">ID</span></code> of every sequence followed by the nucleotide content of that sequence.</p>
+</div>
+<div class="section" id="using-available-modules-argparse">
+<h2><span class="section-number">9.4. </span>Using available modules: argparse<a class="headerlink" href="#using-available-modules-argparse" title="Permalink to this headline">¶</a></h2>
+<p>The Python standard library,
+which is included with every Python version,
+contains a lot of useful modules (see <a class="reference external" href="https://docs.python.org/3/library/">here</a>)
+In addition, there are many third-party modules available.
+Some of these we will use in this course, such as <a class="reference external" href="http://pandas.pydata.org/">pandas</a> for data analysis and <a class="reference external" href="http://matplotlib.org/">matplotlib</a> for making figures.
+However, it is not possible to exhaustively cover all these modules in this course.
+Therefore, it is very useful to be able to search for modules and for examples and tutorials on how to use tese modules.
+With the subjects covered so far, you have should have enough understanding of basic Python principles.</p>
+<p>Let’s take an example, the <code class="docutils literal notranslate"><span class="pre">argparse</span></code> module.
+This is a very useful module for scripts that take (a lot of) command-line arguments. Some examples on how to use this module:</p>
+<p>https://docs.python.org/3/howto/argparse.html</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://docs.python.org/3/howto/argparse.html">https://docs.python.org/3/howto/argparse.html</a></p></li>
+<li><p><a class="reference external" href="http://www.pythonforbeginners.com/argparse/argparse-tutorial">http://www.pythonforbeginners.com/argparse/argparse-tutorial</a></p></li>
+<li><p><a class="reference external" href="https://pymotw.com/3/argparse/">https://pymotw.com/3/argparse/</a></p></li>
+<li><p><a class="reference external" href="https://mkaz.tech/code/python-argparse-cookbook/">https://mkaz.tech/code/python-argparse-cookbook/</a></p></li>
+</ul>
+<p>Have a look, Google it, try it out!
+We will use the argparse module in our final assignment for today.</p>
+</div>
+<div class="section" id="exercises-putting-it-all-together">
+<h2><span class="section-number">9.5. </span>Exercises: putting it all together<a class="headerlink" href="#exercises-putting-it-all-together" title="Permalink to this headline">¶</a></h2>
+<p><strong>Exercise 9.6: motif scanning</strong></p>
+<p>Write a command-line Python script that scans a FASTA file with a IUPAC consensus sequence.
+As an optional argument to the script, a use should be able to specify a number of mismatches.
+It should be possible to specify these arguments on the command line, use the <code class="docutils literal notranslate"><span class="pre">argparse</span></code> module.
+As output, the script should print, for every match, the ID of the sequence and the position of the match within the sequence.</p>
+<p>Take care of the following:</p>
+<ul class="simple">
+<li><p>Comment your code</p></li>
+<li><p>Use functions</p></li>
+<li><p>Follow the style guide</p></li>
+<li><p>Test your code</p></li>
+</ul>
+<p>Start small.
+It is better to have a working script that has limited functionality but works well, then a script that tries to do everything and fails.</p>
+<p><strong>Test data</strong></p>
+<p>Two examples of consensus sequences and FASTA files (for c-Myc and STAT3 from <a class="reference external" href="http://dx.doi.org/10.1016/j.cell.2008.04.043">Chen et al. 2008</a>) are located in <code class="docutils literal notranslate"><span class="pre">/scratch/cfb/consensus_motif</span></code>.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">consensus.txt</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">c-Myc.fa</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">STAT3.fa</span></code></p></li>
+</ul>
+<p><strong>Extension (optional!)</strong></p>
+<p>Implement the ‘Match’ algorithm from <a class="reference external" href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC169193/">Kel et al. 2003</a> to scan for matches to a positional weight matrix.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">log</span></code> function can be imported from the <code class="docutils literal notranslate"><span class="pre">math</span></code> module. See the definition of this function <a class="reference external" href="https://docs.python.org/3/library/math.html#math.log">here</a>.</p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./content"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="files.html" title="previous page"><span class="section-number">8. </span>Files</a>
+    <a class='right-next' id="next-link" href="debugging.html" title="next page"><span class="section-number">10. </span>Debugging</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Simon van Heeringen, Arjen Brinkman, Kees Albers<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    <script src="../_static/js/index.js"></script>
+    
+  </body>
+</html>

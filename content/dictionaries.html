@@ -1,0 +1,819 @@
+
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>6. Dictionaries &#8212; NWI-BM066A Computation for Biologists</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
+    <link href="../_static/css/index.css" rel="stylesheet">
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/spanels-index--0afa1ebdab0bb23b98b56d34c23d9f57.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/spanels-variables--ffc7f74dcb1b9eecba2dbcbc22818714.css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/sphinx-book-theme.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="7. Assembling the pieces" href="extra_exercises.html" />
+    <link rel="prev" title="5. Functions and modules" href="functions_modules.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="docsearch:language" content="en">
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../index.html">
+  
+  
+  <h1 class="site-logo" id="site-title">NWI-BM066A Computation for Biologists</h1>
+  
+</a>
+</div>
+
+<form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="01_introduction.html">
+   Introduction
+  </a>
+ </li>
+</ul>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="first_exercises.html">
+   1. First exercises
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="lists.html">
+   2. Lists
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="control_flow.html">
+   3. Control flow
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="loops.html">
+   4. Loops
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="functions_modules.html">
+   5. Functions and modules
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   6. Dictionaries
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="extra_exercises.html">
+   7. Assembling the pieces
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="files.html">
+   8. Files
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="scripts.html">
+   9. Scripts
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="debugging.html">
+   10. Debugging
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="pandas.html">
+   11. Introduction to pandas DataFrames
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="visualization.html">
+   12. Visualization
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="dnase_motifs.html">
+   13. Motifs in DNase I peaks
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="footprints.html">
+   14. Creating a DNAseI footprint profile
+  </a>
+ </li>
+</ul>
+
+</nav>
+
+ <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        <div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/content/dictionaries.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+    
+</div>
+        <!-- Source interaction buttons -->
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/vanheeringen-lab/cfb_book/master?urlpath=tree/content/dictionaries.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        <a class="colab-button" href="https://colab.research.google.com/github/vanheeringen-lab/cfb_book/blob/master/content/dictionaries.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
+                    src="../_static/images/logo_colab.png"
+                    alt="Interact on Colab">Colab</button></a>
+        
+        
+    </div>
+</div>
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#dictionary-methods">
+   6.1. Dictionary Methods
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#glossary-of-useful-dictionary-terms">
+   6.2. Glossary of useful
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     dictionary
+    </span>
+   </code>
+   terms
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercises-dictionaries">
+   6.3. Exercises: dictionaries
+  </a>
+ </li>
+</ul>
+
+        </nav>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="dictionaries">
+<h1><span class="section-number">6. </span>Dictionaries<a class="headerlink" href="#dictionaries" title="Permalink to this headline">¶</a></h1>
+<p>A dictionary, or <code class="docutils literal notranslate"><span class="pre">dict</span></code>, is like a list, but more general. In a list, the indices have to be integers; in a dictionary they can be (almost) any type.
+You can think of a dictionary as a <em>mapping between a set of indices (which are called keys) and a set of values</em>. Each key maps to a value. The association of a key and a value is called a <em>key-value pair</em> or sometimes an <em>item</em>.</p>
+<p>As an example, we’ll build a dictionary that maps from <em>codons</em> to <em>amino acids</em>, so the keys and the values are all strings.</p>
+<p><img alt="" src="../_images/dict1.png" /></p>
+<p>The function <code class="docutils literal notranslate"><span class="pre">dict()</span></code> creates a new dictionary with no items. Because <code class="docutils literal notranslate"><span class="pre">dict</span></code> is the name of a built-in function, you should avoid using it as a variable name.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cod2aa</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">cod2aa</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">cod2aa</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{}
+&lt;class &#39;dict&#39;&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<p>The curly-brackets, <code class="docutils literal notranslate"><span class="pre">{}</span></code>, represent an empty dictionary.
+You can als create an empty dictionary with the curly brackets (<code class="docutils literal notranslate"><span class="pre">{}</span></code>), just like you can create an empty list with square brackets (<code class="docutils literal notranslate"><span class="pre">[]</span></code>).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cod2aa</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">cod2aa</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{}
+</pre></div>
+</div>
+</div>
+</div>
+<p>To add items to the dictionary one at a time, you use square brackets:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cod2aa</span><span class="p">[</span><span class="s1">&#39;CTA&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;Leu&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>This line creates an item that maps from the key <code class="docutils literal notranslate"><span class="pre">'CTA'</span></code> to the value <code class="docutils literal notranslate"><span class="pre">'Leu'</span></code>. If we print the dictionary again, we see a key-value pair with a colon between the key and value:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">cod2aa</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;CTA&#39;: &#39;Leu&#39;}
+</pre></div>
+</div>
+</div>
+</div>
+<p>This output format is also an input format. For example, you can create a new dictionary with 3 items:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cod2aa</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;CTA&#39;</span><span class="p">:</span> <span class="s1">&#39;Leu&#39;</span><span class="p">,</span> <span class="s1">&#39;AGC&#39;</span><span class="p">:</span> <span class="s1">&#39;Ser&#39;</span><span class="p">,</span> <span class="s1">&#39;ACT&#39;</span><span class="p">:</span> <span class="s1">&#39;Thr&#39;</span><span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>If you print <code class="docutils literal notranslate"><span class="pre">cod2aa</span></code>, you will see that the order of the items in the dictionary is the same. The order of items in the dictionary identical top the order of insertion.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">cod2aa</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;CTA&#39;: &#39;Leu&#39;, &#39;AGC&#39;: &#39;Ser&#39;, &#39;ACT&#39;: &#39;Thr&#39;}
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The dictionary order became available in Python 3.6 and is guaranteed from Python 3.7 onwards. If you ever use an older Python version, be aware that this order is not guaranteed and practically unpredictable. In this case you have to assume that a dictionary is unordered!</p>
+</div>
+<p>You can retrieve an item from a dictionary by using the <code class="docutils literal notranslate"><span class="pre">[]</span></code> square brackets. This is similar as to how you access elements from a list.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">cod2aa</span><span class="p">[</span><span class="s1">&#39;ACT&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Thr
+</pre></div>
+</div>
+</div>
+</div>
+<p>The key <code class="docutils literal notranslate"><span class="pre">'ACT'</span></code> always maps to the value <code class="docutils literal notranslate"><span class="pre">'Thr'</span></code> so the order of the items doesn’t matter.
+If the key isn’t in the dictionary, you get a <code class="docutils literal notranslate"><span class="pre">KeyError</span></code> exception:</p>
+<div class="cell tag_raises-exception docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">cod2aa</span><span class="p">[</span><span class="s1">&#39;GGT&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">KeyError</span><span class="g g-Whitespace">                                  </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">8</span><span class="o">-</span><span class="n">de50dd413888</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="nb">print</span><span class="p">(</span><span class="n">cod2aa</span><span class="p">[</span><span class="s1">&#39;GGT&#39;</span><span class="p">])</span>
+
+<span class="ne">KeyError</span>: &#39;GGT&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Dictionaries are very similar to lists. The one major differences is that values in a <code class="docutils literal notranslate"><span class="pre">list</span></code> are always access by an integer and that value in a <code class="docutils literal notranslate"><span class="pre">dict</span></code> are can be accessed by a variety of key types.</p>
+</div>
+<p>Because you use keys to look up values, you can understand that <em>keys must always be unique</em>. On the other hand, <em>values do not need to be unique and can be anything</em>, including a <code class="docutils literal notranslate"><span class="pre">list</span></code> or a <code class="docutils literal notranslate"><span class="pre">dict</span></code>.
+Let us add another codon (key) that maps to an already existing amino acid (value):</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cod2aa</span><span class="p">[</span><span class="s1">&#39;TTG&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;Leu&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">cod2aa</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;CTA&#39;: &#39;Leu&#39;, &#39;AGC&#39;: &#39;Ser&#39;, &#39;ACT&#39;: &#39;Thr&#39;, &#39;TTG&#39;: &#39;Leu&#39;}
+</pre></div>
+</div>
+</div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">len()</span></code> function works on dictionaries; it returns the number of key-value pairs:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">cod2aa</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4
+</pre></div>
+</div>
+</div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">in</span></code> operator works on dictionaries; it tells you whether something appears as a <em>key</em> in the dictionary (appearing as a value is not good enough).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;CTA&#39;</span> <span class="ow">in</span> <span class="n">cod2aa</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;Leu&#39;</span> <span class="ow">in</span> <span class="n">cod2aa</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="dictionary-methods">
+<h2><span class="section-number">6.1. </span>Dictionary Methods<a class="headerlink" href="#dictionary-methods" title="Permalink to this headline">¶</a></h2>
+<p>Python provides methods that operate on dictionaries. For example, <code class="docutils literal notranslate"><span class="pre">keys()</span></code> gives you all the keys of a dictionary, <code class="docutils literal notranslate"><span class="pre">values()</span></code> gives you all the values, and <code class="docutils literal notranslate"><span class="pre">items()</span></code> gives you all key:value pairs.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cod2aa</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;TTG&#39;</span><span class="p">:</span> <span class="s1">&#39;Leu&#39;</span><span class="p">,</span> <span class="s1">&#39;CTA&#39;</span><span class="p">:</span> <span class="s1">&#39;Leu&#39;</span><span class="p">,</span> <span class="s1">&#39;ACT&#39;</span><span class="p">:</span> <span class="s1">&#39;Thr&#39;</span><span class="p">,</span> <span class="s1">&#39;AGC&#39;</span><span class="p">:</span> <span class="s1">&#39;Ser&#39;</span><span class="p">}</span>
+<span class="n">codons</span> <span class="o">=</span> <span class="n">cod2aa</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">codons</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dict_keys([&#39;TTG&#39;, &#39;CTA&#39;, &#39;ACT&#39;, &#39;AGC&#39;])
+</pre></div>
+</div>
+</div>
+</div>
+<p>You see all the values of the keys in <code class="docutils literal notranslate"><span class="pre">cod2aa</span></code>, which are the different codons. However, you’ll als not an unfamiliar <code class="docutils literal notranslate"><span class="pre">dict_keys()</span></code> object. If you want to loop over all the keys, this doesn’t matter:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">codon</span> <span class="ow">in</span> <span class="n">codons</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">codon</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TTG
+CTA
+ACT
+AGC
+</pre></div>
+</div>
+</div>
+</div>
+<p>However, if you want to use this object as a <code class="docutils literal notranslate"><span class="pre">list</span></code> you have to explicitly convert it to <code class="docutils literal notranslate"><span class="pre">list</span></code> using the <code class="docutils literal notranslate"><span class="pre">list()</span></code> function.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">codons</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">codons</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">codons</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;TTG&#39;, &#39;CTA&#39;, &#39;ACT&#39;, &#39;AGC&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">values()</span></code> and <code class="docutils literal notranslate"><span class="pre">items()</span></code> methods are very similar to <code class="docutils literal notranslate"><span class="pre">keys()</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">amino_acids</span> <span class="o">=</span> <span class="n">cod2aa</span><span class="o">.</span><span class="n">values</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">amino_acids</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dict_values([&#39;Leu&#39;, &#39;Leu&#39;, &#39;Thr&#39;, &#39;Ser&#39;])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">i</span> <span class="o">=</span> <span class="n">cod2aa</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dict_items([(&#39;TTG&#39;, &#39;Leu&#39;), (&#39;CTA&#39;, &#39;Leu&#39;), (&#39;ACT&#39;, &#39;Thr&#39;), (&#39;AGC&#39;, &#39;Ser&#39;)])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">codon</span><span class="p">,</span> <span class="n">aa</span> <span class="ow">in</span> <span class="n">cod2aa</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">codon</span><span class="si">}</span><span class="s2"> encodes for </span><span class="si">{</span><span class="n">aa</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TTG encodes for Leu
+CTA encodes for Leu
+ACT encodes for Thr
+AGC encodes for Ser
+</pre></div>
+</div>
+</div>
+</div>
+<p>As with lists, you can use <code class="docutils literal notranslate"><span class="pre">pop()</span></code> to obtain and delete one key:value pair.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;before pop:&quot;</span><span class="p">,</span> <span class="n">cod2aa</span><span class="p">)</span>
+<span class="n">p</span> <span class="o">=</span> <span class="n">cod2aa</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">&#39;ACT&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;after pop:&quot;</span><span class="p">,</span> <span class="n">cod2aa</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>before pop: {&#39;TTG&#39;: &#39;Leu&#39;, &#39;CTA&#39;: &#39;Leu&#39;, &#39;ACT&#39;: &#39;Thr&#39;, &#39;AGC&#39;: &#39;Ser&#39;}
+Thr
+after pop: {&#39;TTG&#39;: &#39;Leu&#39;, &#39;CTA&#39;: &#39;Leu&#39;, &#39;AGC&#39;: &#39;Ser&#39;}
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="glossary-of-useful-dictionary-terms">
+<h2><span class="section-number">6.2. </span>Glossary of useful <code class="docutils literal notranslate"><span class="pre">dictionary</span></code> terms<a class="headerlink" href="#glossary-of-useful-dictionary-terms" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">dict()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">len()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">in</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">values()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">keys()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">items()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pop()</span></code></p></li>
+</ul>
+</div>
+<div class="section" id="exercises-dictionaries">
+<h2><span class="section-number">6.3. </span>Exercises: dictionaries<a class="headerlink" href="#exercises-dictionaries" title="Permalink to this headline">¶</a></h2>
+<p><strong>Exercise 6.1</strong></p>
+<p>Study the following code:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">my_dictionary</span> <span class="o">=</span> <span class="p">{}</span> <span class="c1"># initialize empty dictionary. NOTE the curly brackets (as opposed to SQUARE brackets to initialize an empty list)</span>
+<span class="n">my_dictionary</span><span class="p">[</span><span class="s1">&#39;green&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;color&#39;</span> <span class="c1"># key = &#39;green&#39;, value = &#39;color&#39;</span>
+<span class="n">my_dictionary</span><span class="p">[</span><span class="s1">&#39;volvo&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;car&#39;</span>  <span class="c1"># key = &#39;volvo&#39;, value = &#39;car&#39;</span>
+<span class="n">my_dictionary</span><span class="p">[</span><span class="s1">&#39;number_of_fingers&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">10</span> <span class="c1"># key = &#39;number_of_fingers&#39;, value = 10. Note, value is a number (not a string, so no quotes &#39;&#39;)! </span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;dictionary:&quot;</span><span class="p">,</span> <span class="n">my_dictionary</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;value associated with key &#39;volvo&#39;:&quot;</span><span class="p">,</span> <span class="n">my_dictionary</span><span class="p">[</span><span class="s1">&#39;volvo&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+<ol class="simple">
+<li><p>Modify this code such that the dictionary also contains the key/value pair (‘opel’, ‘car’).</p></li>
+<li><p>Modify this code to add a key/value pair to the dictionary where <code class="docutils literal notranslate"><span class="pre">10</span></code> is the <em>key</em> and <code class="docutils literal notranslate"><span class="pre">'number_of_fingers'</span></code> is the <em>value</em> (so the reverse of key/value pair that is already in the dictionary.</p></li>
+</ol>
+<p>Verify your code by running it and checking the output.</p>
+<p><strong>Exercise 6.2</strong></p>
+<p>You can also initialize a dictionary as follows:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">my_dictionary</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;A&#39;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;B&#39;</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;C&#39;</span><span class="p">:</span><span class="mi">3</span><span class="p">}</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;dictionary:&quot;</span><span class="p">,</span> <span class="n">my_dictionary</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;value associated with key &#39;A&#39;:&quot;</span><span class="p">,</span> <span class="n">my_dictionary</span><span class="p">[</span><span class="s1">&#39;A&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+<p>Use this syntax to create the dictionary from the previous exercise.</p>
+<p><strong>Exercise 6.3</strong></p>
+<p>I want the following code to print the value associated with the key ‘B’. However, the code contains an error.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">my_dictionary</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;A&#39;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;B&#39;</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;C&#39;</span><span class="p">:</span><span class="mi">3</span><span class="p">}</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;value associated with key &#39;A&#39;:&quot;</span><span class="p">,</span> <span class="n">my_dictionary</span><span class="p">[</span><span class="n">B</span><span class="p">])</span>
+</pre></div>
+</div>
+<p>Run the code and see if you can find where the error is and correct it so that it does print the value associated with key ‘B’.</p>
+<p><strong>Exercise 6.4</strong></p>
+<p>Study and run the following code:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">my_dictionary</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;A&#39;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;B&#39;</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;C&#39;</span><span class="p">:</span><span class="mi">3</span><span class="p">}</span>
+<span class="n">my_dictionary</span><span class="p">[</span><span class="s1">&#39;A&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;value associated with key &#39;A&#39;:&quot;</span><span class="p">,</span> <span class="n">my_dictionary</span><span class="p">[</span><span class="s1">&#39;A&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+<ol class="simple">
+<li><p>Question: why is the value associated with the key ‘A’ the number 5 and not the number 1?</p></li>
+</ol>
+<p><strong>Exercise 6.5</strong></p>
+<p>Study and run the following code:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">my_dictionary</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;A&#39;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;B&#39;</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;C&#39;</span><span class="p">:</span><span class="mi">3</span><span class="p">}</span>
+
+<span class="k">for</span> <span class="n">variable_1</span> <span class="ow">in</span> <span class="n">my_dictionary</span><span class="p">:</span>
+    <span class="n">variable_2</span> <span class="o">=</span> <span class="n">my_dictionary</span><span class="p">[</span><span class="n">variable_1</span><span class="p">]</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;variable_1:&#39;</span><span class="p">,</span> <span class="n">variable_1</span><span class="p">,</span> <span class="s1">&#39;variable_2&#39;</span><span class="p">,</span> <span class="n">variable_2</span><span class="p">)</span>
+</pre></div>
+</div>
+<ol class="simple">
+<li><p>Question: does the variable named <em>variable_1</em> contain keys or values from the dictionary?</p></li>
+<li><p>Question: does the variable named <em>variable_2</em> contain keys or values from the dictionary?</p></li>
+<li><p>Question: what would be a more appropriate (more insightful) name for the variable <em>variable_1</em>?</p></li>
+<li><p>Question: what would be a more appropriate (more insightful) name for the variable <em>variable_2</em>?</p></li>
+</ol>
+<p><strong>Exercise 6.6</strong></p>
+<p>Now adapt the code from exercise 5.6 so that it adds 4 to each value retrieved from the dictionary and prints this to the screen, together with the key.
+Use the more appropriate variable names instead of <code class="docutils literal notranslate"><span class="pre">variable_1</span></code> and <code class="docutils literal notranslate"><span class="pre">variable_2</span></code>.</p>
+<p><strong>NOTE</strong> You are not allowed to change the dictionary itself in the process.</p>
+<p><strong>Exercise 6.7</strong></p>
+<p>The dictionary <code class="docutils literal notranslate"><span class="pre">esrrb</span></code> contains the number of Esrrb peaks per chromosome from an Esrrb ChIP-seq experiment (Chen et al. 2008, 13;133(6):1106-17, PMID 18555785).</p>
+<p>The dictionary <code class="docutils literal notranslate"><span class="pre">chrsizes</span></code> contains the length (bp) of each chromosome in the mouse genome (mm9).</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">esrrb</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;chr1&#39;</span><span class="p">:</span> <span class="mi">1160</span><span class="p">,</span> 
+    <span class="s1">&#39;chr10&#39;</span><span class="p">:</span> <span class="mi">1171</span><span class="p">,</span> 
+    <span class="s1">&#39;chr11&#39;</span><span class="p">:</span> <span class="mi">1887</span><span class="p">,</span> 
+    <span class="s1">&#39;chr12&#39;</span><span class="p">:</span> <span class="mi">799</span><span class="p">,</span> 
+    <span class="s1">&#39;chr13&#39;</span><span class="p">:</span> <span class="mi">844</span><span class="p">,</span> 
+    <span class="s1">&#39;chr14&#39;</span><span class="p">:</span> <span class="mi">535</span><span class="p">,</span> 
+    <span class="s1">&#39;chr15&#39;</span><span class="p">:</span> <span class="mi">946</span><span class="p">,</span> 
+    <span class="s1">&#39;chr16&#39;</span><span class="p">:</span> <span class="mi">708</span><span class="p">,</span> 
+    <span class="s1">&#39;chr17&#39;</span><span class="p">:</span> <span class="mi">1098</span><span class="p">,</span> 
+    <span class="s1">&#39;chr18&#39;</span><span class="p">:</span> <span class="mi">638</span><span class="p">,</span> 
+    <span class="s1">&#39;chr19&#39;</span><span class="p">:</span> <span class="mi">660</span><span class="p">,</span> 
+    <span class="s1">&#39;chr2&#39;</span><span class="p">:</span> <span class="mi">1771</span><span class="p">,</span> 
+    <span class="s1">&#39;chr3&#39;</span><span class="p">:</span> <span class="mi">838</span><span class="p">,</span> 
+    <span class="s1">&#39;chr4&#39;</span><span class="p">:</span> <span class="mi">1800</span><span class="p">,</span> 
+    <span class="s1">&#39;chr5&#39;</span><span class="p">:</span> <span class="mi">1630</span><span class="p">,</span> 
+    <span class="s1">&#39;chr6&#39;</span><span class="p">:</span> <span class="mi">1088</span><span class="p">,</span> 
+    <span class="s1">&#39;chr7&#39;</span><span class="p">:</span> <span class="mi">1434</span><span class="p">,</span> 
+    <span class="s1">&#39;chr8&#39;</span><span class="p">:</span> <span class="mi">1183</span><span class="p">,</span> 
+    <span class="s1">&#39;chr9&#39;</span><span class="p">:</span> <span class="mi">1286</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">chrsizes</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;chr1&quot;</span><span class="p">:</span> <span class="mi">197195432</span><span class="p">,</span> 
+    <span class="s2">&quot;chr2&quot;</span><span class="p">:</span> <span class="mi">181748087</span><span class="p">,</span> 
+    <span class="s2">&quot;chrX&quot;</span><span class="p">:</span> <span class="mi">166650296</span><span class="p">,</span> 
+    <span class="s2">&quot;chr3&quot;</span><span class="p">:</span> <span class="mi">159599783</span><span class="p">,</span> 
+    <span class="s2">&quot;chr4&quot;</span><span class="p">:</span> <span class="mi">155630120</span><span class="p">,</span> 
+    <span class="s2">&quot;chr5&quot;</span><span class="p">:</span> <span class="mi">152537259</span><span class="p">,</span> 
+    <span class="s2">&quot;chr7&quot;</span><span class="p">:</span> <span class="mi">152524553</span><span class="p">,</span> 
+    <span class="s2">&quot;chr6&quot;</span><span class="p">:</span> <span class="mi">149517037</span><span class="p">,</span> 
+    <span class="s2">&quot;chr8&quot;</span><span class="p">:</span> <span class="mi">131738871</span><span class="p">,</span> 
+    <span class="s2">&quot;chr10&quot;</span><span class="p">:</span> <span class="mi">129993255</span><span class="p">,</span> 
+    <span class="s2">&quot;chr14&quot;</span><span class="p">:</span> <span class="mi">125194864</span><span class="p">,</span> 
+    <span class="s2">&quot;chr9&quot;</span><span class="p">:</span> <span class="mi">124076172</span><span class="p">,</span> 
+    <span class="s2">&quot;chr11&quot;</span><span class="p">:</span> <span class="mi">121843856</span><span class="p">,</span> 
+    <span class="s2">&quot;chr12&quot;</span><span class="p">:</span> <span class="mi">121257530</span><span class="p">,</span>
+    <span class="s2">&quot;chr13&quot;</span><span class="p">:</span> <span class="mi">120284312</span><span class="p">,</span> 
+    <span class="s2">&quot;chr15&quot;</span><span class="p">:</span> <span class="mi">103494974</span><span class="p">,</span> 
+    <span class="s2">&quot;chr16&quot;</span><span class="p">:</span> <span class="mi">98319150</span><span class="p">,</span> 
+    <span class="s2">&quot;chr17&quot;</span><span class="p">:</span> <span class="mi">95272651</span><span class="p">,</span> 
+    <span class="s2">&quot;chr18&quot;</span><span class="p">:</span> <span class="mi">90772031</span><span class="p">,</span> 
+    <span class="s2">&quot;chr19&quot;</span><span class="p">:</span> <span class="mi">61342430</span><span class="p">,</span> 
+    <span class="s2">&quot;chrY&quot;</span><span class="p">:</span> <span class="mi">15902555</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<ol class="simple">
+<li><p>What is the Python command to obtain the number of peaks on chr6?</p></li>
+<li><p>The number of peaks for chr11 contains a typo. This should be 1878. Correct this in the dictionary</p></li>
+<li><p>Write a statement that answers the question whether chrX is present in <code class="docutils literal notranslate"><span class="pre">esrrb</span></code>.</p></li>
+<li><p>Expand the code of <strong>3</strong> so that the correct key-value pair is inserted in <code class="docutils literal notranslate"><span class="pre">esrrb</span></code> in case chrX is missing (chrX has 180 peaks)</p></li>
+<li><p>Get the number of peaks for chrY. What’s going on here?</p></li>
+<li><p>Using the two dictionaries above, calculate the peak density (number of peaks per bp) for chr15. <strong>Do not manually type the numeric data</strong></p></li>
+<li><p>Write a loop that will print the peak density for each chromosome.</p></li>
+</ol>
+<p><strong>Exercise 6.8</strong></p>
+<ol class="simple">
+<li><p>Using the keys and values of the dictionary <code class="docutils literal notranslate"><span class="pre">cod2aa</span></code>, make a new dictionary (e.g. <code class="docutils literal notranslate"><span class="pre">aa2cod</span></code>) that does the reverse of <code class="docutils literal notranslate"><span class="pre">cod2aa</span></code>: mapping amino acids to codons. Here is your starting point:</p></li>
+</ol>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">cod2aa</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;TTG&#39;</span><span class="p">:</span> <span class="s1">&#39;Leu&#39;</span><span class="p">,</span> <span class="s1">&#39;AGC&#39;</span><span class="p">:</span> <span class="s1">&#39;Ser&#39;</span><span class="p">,</span> <span class="s1">&#39;CTA&#39;</span><span class="p">:</span> <span class="s1">&#39;Leu&#39;</span><span class="p">,</span> <span class="s1">&#39;ACT&#39;</span><span class="p">:</span> <span class="s1">&#39;Thr&#39;</span><span class="p">}</span>
+</pre></div>
+</div>
+<ol class="simple">
+<li><p>Which problem did you encounter? Could you provide a solution to this?</p></li>
+</ol>
+<p><strong>Exercise 6.9</strong></p>
+<p>For these excercises you will use a dictionary with codons as keys as amino acids as values.
+Create this by running this command (using copy-paste):</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">codons</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;aaa&#39;</span><span class="p">:</span> <span class="s1">&#39;K&#39;</span><span class="p">,</span> <span class="s1">&#39;aac&#39;</span><span class="p">:</span> <span class="s1">&#39;N&#39;</span><span class="p">,</span> <span class="s1">&#39;aag&#39;</span><span class="p">:</span> <span class="s1">&#39;K&#39;</span><span class="p">,</span> <span class="s1">&#39;aat&#39;</span><span class="p">:</span> <span class="s1">&#39;N&#39;</span><span class="p">,</span> <span class="s1">&#39;aca&#39;</span><span class="p">:</span> <span class="s1">&#39;T&#39;</span><span class="p">,</span> <span class="s1">&#39;acc&#39;</span><span class="p">:</span> <span class="s1">&#39;T&#39;</span><span class="p">,</span> <span class="s1">&#39;acg&#39;</span><span class="p">:</span> <span class="s1">&#39;T&#39;</span><span class="p">,</span> 
+    <span class="s1">&#39;act&#39;</span><span class="p">:</span> <span class="s1">&#39;T&#39;</span><span class="p">,</span> <span class="s1">&#39;aga&#39;</span><span class="p">:</span> <span class="s1">&#39;R&#39;</span><span class="p">,</span> <span class="s1">&#39;agc&#39;</span><span class="p">:</span> <span class="s1">&#39;S&#39;</span><span class="p">,</span> <span class="s1">&#39;agg&#39;</span><span class="p">:</span> <span class="s1">&#39;R&#39;</span><span class="p">,</span> <span class="s1">&#39;agt&#39;</span><span class="p">:</span> <span class="s1">&#39;S&#39;</span><span class="p">,</span> <span class="s1">&#39;ata&#39;</span><span class="p">:</span> <span class="s1">&#39;I&#39;</span><span class="p">,</span> <span class="s1">&#39;atc&#39;</span><span class="p">:</span> <span class="s1">&#39;I&#39;</span><span class="p">,</span> 
+    <span class="s1">&#39;atg&#39;</span><span class="p">:</span> <span class="s1">&#39;M&#39;</span><span class="p">,</span> <span class="s1">&#39;att&#39;</span><span class="p">:</span> <span class="s1">&#39;I&#39;</span><span class="p">,</span> <span class="s1">&#39;caa&#39;</span><span class="p">:</span> <span class="s1">&#39;Q&#39;</span><span class="p">,</span> <span class="s1">&#39;cac&#39;</span><span class="p">:</span> <span class="s1">&#39;H&#39;</span><span class="p">,</span> <span class="s1">&#39;cag&#39;</span><span class="p">:</span> <span class="s1">&#39;Q&#39;</span><span class="p">,</span> <span class="s1">&#39;cat&#39;</span><span class="p">:</span> <span class="s1">&#39;H&#39;</span><span class="p">,</span> <span class="s1">&#39;cca&#39;</span><span class="p">:</span> <span class="s1">&#39;P&#39;</span><span class="p">,</span> 
+    <span class="s1">&#39;ccc&#39;</span><span class="p">:</span> <span class="s1">&#39;P&#39;</span><span class="p">,</span> <span class="s1">&#39;ccg&#39;</span><span class="p">:</span> <span class="s1">&#39;P&#39;</span><span class="p">,</span> <span class="s1">&#39;cct&#39;</span><span class="p">:</span> <span class="s1">&#39;P&#39;</span><span class="p">,</span> <span class="s1">&#39;cga&#39;</span><span class="p">:</span> <span class="s1">&#39;R&#39;</span><span class="p">,</span> <span class="s1">&#39;cgc&#39;</span><span class="p">:</span> <span class="s1">&#39;R&#39;</span><span class="p">,</span> <span class="s1">&#39;cgg&#39;</span><span class="p">:</span> <span class="s1">&#39;R&#39;</span><span class="p">,</span> <span class="s1">&#39;cgt&#39;</span><span class="p">:</span> <span class="s1">&#39;R&#39;</span><span class="p">,</span> 
+    <span class="s1">&#39;cta&#39;</span><span class="p">:</span> <span class="s1">&#39;L&#39;</span><span class="p">,</span> <span class="s1">&#39;ctc&#39;</span><span class="p">:</span> <span class="s1">&#39;L&#39;</span><span class="p">,</span> <span class="s1">&#39;ctg&#39;</span><span class="p">:</span> <span class="s1">&#39;L&#39;</span><span class="p">,</span> <span class="s1">&#39;ctt&#39;</span><span class="p">:</span> <span class="s1">&#39;L&#39;</span><span class="p">,</span> <span class="s1">&#39;gaa&#39;</span><span class="p">:</span> <span class="s1">&#39;E&#39;</span><span class="p">,</span> <span class="s1">&#39;gac&#39;</span><span class="p">:</span> <span class="s1">&#39;D&#39;</span><span class="p">,</span> <span class="s1">&#39;gag&#39;</span><span class="p">:</span> <span class="s1">&#39;E&#39;</span><span class="p">,</span> 
+    <span class="s1">&#39;gat&#39;</span><span class="p">:</span> <span class="s1">&#39;D&#39;</span><span class="p">,</span> <span class="s1">&#39;gca&#39;</span><span class="p">:</span> <span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="s1">&#39;gcc&#39;</span><span class="p">:</span> <span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="s1">&#39;gcg&#39;</span><span class="p">:</span> <span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="s1">&#39;gct&#39;</span><span class="p">:</span> <span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="s1">&#39;gga&#39;</span><span class="p">:</span> <span class="s1">&#39;G&#39;</span><span class="p">,</span> <span class="s1">&#39;ggc&#39;</span><span class="p">:</span> <span class="s1">&#39;G&#39;</span><span class="p">,</span> 
+    <span class="s1">&#39;ggg&#39;</span><span class="p">:</span> <span class="s1">&#39;G&#39;</span><span class="p">,</span> <span class="s1">&#39;ggt&#39;</span><span class="p">:</span> <span class="s1">&#39;G&#39;</span><span class="p">,</span> <span class="s1">&#39;gta&#39;</span><span class="p">:</span> <span class="s1">&#39;V&#39;</span><span class="p">,</span> <span class="s1">&#39;gtc&#39;</span><span class="p">:</span> <span class="s1">&#39;V&#39;</span><span class="p">,</span> <span class="s1">&#39;gtg&#39;</span><span class="p">:</span> <span class="s1">&#39;V&#39;</span><span class="p">,</span> <span class="s1">&#39;gtt&#39;</span><span class="p">:</span> <span class="s1">&#39;V&#39;</span><span class="p">,</span> <span class="s1">&#39;taa&#39;</span><span class="p">:</span> <span class="s1">&#39;*&#39;</span><span class="p">,</span> 
+    <span class="s1">&#39;tac&#39;</span><span class="p">:</span> <span class="s1">&#39;Y&#39;</span><span class="p">,</span> <span class="s1">&#39;tag&#39;</span><span class="p">:</span> <span class="s1">&#39;*&#39;</span><span class="p">,</span> <span class="s1">&#39;tat&#39;</span><span class="p">:</span> <span class="s1">&#39;Y&#39;</span><span class="p">,</span> <span class="s1">&#39;tca&#39;</span><span class="p">:</span> <span class="s1">&#39;S&#39;</span><span class="p">,</span> <span class="s1">&#39;tcc&#39;</span><span class="p">:</span> <span class="s1">&#39;S&#39;</span><span class="p">,</span> <span class="s1">&#39;tcg&#39;</span><span class="p">:</span> <span class="s1">&#39;S&#39;</span><span class="p">,</span> <span class="s1">&#39;tct&#39;</span><span class="p">:</span> <span class="s1">&#39;S&#39;</span><span class="p">,</span> 
+    <span class="s1">&#39;tga&#39;</span><span class="p">:</span> <span class="s1">&#39;*&#39;</span><span class="p">,</span> <span class="s1">&#39;tgc&#39;</span><span class="p">:</span> <span class="s1">&#39;C&#39;</span><span class="p">,</span> <span class="s1">&#39;tgg&#39;</span><span class="p">:</span> <span class="s1">&#39;W&#39;</span><span class="p">,</span> <span class="s1">&#39;tgt&#39;</span><span class="p">:</span> <span class="s1">&#39;C&#39;</span><span class="p">,</span> <span class="s1">&#39;tta&#39;</span><span class="p">:</span> <span class="s1">&#39;L&#39;</span><span class="p">,</span> <span class="s1">&#39;ttc&#39;</span><span class="p">:</span> <span class="s1">&#39;F&#39;</span><span class="p">,</span> <span class="s1">&#39;ttg&#39;</span><span class="p">:</span> <span class="s1">&#39;L&#39;</span><span class="p">,</span> 
+    <span class="s1">&#39;ttt&#39;</span><span class="p">:</span> <span class="s1">&#39;F&#39;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<ol class="simple">
+<li><p>Provide the Python code that uses a loop to print for each codon its sequence and the amino acid it encodes (e.g. “aaa encodes K”).</p></li>
+<li><p>Extend this code so that that it only prints the codon sequence if it encodes a stop codon.</p></li>
+<li><p>Create an empty list named <code class="docutils literal notranslate"><span class="pre">leu</span></code> using <code class="docutils literal notranslate"><span class="pre">[]</span></code>. Loop through the <code class="docutils literal notranslate"><span class="pre">codon</span></code> dictionary and add all codons for ‘L’ (leucine) to the list <code class="docutils literal notranslate"><span class="pre">leu</span></code>. After running your code, <code class="docutils literal notranslate"><span class="pre">leu</span></code> should contain 6 codons.</p></li>
+</ol>
+<p><strong>Exercise 6.10</strong></p>
+<p>In this exercise you will compare the behaviour of lists and dictionaries with respect to indexing.</p>
+<p>Study and run the following example:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">my_list</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;A&#39;</span><span class="p">,</span><span class="s1">&#39;B&#39;</span><span class="p">,</span><span class="s1">&#39;C&#39;</span><span class="p">]</span> <span class="c1"># initialize the list</span>
+<span class="n">my_dictionary</span> <span class="o">=</span> <span class="p">{</span> <span class="mi">0</span> <span class="p">:</span> <span class="s1">&#39;A&#39;</span><span class="p">,</span>  <span class="c1"># init the dictionary</span>
+                  <span class="mi">1</span> <span class="p">:</span> <span class="s1">&#39;B&#39;</span><span class="p">,</span>
+                  <span class="mi">2</span> <span class="p">:</span> <span class="s1">&#39;C&#39;</span> <span class="p">}</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;0:&quot;</span><span class="p">,</span> <span class="n">my_list</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">my_dictionary</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;1:&quot;</span><span class="p">,</span> <span class="n">my_list</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">my_dictionary</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;2:&quot;</span><span class="p">,</span> <span class="n">my_list</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">my_dictionary</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+</pre></div>
+</div>
+<p>You should see that for any given index (0, 1 and 2), <code class="docutils literal notranslate"><span class="pre">my_list</span></code> and <code class="docutils literal notranslate"><span class="pre">my_dictionary</span></code> return the same value.</p>
+<p>Now run the following example:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">my_list</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;A&#39;</span><span class="p">,</span><span class="s1">&#39;B&#39;</span><span class="p">,</span><span class="s1">&#39;C&#39;</span><span class="p">]</span> <span class="c1"># initialize the list</span>
+<span class="n">my_dictionary</span> <span class="o">=</span> <span class="p">{</span> <span class="mi">0</span> <span class="p">:</span> <span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="c1"># init the dictionary</span>
+                  <span class="mi">1</span> <span class="p">:</span> <span class="s1">&#39;B&#39;</span><span class="p">,</span>
+                  <span class="mi">2</span> <span class="p">:</span> <span class="s1">&#39;C&#39;</span><span class="p">,</span>
+                  <span class="mi">5</span> <span class="p">:</span> <span class="s1">&#39;F&#39;</span> <span class="p">}</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;0:&quot;</span><span class="p">,</span><span class="n">my_list</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">my_dictionary</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;1:&quot;</span><span class="p">,</span><span class="n">my_list</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">my_dictionary</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;2:&quot;</span><span class="p">,</span><span class="n">my_list</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">my_dictionary</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;my_dictionary[5]:&quot;</span><span class="p">,</span><span class="n">my_dictionary</span><span class="p">[</span><span class="mi">5</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;my_list[5]:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">my_list</span><span class="p">[</span><span class="mi">5</span><span class="p">])</span>
+</pre></div>
+</div>
+<ol class="simple">
+<li><p>Question: can you retrieve the value for key 5 from the dictionary?</p></li>
+<li><p>Question: can you retrieve the value for key 5 from the list? Why not?</p></li>
+</ol>
+<p>Now adapt the code by changing the initalization of the list (first line) such that</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">mylist</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>contains the value <code class="docutils literal notranslate"><span class="pre">'F'</span></code>, and as a result <code class="docutils literal notranslate"><span class="pre">print(my_list[5])</span></code> actually prints the letter F to screen.</p>
+<p>Hint: you need to initialize the list in such a way that 5 is a valid index for the list.</p>
+<ol class="simple">
+<li><p>Question: what is the minimum length of the list required to accomplish this?</p></li>
+<li><p>Question: Why is not possible to define a list (for instance, <code class="docutils literal notranslate"><span class="pre">my_list</span></code>) with only 4 items that still produces a value for index 5 (<code class="docutils literal notranslate"><span class="pre">my_list[5]</span></code>)?</p></li>
+<li><p>Question: Suppose you have a consecutive list of indices (or integer keys) 0,1,2,3,4,…,100 and corresponding values.
+Which type of variable is more efficient to store and access these keys and values: a list or a dictionary?</p></li>
+<li><p>Question: Suppose you have a sparse and non-consecutive list of 4 integers (for instance 1,2,10000 and 2000000) and associated values (for instance ‘A’,’B’,’C’ and ‘D’). Which type of variable is more efficient to store and access this particular combination of keys and values together: a list or a dictionary? Explain why!</p></li>
+</ol>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./content"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="functions_modules.html" title="previous page"><span class="section-number">5. </span>Functions and modules</a>
+    <a class='right-next' id="next-link" href="extra_exercises.html" title="next page"><span class="section-number">7. </span>Assembling the pieces</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Simon van Heeringen, Arjen Brinkman, Kees Albers<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    <script src="../_static/js/index.js"></script>
+    
+  </body>
+</html>

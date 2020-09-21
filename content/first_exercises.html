@@ -1,0 +1,547 @@
+
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>1. First exercises &#8212; NWI-BM066A Computation for Biologists</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
+    <link href="../_static/css/index.css" rel="stylesheet">
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/spanels-index--0afa1ebdab0bb23b98b56d34c23d9f57.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/spanels-variables--ffc7f74dcb1b9eecba2dbcbc22818714.css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/sphinx-book-theme.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="2. Lists" href="lists.html" />
+    <link rel="prev" title="Introduction" href="01_introduction.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="docsearch:language" content="en">
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../index.html">
+  
+  
+  <h1 class="site-logo" id="site-title">NWI-BM066A Computation for Biologists</h1>
+  
+</a>
+</div>
+
+<form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="01_introduction.html">
+   Introduction
+  </a>
+ </li>
+</ul>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   1. First exercises
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="lists.html">
+   2. Lists
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="control_flow.html">
+   3. Control flow
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="loops.html">
+   4. Loops
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="functions_modules.html">
+   5. Functions and modules
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="dictionaries.html">
+   6. Dictionaries
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="extra_exercises.html">
+   7. Assembling the pieces
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="files.html">
+   8. Files
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="scripts.html">
+   9. Scripts
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="debugging.html">
+   10. Debugging
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="pandas.html">
+   11. Introduction to pandas DataFrames
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="visualization.html">
+   12. Visualization
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="dnase_motifs.html">
+   13. Motifs in DNase I peaks
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="footprints.html">
+   14. Creating a DNAseI footprint profile
+  </a>
+ </li>
+</ul>
+
+</nav>
+
+ <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        <div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/content/first_exercises.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+    
+</div>
+        <!-- Source interaction buttons -->
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/vanheeringen-lab/cfb_book/master?urlpath=tree/content/first_exercises.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        <a class="colab-button" href="https://colab.research.google.com/github/vanheeringen-lab/cfb_book/blob/master/content/first_exercises.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
+                    src="../_static/images/logo_colab.png"
+                    alt="Interact on Colab">Colab</button></a>
+        
+        
+    </div>
+</div>
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercises-integer-int-and-string-str-variables">
+   1.1. Exercises: integer (int) and string (str) variables
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#working-with-strings">
+   1.2. Working with strings
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercises-strings">
+   1.3. Exercises: strings
+  </a>
+ </li>
+</ul>
+
+        </nav>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="first-exercises">
+<h1><span class="section-number">1. </span>First exercises<a class="headerlink" href="#first-exercises" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="exercises-integer-int-and-string-str-variables">
+<h2><span class="section-number">1.1. </span>Exercises: integer (int) and string (str) variables<a class="headerlink" href="#exercises-integer-int-and-string-str-variables" title="Permalink to this headline">¶</a></h2>
+<p><strong>Exercise 1.1</strong></p>
+<p>Consider the following code:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mi">4</span>
+<span class="n">c</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+</pre></div>
+</div>
+<ol class="simple">
+<li><p>Question: What is the value of <code class="docutils literal notranslate"><span class="pre">c</span></code> that is printed?</p></li>
+<li><p>Modify the value that is assigned to variable <code class="docutils literal notranslate"><span class="pre">b</span></code> in such a way that the value of <code class="docutils literal notranslate"><span class="pre">c</span></code> printed to screen is <code class="docutils literal notranslate"><span class="pre">16</span></code>.</p></li>
+</ol>
+<p><strong>Exercise 1.2</strong></p>
+<p>Create two variables <code class="docutils literal notranslate"><span class="pre">a</span></code> and <code class="docutils literal notranslate"><span class="pre">b</span></code>, and assign them the values 4 and 20 respectively. Create a new variable <code class="docutils literal notranslate"><span class="pre">c</span></code> that is the sum of these two variables. Your code should produce the following output by printing the value of the variable <code class="docutils literal notranslate"><span class="pre">c</span></code> to the screen:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">+</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">24</span>
+</pre></div>
+</div>
+<p><strong>Exercise 1.3</strong></p>
+<p>Run the following code:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mi">4</span>
+<span class="n">c</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+</pre></div>
+</div>
+<ol class="simple">
+<li><p>Question: Which value is printed to the screen and how often?</p></li>
+</ol>
+<p>Now assign the variable <code class="docutils literal notranslate"><span class="pre">b</span></code> a new value after having printed the value of <code class="docutils literal notranslate"><span class="pre">c</span></code>, like so:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mi">4</span>
+<span class="n">c</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;a + b = &#39;</span><span class="p">,</span><span class="n">c</span><span class="p">)</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;a + b = &#39;</span><span class="p">,</span><span class="n">c</span><span class="p">)</span>
+</pre></div>
+</div>
+<ol class="simple">
+<li><p>Question: Why does the value of the variable <em>c</em> not change between the first and the second print statement (in line 4 and line 6 respectively)?</p></li>
+</ol>
+<p><strong>Exercise 1.4</strong></p>
+<p>Run the following code (make sure to write it <em>exactly</em> as shown here):</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="s1">&#39;10&#39;</span>
+<span class="n">b</span> <span class="o">=</span> <span class="s1">&#39;4&#39;</span>
+<span class="n">c</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+</pre></div>
+</div>
+<ol class="simple">
+<li><p>Question: what is printed to the screen?</p></li>
+<li><p>Question: what type of variable are <code class="docutils literal notranslate"><span class="pre">a</span></code>, <code class="docutils literal notranslate"><span class="pre">b</span></code> and <code class="docutils literal notranslate"><span class="pre">c</span></code>? (e.g. list, integer, float, string)</p></li>
+<li><p>Question: why does it not print <code class="docutils literal notranslate"><span class="pre">14</span></code> to the screen? You could also try this example to see what is happening:</p></li>
+</ol>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="s1">&#39;10&#39;</span>
+<span class="n">b</span> <span class="o">=</span> <span class="s1">&#39;4&#39;</span>
+<span class="n">c</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="s1">&#39;+&#39;</span> <span class="o">+</span> <span class="n">b</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Exercise 1.5</strong></p>
+<p>Have a look at the following code (do not run it yet):</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">b</span> <span class="o">=</span> <span class="s1">&#39;4&#39;</span>
+<span class="n">c</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+</pre></div>
+</div>
+<ol class="simple">
+<li><p>Question: what type of variable is <code class="docutils literal notranslate"><span class="pre">a</span></code>?</p></li>
+<li><p>Question: what type of variable is <code class="docutils literal notranslate"><span class="pre">b</span></code>?</p></li>
+<li><p>Question: what is the output of the code? (Run it!)</p></li>
+<li><p>Question: do you understand the output?</p></li>
+</ol>
+</div>
+<div class="section" id="working-with-strings">
+<h2><span class="section-number">1.2. </span>Working with strings<a class="headerlink" href="#working-with-strings" title="Permalink to this headline">¶</a></h2>
+<p>As you have seen, you can combine strings using the <code class="docutils literal notranslate"><span class="pre">+</span></code> operator.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">first_part</span> <span class="o">=</span> <span class="s2">&quot;this is &quot;</span>
+<span class="n">second_part</span> <span class="o">=</span> <span class="s2">&quot;a long string&quot;</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">first_part</span> <span class="o">+</span> <span class="n">second_part</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>this is a long string
+</pre></div>
+</div>
+</div>
+</div>
+<p>If you want to access specific parts of a string you can use <code class="docutils literal notranslate"><span class="pre">[</span></code> and <code class="docutils literal notranslate"><span class="pre">]</span></code> with a number in between.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">msg</span> <span class="o">=</span> <span class="s2">&quot;hello there!&quot;</span>
+<span class="n">msg</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;e&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>You’ll see that <code class="docutils literal notranslate"><span class="pre">[1]</span></code> selects the second character of the string <code class="docutils literal notranslate"><span class="pre">&quot;hello</span> <span class="pre">there!&quot;</span></code>. Why the second and not the first? This is because Python, like many other programming language, starts counting at <code class="docutils literal notranslate"><span class="pre">0</span></code>.</p>
+<p>There is a more extended version, where you create a <em>slice</em>. In this case you specify <code class="docutils literal notranslate"><span class="pre">[start:end]</span></code>. This looks as follows:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">msg</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">5</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;hello&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Here you see that you can take a <em>substring</em> of <code class="docutils literal notranslate"><span class="pre">string</span></code>. In other words, you select a smaller part of a <code class="docutils literal notranslate"><span class="pre">string</span></code>.</p>
+<p>You can convert a number, such as an <code class="docutils literal notranslate"><span class="pre">int</span></code> or <code class="docutils literal notranslate"><span class="pre">float</span></code> to a string with the <code class="docutils literal notranslate"><span class="pre">str()</span></code> method.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mf">0.12</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">a</span><span class="p">))</span>
+<span class="n">b</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">b</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;float&#39;&gt;
+&lt;class &#39;str&#39;&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Similarly, you can convert a string that contains a number to an integer with the <code class="docutils literal notranslate"><span class="pre">int()</span></code> function or to a float with the <code class="docutils literal notranslate"><span class="pre">float()</span></code> function.</p>
+<p>Strings have a number of methods that allow you to perform a variety of useful functions. For instance, <code class="docutils literal notranslate"><span class="pre">lower()</span></code> creates a new string where all characters are in lowercase.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s1</span> <span class="o">=</span> <span class="s2">&quot;ATG&quot;</span>
+<span class="n">s2</span> <span class="o">=</span> <span class="n">s1</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">s2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>atg
+</pre></div>
+</div>
+</div>
+</div>
+<p>Similarly, you can use <code class="docutils literal notranslate"><span class="pre">upper()</span></code> to convert a string to all uppercase. These methods create a <em>new</em> string, they leave the string you use to call the method unchanged.</p>
+<p>Here is a list of useful string methods. For a complete overview you can check the <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#string-methods">Python string documentation</a>.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">upper()</span></code> - Returns a string in uppercase</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">lower()</span></code> - Returns a string in lowercase</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">len()</span></code> - Returns the length of a string</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">count()</span></code> - Returns the number of occurrences of a string within another string</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">replace()</span></code> - Returns a string with specific text replaced</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">find()</span></code> - Return the first position where a substring is found, or -1 if is not found</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">strip()</span></code> - Returns a string with all leading and trailing whitespace removed</p></li>
+</ul>
+</div>
+<div class="section" id="exercises-strings">
+<h2><span class="section-number">1.3. </span>Exercises: strings<a class="headerlink" href="#exercises-strings" title="Permalink to this headline">¶</a></h2>
+<p><strong>Exercise 1.6</strong></p>
+<p>You are going to analyze the following sequence in more detail using Python:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">GCTTGACAGGTAGACAGGACCCATAGACAGGATAGACAGGTAGACAGGGATAGACAGGGATAGCCAGATAGACGATAGCGATGATAC</span>
+</pre></div>
+</div>
+<p>To get this sequence into python you are allowed to copy paste!
+Provide answers + code to the following questions:</p>
+<ol class="simple">
+<li><p>What is the length of this sequence?</p></li>
+<li><p>What is the 40th base of this sequence?</p></li>
+<li><p>Is there a C in the sequence starting at base position 44 and ending at position 53? (let Python tell you)</p></li>
+</ol>
+<p><strong>Exercise 1.7</strong></p>
+<p>Given the following input:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">seq1</span> <span class="o">=</span> <span class="s2">&quot;ATG&quot;</span>
+<span class="n">seq2</span> <span class="o">=</span> <span class="s2">&quot;GATTACA&quot;</span>
+<span class="n">seq3</span> <span class="o">=</span> <span class="s2">&quot;A&quot;</span>
+</pre></div>
+</div>
+<p>Write the code that will calculate the total length of these three sequences and print the following output:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Total</span> <span class="n">length</span><span class="p">:</span> <span class="mi">11</span>
+</pre></div>
+</div>
+<p><strong>Exercise 1.8</strong></p>
+<p>An open reading frame is a sequence of DNA that starts with the start codon ATG and ends with a stop codon (TAA, TAG or TGA). Take the following DNA sequence.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">dna</span> <span class="o">=</span> <span class="s2">&quot;TTGCATGTCAATCGATCGGATTGGTTGATTTATCCCGA&quot;</span>
+</pre></div>
+</div>
+<p>This sequence contains one ORF, with a start codon at the 5th position and a stop codon (TGA) at the 26th position.</p>
+<ol class="simple">
+<li><p>Write code that will print the ORF of this sequence.</p></li>
+</ol>
+<p>Let’s look at a different DNA sequence:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">dna2</span> <span class="o">=</span> <span class="s2">&quot;CCGGTATGCGGTTCTGACCA&quot;</span>
+</pre></div>
+</div>
+<ol class="simple">
+<li><p>Does the code that you wrote for 1) also work for this sequence? If not, write code that will print the ORF of a DNA sequence (only with the TGA stop codon) that works with either of this sequences.</p></li>
+</ol>
+<p><strong>Exercise 1.9</strong></p>
+<p>Write code that will print the GC content of a sequence. This is the fraction of a sequence that is either C or G. When you use string <code class="docutils literal notranslate"><span class="pre">dna</span></code> from <strong>1.8</strong> it should print the following:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">GC</span> <span class="n">content</span><span class="p">:</span> <span class="mi">42</span><span class="o">%</span>
+</pre></div>
+</div>
+<p><strong>Exercise 1.10</strong></p>
+<p>Write code that will print a sequence in lower-case with the ORF (start ATG, stop TGA) in upper-case.</p>
+<p>For instance, the following sequence:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">dna</span> <span class="o">=</span> <span class="s2">&quot;TTGCATGTCAATCGATCGGATTGGTTGATTTATCCCGA&quot;</span>
+</pre></div>
+</div>
+<p>Would be printed like this:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ttgcATGTCAATCGATCGGATTGGTTGAtttatcccga</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./content"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="01_introduction.html" title="previous page">Introduction</a>
+    <a class='right-next' id="next-link" href="lists.html" title="next page"><span class="section-number">2. </span>Lists</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Simon van Heeringen, Arjen Brinkman, Kees Albers<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    <script src="../_static/js/index.js"></script>
+    
+  </body>
+</html>
