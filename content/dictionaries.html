@@ -307,7 +307,7 @@ You can als create an empty dictionary with the curly brackets (<code class="doc
 </div>
 </div>
 </div>
-<p>If you print <code class="docutils literal notranslate"><span class="pre">cod2aa</span></code>, you will see that the order of the items in the dictionary is the same. The order of items in the dictionary identical top the order of insertion.</p>
+<p>If you print <code class="docutils literal notranslate"><span class="pre">cod2aa</span></code>, you will see that the order of the items in the dictionary is the same. The order of items in the dictionary is identical to the order of insertion.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">cod2aa</span><span class="p">)</span>
@@ -358,7 +358,7 @@ If the key isn’t in the dictionary, you get a <code class="docutils literal no
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Dictionaries are very similar to lists. The one major differences is that values in a <code class="docutils literal notranslate"><span class="pre">list</span></code> are always access by an integer and that value in a <code class="docutils literal notranslate"><span class="pre">dict</span></code> are can be accessed by a variety of key types.</p>
+<p>Dictionaries are very similar to lists. The one major differences is that values in a <code class="docutils literal notranslate"><span class="pre">list</span></code> are always accessed by an integer and that values in a <code class="docutils literal notranslate"><span class="pre">dict</span></code> can be accessed by a variety of key types.</p>
 </div>
 <p>Because you use keys to look up values, you can understand that <em>keys must always be unique</em>. On the other hand, <em>values do not need to be unique and can be anything</em>, including a <code class="docutils literal notranslate"><span class="pre">list</span></code> or a <code class="docutils literal notranslate"><span class="pre">dict</span></code>.
 Let us add another codon (key) that maps to an already existing amino acid (value):</p>
@@ -430,7 +430,7 @@ Let us add another codon (key) that maps to an already existing amino acid (valu
 </div>
 </div>
 </div>
-<p>You see all the values of the keys in <code class="docutils literal notranslate"><span class="pre">cod2aa</span></code>, which are the different codons. However, you’ll als not an unfamiliar <code class="docutils literal notranslate"><span class="pre">dict_keys()</span></code> object. If you want to loop over all the keys, this doesn’t matter:</p>
+<p>You see all the values of the keys in <code class="docutils literal notranslate"><span class="pre">cod2aa</span></code>, which are the different codons. However, you’ll als note an unfamiliar <code class="docutils literal notranslate"><span class="pre">dict_keys()</span></code> object. If you want to loop over all the keys, this doesn’t matter:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">codon</span> <span class="ow">in</span> <span class="n">codons</span><span class="p">:</span>
@@ -563,7 +563,7 @@ after pop: {&#39;TTG&#39;: &#39;Leu&#39;, &#39;CTA&#39;: &#39;Leu&#39;, &#39;AGC
 <p><strong>Exercise 6.3</strong></p>
 <p>I want the following code to print the value associated with the key ‘B’. However, the code contains an error.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">my_dictionary</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;A&#39;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;B&#39;</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;C&#39;</span><span class="p">:</span><span class="mi">3</span><span class="p">}</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;value associated with key &#39;A&#39;:&quot;</span><span class="p">,</span> <span class="n">my_dictionary</span><span class="p">[</span><span class="n">B</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;value associated with key &#39;B&#39;:&quot;</span><span class="p">,</span> <span class="n">my_dictionary</span><span class="p">[</span><span class="n">B</span><span class="p">])</span>
 </pre></div>
 </div>
 <p>Run the code and see if you can find where the error is and correct it so that it does print the value associated with key ‘B’.</p>
@@ -593,9 +593,19 @@ after pop: {&#39;TTG&#39;: &#39;Leu&#39;, &#39;CTA&#39;: &#39;Leu&#39;, &#39;AGC
 <li><p>Question: what would be a more appropriate (more insightful) name for the variable <em>variable_2</em>?</p></li>
 </ol>
 <p><strong>Exercise 6.6</strong></p>
-<p>Now adapt the code from exercise 5.6 so that it adds 4 to each value retrieved from the dictionary and prints this to the screen, together with the key.
+<p>Now adapt the code from exercise 6.5 so that it adds 4 to each value retrieved from the dictionary and prints this to the screen, together with the key.
 Use the more appropriate variable names instead of <code class="docutils literal notranslate"><span class="pre">variable_1</span></code> and <code class="docutils literal notranslate"><span class="pre">variable_2</span></code>.</p>
 <p><strong>NOTE</strong> You are not allowed to change the dictionary itself in the process.</p>
+<p>So the dictionary will stay like this:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">my_dictionary</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;A&#39;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;B&#39;</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;C&#39;</span><span class="p">:</span><span class="mi">3</span><span class="p">}</span>
+</pre></div>
+</div>
+<p>But your code should print:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="mi">5</span>
+<span class="n">B</span> <span class="mi">6</span>
+<span class="n">C</span> <span class="mi">7</span>
+</pre></div>
+</div>
 <p><strong>Exercise 6.7</strong></p>
 <p>The dictionary <code class="docutils literal notranslate"><span class="pre">esrrb</span></code> contains the number of Esrrb peaks per chromosome from an Esrrb ChIP-seq experiment (Chen et al. 2008, 13;133(6):1106-17, PMID 18555785).</p>
 <p>The dictionary <code class="docutils literal notranslate"><span class="pre">chrsizes</span></code> contains the length (bp) of each chromosome in the mouse genome (mm9).</p>
@@ -657,14 +667,18 @@ Use the more appropriate variable names instead of <code class="docutils literal
 <li><p>Write a loop that will print the peak density for each chromosome.</p></li>
 </ol>
 <p><strong>Exercise 6.8</strong></p>
-<ol class="simple">
-<li><p>Using the keys and values of the dictionary <code class="docutils literal notranslate"><span class="pre">cod2aa</span></code>, make a new dictionary (e.g. <code class="docutils literal notranslate"><span class="pre">aa2cod</span></code>) that does the reverse of <code class="docutils literal notranslate"><span class="pre">cod2aa</span></code>: mapping amino acids to codons. Here is your starting point:</p></li>
-</ol>
+<p>Here is a dictionary, <code class="docutils literal notranslate"><span class="pre">cod2aa</span></code>, that maps codons to amino acids:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">cod2aa</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;TTG&#39;</span><span class="p">:</span> <span class="s1">&#39;Leu&#39;</span><span class="p">,</span> <span class="s1">&#39;AGC&#39;</span><span class="p">:</span> <span class="s1">&#39;Ser&#39;</span><span class="p">,</span> <span class="s1">&#39;CTA&#39;</span><span class="p">:</span> <span class="s1">&#39;Leu&#39;</span><span class="p">,</span> <span class="s1">&#39;ACT&#39;</span><span class="p">:</span> <span class="s1">&#39;Thr&#39;</span><span class="p">}</span>
 </pre></div>
 </div>
-<ol class="simple">
-<li><p>Which problem did you encounter? Could you provide a solution to this?</p></li>
+<ol>
+<li><p>Write the definition of a new dictionary, <code class="docutils literal notranslate"><span class="pre">aa2cod</span></code>, that maps amino acids to codons. In other words, this dictionary is the reverse of <code class="docutils literal notranslate"><span class="pre">cod2aa</span></code>. You can write this by hand, do not yet use Python to create this dictionary.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">aa2cod</span> <span class="o">=</span> <span class="p">{</span> <span class="o">...</span><span class="n">fill</span> <span class="ow">in</span> <span class="n">here</span><span class="o">...</span> <span class="p">}</span>
+</pre></div>
+</div>
+</li>
+<li><p>Which problem did you encounter? Think of a solution for this problem and write the updated dictionary definition.</p></li>
+<li><p>Now you know what the new dictionary <code class="docutils literal notranslate"><span class="pre">aa2cod</span></code> should look like, create the new dictionary using Python. Your code should take <code class="docutils literal notranslate"><span class="pre">cod2aa</span></code> as input and create the <code class="docutils literal notranslate"><span class="pre">aa2cod</span></code> dictionary for you.</p></li>
 </ol>
 <p><strong>Exercise 6.9</strong></p>
 <p>For these excercises you will use a dictionary with codons as keys as amino acids as values.
