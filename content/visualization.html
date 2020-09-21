@@ -2,9 +2,10 @@
 
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
   <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>12. Visualization &#8212; NWI-BM066A Computation for Biologists</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
     <link href="../_static/css/index.css" rel="stylesheet">
@@ -13,9 +14,10 @@
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/jupyter-sphinx.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/spanels-index--0afa1ebdab0bb23b98b56d34c23d9f57.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/spanels-variables--ffc7f74dcb1b9eecba2dbcbc22818714.css" />
     <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-    <script src="../_static/sphinx-book-theme.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
@@ -23,11 +25,15 @@
     <script src="../_static/togglebutton.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
-    <script src="../_static/mystnb.js"></script>
     <script src="../_static/sphinx-book-theme.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="13. Motifs in DNase I peaks" href="dnase_motifs.html" />
@@ -201,12 +207,34 @@
 
         <!-- Launch buttons -->
 
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/vanheeringen-lab/cfb_book/master?urlpath=tree/content/visualization.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        <a class="colab-button" href="https://colab.research.google.com/github/vanheeringen-lab/cfb_book/blob/master/content/visualization.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
+                    src="../_static/images/logo_colab.png"
+                    alt="Interact on Colab">Colab</button></a>
+        
+        
+    </div>
+</div>
+
     </div>
 
     <!-- Table of contents -->
     <div class="d-none d-md-block col-md-2 bd-toc show">
         <div class="tocsection onthispage pt-5 pb-3">
-            <i class="fas fa-list"></i> On this page
+            <i class="fas fa-list"></i> Contents
         </div>
         <nav id="bd-toc-nav">
             <ul class="nav section-nav flex-column">
@@ -256,11 +284,11 @@
 <p>Before we start, import the appropriate modules</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
-<span class="o">%</span><span class="n">matplotlib</span> <span class="n">inline</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline
 
 <span class="c1"># Set directory for the data files</span>
 <span class="n">DATA_DIR</span> <span class="o">=</span> <span class="s2">&quot;/scratch/cfb/visual&quot;</span>
@@ -293,7 +321,7 @@
 <p>Next, we can import the data for E082 into pandas DataFrames, using the <code class="docutils literal notranslate"><span class="pre">read_csv()</span></code> function. Note: in earlier versions of pandas you could use the <code class="docutils literal notranslate"><span class="pre">read_table()</span></code> function, however, in newer versions of pandas this function has been deprecated and will be removed.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">E082_prom_K4me1</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">DATA_DIR</span><span class="si">}</span><span class="s2">/hg19_RefSeq_TSS500__E082-H3K4me1.counts.gz&quot;</span><span class="p">,</span> 
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">E082_prom_K4me1</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">DATA_DIR</span><span class="si">}</span><span class="s2">/hg19_RefSeq_TSS500__E082-H3K4me1.counts.gz&quot;</span><span class="p">,</span> 
                                 <span class="n">sep</span><span class="o">=</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">&quot;</span><span class="p">,</span> <span class="c1"># The files are tab-separated </span>
                                 <span class="n">header</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
                                 <span class="n">names</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;chr&#39;</span><span class="p">,</span> <span class="s1">&#39;start&#39;</span><span class="p">,</span> <span class="s1">&#39;end&#39;</span><span class="p">,</span> <span class="s1">&#39;reads&#39;</span><span class="p">])</span>
@@ -316,7 +344,7 @@
 <p>For each DataFrame, make columns with the corresponding annotation</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">E082_prom_K4me1</span><span class="p">[</span><span class="s1">&#39;elem&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;prom&#39;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">E082_prom_K4me1</span><span class="p">[</span><span class="s1">&#39;elem&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;prom&#39;</span>
 <span class="n">E082_enh_K4me1</span><span class="p">[</span><span class="s1">&#39;elem&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;enh&#39;</span>
 <span class="n">E082_prom_K4me3</span><span class="p">[</span><span class="s1">&#39;elem&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;prom&#39;</span>
 <span class="n">E082_enh_K4me3</span><span class="p">[</span><span class="s1">&#39;elem&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;enh&#39;</span>
@@ -333,7 +361,7 @@
 <p>Concatenate the DataFrames into one DataFrame (all DataFrame rows will be added to one big DataFrame)</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">E082</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">E082_prom_K4me1</span><span class="p">,</span> <span class="n">E082_enh_K4me1</span><span class="p">,</span> <span class="n">E082_prom_K4me3</span><span class="p">,</span> <span class="n">E082_enh_K4me3</span><span class="p">])</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">E082</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">E082_prom_K4me1</span><span class="p">,</span> <span class="n">E082_enh_K4me1</span><span class="p">,</span> <span class="n">E082_prom_K4me3</span><span class="p">,</span> <span class="n">E082_enh_K4me3</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
@@ -341,12 +369,12 @@
 <p>Make a boxplot of H3K4me1, H3K4me3 in promoters and enhancers</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s2">&quot;elem&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;reads&quot;</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s2">&quot;mark&quot;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">E082</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s2">&quot;elem&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;reads&quot;</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s2">&quot;mark&quot;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">E082</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:xlabel=&#39;elem&#39;, ylabel=&#39;reads&#39;&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:xlabel=&#39;elem&#39;, ylabel=&#39;reads&#39;&gt;
 </pre></div>
 </div>
 <img alt="../_images/visualization_10_1.png" src="../_images/visualization_10_1.png" />
@@ -363,12 +391,12 @@
 <p>It is probably better to not plot the outliers</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s2">&quot;elem&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;reads&quot;</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s2">&quot;mark&quot;</span><span class="p">,</span> <span class="n">fliersize</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">E082</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s2">&quot;elem&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;reads&quot;</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s2">&quot;mark&quot;</span><span class="p">,</span> <span class="n">fliersize</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">E082</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:xlabel=&#39;elem&#39;, ylabel=&#39;reads&#39;&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:xlabel=&#39;elem&#39;, ylabel=&#39;reads&#39;&gt;
 </pre></div>
 </div>
 <img alt="../_images/visualization_12_1.png" src="../_images/visualization_12_1.png" />
@@ -380,13 +408,13 @@
 <p>Repeat the boxplot on the transformed data.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">E082</span><span class="p">[</span><span class="s1">&#39;reads_sqrt&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">E082</span><span class="p">[</span><span class="s1">&#39;reads&#39;</span><span class="p">])</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">E082</span><span class="p">[</span><span class="s1">&#39;reads_sqrt&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">E082</span><span class="p">[</span><span class="s1">&#39;reads&#39;</span><span class="p">])</span>
 <span class="n">sns</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s2">&quot;elem&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;reads_sqrt&quot;</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s2">&quot;mark&quot;</span><span class="p">,</span> <span class="n">fliersize</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">E082</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:xlabel=&#39;elem&#39;, ylabel=&#39;reads_sqrt&#39;&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:xlabel=&#39;elem&#39;, ylabel=&#39;reads_sqrt&#39;&gt;
 </pre></div>
 </div>
 <img alt="../_images/visualization_14_1.png" src="../_images/visualization_14_1.png" />
@@ -395,13 +423,13 @@
 <p>Knowing that the regions in the DataFrame are not of the same length, we may need to correct the transformed readcounts for the length of the regions</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">E082</span><span class="p">[</span><span class="s1">&#39;reads_sqrt_bp&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">E082</span><span class="p">[</span><span class="s1">&#39;reads_sqrt&#39;</span><span class="p">]</span><span class="o">/</span><span class="p">(</span><span class="n">E082</span><span class="p">[</span><span class="s1">&#39;end&#39;</span><span class="p">]</span><span class="o">-</span><span class="n">E082</span><span class="p">[</span><span class="s1">&#39;start&#39;</span><span class="p">])</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">E082</span><span class="p">[</span><span class="s1">&#39;reads_sqrt_bp&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">E082</span><span class="p">[</span><span class="s1">&#39;reads_sqrt&#39;</span><span class="p">]</span><span class="o">/</span><span class="p">(</span><span class="n">E082</span><span class="p">[</span><span class="s1">&#39;end&#39;</span><span class="p">]</span><span class="o">-</span><span class="n">E082</span><span class="p">[</span><span class="s1">&#39;start&#39;</span><span class="p">])</span>
 <span class="n">sns</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s2">&quot;elem&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;reads_sqrt_bp&quot;</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s2">&quot;mark&quot;</span><span class="p">,</span> <span class="n">fliersize</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">E082</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:xlabel=&#39;elem&#39;, ylabel=&#39;reads_sqrt_bp&#39;&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:xlabel=&#39;elem&#39;, ylabel=&#39;reads_sqrt_bp&#39;&gt;
 </pre></div>
 </div>
 <img alt="../_images/visualization_16_1.png" src="../_images/visualization_16_1.png" />
@@ -410,13 +438,13 @@
 <p>This is definitely better, but the plot may even better if we adapt the y-axis scale</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mf">0.05</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mf">0.05</span><span class="p">)</span>
 <span class="n">sns</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s2">&quot;elem&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;reads_sqrt_bp&quot;</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s2">&quot;mark&quot;</span><span class="p">,</span> <span class="n">fliersize</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">E082</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:xlabel=&#39;elem&#39;, ylabel=&#39;reads_sqrt_bp&#39;&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:xlabel=&#39;elem&#39;, ylabel=&#39;reads_sqrt_bp&#39;&gt;
 </pre></div>
 </div>
 <img alt="../_images/visualization_18_1.png" src="../_images/visualization_18_1.png" />
@@ -433,7 +461,7 @@
 <p>Read the file into a pandas DataFrame.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">enh</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">DATA_DIR</span><span class="si">}</span><span class="s2">/regions_enh_E081_E082_E083.bed.gz&quot;</span><span class="p">,</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">enh</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">DATA_DIR</span><span class="si">}</span><span class="s2">/regions_enh_E081_E082_E083.bed.gz&quot;</span><span class="p">,</span>
                     <span class="n">sep</span><span class="o">=</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">&quot;</span><span class="p">,</span>
                     <span class="n">header</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
                     <span class="n">names</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;chr&#39;</span><span class="p">,</span> <span class="s1">&#39;start&#39;</span><span class="p">,</span> <span class="s1">&#39;end&#39;</span><span class="p">,</span> <span class="s1">&#39;celltype&#39;</span><span class="p">])</span>
@@ -445,7 +473,7 @@
 <p>To select all the regions that are called as enhancer in E082, we will create a <strong>boolean</strong> that consists of <code class="docutils literal notranslate"><span class="pre">True</span></code> / <code class="docutils literal notranslate"><span class="pre">False</span></code> indicating which line (=region, =enhancer) in the <code class="docutils literal notranslate"><span class="pre">enh</span></code> DataFrame refers to an enhancer in E082.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cond</span> <span class="o">=</span> <span class="n">enh</span><span class="p">[</span><span class="s1">&#39;celltype&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="s1">&#39;E082&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cond</span> <span class="o">=</span> <span class="n">enh</span><span class="p">[</span><span class="s1">&#39;celltype&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="s1">&#39;E082&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -454,7 +482,7 @@
 <p>Now we take the individual enhancer DataFrames for E082 (not the concatenated one) and select from those only the E082-specific enhancer regions</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">E082_enh_K4me1_spec</span> <span class="o">=</span> <span class="n">E082_enh_K4me1</span><span class="p">[</span><span class="n">cond</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">E082_enh_K4me1_spec</span> <span class="o">=</span> <span class="n">E082_enh_K4me1</span><span class="p">[</span><span class="n">cond</span><span class="p">]</span>
 <span class="n">E082_enh_K4me3_spec</span> <span class="o">=</span> <span class="n">E082_enh_K4me3</span><span class="p">[</span><span class="n">cond</span><span class="p">]</span>
 </pre></div>
 </div>
@@ -463,7 +491,7 @@
 <p>Now that we have selected the E082-specific enhancers only, we can concatenate the DataFrames like we did above</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">E082_spec</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">E082_prom_K4me1</span><span class="p">,</span> <span class="n">E082_enh_K4me1_spec</span><span class="p">,</span> <span class="n">E082_prom_K4me3</span><span class="p">,</span> <span class="n">E082_enh_K4me3_spec</span><span class="p">])</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">E082_spec</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">E082_prom_K4me1</span><span class="p">,</span> <span class="n">E082_enh_K4me1_spec</span><span class="p">,</span> <span class="n">E082_prom_K4me3</span><span class="p">,</span> <span class="n">E082_enh_K4me3_spec</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
@@ -471,7 +499,7 @@
 <p>Like above, we do the sqrt transformation and length-correction</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">E082_spec</span><span class="p">[</span><span class="s1">&#39;reads_sqrt&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">E082_spec</span><span class="p">[</span><span class="s1">&#39;reads&#39;</span><span class="p">])</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">E082_spec</span><span class="p">[</span><span class="s1">&#39;reads_sqrt&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">E082_spec</span><span class="p">[</span><span class="s1">&#39;reads&#39;</span><span class="p">])</span>
 <span class="n">E082_spec</span><span class="p">[</span><span class="s1">&#39;reads_sqrt_bp&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">E082_spec</span><span class="p">[</span><span class="s1">&#39;reads_sqrt&#39;</span><span class="p">]</span><span class="o">/</span><span class="p">(</span><span class="n">E082_spec</span><span class="p">[</span><span class="s1">&#39;end&#39;</span><span class="p">]</span><span class="o">-</span><span class="n">E082_spec</span><span class="p">[</span><span class="s1">&#39;start&#39;</span><span class="p">])</span>
 </pre></div>
 </div>
@@ -480,13 +508,13 @@
 <p>We can now make the boxplot as we did above</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mf">0.05</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mf">0.05</span><span class="p">)</span>
 <span class="n">sns</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s2">&quot;elem&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;reads_sqrt_bp&quot;</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s2">&quot;mark&quot;</span><span class="p">,</span> <span class="n">fliersize</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">E082_spec</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:xlabel=&#39;elem&#39;, ylabel=&#39;reads_sqrt_bp&#39;&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:xlabel=&#39;elem&#39;, ylabel=&#39;reads_sqrt_bp&#39;&gt;
 </pre></div>
 </div>
 <img alt="../_images/visualization_30_1.png" src="../_images/visualization_30_1.png" />
@@ -502,7 +530,7 @@
 <p>First, read in the data into a pandas DataFrame again</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">E081_enh_K4me1</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">DATA_DIR</span><span class="si">}</span><span class="s2">/regions_enh_E081_E082_E083__E081-H3K4me1.counts.gz&quot;</span><span class="p">,</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">E081_enh_K4me1</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">DATA_DIR</span><span class="si">}</span><span class="s2">/regions_enh_E081_E082_E083__E081-H3K4me1.counts.gz&quot;</span><span class="p">,</span>
                                 <span class="n">sep</span><span class="o">=</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">&quot;</span><span class="p">,</span> 
                                 <span class="n">header</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
                                 <span class="n">names</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;chr&#39;</span><span class="p">,</span> <span class="s1">&#39;start&#39;</span><span class="p">,</span> <span class="s1">&#39;end&#39;</span><span class="p">,</span> <span class="s1">&#39;reads&#39;</span><span class="p">])</span>
@@ -521,7 +549,7 @@
 <p>In each DataFrame, annotate from which celltype the data comes in a column called <code class="docutils literal notranslate"><span class="pre">celltype</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">E081_enh_K4me1</span><span class="p">[</span><span class="s1">&#39;celltype&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;E081&quot;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">E081_enh_K4me1</span><span class="p">[</span><span class="s1">&#39;celltype&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;E081&quot;</span>
 <span class="n">E082_enh_K4me1</span><span class="p">[</span><span class="s1">&#39;celltype&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;E082&quot;</span>
 <span class="n">E083_enh_K4me1</span><span class="p">[</span><span class="s1">&#39;celltype&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;E083&quot;</span>
 </pre></div>
@@ -533,7 +561,7 @@
 <p>This data we take from the DataFrame <code class="docutils literal notranslate"><span class="pre">enh</span></code>, from which we know that the order is the same as in our DataFrames.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">E081_enh_K4me1</span><span class="p">[</span><span class="s1">&#39;enh&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">enh</span><span class="p">[</span><span class="s1">&#39;celltype&#39;</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">E081_enh_K4me1</span><span class="p">[</span><span class="s1">&#39;enh&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">enh</span><span class="p">[</span><span class="s1">&#39;celltype&#39;</span><span class="p">]</span>
 <span class="n">E082_enh_K4me1</span><span class="p">[</span><span class="s1">&#39;enh&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">enh</span><span class="p">[</span><span class="s1">&#39;celltype&#39;</span><span class="p">]</span>
 <span class="n">E083_enh_K4me1</span><span class="p">[</span><span class="s1">&#39;enh&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">enh</span><span class="p">[</span><span class="s1">&#39;celltype&#39;</span><span class="p">]</span>
 </pre></div>
@@ -543,7 +571,7 @@
 <p>Like above, we make a concatenated DataFrame <code class="docutils literal notranslate"><span class="pre">m</span></code> using <code class="docutils literal notranslate"><span class="pre">concat</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">m</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">E081_enh_K4me1</span><span class="p">,</span> <span class="n">E082_enh_K4me1</span><span class="p">,</span> <span class="n">E083_enh_K4me1</span><span class="p">])</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">m</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">E081_enh_K4me1</span><span class="p">,</span> <span class="n">E082_enh_K4me1</span><span class="p">,</span> <span class="n">E083_enh_K4me1</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
@@ -551,7 +579,7 @@
 <p>Like above, we transform the readcounts using <code class="docutils literal notranslate"><span class="pre">sqrt</span></code>, and correct for region length.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">m</span><span class="p">[</span><span class="s1">&#39;reads_sqrt&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">m</span><span class="p">[</span><span class="s1">&#39;reads&#39;</span><span class="p">])</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">m</span><span class="p">[</span><span class="s1">&#39;reads_sqrt&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">m</span><span class="p">[</span><span class="s1">&#39;reads&#39;</span><span class="p">])</span>
 <span class="n">m</span><span class="p">[</span><span class="s1">&#39;reads_sqrt_bp&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">m</span><span class="p">[</span><span class="s1">&#39;reads_sqrt&#39;</span><span class="p">]</span><span class="o">/</span><span class="p">(</span><span class="n">m</span><span class="p">[</span><span class="s1">&#39;end&#39;</span><span class="p">]</span><span class="o">-</span><span class="n">m</span><span class="p">[</span><span class="s1">&#39;start&#39;</span><span class="p">])</span>
 </pre></div>
 </div>
@@ -561,7 +589,7 @@
 <p>Note that we add an extra argument called <code class="docutils literal notranslate"><span class="pre">hue</span></code> which colors the boxplot according the information in the column called <code class="docutils literal notranslate"><span class="pre">enh</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s2">&quot;celltype&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;reads_sqrt_bp&quot;</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s2">&quot;enh&quot;</span><span class="p">,</span> <span class="n">fliersize</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">m</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s2">&quot;celltype&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;reads_sqrt_bp&quot;</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s2">&quot;enh&quot;</span><span class="p">,</span> <span class="n">fliersize</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">m</span><span class="p">)</span>
 
 <span class="c1"># Move legend outside the plot</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">bbox_to_anchor</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="n">loc</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
@@ -572,7 +600,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>(0.0, 0.08)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(0.0, 0.08)
 </pre></div>
 </div>
 <img alt="../_images/visualization_42_1.png" src="../_images/visualization_42_1.png" />
@@ -589,7 +617,7 @@
 <p>First, read in the expression data into a pandas DataFrame.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">rpkm</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">DATA_DIR</span><span class="si">}</span><span class="s2">/hg19_RefSeq_TSS500_ENSEMBL_RPKM.gz&quot;</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rpkm</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">DATA_DIR</span><span class="si">}</span><span class="s2">/hg19_RefSeq_TSS500_ENSEMBL_RPKM.gz&quot;</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -598,12 +626,12 @@
 <p>Note that <code class="docutils literal notranslate"><span class="pre">head()</span></code> does not show you all columns, so you can use the following to see all column names</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">rpkm</span><span class="o">.</span><span class="n">columns</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rpkm</span><span class="o">.</span><span class="n">columns</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>Index([&#39;chr&#39;, &#39;start&#39;, &#39;end&#39;, &#39;refseq&#39;, &#39;gene&#39;, &#39;strand&#39;, &#39;ensembl&#39;, &#39;E000&#39;,
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Index([&#39;chr&#39;, &#39;start&#39;, &#39;end&#39;, &#39;refseq&#39;, &#39;gene&#39;, &#39;strand&#39;, &#39;ensembl&#39;, &#39;E000&#39;,
        &#39;E003&#39;, &#39;E004&#39;, &#39;E005&#39;, &#39;E006&#39;, &#39;E007&#39;, &#39;E011&#39;, &#39;E012&#39;, &#39;E013&#39;, &#39;E016&#39;,
        &#39;E024&#39;, &#39;E027&#39;, &#39;E028&#39;, &#39;E037&#39;, &#39;E038&#39;, &#39;E047&#39;, &#39;E050&#39;, &#39;E053&#39;, &#39;E054&#39;,
        &#39;E055&#39;, &#39;E056&#39;, &#39;E057&#39;, &#39;E058&#39;, &#39;E059&#39;, &#39;E061&#39;, &#39;E062&#39;, &#39;E065&#39;, &#39;E066&#39;,
@@ -619,7 +647,7 @@
 <p>The DataFrame <code class="docutils literal notranslate"><span class="pre">rpkm</span></code> has many columns, you need to paste the column called <code class="docutils literal notranslate"><span class="pre">E082</span></code> to a DataFrame called <code class="docutils literal notranslate"><span class="pre">E082_prom_K4me3</span></code></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">E082_prom_K4me3</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">DATA_DIR</span><span class="si">}</span><span class="s2">/hg19_RefSeq_TSS500__E082-H3K4me3.counts.gz&quot;</span><span class="p">,</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">E082_prom_K4me3</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">DATA_DIR</span><span class="si">}</span><span class="s2">/hg19_RefSeq_TSS500__E082-H3K4me3.counts.gz&quot;</span><span class="p">,</span>
                                 <span class="n">sep</span><span class="o">=</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">&quot;</span><span class="p">,</span>
                                 <span class="n">header</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
                                 <span class="n">names</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;chr&#39;</span><span class="p">,</span> <span class="s1">&#39;start&#39;</span><span class="p">,</span> <span class="s1">&#39;end&#39;</span><span class="p">,</span> <span class="s1">&#39;reads&#39;</span><span class="p">])</span>
@@ -630,7 +658,7 @@
 <p>Like above, do the sqrt transformation on the H3K4me3 readcounts.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">E082_prom_K4me3</span><span class="p">[</span><span class="s1">&#39;reads_sqrt&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">E082_prom_K4me3</span><span class="p">[</span><span class="s1">&#39;reads&#39;</span><span class="p">])</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">E082_prom_K4me3</span><span class="p">[</span><span class="s1">&#39;reads_sqrt&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">E082_prom_K4me3</span><span class="p">[</span><span class="s1">&#39;reads&#39;</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
@@ -639,7 +667,7 @@
 <p>Since the order of the regions (=lines) in the <code class="docutils literal notranslate"><span class="pre">rpkm</span></code> DataFrame is the same as in the <code class="docutils literal notranslate"><span class="pre">E082_prom_K4me3</span></code> DataFrame, we can paste the RPKM column <code class="docutils literal notranslate"><span class="pre">E082</span></code> from the <code class="docutils literal notranslate"><span class="pre">rpkm</span></code> DataFrame into the <code class="docutils literal notranslate"><span class="pre">E082_prom_K4me3</span></code> DataFrame.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">E082_prom_K4me3</span><span class="p">[</span><span class="s1">&#39;rpkm&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">rpkm</span><span class="p">[</span><span class="s1">&#39;E082&#39;</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">E082_prom_K4me3</span><span class="p">[</span><span class="s1">&#39;rpkm&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">rpkm</span><span class="p">[</span><span class="s1">&#39;E082&#39;</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -648,12 +676,12 @@
 <p>We use the function <code class="docutils literal notranslate"><span class="pre">lmplot()</span></code> from seaborn.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">lmplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;reads_sqrt&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;rpkm&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">E082_prom_K4me3</span><span class="p">,</span> <span class="n">fit_reg</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">lmplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;reads_sqrt&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;rpkm&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">E082_prom_K4me3</span><span class="p">,</span> <span class="n">fit_reg</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.FacetGrid at 0x7f9b26813c40&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.FacetGrid at 0x7fe6aa06ab10&gt;
 </pre></div>
 </div>
 <img alt="../_images/visualization_54_1.png" src="../_images/visualization_54_1.png" />
@@ -666,18 +694,17 @@
 <p>In this case we choose the log2, but a log10 would be fine as well.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">E082_prom_K4me3</span><span class="p">[</span><span class="s1">&#39;rpkm_log&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">log2</span><span class="p">(</span><span class="n">E082_prom_K4me3</span><span class="p">[</span><span class="s1">&#39;rpkm&#39;</span><span class="p">])</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">E082_prom_K4me3</span><span class="p">[</span><span class="s1">&#39;rpkm_log&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">log2</span><span class="p">(</span><span class="n">E082_prom_K4me3</span><span class="p">[</span><span class="s1">&#39;rpkm&#39;</span><span class="p">])</span>
 <span class="n">sns</span><span class="o">.</span><span class="n">lmplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;reads_sqrt&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;rpkm_log&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">E082_prom_K4me3</span><span class="p">,</span> <span class="n">fit_reg</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="stderr docutils container">
-<pre class="stderr literal-block">/home/simon/anaconda3/envs/cfb/lib/python3.8/site-packages/pandas/core/series.py:726: RuntimeWarning: divide by zero encountered in log2
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/pandas/core/series.py:726: RuntimeWarning: divide by zero encountered in log2
   result = getattr(ufunc, method)(*inputs, **kwargs)
-</pre>
+</pre></div>
 </div>
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.FacetGrid at 0x7f9b249ca0a0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.FacetGrid at 0x7fe6a89d9a90&gt;
 </pre></div>
 </div>
 <img alt="../_images/visualization_56_2.png" src="../_images/visualization_56_2.png" />
@@ -691,7 +718,7 @@
 <p>Read the promoter H3K4me3 data into a pandas DataFrame as we did above</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">E083_prom_K4me3</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">DATA_DIR</span><span class="si">}</span><span class="s2">/hg19_RefSeq_TSS500__E083-H3K4me3.counts.gz&quot;</span><span class="p">,</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">E083_prom_K4me3</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">DATA_DIR</span><span class="si">}</span><span class="s2">/hg19_RefSeq_TSS500__E083-H3K4me3.counts.gz&quot;</span><span class="p">,</span>
                                 <span class="n">sep</span><span class="o">=</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">&quot;</span><span class="p">,</span>
                                 <span class="n">header</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
                                 <span class="n">names</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;chr&#39;</span><span class="p">,</span> <span class="s1">&#39;start&#39;</span><span class="p">,</span> <span class="s1">&#39;end&#39;</span><span class="p">,</span> <span class="s1">&#39;reads&#39;</span><span class="p">])</span>
@@ -704,29 +731,22 @@
 <p>Do the RPKM log2 transformation, as above.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">E083_prom_K4me3</span><span class="p">[</span><span class="s1">&#39;reads_sqrt&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">E083_prom_K4me3</span><span class="p">[</span><span class="s1">&#39;reads&#39;</span><span class="p">])</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">E083_prom_K4me3</span><span class="p">[</span><span class="s1">&#39;reads_sqrt&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">E083_prom_K4me3</span><span class="p">[</span><span class="s1">&#39;reads&#39;</span><span class="p">])</span>
 <span class="n">E083_prom_K4me3</span><span class="p">[</span><span class="s1">&#39;rpkm&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">rpkm</span><span class="p">[</span><span class="s1">&#39;E082&#39;</span><span class="p">]</span>
 <span class="n">E083_prom_K4me3</span><span class="p">[</span><span class="s1">&#39;rpkm_log&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">log2</span><span class="p">(</span><span class="n">E083_prom_K4me3</span><span class="p">[</span><span class="s1">&#39;rpkm&#39;</span><span class="p">])</span>
 </pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="stderr docutils container">
-<pre class="stderr literal-block">/home/simon/anaconda3/envs/cfb/lib/python3.8/site-packages/pandas/core/series.py:726: RuntimeWarning: divide by zero encountered in log2
-  result = getattr(ufunc, method)(*inputs, **kwargs)
-</pre>
 </div>
 </div>
 </div>
 <p>And then the scatterplot.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">lmplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;reads_sqrt&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;rpkm_log&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">E083_prom_K4me3</span><span class="p">,</span> <span class="n">fit_reg</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">lmplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;reads_sqrt&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;rpkm_log&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">E083_prom_K4me3</span><span class="p">,</span> <span class="n">fit_reg</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.FacetGrid at 0x7f9b17e38f10&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.FacetGrid at 0x7fe6a892c550&gt;
 </pre></div>
 </div>
 <img alt="../_images/visualization_62_1.png" src="../_images/visualization_62_1.png" />
@@ -736,15 +756,19 @@
 <p>To get an idea, we can plot the distribution of the H3K4me3 signal using a histogram/densityplot. For this we use the <code class="docutils literal notranslate"><span class="pre">distplot</span></code> function from seaborn.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">distplot</span><span class="p">(</span><span class="n">E082_prom_K4me3</span><span class="p">[</span><span class="s1">&#39;reads_sqrt&#39;</span><span class="p">])</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">distplot</span><span class="p">(</span><span class="n">E082_prom_K4me3</span><span class="p">[</span><span class="s1">&#39;reads_sqrt&#39;</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:xlabel=&#39;reads_sqrt&#39;&gt;
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/seaborn/distributions.py:2551: FutureWarning: `distplot` is a deprecated function and will be removed in a future version. Please adapt your code to use either `displot` (a figure-level function with similar flexibility) or `histplot` (an axes-level function for histograms).
+  warnings.warn(msg, FutureWarning)
 </pre></div>
 </div>
-<img alt="../_images/visualization_64_1.png" src="../_images/visualization_64_1.png" />
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:xlabel=&#39;reads_sqrt&#39;, ylabel=&#39;Density&#39;&gt;
+</pre></div>
+</div>
+<img alt="../_images/visualization_64_2.png" src="../_images/visualization_64_2.png" />
 </div>
 </div>
 <p>By looking at this histogram, we could conclude that the regions with ‘high’ H3K4me3 are the ones that roughly have signals higher than 15 or so.</p>
@@ -752,7 +776,7 @@
 <p>For this we use the <code class="docutils literal notranslate"><span class="pre">where</span></code> function from numpy, in which we state: if the values in column x are higher than 15, return “high H3K4me3”, else, return “low H3K4me3”.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">E082_prom_K4me3</span><span class="p">[</span><span class="s1">&#39;reads_sqrt_bin&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">E082_prom_K4me3</span><span class="p">[</span><span class="s1">&#39;reads_sqrt&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">15</span><span class="p">,</span> <span class="s2">&quot;high K4me3&quot;</span><span class="p">,</span> <span class="s2">&quot;low K4me3&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">E082_prom_K4me3</span><span class="p">[</span><span class="s1">&#39;reads_sqrt_bin&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">E082_prom_K4me3</span><span class="p">[</span><span class="s1">&#39;reads_sqrt&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">15</span><span class="p">,</span> <span class="s2">&quot;high K4me3&quot;</span><span class="p">,</span> <span class="s2">&quot;low K4me3&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -762,12 +786,12 @@
 <p>In this boxplot the RPKM is plotted in boxes, as a function of “high K4me3” or “low K4me3”.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s2">&quot;reads_sqrt_bin&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;rpkm_log&quot;</span><span class="p">,</span> <span class="n">fliersize</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">E082_prom_K4me3</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s2">&quot;reads_sqrt_bin&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;rpkm_log&quot;</span><span class="p">,</span> <span class="n">fliersize</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">E082_prom_K4me3</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:xlabel=&#39;reads_sqrt_bin&#39;, ylabel=&#39;rpkm_log&#39;&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:xlabel=&#39;reads_sqrt_bin&#39;, ylabel=&#39;rpkm_log&#39;&gt;
 </pre></div>
 </div>
 <img alt="../_images/visualization_68_1.png" src="../_images/visualization_68_1.png" />
@@ -778,7 +802,7 @@
 <p>For this we use the <code class="docutils literal notranslate"><span class="pre">cut</span></code> method of pandas, for which we can specify the number of bins we want.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">E082_prom_K4me3</span><span class="p">[</span><span class="s1">&#39;reads_sqrt_bin&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">cut</span><span class="p">(</span><span class="n">E082_prom_K4me3</span><span class="p">[</span><span class="s1">&#39;reads_sqrt&#39;</span><span class="p">],</span> <span class="mi">3</span><span class="p">,</span> <span class="n">labels</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">E082_prom_K4me3</span><span class="p">[</span><span class="s1">&#39;reads_sqrt_bin&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">cut</span><span class="p">(</span><span class="n">E082_prom_K4me3</span><span class="p">[</span><span class="s1">&#39;reads_sqrt&#39;</span><span class="p">],</span> <span class="mi">3</span><span class="p">,</span> <span class="n">labels</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -787,12 +811,12 @@
 <p>We can now make a similar boxplot as above, with the RPKM plotted in boxes, as a function of the different bins we created.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s2">&quot;reads_sqrt_bin&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;rpkm_log&quot;</span><span class="p">,</span> <span class="n">fliersize</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">E082_prom_K4me3</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s2">&quot;reads_sqrt_bin&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;rpkm_log&quot;</span><span class="p">,</span> <span class="n">fliersize</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">E082_prom_K4me3</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:xlabel=&#39;reads_sqrt_bin&#39;, ylabel=&#39;rpkm_log&#39;&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:xlabel=&#39;reads_sqrt_bin&#39;, ylabel=&#39;rpkm_log&#39;&gt;
 </pre></div>
 </div>
 <img alt="../_images/visualization_72_1.png" src="../_images/visualization_72_1.png" />
@@ -891,6 +915,25 @@ By the way, for help you are allowed (=encouraged) to use Google as well!</p>
 </div>
 </div>
 
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./content"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
 
               </div>
               

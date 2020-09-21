@@ -2,9 +2,10 @@
 
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
   <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>6. Dictionaries &#8212; NWI-BM066A Computation for Biologists</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
     <link href="../_static/css/index.css" rel="stylesheet">
@@ -13,9 +14,10 @@
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/jupyter-sphinx.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/spanels-index--0afa1ebdab0bb23b98b56d34c23d9f57.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/spanels-variables--ffc7f74dcb1b9eecba2dbcbc22818714.css" />
     <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-    <script src="../_static/sphinx-book-theme.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
@@ -23,11 +25,15 @@
     <script src="../_static/togglebutton.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
-    <script src="../_static/mystnb.js"></script>
     <script src="../_static/sphinx-book-theme.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="7. Assembling the pieces" href="extra_exercises.html" />
@@ -201,12 +207,34 @@
 
         <!-- Launch buttons -->
 
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/vanheeringen-lab/cfb_book/master?urlpath=tree/content/dictionaries.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        <a class="colab-button" href="https://colab.research.google.com/github/vanheeringen-lab/cfb_book/blob/master/content/dictionaries.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
+                    src="../_static/images/logo_colab.png"
+                    alt="Interact on Colab">Colab</button></a>
+        
+        
+    </div>
+</div>
+
     </div>
 
     <!-- Table of contents -->
     <div class="d-none d-md-block col-md-2 bd-toc show">
         <div class="tocsection onthispage pt-5 pb-3">
-            <i class="fas fa-list"></i> On this page
+            <i class="fas fa-list"></i> Contents
         </div>
         <nav id="bd-toc-nav">
             <ul class="nav section-nav flex-column">
@@ -250,14 +278,14 @@ You can think of a dictionary as a <em>mapping between a set of indices (which a
 <p>The function <code class="docutils literal notranslate"><span class="pre">dict()</span></code> creates a new dictionary with no items. Because <code class="docutils literal notranslate"><span class="pre">dict</span></code> is the name of a built-in function, you should avoid using it as a variable name.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cod2aa</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cod2aa</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">cod2aa</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">cod2aa</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>{}
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{}
 &lt;class &#39;dict&#39;&gt;
 </pre></div>
 </div>
@@ -267,13 +295,13 @@ You can think of a dictionary as a <em>mapping between a set of indices (which a
 You can als create an empty dictionary with the curly brackets (<code class="docutils literal notranslate"><span class="pre">{}</span></code>), just like you can create an empty list with square brackets (<code class="docutils literal notranslate"><span class="pre">[]</span></code>).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cod2aa</span> <span class="o">=</span> <span class="p">{}</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cod2aa</span> <span class="o">=</span> <span class="p">{}</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">cod2aa</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>{}
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{}
 </pre></div>
 </div>
 </div>
@@ -281,7 +309,7 @@ You can als create an empty dictionary with the curly brackets (<code class="doc
 <p>To add items to the dictionary one at a time, you use square brackets:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cod2aa</span><span class="p">[</span><span class="s1">&#39;CTA&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;Leu&#39;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cod2aa</span><span class="p">[</span><span class="s1">&#39;CTA&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;Leu&#39;</span>
 </pre></div>
 </div>
 </div>
@@ -289,12 +317,12 @@ You can als create an empty dictionary with the curly brackets (<code class="doc
 <p>This line creates an item that maps from the key <code class="docutils literal notranslate"><span class="pre">'CTA'</span></code> to the value <code class="docutils literal notranslate"><span class="pre">'Leu'</span></code>. If we print the dictionary again, we see a key-value pair with a colon between the key and value:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">cod2aa</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">cod2aa</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>{&#39;CTA&#39;: &#39;Leu&#39;}
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;CTA&#39;: &#39;Leu&#39;}
 </pre></div>
 </div>
 </div>
@@ -302,7 +330,7 @@ You can als create an empty dictionary with the curly brackets (<code class="doc
 <p>This output format is also an input format. For example, you can create a new dictionary with 3 items:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cod2aa</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;CTA&#39;</span><span class="p">:</span> <span class="s1">&#39;Leu&#39;</span><span class="p">,</span> <span class="s1">&#39;AGC&#39;</span><span class="p">:</span> <span class="s1">&#39;Ser&#39;</span><span class="p">,</span> <span class="s1">&#39;ACT&#39;</span><span class="p">:</span> <span class="s1">&#39;Thr&#39;</span><span class="p">}</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cod2aa</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;CTA&#39;</span><span class="p">:</span> <span class="s1">&#39;Leu&#39;</span><span class="p">,</span> <span class="s1">&#39;AGC&#39;</span><span class="p">:</span> <span class="s1">&#39;Ser&#39;</span><span class="p">,</span> <span class="s1">&#39;ACT&#39;</span><span class="p">:</span> <span class="s1">&#39;Thr&#39;</span><span class="p">}</span>
 </pre></div>
 </div>
 </div>
@@ -310,12 +338,12 @@ You can als create an empty dictionary with the curly brackets (<code class="doc
 <p>If you print <code class="docutils literal notranslate"><span class="pre">cod2aa</span></code>, you will see that the order of the items in the dictionary is the same. The order of items in the dictionary is identical to the order of insertion.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">cod2aa</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">cod2aa</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>{&#39;CTA&#39;: &#39;Leu&#39;, &#39;AGC&#39;: &#39;Ser&#39;, &#39;ACT&#39;: &#39;Thr&#39;}
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;CTA&#39;: &#39;Leu&#39;, &#39;AGC&#39;: &#39;Ser&#39;, &#39;ACT&#39;: &#39;Thr&#39;}
 </pre></div>
 </div>
 </div>
@@ -327,12 +355,12 @@ You can als create an empty dictionary with the curly brackets (<code class="doc
 <p>You can retrieve an item from a dictionary by using the <code class="docutils literal notranslate"><span class="pre">[]</span></code> square brackets. This is similar as to how you access elements from a list.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">cod2aa</span><span class="p">[</span><span class="s1">&#39;ACT&#39;</span><span class="p">])</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">cod2aa</span><span class="p">[</span><span class="s1">&#39;ACT&#39;</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>Thr
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Thr
 </pre></div>
 </div>
 </div>
@@ -341,7 +369,7 @@ You can als create an empty dictionary with the curly brackets (<code class="doc
 If the key isn’t in the dictionary, you get a <code class="docutils literal notranslate"><span class="pre">KeyError</span></code> exception:</p>
 <div class="cell tag_raises-exception docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">cod2aa</span><span class="p">[</span><span class="s1">&#39;GGT&#39;</span><span class="p">])</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">cod2aa</span><span class="p">[</span><span class="s1">&#39;GGT&#39;</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
@@ -364,13 +392,13 @@ If the key isn’t in the dictionary, you get a <code class="docutils literal no
 Let us add another codon (key) that maps to an already existing amino acid (value):</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cod2aa</span><span class="p">[</span><span class="s1">&#39;TTG&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;Leu&#39;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cod2aa</span><span class="p">[</span><span class="s1">&#39;TTG&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;Leu&#39;</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">cod2aa</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>{&#39;CTA&#39;: &#39;Leu&#39;, &#39;AGC&#39;: &#39;Ser&#39;, &#39;ACT&#39;: &#39;Thr&#39;, &#39;TTG&#39;: &#39;Leu&#39;}
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;CTA&#39;: &#39;Leu&#39;, &#39;AGC&#39;: &#39;Ser&#39;, &#39;ACT&#39;: &#39;Thr&#39;, &#39;TTG&#39;: &#39;Leu&#39;}
 </pre></div>
 </div>
 </div>
@@ -378,12 +406,12 @@ Let us add another codon (key) that maps to an already existing amino acid (valu
 <p>The <code class="docutils literal notranslate"><span class="pre">len()</span></code> function works on dictionaries; it returns the number of key-value pairs:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">cod2aa</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">cod2aa</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>4
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4
 </pre></div>
 </div>
 </div>
@@ -391,24 +419,24 @@ Let us add another codon (key) that maps to an already existing amino acid (valu
 <p>The <code class="docutils literal notranslate"><span class="pre">in</span></code> operator works on dictionaries; it tells you whether something appears as a <em>key</em> in the dictionary (appearing as a value is not good enough).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;CTA&#39;</span> <span class="ow">in</span> <span class="n">cod2aa</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;CTA&#39;</span> <span class="ow">in</span> <span class="n">cod2aa</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>True
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;Leu&#39;</span> <span class="ow">in</span> <span class="n">cod2aa</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;Leu&#39;</span> <span class="ow">in</span> <span class="n">cod2aa</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>False
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
 </pre></div>
 </div>
 </div>
@@ -418,14 +446,14 @@ Let us add another codon (key) that maps to an already existing amino acid (valu
 <p>Python provides methods that operate on dictionaries. For example, <code class="docutils literal notranslate"><span class="pre">keys()</span></code> gives you all the keys of a dictionary, <code class="docutils literal notranslate"><span class="pre">values()</span></code> gives you all the values, and <code class="docutils literal notranslate"><span class="pre">items()</span></code> gives you all key:value pairs.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cod2aa</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;TTG&#39;</span><span class="p">:</span> <span class="s1">&#39;Leu&#39;</span><span class="p">,</span> <span class="s1">&#39;CTA&#39;</span><span class="p">:</span> <span class="s1">&#39;Leu&#39;</span><span class="p">,</span> <span class="s1">&#39;ACT&#39;</span><span class="p">:</span> <span class="s1">&#39;Thr&#39;</span><span class="p">,</span> <span class="s1">&#39;AGC&#39;</span><span class="p">:</span> <span class="s1">&#39;Ser&#39;</span><span class="p">}</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cod2aa</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;TTG&#39;</span><span class="p">:</span> <span class="s1">&#39;Leu&#39;</span><span class="p">,</span> <span class="s1">&#39;CTA&#39;</span><span class="p">:</span> <span class="s1">&#39;Leu&#39;</span><span class="p">,</span> <span class="s1">&#39;ACT&#39;</span><span class="p">:</span> <span class="s1">&#39;Thr&#39;</span><span class="p">,</span> <span class="s1">&#39;AGC&#39;</span><span class="p">:</span> <span class="s1">&#39;Ser&#39;</span><span class="p">}</span>
 <span class="n">codons</span> <span class="o">=</span> <span class="n">cod2aa</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">codons</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>dict_keys([&#39;TTG&#39;, &#39;CTA&#39;, &#39;ACT&#39;, &#39;AGC&#39;])
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dict_keys([&#39;TTG&#39;, &#39;CTA&#39;, &#39;ACT&#39;, &#39;AGC&#39;])
 </pre></div>
 </div>
 </div>
@@ -433,13 +461,13 @@ Let us add another codon (key) that maps to an already existing amino acid (valu
 <p>You see all the values of the keys in <code class="docutils literal notranslate"><span class="pre">cod2aa</span></code>, which are the different codons. However, you’ll als note an unfamiliar <code class="docutils literal notranslate"><span class="pre">dict_keys()</span></code> object. If you want to loop over all the keys, this doesn’t matter:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">codon</span> <span class="ow">in</span> <span class="n">codons</span><span class="p">:</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">codon</span> <span class="ow">in</span> <span class="n">codons</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">codon</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>TTG
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TTG
 CTA
 ACT
 AGC
@@ -450,13 +478,13 @@ AGC
 <p>However, if you want to use this object as a <code class="docutils literal notranslate"><span class="pre">list</span></code> you have to explicitly convert it to <code class="docutils literal notranslate"><span class="pre">list</span></code> using the <code class="docutils literal notranslate"><span class="pre">list()</span></code> function.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">codons</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">codons</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">codons</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">codons</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">codons</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>[&#39;TTG&#39;, &#39;CTA&#39;, &#39;ACT&#39;, &#39;AGC&#39;]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;TTG&#39;, &#39;CTA&#39;, &#39;ACT&#39;, &#39;AGC&#39;]
 </pre></div>
 </div>
 </div>
@@ -464,39 +492,39 @@ AGC
 <p>The <code class="docutils literal notranslate"><span class="pre">values()</span></code> and <code class="docutils literal notranslate"><span class="pre">items()</span></code> methods are very similar to <code class="docutils literal notranslate"><span class="pre">keys()</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">amino_acids</span> <span class="o">=</span> <span class="n">cod2aa</span><span class="o">.</span><span class="n">values</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">amino_acids</span> <span class="o">=</span> <span class="n">cod2aa</span><span class="o">.</span><span class="n">values</span><span class="p">()</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">amino_acids</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>dict_values([&#39;Leu&#39;, &#39;Leu&#39;, &#39;Thr&#39;, &#39;Ser&#39;])
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dict_values([&#39;Leu&#39;, &#39;Leu&#39;, &#39;Thr&#39;, &#39;Ser&#39;])
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">i</span> <span class="o">=</span> <span class="n">cod2aa</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">i</span> <span class="o">=</span> <span class="n">cod2aa</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>dict_items([(&#39;TTG&#39;, &#39;Leu&#39;), (&#39;CTA&#39;, &#39;Leu&#39;), (&#39;ACT&#39;, &#39;Thr&#39;), (&#39;AGC&#39;, &#39;Ser&#39;)])
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dict_items([(&#39;TTG&#39;, &#39;Leu&#39;), (&#39;CTA&#39;, &#39;Leu&#39;), (&#39;ACT&#39;, &#39;Thr&#39;), (&#39;AGC&#39;, &#39;Ser&#39;)])
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">codon</span><span class="p">,</span> <span class="n">aa</span> <span class="ow">in</span> <span class="n">cod2aa</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">codon</span><span class="p">,</span> <span class="n">aa</span> <span class="ow">in</span> <span class="n">cod2aa</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">codon</span><span class="si">}</span><span class="s2"> encodes for </span><span class="si">{</span><span class="n">aa</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>TTG encodes for Leu
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TTG encodes for Leu
 CTA encodes for Leu
 ACT encodes for Thr
 AGC encodes for Ser
@@ -507,7 +535,7 @@ AGC encodes for Ser
 <p>As with lists, you can use <code class="docutils literal notranslate"><span class="pre">pop()</span></code> to obtain and delete one key:value pair.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;before pop:&quot;</span><span class="p">,</span> <span class="n">cod2aa</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;before pop:&quot;</span><span class="p">,</span> <span class="n">cod2aa</span><span class="p">)</span>
 <span class="n">p</span> <span class="o">=</span> <span class="n">cod2aa</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">&#39;ACT&#39;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;after pop:&quot;</span><span class="p">,</span> <span class="n">cod2aa</span><span class="p">)</span>
@@ -515,7 +543,7 @@ AGC encodes for Ser
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>before pop: {&#39;TTG&#39;: &#39;Leu&#39;, &#39;CTA&#39;: &#39;Leu&#39;, &#39;ACT&#39;: &#39;Thr&#39;, &#39;AGC&#39;: &#39;Ser&#39;}
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>before pop: {&#39;TTG&#39;: &#39;Leu&#39;, &#39;CTA&#39;: &#39;Leu&#39;, &#39;ACT&#39;: &#39;Thr&#39;, &#39;AGC&#39;: &#39;Ser&#39;}
 Thr
 after pop: {&#39;TTG&#39;: &#39;Leu&#39;, &#39;CTA&#39;: &#39;Leu&#39;, &#39;AGC&#39;: &#39;Ser&#39;}
 </pre></div>
@@ -751,6 +779,25 @@ Which type of variable is more efficient to store and access these keys and valu
 </div>
 </div>
 
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./content"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
 
               </div>
               

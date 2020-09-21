@@ -2,9 +2,10 @@
 
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
   <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>10. Debugging &#8212; NWI-BM066A Computation for Biologists</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
     <link href="../_static/css/index.css" rel="stylesheet">
@@ -13,9 +14,10 @@
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/jupyter-sphinx.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/spanels-index--0afa1ebdab0bb23b98b56d34c23d9f57.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/spanels-variables--ffc7f74dcb1b9eecba2dbcbc22818714.css" />
     <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-    <script src="../_static/sphinx-book-theme.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
@@ -23,11 +25,15 @@
     <script src="../_static/togglebutton.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
-    <script src="../_static/mystnb.js"></script>
     <script src="../_static/sphinx-book-theme.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="11. Introduction to pandas DataFrames" href="pandas.html" />
@@ -201,12 +207,34 @@
 
         <!-- Launch buttons -->
 
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/vanheeringen-lab/cfb_book/master?urlpath=tree/content/debugging.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        <a class="colab-button" href="https://colab.research.google.com/github/vanheeringen-lab/cfb_book/blob/master/content/debugging.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
+                    src="../_static/images/logo_colab.png"
+                    alt="Interact on Colab">Colab</button></a>
+        
+        
+    </div>
+</div>
+
     </div>
 
     <!-- Table of contents -->
     <div class="d-none d-md-block col-md-2 bd-toc show">
         <div class="tocsection onthispage pt-5 pb-3">
-            <i class="fas fa-list"></i> On this page
+            <i class="fas fa-list"></i> Contents
         </div>
         <nav id="bd-toc-nav">
             <ul class="nav section-nav flex-column">
@@ -262,7 +290,7 @@ However, some are mistakes that do not produce runtime errors that produce an in
 </div>
 <div class="cell tag_raises-exception docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># define HSC network from Bonzanni et al, Bioinformatics 2013</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># define HSC network from Bonzanni et al, Bioinformatics 2013</span>
 <span class="n">hsc_network</span> <span class="o">=</span> <span class="p">{</span>                                <span class="c1"># each key is a source TF, the value for each key is a list of target TFs</span>
         <span class="s2">&quot;Scl&quot;</span> <span class="p">:</span> <span class="p">[</span><span class="s2">&quot;Scl&quot;</span><span class="p">,</span><span class="s2">&quot;Gata1&quot;</span><span class="p">,</span><span class="s2">&quot;Gata2&quot;</span><span class="p">,</span><span class="s2">&quot;Hhex&quot;</span><span class="p">,</span><span class="s2">&quot;Zfpm1&quot;</span><span class="p">,</span><span class="s2">&quot;Fli1&quot;</span><span class="p">,</span><span class="s2">&quot;Erg&quot;</span><span class="p">,</span><span class="s2">&quot;Smad6&quot;</span><span class="p">,</span><span class="s2">&quot;Runx1&quot;</span><span class="p">,</span><span class="s2">&quot;Eto2&quot;</span><span class="p">],</span>
         <span class="s2">&quot;Pu.1&quot;</span> <span class="p">:</span> <span class="p">[</span><span class="s2">&quot;Pu.1&quot;</span><span class="p">,</span><span class="s2">&quot;Runx1&quot;</span><span class="p">,</span><span class="s2">&quot;Gata1&quot;</span><span class="p">],</span>
@@ -345,7 +373,7 @@ If not, how would you adapt the code (extend or change it) so that it does produ
 </ol>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Does a TF regulate itself?</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Does a TF regulate itself?</span>
 
 <span class="c1"># each key is a source TF, the value for each key is a list of target TFs</span>
 <span class="n">hsc_network</span> <span class="o">=</span> <span class="p">{</span>                                
@@ -376,7 +404,7 @@ If not, how would you adapt the code (extend or change it) so that it does produ
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>Transcription factor Scl regulates itself
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Transcription factor Scl regulates itself
 </pre></div>
 </div>
 </div>
@@ -403,7 +431,7 @@ It reads a network from the file <code class="docutils literal notranslate"><spa
 The code contained in it is as follows:</p>
 <div class="cell tag_raises-exception docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">target_tfs_dict</span> <span class="o">=</span> <span class="p">{}</span> <span class="c1"># will contain a list of the target genes for each source gene</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">target_tfs_dict</span> <span class="o">=</span> <span class="p">{}</span> <span class="c1"># will contain a list of the target genes for each source gene</span>
 
 <span class="n">input_file</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;/scratch/cfb/scripts_debugging/network_exercise_6.txt&quot;</span><span class="p">,</span><span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="c1"># change path/filename if you want to run it on a different file</span>
 
@@ -473,6 +501,25 @@ For instance, you can use an <code class="docutils literal notranslate"><span cl
 </div>
 </div>
 
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./content"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
 
               </div>
               

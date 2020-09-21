@@ -2,9 +2,10 @@
 
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
   <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>5. Functions and modules &#8212; NWI-BM066A Computation for Biologists</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
     <link href="../_static/css/index.css" rel="stylesheet">
@@ -13,9 +14,10 @@
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/jupyter-sphinx.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/spanels-index--0afa1ebdab0bb23b98b56d34c23d9f57.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/spanels-variables--ffc7f74dcb1b9eecba2dbcbc22818714.css" />
     <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-    <script src="../_static/sphinx-book-theme.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
@@ -23,11 +25,15 @@
     <script src="../_static/togglebutton.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
-    <script src="../_static/mystnb.js"></script>
     <script src="../_static/sphinx-book-theme.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="6. Dictionaries" href="dictionaries.html" />
@@ -201,12 +207,34 @@
 
         <!-- Launch buttons -->
 
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/vanheeringen-lab/cfb_book/master?urlpath=tree/content/functions_modules.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        <a class="colab-button" href="https://colab.research.google.com/github/vanheeringen-lab/cfb_book/blob/master/content/functions_modules.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
+                    src="../_static/images/logo_colab.png"
+                    alt="Interact on Colab">Colab</button></a>
+        
+        
+    </div>
+</div>
+
     </div>
 
     <!-- Table of contents -->
     <div class="d-none d-md-block col-md-2 bd-toc show">
         <div class="tocsection onthispage pt-5 pb-3">
-            <i class="fas fa-list"></i> On this page
+            <i class="fas fa-list"></i> Contents
         </div>
         <nav id="bd-toc-nav">
             <ul class="nav section-nav flex-column">
@@ -309,7 +337,7 @@ Run the example to see the output.</p>
 <p>Example:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">print_nuc_count</span><span class="p">():</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">print_nuc_count</span><span class="p">():</span>
     <span class="n">dna</span> <span class="o">=</span> <span class="s2">&quot;AGCTTTTCATTCTGACTGCAACGGGCAATATGTCTCTGTGTGGATTAAAAAAAG&quot;</span>
 
     <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="s2">&quot;ACGT&quot;</span><span class="p">:</span>
@@ -322,7 +350,7 @@ Run the example to see the output.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>A 16
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A 16
 C 9
 G 12
 T 17
@@ -331,7 +359,6 @@ A 16
 C 9
 G 12
 T 17
-
 </pre></div>
 </div>
 </div>
@@ -362,7 +389,7 @@ We usually don’t want to count the number of nucleotides in the same sequence 
 We will define a function that takes one argument, called <code class="docutils literal notranslate"><span class="pre">seq</span></code>, which is used to determine the number of nucleotides.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">print_nuc_count</span><span class="p">(</span><span class="n">seq</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">print_nuc_count</span><span class="p">(</span><span class="n">seq</span><span class="p">):</span>
 
     <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="s2">&quot;ACGT&quot;</span><span class="p">:</span>
         <span class="nb">print</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">seq</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="n">n</span><span class="p">))</span>
@@ -376,7 +403,7 @@ We will define a function that takes one argument, called <code class="docutils 
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>A 1
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A 1
 C 2
 G 3
 T 3
@@ -385,7 +412,6 @@ A 5
 C 1
 G 6
 T 3
-
 </pre></div>
 </div>
 </div>
@@ -404,7 +430,7 @@ function. This is called the <em>scope</em> of the variable. All variables have 
 they are declared in starting from the point of definition of the name.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">50</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">50</span>
 
 <span class="k">def</span> <span class="nf">func</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;x is&#39;</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
@@ -417,7 +443,7 @@ they are declared in starting from the point of definition of the name.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>x is 50
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>x is 50
 Changed local x to 2
 x is still 50
 </pre></div>
@@ -443,7 +469,7 @@ in the function definition the assignment operator (<code class="docutils litera
 <p>Note that the default argument value should be a constant.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">say</span><span class="p">(</span><span class="n">message</span><span class="p">,</span> <span class="n">times</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">say</span><span class="p">(</span><span class="n">message</span><span class="p">,</span> <span class="n">times</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">message</span> <span class="o">*</span> <span class="n">times</span><span class="p">)</span>
 
 <span class="n">say</span><span class="p">(</span><span class="s1">&#39;Hello&#39;</span><span class="p">)</span>
@@ -452,7 +478,7 @@ in the function definition the assignment operator (<code class="docutils litera
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>Hello
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hello
 WorldWorldWorldWorldWorld
 </pre></div>
 </div>
@@ -485,7 +511,7 @@ the order of the arguments. Two, we can give values to only those parameters to 
 provided that the other parameters have default argument values.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">func</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="mi">10</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">func</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="mi">10</span><span class="p">):</span>
     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;a is&#39;</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="s1">&#39;and b is&#39;</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="s1">&#39;and c is&#39;</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span>
 
 <span class="n">func</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">7</span><span class="p">)</span>
@@ -495,7 +521,7 @@ provided that the other parameters have default argument values.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>a is 3 and b is 7 and c is 10
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>a is 3 and b is 7 and c is 10
 a is 25 and b is 5 and c is 24
 a is 100 and b is 5 and c is 50
 </pre></div>
@@ -520,7 +546,7 @@ before <code class="docutils literal notranslate"><span class="pre">c</span></co
 optionally <em>return a value</em> from the function as well.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">maximum</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">maximum</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
     <span class="k">if</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="n">y</span><span class="p">:</span>
         <span class="k">return</span> <span class="n">x</span>
     <span class="k">elif</span> <span class="n">x</span> <span class="o">==</span> <span class="n">y</span><span class="p">:</span>
@@ -533,7 +559,7 @@ optionally <em>return a value</em> from the function as well.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>3
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3
 </pre></div>
 </div>
 </div>
@@ -550,7 +576,7 @@ your own <code class="docutils literal notranslate"><span class="pre">return</sp
 <code class="docutils literal notranslate"><span class="pre">some_function</span></code> does not use the <code class="docutils literal notranslate"><span class="pre">return</span></code> statement such as:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">some_function</span><span class="p">():</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">some_function</span><span class="p">():</span>
     <span class="k">pass</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">some_function</span><span class="p">())</span>
@@ -558,7 +584,7 @@ your own <code class="docutils literal notranslate"><span class="pre">return</sp
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>None
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>None
 </pre></div>
 </div>
 </div>
@@ -581,7 +607,7 @@ We can even get the docstring back from,
 say a function, when the program is actually running!</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Please note the function below is not optimal, and would not be implemented like this.</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Please note the function below is not optimal, and would not be implemented like this.</span>
 <span class="c1"># We would use a data type called &#39;dictionary&#39;, which is discussed in the next chapter.</span>
 
 <span class="k">def</span> <span class="nf">count_nuc</span><span class="p">(</span><span class="n">dna</span><span class="p">):</span>
@@ -614,7 +640,7 @@ say a function, when the program is actually running!</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>(3, 1, 1, 2)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(3, 1, 1, 2)
 
 Help:
 Returns the nucleotide content of a sequence.
@@ -690,14 +716,14 @@ use the Python standard library as well. First, we will see how to use the stand
 modules.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">16</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>4.0
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4.0
 </pre></div>
 </div>
 </div>
@@ -717,7 +743,7 @@ that the name does not clash with any <code class="docutils literal notranslate"
 <p>There are many more functions defined in the <code class="docutils literal notranslate"><span class="pre">math</span></code> module.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">pow</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">pow</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
 <span class="nb">print</span><span class="p">()</span>
 
 <span class="n">result</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="mf">2.71828183</span><span class="p">)</span>
@@ -727,7 +753,7 @@ that the name does not clash with any <code class="docutils literal notranslate"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>32.0
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>32.0
 
 1.0000000005668856
 True
@@ -744,13 +770,13 @@ then you can use the <code class="docutils literal notranslate"><span class="pre
 <p>In general, the <code class="docutils literal notranslate"><span class="pre">import</span></code> statement is better since your program will avoid name clashes and will be more readable.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">sqrt</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">sqrt</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Square root of 16 is&quot;</span><span class="p">,</span> <span class="n">sqrt</span><span class="p">(</span><span class="mi">16</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>Square root of 16 is 4.0
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Square root of 16 is 4.0
 </pre></div>
 </div>
 </div>
@@ -761,7 +787,7 @@ then you can use the <code class="docutils literal notranslate"><span class="pre
 <p>You can import from many different modules.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
 <span class="kn">import</span> <span class="nn">random</span>
 <span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">date</span>
 <span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">sqrt</span>
@@ -783,14 +809,14 @@ then you can use the <code class="docutils literal notranslate"><span class="pre
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>[&#39;.ipynb_checkpoints&#39;, &#39;01_introduction.md&#39;, &#39;cell_lines.txt&#39;, &#39;control_flow.ipynb&#39;, &#39;debugging.ipynb&#39;, &#39;dictionaries.ipynb&#39;, &#39;dnase_motifs.ipynb&#39;, &#39;extra_exercises.ipynb&#39;, &#39;files.ipynb&#39;, &#39;first_exercises.ipynb&#39;, &#39;footprints.ipynb&#39;, &#39;functions_modules.ipynb&#39;, &#39;img&#39;, &#39;lists.ipynb&#39;, &#39;loops.ipynb&#39;, &#39;pandas.ipynb&#39;, &#39;scripts.ipynb&#39;, &#39;testfile.txt&#39;, &#39;visualization.ipynb&#39;]
-The current directory is: /mnt/c/Users/simon/Documents/git/cfb_book/content
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;01_introduction.md&#39;, &#39;files.ipynb&#39;, &#39;dnase_motifs.ipynb&#39;, &#39;functions_modules.ipynb&#39;, &#39;pandas.ipynb&#39;, &#39;loops.ipynb&#39;, &#39;debugging.ipynb&#39;, &#39;extra_exercises.ipynb&#39;, &#39;scripts.ipynb&#39;, &#39;lists.ipynb&#39;, &#39;img&#39;, &#39;first_exercises.ipynb&#39;, &#39;visualization.ipynb&#39;, &#39;dictionaries.ipynb&#39;, &#39;testfile.txt&#39;, &#39;footprints.ipynb&#39;, &#39;control_flow.ipynb&#39;]
+The current directory is: /home/runner/work/cfb_book/cfb_book/content
 
 The square root of 16 is 4.0
 
-Today is 2020-09-17
+Today is 2020-09-21
 
-Here you have a pseudo-random number: 0.36468796931045466
+Here you have a pseudo-random number: 0.7822457161941386
 Or a random integer between 0 and 10: 5
 </pre></div>
 </div>
@@ -819,6 +845,25 @@ Or a random integer between 0 and 10: 5
 </div>
 </div>
 
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./content"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
 
               </div>
               
