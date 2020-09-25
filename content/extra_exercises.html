@@ -273,12 +273,21 @@ You can use the codon table that was used in <strong>exercise 6.9</strong>.</p>
 </div>
 </div>
 <p><strong>Exercise 7.2: Open reading frames</strong></p>
-<p>Write a function <code class="docutils literal notranslate"><span class="pre">longest_orfs</span></code> that will take a DNA sequence as input and returns the protein sequence encoded by the longest ORF for all three frames. The return value should be a dictionary, with the frame number as the key and the protein sequence as the value. You can re-use code that you have written for <strong>exercise 4.8</strong> and <strong>exercise 7.1</strong>.</p>
+<p>Write a function <code class="docutils literal notranslate"><span class="pre">longest_orfs</span></code> that will take a DNA sequence as input and returns the protein sequence encoded by
+the longest ORF for all three frames. The return value should be a dictionary, with the frame number as the key and the
+protein sequence as the value. This means that the dictionary will have three <code class="docutils literal notranslate"><span class="pre">key:value</span></code> pairs. The three keys are <code class="docutils literal notranslate"><span class="pre">1</span></code>,
+<code class="docutils literal notranslate"><span class="pre">2</span></code> and <code class="docutils literal notranslate"><span class="pre">3</span></code> and the corresponding values are the longest ORF for frame 1, the longest ORF for frame 2 and the longest ORF for frame 3.</p>
+<p>The stop codon (<code class="docutils literal notranslate"><span class="pre">*</span></code> in the amino acid table) should not be included in the translation of the ORF. For this exercise an open reading frame does not need to start with an ATG, it can start with any codon, except a stop codon.
+For example, take the sequence <code class="docutils literal notranslate"><span class="pre">&quot;actgcgtagagagctggagagattaggc&quot;</span></code>. The translation of the full sequence for frame 1 would look like this:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">TA</span><span class="o">*</span><span class="n">RAGEIR</span>
+</pre></div>
+</div>
+<p>In this example, the longest ORF is <code class="docutils literal notranslate"><span class="pre">RAGEIR</span></code>.</p>
+<p>You can re-use code that you have written for <strong>exercise 4.8</strong> and <strong>exercise 7.1</strong>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">longest_orfs</span><span class="p">(</span><span class="n">seq</span><span class="p">):</span>
     <span class="c1"># Adapt this function with your own code</span>
-    
     <span class="k">return</span> <span class="n">orfs</span>
 </pre></div>
 </div>
