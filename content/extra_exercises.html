@@ -365,7 +365,7 @@ and returns a <code class="docutils literal notranslate"><span class="pre">list<
 <p><strong>Exercise 7.5: Motif conversion</strong></p>
 <p>Write a function that converts a consensus sequence into a positional weight matrix.
 The consensus sequence can be composed of symbols from the <a class="reference external" href="http://www.bioinformatics.org/sms2/iupac.html">IUPAC DNA code</a>.
-The positional weight matrix should be a two-dimensional list.
+The function should ignore any non-IUPAC character. The positional weight matrix should be a two-dimensional list.
 Every element in the first list is a list containing the relative frequencies of A, C, G and T, in that specific order, that together sum up to <code class="docutils literal notranslate"><span class="pre">1.0</span></code>.</p>
 <p><strong>Exercise 7.6: Analysis of a regulatory network</strong></p>
 <p>For this question use the regulatory network represented in the following dictionary:</p>
