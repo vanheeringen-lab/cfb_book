@@ -1,15 +1,31 @@
 
-
 <!DOCTYPE html>
 
 <html>
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>9. Scripts &#8212; NWI-BM066A Computation for Biologists</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
-    <link href="../_static/css/index.css" rel="stylesheet">
-    <link rel="stylesheet" href="../_static/sphinx-book-theme.css" type="text/css" />
+    <title>8. Scripts &#8212; NWI-BM066A Computation for Biologists</title>
+    
+  <link rel="stylesheet" href="../_static/css/index.d431a4ee1c1efae0e38bdfebc22debff.css">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.bfb7730f9caf2ec0b46a44615585038c.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
@@ -17,6 +33,9 @@
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.30270b6e4c972e43c488.js">
+
     <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
@@ -25,8 +44,8 @@
     <script src="../_static/togglebutton.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
-    <script src="../_static/sphinx-book-theme.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.be0a4a0c39cd630af62a2fcf693f3f06.js"></script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
@@ -36,11 +55,11 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="10. Debugging" href="debugging.html" />
-    <link rel="prev" title="8. Files" href="files.html" />
+    <link rel="next" title="9. Debugging" href="debugging.html" />
+    <link rel="prev" title="7. Files" href="files.html" />
 
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="docsearch:language" content="en">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
 
 
 
@@ -107,43 +126,38 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="extra_exercises.html">
-   7. Assembling the pieces
-  </a>
- </li>
- <li class="toctree-l1">
   <a class="reference internal" href="files.html">
-   8. Files
+   7. Files
   </a>
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   9. Scripts
+   8. Scripts
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="debugging.html">
-   10. Debugging
+   9. Debugging
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="pandas.html">
-   11. Introduction to pandas DataFrames
+   10. Introduction to pandas DataFrames
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="visualization.html">
-   12. Visualization
+   11. Visualization
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="dnase_motifs.html">
-   13. Motifs in DNase I peaks
+   12. Motifs in DNase I peaks
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="footprints.html">
-   14. Creating a DNAseI footprint profile
+   13. Creating a DNAseI footprint profile
   </a>
  </li>
 </ul>
@@ -233,6 +247,7 @@
 
     <!-- Table of contents -->
     <div class="d-none d-md-block col-md-2 bd-toc show">
+        
         <div class="tocsection onthispage pt-5 pb-3">
             <i class="fas fa-list"></i> Contents
         </div>
@@ -240,17 +255,17 @@
             <ul class="nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#exercises-scripts">
-   9.1. Exercises: scripts
+   8.1. Exercises: scripts
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#using-script-withs-variable-input">
-   9.2. Using script withs variable input
+   8.2. Using script withs variable input
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#exercises-using-sys-argv">
-   9.3. Exercises using
+   8.3. Exercises using
    <code class="docutils literal notranslate">
     <span class="pre">
      sys.argv
@@ -260,17 +275,18 @@
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#using-available-modules-argparse">
-   9.4. Using available modules: argparse
+   8.4. Using available modules: argparse
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#exercises-putting-it-all-together">
-   9.5. Exercises: putting it all together
+   8.5. Exercises: putting it all together
   </a>
  </li>
 </ul>
 
         </nav>
+        
     </div>
 </div>
     <div id="main-content" class="row">
@@ -279,9 +295,9 @@
               <div>
                 
   <div class="section" id="scripts">
-<h1><span class="section-number">9. </span>Scripts<a class="headerlink" href="#scripts" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">8. </span>Scripts<a class="headerlink" href="#scripts" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="exercises-scripts">
-<h2><span class="section-number">9.1. </span>Exercises: scripts<a class="headerlink" href="#exercises-scripts" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">8.1. </span>Exercises: scripts<a class="headerlink" href="#exercises-scripts" title="Permalink to this headline">¶</a></h2>
 <p><strong>Exercise 9.1: Copying the files required for the exercises</strong></p>
 <p>Open a terminal from the Jupyter “Home” page in your webbrowser (the view of your home directory), by clicking on “Terminal” in the “New” pull down menu.</p>
 <p>If you haven’t already done so, first create a folder/directory named <code class="docutils literal notranslate"><span class="pre">cfb_2020</span></code> in your network folder for this course:</p>
@@ -359,7 +375,7 @@ python exercise3b.py
 </ol>
 </div>
 <div class="section" id="using-script-withs-variable-input">
-<h2><span class="section-number">9.2. </span>Using script withs variable input<a class="headerlink" href="#using-script-withs-variable-input" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">8.2. </span>Using script withs variable input<a class="headerlink" href="#using-script-withs-variable-input" title="Permalink to this headline">¶</a></h2>
 <p>Create the a file called <code class="docutils literal notranslate"><span class="pre">module_using_sys.py</span></code> with the following contents:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sys</span>
 
@@ -389,7 +405,7 @@ in this case we will have <code class="docutils literal notranslate"><span class
 <code class="docutils literal notranslate"><span class="pre">'are'</span></code> as <code class="docutils literal notranslate"><span class="pre">sys.argv[2]</span></code> and <code class="docutils literal notranslate"><span class="pre">'arguments'</span></code> as <code class="docutils literal notranslate"><span class="pre">sys.argv[3]</span></code>.</p>
 </div>
 <div class="section" id="exercises-using-sys-argv">
-<h2><span class="section-number">9.3. </span>Exercises using <code class="docutils literal notranslate"><span class="pre">sys.argv</span></code><a class="headerlink" href="#exercises-using-sys-argv" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">8.3. </span>Exercises using <code class="docutils literal notranslate"><span class="pre">sys.argv</span></code><a class="headerlink" href="#exercises-using-sys-argv" title="Permalink to this headline">¶</a></h2>
 <p><strong>Exercise 9.4: Reading the command line arguments</strong></p>
 <p>Make a script called <code class="docutils literal notranslate"><span class="pre">nuc_arg.py</span></code> that prints the nucleotide content of a sequence that you give as argument on the command line.
 For example, this command:</p>
@@ -412,7 +428,7 @@ This script should accept the name of a FASTA file as argument, read the FASTA s
 The script should print the <code class="docutils literal notranslate"><span class="pre">ID</span></code> of every sequence followed by the nucleotide content of that sequence.</p>
 </div>
 <div class="section" id="using-available-modules-argparse">
-<h2><span class="section-number">9.4. </span>Using available modules: argparse<a class="headerlink" href="#using-available-modules-argparse" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">8.4. </span>Using available modules: argparse<a class="headerlink" href="#using-available-modules-argparse" title="Permalink to this headline">¶</a></h2>
 <p>The Python standard library,
 which is included with every Python version,
 contains a lot of useful modules (see <a class="reference external" href="https://docs.python.org/3/library/">here</a>)
@@ -434,7 +450,7 @@ This is a very useful module for scripts that take (a lot of) command-line argum
 We will use the argparse module in our final assignment for today.</p>
 </div>
 <div class="section" id="exercises-putting-it-all-together">
-<h2><span class="section-number">9.5. </span>Exercises: putting it all together<a class="headerlink" href="#exercises-putting-it-all-together" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">8.5. </span>Exercises: putting it all together<a class="headerlink" href="#exercises-putting-it-all-together" title="Permalink to this headline">¶</a></h2>
 <p><strong>Exercise 9.6: motif scanning</strong></p>
 <p>Write a command-line Python script that scans a FASTA file with a IUPAC consensus sequence.
 As an optional argument to the script, a use should be able to specify a number of mismatches.
@@ -490,8 +506,8 @@ It is better to have a working script that has limited functionality but works w
     
     <div class='prev-next-bottom'>
         
-    <a class='left-prev' id="prev-link" href="files.html" title="previous page"><span class="section-number">8. </span>Files</a>
-    <a class='right-next' id="next-link" href="debugging.html" title="next page"><span class="section-number">10. </span>Debugging</a>
+    <a class='left-prev' id="prev-link" href="files.html" title="previous page"><span class="section-number">7. </span>Files</a>
+    <a class='right-next' id="next-link" href="debugging.html" title="next page"><span class="section-number">9. </span>Debugging</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">
@@ -510,7 +526,10 @@ It is better to have a working script that has limited functionality but works w
       </div>
     </div>
 
-    <script src="../_static/js/index.js"></script>
+    
+  <script src="../_static/js/index.30270b6e4c972e43c488.js"></script>
+
+
     
   </body>
 </html>
