@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>13. Creating a DNAseI footprint profile &#8212; NWI-BM066A Computation for Biologists</title>
+    <title>14. Creating a DNAseI footprint profile &#8212; NWI-BM066A Computation for Biologists</title>
     
   <link rel="stylesheet" href="../_static/css/index.d431a4ee1c1efae0e38bdfebc22debff.css">
 
@@ -55,7 +55,7 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="prev" title="12. Motifs in DNase I peaks" href="dnase_motifs.html" />
+    <link rel="prev" title="13. Motifs in DNase I peaks" href="dnase_motifs.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -125,38 +125,43 @@
   </a>
  </li>
  <li class="toctree-l1">
+  <a class="reference internal" href="extra_exercises.html">
+   7. Assembling the pieces
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="files.html">
-   7. Files
+   8. Files
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="scripts.html">
-   8. Scripts
+   9. Scripts
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="debugging.html">
-   9. Debugging
+   10. Debugging
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="pandas.html">
-   10. Introduction to pandas DataFrames
+   11. Introduction to pandas DataFrames
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="visualization.html">
-   11. Visualization
+   12. Visualization
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="dnase_motifs.html">
-   12. Motifs in DNase I peaks
+   13. Motifs in DNase I peaks
   </a>
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   13. Creating a DNAseI footprint profile
+   14. Creating a DNAseI footprint profile
   </a>
  </li>
 </ul>
@@ -254,49 +259,49 @@
             <ul class="nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#description">
-   13.1. Description
+   14.1. Description
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#data">
-     13.1.1. Data
+     14.1.1. Data
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#reading-bam-files">
-     13.1.2. Reading BAM files
+     14.1.2. Reading BAM files
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#creating-the-profile">
-     13.1.3. Creating the profile
+     14.1.3. Creating the profile
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#plotting">
-     13.1.4. Plotting
+     14.1.4. Plotting
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#approach">
-     13.1.5. Approach
+     14.1.5. Approach
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#tricky-issues">
-       13.1.5.1. Tricky issues:
+       14.1.5.1. Tricky issues:
       </a>
      </li>
     </ul>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#testing">
-     13.1.6. Testing
+     14.1.6. Testing
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#final-exercise">
-     13.1.7. Final exercise
+     14.1.7. Final exercise
     </a>
    </li>
   </ul>
@@ -313,13 +318,13 @@
               <div>
                 
   <div class="section" id="creating-a-dnasei-footprint-profile">
-<h1><span class="section-number">13. </span>Creating a DNAseI footprint profile<a class="headerlink" href="#creating-a-dnasei-footprint-profile" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">14. </span>Creating a DNAseI footprint profile<a class="headerlink" href="#creating-a-dnasei-footprint-profile" title="Permalink to this headline">¶</a></h1>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>This exercise is <em>optional</em>!</p>
 </div>
 <div class="section" id="description">
-<h2><span class="section-number">13.1. </span>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">14.1. </span>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
 <p>The exercise for this week is to write a <strong>script</strong> that plots the cumulative footprint signal in motif sequences.
 The script is given two input filenames as arguments on the command line:</p>
 <ul class="simple">
@@ -334,7 +339,7 @@ averaged over all motif locations.
 The result should look something like this:</p>
 <p><img alt="An example of a CTCF footprint profile." src="../_images/CTCF.Fetal_Brain.png" /></p>
 <div class="section" id="data">
-<h3><span class="section-number">13.1.1. </span>Data<a class="headerlink" href="#data" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">14.1.1. </span>Data<a class="headerlink" href="#data" title="Permalink to this headline">¶</a></h3>
 <p>The motif matches for three transcription factors in DNAseI hotspots are located in <code class="docutils literal notranslate"><span class="pre">/scratch/cfb/footprints/</span></code>:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">/scratch/cfb/footprints/CTCF_motifs.bed</span></code></p></li>
@@ -348,7 +353,7 @@ The result should look something like this:</p>
 </ul>
 </div>
 <div class="section" id="reading-bam-files">
-<h3><span class="section-number">13.1.2. </span>Reading BAM files<a class="headerlink" href="#reading-bam-files" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">14.1.2. </span>Reading BAM files<a class="headerlink" href="#reading-bam-files" title="Permalink to this headline">¶</a></h3>
 <p>To read BAM files, you will use the Python <code class="docutils literal notranslate"><span class="pre">pysam</span></code> module,
 see the documentation <a class="reference external" href="http://pysam.readthedocs.org/">here</a>.
 Let’s say you have a <code class="docutils literal notranslate"><span class="pre">BAM</span></code> (indexed!) file called <code class="docutils literal notranslate"><span class="pre">example.bam</span></code>.
@@ -391,7 +396,7 @@ SOLEXA-1GA-2:5:1:790:886#0 chr6 170862008
 <p>See the attributes of the read, an <code class="docutils literal notranslate"><span class="pre">AlignedSegment</span></code> object, <a class="reference external" href="http://pysam.readthedocs.org/en/latest/api.html#pysam.AlignedSegment">here</a>.</p>
 </div>
 <div class="section" id="creating-the-profile">
-<h3><span class="section-number">13.1.3. </span>Creating the profile<a class="headerlink" href="#creating-the-profile" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">14.1.3. </span>Creating the profile<a class="headerlink" href="#creating-the-profile" title="Permalink to this headline">¶</a></h3>
 <p>You can use a <code class="docutils literal notranslate"><span class="pre">list</span></code> to store the profile.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -414,7 +419,7 @@ SOLEXA-1GA-2:5:1:790:886#0 chr6 170862008
 </div>
 </div>
 <div class="section" id="plotting">
-<h3><span class="section-number">13.1.4. </span>Plotting<a class="headerlink" href="#plotting" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">14.1.4. </span>Plotting<a class="headerlink" href="#plotting" title="Permalink to this headline">¶</a></h3>
 <p>Here is an example how to make a line plot using <code class="docutils literal notranslate"><span class="pre">pandas</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -448,7 +453,7 @@ SOLEXA-1GA-2:5:1:790:886#0 chr6 170862008
 </div>
 </div>
 <div class="section" id="approach">
-<h3><span class="section-number">13.1.5. </span>Approach<a class="headerlink" href="#approach" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">14.1.5. </span>Approach<a class="headerlink" href="#approach" title="Permalink to this headline">¶</a></h3>
 <p>Keep the following things in mind:</p>
 <ul class="simple">
 <li><p>Think about the problem first, before starting to program.</p></li>
@@ -460,7 +465,7 @@ Create a small test file with few motifs to develop and test your script. What w
 <li><p>The score of the motif match (higher means a better match) is represented in the 5th column of the BED file.</p></li>
 </ul>
 <div class="section" id="tricky-issues">
-<h4><span class="section-number">13.1.5.1. </span>Tricky issues:<a class="headerlink" href="#tricky-issues" title="Permalink to this headline">¶</a></h4>
+<h4><span class="section-number">14.1.5.1. </span>Tricky issues:<a class="headerlink" href="#tricky-issues" title="Permalink to this headline">¶</a></h4>
 <ol class="simple">
 <li><p>Motif orientation. A motif can be located on the forward or reverse strand (column 6 in the BED file). Start with only forward motifs, and once that works, add the reverse motifs.</p></li>
 <li><p>Read orientation. The start position of the reverse reads is not represented in the <code class="docutils literal notranslate"><span class="pre">pos</span></code> attribute.
@@ -469,12 +474,12 @@ Start with only the reads mapped to the forward strand.</p></li>
 </div>
 </div>
 <div class="section" id="testing">
-<h3><span class="section-number">13.1.6. </span>Testing<a class="headerlink" href="#testing" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">14.1.6. </span>Testing<a class="headerlink" href="#testing" title="Permalink to this headline">¶</a></h3>
 <p>You can use CTCF and/or NRF1 data to test your script and compare your result to published examples.
 See <a class="reference external" href="http://genome.cshlp.org/content/21/3/456/F5.expansion.html">Fig. 5</a> of <a class="reference external" href="https://dx.doi.org/10.1101/gr.112656.110">Boyle et al. 2012</a> for CTCF and <a class="reference external" href="http://www.nature.com/nature/journal/v489/n7414/fig_tab/nature11212_F3.html">Fig. 3</a> of <a class="reference external" href="https://dx.doi.org/10.1038/nature11212">Neph et al. 2012</a> for NRF1.</p>
 </div>
 <div class="section" id="final-exercise">
-<h3><span class="section-number">13.1.7. </span>Final exercise<a class="headerlink" href="#final-exercise" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">14.1.7. </span>Final exercise<a class="headerlink" href="#final-exercise" title="Permalink to this headline">¶</a></h3>
 <p>Create the footprint profile of REST (RE1-Silencing Transcription factor), also known as Neuron-Restrictive Silencer Factor (NRSF),
 in both heart and brain fetal tissues.
 Compare the resuls and check the literature for REST function.
@@ -511,7 +516,7 @@ Can you explain the result?</p>
     
     <div class='prev-next-bottom'>
         
-    <a class='left-prev' id="prev-link" href="dnase_motifs.html" title="previous page"><span class="section-number">12. </span>Motifs in DNase I peaks</a>
+    <a class='left-prev' id="prev-link" href="dnase_motifs.html" title="previous page"><span class="section-number">13. </span>Motifs in DNase I peaks</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">

@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>11. Visualization &#8212; NWI-BM066A Computation for Biologists</title>
+    <title>12. Visualization &#8212; NWI-BM066A Computation for Biologists</title>
     
   <link rel="stylesheet" href="../_static/css/index.d431a4ee1c1efae0e38bdfebc22debff.css">
 
@@ -55,8 +55,8 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="12. Motifs in DNase I peaks" href="dnase_motifs.html" />
-    <link rel="prev" title="10. Introduction to pandas DataFrames" href="pandas.html" />
+    <link rel="next" title="13. Motifs in DNase I peaks" href="dnase_motifs.html" />
+    <link rel="prev" title="11. Introduction to pandas DataFrames" href="pandas.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -126,38 +126,43 @@
   </a>
  </li>
  <li class="toctree-l1">
+  <a class="reference internal" href="extra_exercises.html">
+   7. Assembling the pieces
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="files.html">
-   7. Files
+   8. Files
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="scripts.html">
-   8. Scripts
+   9. Scripts
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="debugging.html">
-   9. Debugging
+   10. Debugging
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="pandas.html">
-   10. Introduction to pandas DataFrames
+   11. Introduction to pandas DataFrames
   </a>
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   11. Visualization
+   12. Visualization
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="dnase_motifs.html">
-   12. Motifs in DNase I peaks
+   13. Motifs in DNase I peaks
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="footprints.html">
-   13. Creating a DNAseI footprint profile
+   14. Creating a DNAseI footprint profile
   </a>
  </li>
 </ul>
@@ -255,27 +260,27 @@
             <ul class="nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#h3k4me1-and-h3k4me3-marking-in-promoters-and-enhancers-in-fetal-brain">
-   11.1. H3K4me1 and H3K4me3 marking in promoters and enhancers in Fetal Brain
+   12.1. H3K4me1 and H3K4me3 marking in promoters and enhancers in Fetal Brain
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#h3k4me1-and-h3k4me3-marking-in-promoters-and-enhancers-fetal-brain-specific-enhancers-only">
-   11.2. H3K4me1 and H3K4me3 marking in promoters and enhancers: Fetal Brain-specific enhancers only
+   12.2. H3K4me1 and H3K4me3 marking in promoters and enhancers: Fetal Brain-specific enhancers only
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#enhancer-marking-in-different-cell-types">
-   11.3. Enhancer marking in different cell types
+   12.3. Enhancer marking in different cell types
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#promoter-marking-vs-gene-expression">
-   11.4. Promoter marking vs. gene expression
+   12.4. Promoter marking vs. gene expression
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#exercises">
-   11.5. Exercises
+   12.5. Exercises
   </a>
  </li>
 </ul>
@@ -290,7 +295,7 @@
               <div>
                 
   <div class="section" id="visualization">
-<h1><span class="section-number">11. </span>Visualization<a class="headerlink" href="#visualization" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">12. </span>Visualization<a class="headerlink" href="#visualization" title="Permalink to this headline">¶</a></h1>
 <p>In this Pandas tutorial you will use Pandas to explore ChIP-seq and DNase-seq footprinting datasets for 3 different celltypes from the Roadmap data:</p>
 <ul class="simple">
 <li><p>E081: Fetal Brain Male</p></li>
@@ -333,7 +338,7 @@
 <li><p><code class="docutils literal notranslate"><span class="pre">%matplotlib</span> <span class="pre">inline</span></code>: we make sure that all plotting is going to be shown “inline” with our commands (in Jupyter)</p></li>
 </ul>
 <div class="section" id="h3k4me1-and-h3k4me3-marking-in-promoters-and-enhancers-in-fetal-brain">
-<h2><span class="section-number">11.1. </span>H3K4me1 and H3K4me3 marking in promoters and enhancers in Fetal Brain<a class="headerlink" href="#h3k4me1-and-h3k4me3-marking-in-promoters-and-enhancers-in-fetal-brain" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">12.1. </span>H3K4me1 and H3K4me3 marking in promoters and enhancers in Fetal Brain<a class="headerlink" href="#h3k4me1-and-h3k4me3-marking-in-promoters-and-enhancers-in-fetal-brain" title="Permalink to this headline">¶</a></h2>
 <p>Next, we can import the data for E082 into pandas DataFrames, using the <code class="docutils literal notranslate"><span class="pre">read_csv()</span></code> function. Note: in earlier versions of pandas you could use the <code class="docutils literal notranslate"><span class="pre">read_table()</span></code> function, however, in newer versions of pandas this function has been deprecated and will be removed.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -470,7 +475,7 @@
 <p>What can you conclude for H3K4me3 and H3K4me1 in promoters and enhancers?</p>
 </div>
 <div class="section" id="h3k4me1-and-h3k4me3-marking-in-promoters-and-enhancers-fetal-brain-specific-enhancers-only">
-<h2><span class="section-number">11.2. </span>H3K4me1 and H3K4me3 marking in promoters and enhancers: Fetal Brain-specific enhancers only<a class="headerlink" href="#h3k4me1-and-h3k4me3-marking-in-promoters-and-enhancers-fetal-brain-specific-enhancers-only" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">12.2. </span>H3K4me1 and H3K4me3 marking in promoters and enhancers: Fetal Brain-specific enhancers only<a class="headerlink" href="#h3k4me1-and-h3k4me3-marking-in-promoters-and-enhancers-fetal-brain-specific-enhancers-only" title="Permalink to this headline">¶</a></h2>
 <p>In the previous section we used all enhancers that were called in Fetal Brain (male and Female) and Fetal Heart, but maybe we should include only those enhancers that were really called as an enhancer in E082 (Fetal Brain Female)</p>
 <p>This information is in the file <code class="docutils literal notranslate"><span class="pre">regions_enh_E081_E082_E083.bed</span></code>, which you find in the <code class="docutils literal notranslate"><span class="pre">/scratch/cfb/visual</span></code> directory.</p>
 <p>This file has the same order as all files above that are called  <code class="docutils literal notranslate"><span class="pre">regions_enh_E081_E082_E083__xxxxx</span></code>.</p>
@@ -540,7 +545,7 @@
 <p>Does this make sense (H3K4me is a typical enhancer mark) ?</p>
 </div>
 <div class="section" id="enhancer-marking-in-different-cell-types">
-<h2><span class="section-number">11.3. </span>Enhancer marking in different cell types<a class="headerlink" href="#enhancer-marking-in-different-cell-types" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">12.3. </span>Enhancer marking in different cell types<a class="headerlink" href="#enhancer-marking-in-different-cell-types" title="Permalink to this headline">¶</a></h2>
 <p>Now let us look at H3K4me1 data only, in enhancers only, but in different cell types</p>
 <p>We will add data from a different cell type, E081 (Fetal Brain Male), E082 (Fetal Brain Female) and E083 (Fetal Heart)</p>
 <p>First, read in the data into a pandas DataFrame again</p>
@@ -626,7 +631,7 @@
 <p>Does this make sense?</p>
 </div>
 <div class="section" id="promoter-marking-vs-gene-expression">
-<h2><span class="section-number">11.4. </span>Promoter marking vs. gene expression<a class="headerlink" href="#promoter-marking-vs-gene-expression" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">12.4. </span>Promoter marking vs. gene expression<a class="headerlink" href="#promoter-marking-vs-gene-expression" title="Permalink to this headline">¶</a></h2>
 <p>You are going to plot the gene expression (RNA-seq, so RPKM) as a function of the active promoter mark H3K4me3 at the corresponding genes, for E082.</p>
 <p>For this you need the file <code class="docutils literal notranslate"><span class="pre">hg19_RefSeq_TSS500_ENSEMBL_RPKM</span></code> from the <code class="docutils literal notranslate"><span class="pre">/scratch/cfb/visual</span></code> directory.</p>
 <p>This file has the same ordering as all files named <code class="docutils literal notranslate"><span class="pre">hg19_RefSeq_TSS500__xxxxx</span></code>.</p>
@@ -697,7 +702,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.FacetGrid at 0x7f3becb56cd0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.FacetGrid at 0x7f65e1217650&gt;
 </pre></div>
 </div>
 <img alt="../_images/visualization_54_1.png" src="../_images/visualization_54_1.png" />
@@ -720,7 +725,7 @@
   result = getattr(ufunc, method)(*inputs, **kwargs)
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.FacetGrid at 0x7f3beb4c83d0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.FacetGrid at 0x7f65dfb86310&gt;
 </pre></div>
 </div>
 <img alt="../_images/visualization_56_2.png" src="../_images/visualization_56_2.png" />
@@ -762,7 +767,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.FacetGrid at 0x7f3beb40e150&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.FacetGrid at 0x7f65dfbc1e90&gt;
 </pre></div>
 </div>
 <img alt="../_images/visualization_62_1.png" src="../_images/visualization_62_1.png" />
@@ -840,7 +845,7 @@
 </div>
 </div>
 <div class="section" id="exercises">
-<h2><span class="section-number">11.5. </span>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">12.5. </span>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">¶</a></h2>
 <p><strong>Exercise 12.1 Visualization using pandas and seaborn</strong></p>
 <p>In this exercise you are going to compare the different ChIP-seq and DNase-seq datasets from</p>
 <ul class="simple">
@@ -959,8 +964,8 @@ By the way, for help you are allowed (=encouraged) to use Google as well!</p>
     
     <div class='prev-next-bottom'>
         
-    <a class='left-prev' id="prev-link" href="pandas.html" title="previous page"><span class="section-number">10. </span>Introduction to pandas DataFrames</a>
-    <a class='right-next' id="next-link" href="dnase_motifs.html" title="next page"><span class="section-number">12. </span>Motifs in DNase I peaks</a>
+    <a class='left-prev' id="prev-link" href="pandas.html" title="previous page"><span class="section-number">11. </span>Introduction to pandas DataFrames</a>
+    <a class='right-next' id="next-link" href="dnase_motifs.html" title="next page"><span class="section-number">13. </span>Motifs in DNase I peaks</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">
