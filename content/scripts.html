@@ -264,8 +264,8 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#using-script-withs-variable-input">
-   9.2. Using script withs variable input
+  <a class="reference internal nav-link" href="#using-script-with-variable-input">
+   9.2. Using script with variable input
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -304,7 +304,7 @@
 <div class="section" id="exercises-scripts">
 <h2><span class="section-number">9.1. </span>Exercises: scripts<a class="headerlink" href="#exercises-scripts" title="Permalink to this headline">¶</a></h2>
 <p><strong>Exercise 9.1: Copying the files required for the exercises</strong></p>
-<p>Open a terminal from the Jupyter “Home” page in your webbrowser (the view of your home directory), by clicking on “Terminal” in the “New” pull down menu.</p>
+<p>Open a terminal from the Jupyter “Home” page in your web browser (the view of your home directory), by clicking on “Terminal” in the “New” pull down menu.</p>
 <p>If you haven’t already done so, first create a folder/directory named <code class="docutils literal notranslate"><span class="pre">cfb_2020</span></code> in your network folder for this course:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>cd                # go to root of your home directory
 mkdir cfb_2020    # mkdir creates a directory
@@ -320,7 +320,7 @@ The Linux command “cp” copies files and directories.</p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>The <code class="docutils literal notranslate"><span class="pre">~</span></code> refers to the root of your homedirectory (whatever your username is), and the directory <code class="docutils literal notranslate"><span class="pre">cfb_2020</span></code> has to exist for this particular copy command to work.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">~</span></code> refers to the root of your home directory (whatever your username is), and the directory <code class="docutils literal notranslate"><span class="pre">cfb_2020</span></code> has to exist for this particular copy command to work.</p>
 </div>
 <p>Now change directory (using <code class="docutils literal notranslate"><span class="pre">cd</span></code>) to the directory <code class="docutils literal notranslate"><span class="pre">~/cfb_2020/scripts_and_debugging</span></code>.
 Validate that you are in the correct directory using the command <code class="docutils literal notranslate"><span class="pre">pwd</span></code> as above.</p>
@@ -350,7 +350,7 @@ Put the same three lines of code in this text file. Then, rename the text file t
 <p>Questions:</p>
 <ol class="simple">
 <li><p>Is the output of the script printed to the terminal window exactly the same as the output printed to screen when executing the cell in a Jupyter notebook?</p></li>
-<li><p>How does a Jupyter-notebook differ from a script in terms of outputing information to the screen?</p></li>
+<li><p>How does a Jupyter-notebook differ from a script in terms of the output, the information that is written to the screen?</p></li>
 </ol>
 <p><strong>Exercise 9.3: Permanence of Python variables in memory</strong></p>
 <p>Copy the following code to a cell in a <em><strong>Jupyter notebook</strong></em> and execute the cell.</p>
@@ -379,8 +379,8 @@ python exercise3b.py
 <li><p>What is the state of the Python memory when it starts to execute a Python script?</p></li>
 </ol>
 </div>
-<div class="section" id="using-script-withs-variable-input">
-<h2><span class="section-number">9.2. </span>Using script withs variable input<a class="headerlink" href="#using-script-withs-variable-input" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="using-script-with-variable-input">
+<h2><span class="section-number">9.2. </span>Using script with variable input<a class="headerlink" href="#using-script-with-variable-input" title="Permalink to this headline">¶</a></h2>
 <p>Create the a file called <code class="docutils literal notranslate"><span class="pre">module_using_sys.py</span></code> with the following contents:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sys</span>
 
@@ -430,7 +430,15 @@ For example, this command:</p>
 <p><strong>Exercise 9.5: FASTA statistics</strong></p>
 <p>Write a script called <code class="docutils literal notranslate"><span class="pre">nuc_fasta.py</span></code>.
 This script should accept the name of a FASTA file as argument, read the FASTA sequences in that file and print the nucleotide content of all the sequences.
-The script should print the <code class="docutils literal notranslate"><span class="pre">ID</span></code> of every sequence followed by the nucleotide content of that sequence.</p>
+The script should print a header line, followed by the FASTA id (the sequence name) of every sequence followed by the nucleotide content of that sequence. The output should be tab-separated. The nucleotide content should be specified as a fraction of the sequence length, with two digits in the order A, C, G and T. When you run the script <code class="docutils literal notranslate"><span class="pre">nuc_fasta.py</span></code> on the input file <code class="docutils literal notranslate"><span class="pre">/scratch/cfb/scripts_debugging/sequences.fa</span></code> the output should <em>exactly</em> mach the following:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">name</span>	<span class="n">A</span>	<span class="n">C</span>	<span class="n">G</span>	<span class="n">T</span>
+<span class="n">chr14</span><span class="p">:</span><span class="mi">89352059</span><span class="o">-</span><span class="mi">89352259</span>	<span class="mf">0.31</span>	<span class="mf">0.28</span>	<span class="mf">0.20</span>	<span class="mf">0.22</span>
+<span class="n">chr5</span><span class="p">:</span><span class="mi">74264624</span><span class="o">-</span><span class="mi">74264824</span>	<span class="mf">0.34</span>	<span class="mf">0.20</span>	<span class="mf">0.20</span>	<span class="mf">0.26</span>
+<span class="n">chr2</span><span class="p">:</span><span class="mi">132500203</span><span class="o">-</span><span class="mi">132500403</span>	<span class="mf">0.23</span>	<span class="mf">0.12</span>	<span class="mf">0.21</span>	<span class="mf">0.43</span>
+<span class="n">chr6</span><span class="p">:</span><span class="mi">30630663</span><span class="o">-</span><span class="mi">30630863</span>	<span class="mf">0.28</span>	<span class="mf">0.23</span>	<span class="mf">0.27</span>	<span class="mf">0.22</span>
+<span class="n">chr15_KI270905v1_alt</span><span class="p">:</span><span class="mi">1999423</span><span class="o">-</span><span class="mi">1999623</span>	<span class="mf">0.35</span>	<span class="mf">0.22</span>	<span class="mf">0.15</span>	<span class="mf">0.28</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="using-available-modules-argparse">
 <h2><span class="section-number">9.4. </span>Using available modules: argparse<a class="headerlink" href="#using-available-modules-argparse" title="Permalink to this headline">¶</a></h2>
@@ -441,7 +449,7 @@ In addition, there are many third-party modules available.
 Some of these we will use in this course, such as <a class="reference external" href="http://pandas.pydata.org/">pandas</a> for data analysis and <a class="reference external" href="http://matplotlib.org/">matplotlib</a> for making figures.
 However, it is not possible to exhaustively cover all these modules in this course.
 Therefore, it is very useful to be able to search for modules and for examples and tutorials on how to use tese modules.
-With the subjects covered so far, you have should have enough understanding of basic Python principles.</p>
+With the subjects covered so far, you should have enough understanding of basic Python principles.</p>
 <p>Let’s take an example, the <code class="docutils literal notranslate"><span class="pre">argparse</span></code> module.
 This is a very useful module for scripts that take (a lot of) command-line arguments. Some examples on how to use this module:</p>
 <p>https://docs.python.org/3/howto/argparse.html</p>
