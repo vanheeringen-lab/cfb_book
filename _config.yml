@@ -15,5 +15,4 @@ html:
   use_edit_page_button: true
 
 launch_buttons:
-  binderhub_url: https://mybinder.org/v2/gh/vanheeringen-lab/cfb_temp/master
- 
+  binderhub_url: https://mybinder.org
