@@ -301,45 +301,47 @@
   <a class="reference internal nav-link" href="#merging-pandas-dataframes">
    11.4. Merging pandas DataFrames
   </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#merging-dataframes-on-column-values">
-   11.5. Merging DataFrames on column values
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#merging-dataframes-concat">
-   11.6. Merging DataFrames:
-   <code class="docutils literal notranslate">
-    <span class="pre">
-     concat
-    </span>
-   </code>
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#merging-dataframes-merge">
-   11.7. Merging DataFrames:
-   <code class="docutils literal notranslate">
-    <span class="pre">
-     merge
-    </span>
-   </code>
-  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#merging-dataframes-on-column-values">
+     11.4.1. Merging DataFrames on column values
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#merging-dataframes-concat">
+     11.4.2. Merging DataFrames:
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       concat
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#merging-dataframes-merge">
+     11.4.3. Merging DataFrames:
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       merge
+      </span>
+     </code>
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#tab-completion-and-help">
-   11.8. Tab completion and help
+   11.5. Tab completion and help
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#sorting-a-dataframe">
-   11.9. Sorting a DataFrame
+   11.6. Sorting a DataFrame
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#using-to-obtain-dataframe-columns-or-rows">
-   11.10. Using
+   11.7. Using
    <code class="docutils literal notranslate">
     <span class="pre">
      [
@@ -353,7 +355,7 @@
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#removing-missing-values-or-nans">
-   11.11. Removing missing values or
+   11.8. Removing missing values or
    <code class="docutils literal notranslate">
     <span class="pre">
      NaN
@@ -364,7 +366,7 @@
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#basic-calculations">
-   11.12. Basic calculations
+   11.9. Basic calculations
   </a>
  </li>
 </ul>
@@ -388,7 +390,7 @@ We will focus on DataFrames, a convenient object type used in pandas.</p>
 It will illustrate what you can do with pandas DataFrames.</p>
 </div>
 <p>If you want more information on pandas, a (quick) tutorial is found here:</p>
-<p><a class="reference external" href="http://pandas.pydata.org/pandas-docs/stable/10min.html">http://pandas.pydata.org/pandas-docs/stable/10min.html</a></p>
+<p><a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/user_guide/10min.html">https://pandas.pydata.org/pandas-docs/stable/user_guide/10min.html</a></p>
 <div class="section" id="importing-the-pandas-module">
 <h2><span class="section-number">11.1. </span>Importing the pandas module<a class="headerlink" href="#importing-the-pandas-module" title="Permalink to this headline">¶</a></h2>
 <p>We start by importing the <code class="docutils literal notranslate"><span class="pre">pandas</span></code> module, for which we use the following command:</p>
@@ -698,7 +700,7 @@ It will illustrate what you can do with pandas DataFrames.</p>
 <p>Take a look at the two DataFrames, and note how we did this:</p>
 <ul class="simple">
 <li><p>We used <code class="docutils literal notranslate"><span class="pre">[</span> <span class="pre">]</span></code> to define a new colum, with the column name between <code class="docutils literal notranslate"><span class="pre">[</span> <span class="pre">]</span></code></p></li>
-<li><p>We only used only one string (<code class="docutils literal notranslate"><span class="pre">'exp1'</span></code>), but this was automatically expanded to the whole column</p></li>
+<li><p>We used only one string (<code class="docutils literal notranslate"><span class="pre">'exp1'</span></code> or <code class="docutils literal notranslate"><span class="pre">'exp2'</span></code>), but this was automatically expanded to the whole column</p></li>
 </ul>
 </div>
 <div class="section" id="creating-a-pandas-dataframe-using-a-dictionary">
@@ -888,29 +890,29 @@ It will illustrate what you can do with pandas DataFrames.</p>
   </thead>
   <tbody>
     <tr>
-      <th>3</th>
-      <td>NM_001126112</td>
-      <td>ENSG00000141510</td>
-      <td>TP53</td>
+      <th>16</th>
+      <td>NM_007145</td>
+      <td>ENSG00000167635</td>
+      <td>ZNF146</td>
     </tr>
     <tr>
-      <th>9</th>
-      <td>NM_002121</td>
-      <td>ENSG00000237710</td>
-      <td>HLA-DPB1</td>
+      <th>14</th>
+      <td>NM_005165</td>
+      <td>ENSG00000109107</td>
+      <td>ALDOC</td>
     </tr>
     <tr>
-      <th>6</th>
-      <td>NM_001164386</td>
-      <td>ENSG00000158987</td>
-      <td>RAPGEF6</td>
+      <th>11</th>
+      <td>NM_003251</td>
+      <td>ENSG00000151365</td>
+      <td>THRSP</td>
     </tr>
   </tbody>
 </table>
 </div></div></div>
 </div>
 <p>Next, we create another DataFrame with gene expression values</p>
-<p>Here, we will use the dictionary method to create a <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> without creating explicitly creating the dictrionary.</p>
+<p>Here, we will use the dictionary method to create a <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> without explicitly creating the dictionary.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ensembl_1</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;ENSG00000237710&quot;</span><span class="p">,</span> <span class="s2">&quot;ENSG00000182667&quot;</span><span class="p">,</span> <span class="s2">&quot;ENSG00000121742&quot;</span><span class="p">,</span> <span class="s2">&quot;ENSG00000158987&quot;</span><span class="p">,</span> 
@@ -951,14 +953,13 @@ It will illustrate what you can do with pandas DataFrames.</p>
 </div>
 </div>
 </div>
+<p>Look at the DataFrames using <code class="docutils literal notranslate"><span class="pre">print()</span></code> or, in Jupyter, by just typing the DataFrame name followed by <code class="docutils literal notranslate"><span class="pre">&lt;Enter&gt;</span></code>.</p>
+<p>In the case where you would have very large DataFrames, you can always use <code class="docutils literal notranslate"><span class="pre">df.head()</span></code> to show the first rows, or <code class="docutils literal notranslate"><span class="pre">df.tail()</span></code> to show the last rows, where <code class="docutils literal notranslate"><span class="pre">df</span></code> is your DataFrame name.</p>
 </div>
 <div class="section" id="merging-pandas-dataframes">
 <h2><span class="section-number">11.4. </span>Merging pandas DataFrames<a class="headerlink" href="#merging-pandas-dataframes" title="Permalink to this headline">¶</a></h2>
-<p>Look at the DataFrames using print (or by just typing the DataFrame name followed by Enter)</p>
-<p>In the case where you would have very large DataFrames, can always use <code class="docutils literal notranslate"><span class="pre">df.head()</span></code> (where <code class="docutils literal notranslate"><span class="pre">df</span></code> is your DataFrame name)</p>
-</div>
 <div class="section" id="merging-dataframes-on-column-values">
-<h2><span class="section-number">11.5. </span>Merging DataFrames on column values<a class="headerlink" href="#merging-dataframes-on-column-values" title="Permalink to this headline">¶</a></h2>
+<h3><span class="section-number">11.4.1. </span>Merging DataFrames on column values<a class="headerlink" href="#merging-dataframes-on-column-values" title="Permalink to this headline">¶</a></h3>
 <p>We now have 3 types of data in our 3 DataFrames:</p>
 <ul class="simple">
 <li><p>ChIP-seq peaks (<code class="docutils literal notranslate"><span class="pre">df_peaks</span></code>)</p></li>
@@ -966,10 +967,10 @@ It will illustrate what you can do with pandas DataFrames.</p>
 <li><p>Expression values of genes in 4 samples, with ENSEMBL identifiers (<code class="docutils literal notranslate"><span class="pre">df_expr</span></code>)</p></li>
 </ul>
 <p>This is a typical example for any (bioinformatical) analysis in which you want to incorporate different data types, often from different sources. You need to merge them if you want to do anything useful. Pandas DataFrames can be of big help here.</p>
-<p>So let us try to merge these pieces of data</p>
+<p>So let us try to merge these pieces of data.</p>
 </div>
 <div class="section" id="merging-dataframes-concat">
-<h2><span class="section-number">11.6. </span>Merging DataFrames: <code class="docutils literal notranslate"><span class="pre">concat</span></code><a class="headerlink" href="#merging-dataframes-concat" title="Permalink to this headline">¶</a></h2>
+<h3><span class="section-number">11.4.2. </span>Merging DataFrames: <code class="docutils literal notranslate"><span class="pre">concat</span></code><a class="headerlink" href="#merging-dataframes-concat" title="Permalink to this headline">¶</a></h3>
 <p>Using the command <code class="docutils literal notranslate"><span class="pre">concat()</span></code> we can concatenate multiple DataFrames.
 Let us do this with the 2 ChIP-seq peaks DataFrames:</p>
 <div class="cell docutils container">
@@ -1106,7 +1107,7 @@ Let us do this with the 2 ChIP-seq peaks DataFrames:</p>
 </table>
 </div></div></div>
 </div>
-<p>Check out the result, and note how the <code class="docutils literal notranslate"><span class="pre">exp</span></code> column still allows us to distinghuish the two experiments.</p>
+<p>Check out the result, and note how the <code class="docutils literal notranslate"><span class="pre">exp</span></code> column still allows us to distinguish the two experiments.</p>
 <p>You can use <code class="docutils literal notranslate"><span class="pre">concat()</span></code> to combine two DataFrames vertically (<code class="docutils literal notranslate"><span class="pre">axis=0</span></code>) or horizontally (<code class="docutils literal notranslate"><span class="pre">axis=1</span></code>).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1362,10 +1363,14 @@ Let us do this with the 2 ChIP-seq peaks DataFrames:</p>
 </div></div></div>
 </div>
 <p>The <a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.concat.html">documentation</a> contains more examples.</p>
+</div>
+<div class="section" id="merging-dataframes-merge">
+<h3><span class="section-number">11.4.3. </span>Merging DataFrames: <code class="docutils literal notranslate"><span class="pre">merge</span></code><a class="headerlink" href="#merging-dataframes-merge" title="Permalink to this headline">¶</a></h3>
 <p>In the above case, we want to simply combine two DataFrames by concatenating, i.e. simply adding the rows of two DataFrames together. You can also join two DataFrames in other ways. The <code class="docutils literal notranslate"><span class="pre">df_peaks</span></code> DataFrame has a <code class="docutils literal notranslate"><span class="pre">nearest_gene</span></code> column. This is a RefSeq gene identifier that is also present in the <code class="docutils literal notranslate"><span class="pre">df_genes</span></code> DataFrame. If we would like to annotate the genes in <code class="docutils literal notranslate"><span class="pre">df_peaks</span></code>, we would only need the relevant columns for the genes that are in <code class="docutils literal notranslate"><span class="pre">df_peaks</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_peaks</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">df_genes</span><span class="p">,</span> <span class="n">left_on</span><span class="o">=</span><span class="s2">&quot;nearest_gene&quot;</span><span class="p">,</span> <span class="n">right_on</span><span class="o">=</span><span class="s2">&quot;refseq&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_genes_peaks</span> <span class="o">=</span> <span class="n">df_peaks</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">df_genes</span><span class="p">,</span> <span class="n">left_on</span><span class="o">=</span><span class="s2">&quot;nearest_gene&quot;</span><span class="p">,</span> <span class="n">right_on</span><span class="o">=</span><span class="s2">&quot;refseq&quot;</span><span class="p">)</span>
+<span class="n">df_genes_peaks</span>
 </pre></div>
 </div>
 </div>
@@ -1447,24 +1452,11 @@ Let us do this with the 2 ChIP-seq peaks DataFrames:</p>
 </table>
 </div></div></div>
 </div>
-<p>Next, we merge the ChIP-seq peaks with the gene identifier mappings, using the <code class="docutils literal notranslate"><span class="pre">merge</span></code> function</p>
-</div>
-<div class="section" id="merging-dataframes-merge">
-<h2><span class="section-number">11.7. </span>Merging DataFrames: <code class="docutils literal notranslate"><span class="pre">merge</span></code><a class="headerlink" href="#merging-dataframes-merge" title="Permalink to this headline">¶</a></h2>
-<p>Here we will merge the three different DataFrames (<code class="docutils literal notranslate"><span class="pre">df_peaks</span></code>, <code class="docutils literal notranslate"><span class="pre">df_genes</span></code>, <code class="docutils literal notranslate"><span class="pre">df_expr</span></code>) using the gene identifiers. Note that we have two different gene identifiers (RefSeq and ENSEMBL).</p>
-<p>First, we merge <code class="docutils literal notranslate"><span class="pre">df_peaks</span></code> with <code class="docutils literal notranslate"><span class="pre">df_genes</span></code>.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_genes_peaks</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">df_peaks</span><span class="p">,</span> <span class="n">df_genes</span><span class="p">,</span> <span class="n">left_on</span><span class="o">=</span><span class="s1">&#39;nearest_gene&#39;</span><span class="p">,</span> <span class="n">right_on</span><span class="o">=</span><span class="s1">&#39;refseq&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
 <p>Check the resulting DataFrame. For every row in <code class="docutils literal notranslate"><span class="pre">df_peaks</span></code>, a row from <code class="docutils literal notranslate"><span class="pre">df_genes</span></code> has been added if the <code class="docutils literal notranslate"><span class="pre">refseq</span></code> identifier matches the identifier specified in <code class="docutils literal notranslate"><span class="pre">nearest_gene</span></code>.</p>
 <p>Our DataFrame now has the ENSEMBL gene identifiers, so we can also merge the <code class="docutils literal notranslate"><span class="pre">df_expr</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_genes_peaks_expr</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">df_genes_peaks</span><span class="p">,</span> <span class="n">df_expr</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="s1">&#39;ensembl&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_genes_peaks_expr</span> <span class="o">=</span> <span class="n">df_genes_peaks</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">df_expr</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="s1">&#39;ensembl&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1479,8 +1471,9 @@ Let us do this with the 2 ChIP-seq peaks DataFrames:</p>
 </div>
 </div>
 </div>
+</div>
 <div class="section" id="tab-completion-and-help">
-<h2><span class="section-number">11.8. </span>Tab completion and help<a class="headerlink" href="#tab-completion-and-help" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">11.5. </span>Tab completion and help<a class="headerlink" href="#tab-completion-and-help" title="Permalink to this headline">¶</a></h2>
 <p>Now that we have merged our data, we can do several neat things.</p>
 <p>Because <code class="docutils literal notranslate"><span class="pre">df_all</span></code> is a pandas DataFrame, it automatically inherits DataFrame methods.</p>
 <p>You can get an idea if you type:</p>
@@ -1496,7 +1489,7 @@ Let us do this with the 2 ChIP-seq peaks DataFrames:</p>
 <p>This HELP menu gives you information about the function. type <code class="docutils literal notranslate"><span class="pre">q</span></code> or <code class="docutils literal notranslate"><span class="pre">&lt;ESC&gt;</span></code> to leave the HELP.</p>
 </div>
 <div class="section" id="sorting-a-dataframe">
-<h2><span class="section-number">11.9. </span>Sorting a DataFrame<a class="headerlink" href="#sorting-a-dataframe" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">11.6. </span>Sorting a DataFrame<a class="headerlink" href="#sorting-a-dataframe" title="Permalink to this headline">¶</a></h2>
 <p>Let us try it out:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1680,7 +1673,7 @@ Let us do this with the 2 ChIP-seq peaks DataFrames:</p>
 <p>Note that these commands did not replace the original DataFrame <code class="docutils literal notranslate"><span class="pre">df_all</span></code>!</p>
 </div>
 <div class="section" id="using-to-obtain-dataframe-columns-or-rows">
-<h2><span class="section-number">11.10. </span>Using <code class="docutils literal notranslate"><span class="pre">[</span> <span class="pre">]</span></code> to obtain DataFrame columns or rows<a class="headerlink" href="#using-to-obtain-dataframe-columns-or-rows" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">11.7. </span>Using <code class="docutils literal notranslate"><span class="pre">[</span> <span class="pre">]</span></code> to obtain DataFrame columns or rows<a class="headerlink" href="#using-to-obtain-dataframe-columns-or-rows" title="Permalink to this headline">¶</a></h2>
 <p>Using <code class="docutils literal notranslate"><span class="pre">[</span> <span class="pre">]</span></code> we can obtain specific parts of the DataFrame.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1888,21 +1881,116 @@ Name: 2, dtype: object
 </div>
 </div>
 <div class="section" id="removing-missing-values-or-nans">
-<h2><span class="section-number">11.11. </span>Removing missing values or <code class="docutils literal notranslate"><span class="pre">NaN</span></code>s.<a class="headerlink" href="#removing-missing-values-or-nans" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">11.8. </span>Removing missing values or <code class="docutils literal notranslate"><span class="pre">NaN</span></code>s.<a class="headerlink" href="#removing-missing-values-or-nans" title="Permalink to this headline">¶</a></h2>
 <p>In many cases DataFrames contains <code class="docutils literal notranslate"><span class="pre">NaN</span></code>, missing values, and you often have to remove them.</p>
-<p>We have several such <code class="docutils literal notranslate"><span class="pre">NaN</span></code>s in <code class="docutils literal notranslate"><span class="pre">df_all</span></code>.</p>
-<p>We can obtain a <code class="docutils literal notranslate"><span class="pre">boolean</span></code> (<code class="docutils literal notranslate"><span class="pre">True</span></code>/<code class="docutils literal notranslate"><span class="pre">False</span></code>) for the column called <code class="docutils literal notranslate"><span class="pre">sample1</span></code> like this:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_all</span><span class="p">[</span><span class="s1">&#39;sample1&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gene_info</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s2">&quot;full_name&quot;</span><span class="p">:[</span><span class="s2">&quot;tumor protein p53&quot;</span><span class="p">,</span> <span class="s2">&quot;aldolase, fructose-bisphosphate C&quot;</span><span class="p">]},</span>
+                         <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;TP53&quot;</span><span class="p">,</span> <span class="s2">&quot;ALDOC&quot;</span><span class="p">])</span>
+<span class="n">df_all</span> <span class="o">=</span> <span class="n">df_all</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">gene_info</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="s2">&quot;genename&quot;</span><span class="p">)</span>
+<span class="n">df_all</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0    False
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>chrom</th>
+      <th>start</th>
+      <th>end</th>
+      <th>nearest_gene</th>
+      <th>exp</th>
+      <th>refseq</th>
+      <th>ensembl</th>
+      <th>genename</th>
+      <th>sample1</th>
+      <th>sample2</th>
+      <th>sample3</th>
+      <th>sample4</th>
+      <th>full_name</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>chr11</td>
+      <td>77774406</td>
+      <td>77775406</td>
+      <td>NM_003251</td>
+      <td>exp1</td>
+      <td>NM_003251</td>
+      <td>ENSG00000151365</td>
+      <td>THRSP</td>
+      <td>0.026</td>
+      <td>0.013</td>
+      <td>0.023</td>
+      <td>0.181</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>chr17</td>
+      <td>7590368</td>
+      <td>7591368</td>
+      <td>NM_001126112</td>
+      <td>exp1</td>
+      <td>NM_001126112</td>
+      <td>ENSG00000141510</td>
+      <td>TP53</td>
+      <td>58.697</td>
+      <td>47.569</td>
+      <td>34.299</td>
+      <td>28.180</td>
+      <td>tumor protein p53</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>chr17</td>
+      <td>26903451</td>
+      <td>26904451</td>
+      <td>NM_005165</td>
+      <td>exp1</td>
+      <td>NM_005165</td>
+      <td>ENSG00000109107</td>
+      <td>ALDOC</td>
+      <td>18.218</td>
+      <td>5.333</td>
+      <td>18.445</td>
+      <td>131.013</td>
+      <td>aldolase, fructose-bisphosphate C</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>We can obtain a <code class="docutils literal notranslate"><span class="pre">boolean</span></code> (<code class="docutils literal notranslate"><span class="pre">True</span></code>/<code class="docutils literal notranslate"><span class="pre">False</span></code>) for the column called <code class="docutils literal notranslate"><span class="pre">full_name</span></code> like this:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_all</span><span class="p">[</span><span class="s1">&#39;full_name&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0     True
 1    False
 2    False
-Name: sample1, dtype: bool
+Name: full_name, dtype: bool
 </pre></div>
 </div>
 </div>
@@ -1910,15 +1998,15 @@ Name: sample1, dtype: bool
 <p>By using the <code class="docutils literal notranslate"><span class="pre">~</span></code> symbol we can invert this <code class="docutils literal notranslate"><span class="pre">boolean</span></code> column. The <code class="docutils literal notranslate"><span class="pre">~</span></code> acts as <code class="docutils literal notranslate"><span class="pre">not</span></code> for a pandas Series.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">~</span><span class="n">df_all</span><span class="p">[</span><span class="s1">&#39;sample1&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">~</span><span class="n">df_all</span><span class="p">[</span><span class="s1">&#39;full_name&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0    True
-1    True
-2    True
-Name: sample1, dtype: bool
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0    False
+1     True
+2     True
+Name: full_name, dtype: bool
 </pre></div>
 </div>
 </div>
@@ -1926,7 +2014,7 @@ Name: sample1, dtype: bool
 <p>We can use this strategy to remove all rows that have <code class="docutils literal notranslate"><span class="pre">NaN</span></code> in the column <code class="docutils literal notranslate"><span class="pre">sample1</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_all</span><span class="p">[</span><span class="o">~</span><span class="n">df_all</span><span class="p">[</span><span class="s1">&#39;sample1&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">isnull</span><span class="p">()]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_all</span><span class="p">[</span><span class="o">~</span><span class="n">df_all</span><span class="p">[</span><span class="s1">&#39;full_name&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">isnull</span><span class="p">()]</span>
 </pre></div>
 </div>
 </div>
@@ -1961,24 +2049,10 @@ Name: sample1, dtype: bool
       <th>sample2</th>
       <th>sample3</th>
       <th>sample4</th>
+      <th>full_name</th>
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <th>0</th>
-      <td>chr11</td>
-      <td>77774406</td>
-      <td>77775406</td>
-      <td>NM_003251</td>
-      <td>exp1</td>
-      <td>NM_003251</td>
-      <td>ENSG00000151365</td>
-      <td>THRSP</td>
-      <td>0.026</td>
-      <td>0.013</td>
-      <td>0.023</td>
-      <td>0.181</td>
-    </tr>
     <tr>
       <th>1</th>
       <td>chr17</td>
@@ -1993,6 +2067,7 @@ Name: sample1, dtype: bool
       <td>47.569</td>
       <td>34.299</td>
       <td>28.180</td>
+      <td>tumor protein p53</td>
     </tr>
     <tr>
       <th>2</th>
@@ -2008,105 +2083,16 @@ Name: sample1, dtype: bool
       <td>5.333</td>
       <td>18.445</td>
       <td>131.013</td>
+      <td>aldolase, fructose-bisphosphate C</td>
     </tr>
   </tbody>
 </table>
 </div></div></div>
 </div>
 <p>Make sure you understand how this worked!</p>
-<p>We can do the same for getting all rows corresponding to <code class="docutils literal notranslate"><span class="pre">exp1</span></code> (experiment 1):</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_all</span><span class="p">[</span><span class="n">df_all</span><span class="p">[</span><span class="s1">&#39;exp&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;exp1&#39;</span><span class="p">]</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>chrom</th>
-      <th>start</th>
-      <th>end</th>
-      <th>nearest_gene</th>
-      <th>exp</th>
-      <th>refseq</th>
-      <th>ensembl</th>
-      <th>genename</th>
-      <th>sample1</th>
-      <th>sample2</th>
-      <th>sample3</th>
-      <th>sample4</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>chr11</td>
-      <td>77774406</td>
-      <td>77775406</td>
-      <td>NM_003251</td>
-      <td>exp1</td>
-      <td>NM_003251</td>
-      <td>ENSG00000151365</td>
-      <td>THRSP</td>
-      <td>0.026</td>
-      <td>0.013</td>
-      <td>0.023</td>
-      <td>0.181</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>chr17</td>
-      <td>7590368</td>
-      <td>7591368</td>
-      <td>NM_001126112</td>
-      <td>exp1</td>
-      <td>NM_001126112</td>
-      <td>ENSG00000141510</td>
-      <td>TP53</td>
-      <td>58.697</td>
-      <td>47.569</td>
-      <td>34.299</td>
-      <td>28.180</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>chr17</td>
-      <td>26903451</td>
-      <td>26904451</td>
-      <td>NM_005165</td>
-      <td>exp1</td>
-      <td>NM_005165</td>
-      <td>ENSG00000109107</td>
-      <td>ALDOC</td>
-      <td>18.218</td>
-      <td>5.333</td>
-      <td>18.445</td>
-      <td>131.013</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
-</div>
 </div>
 <div class="section" id="basic-calculations">
-<h2><span class="section-number">11.12. </span>Basic calculations<a class="headerlink" href="#basic-calculations" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">11.9. </span>Basic calculations<a class="headerlink" href="#basic-calculations" title="Permalink to this headline">¶</a></h2>
 <p>There are a lot of methods that allows you to do basic calculation on DataFrames.</p>
 <p>As an illustration we will calculate the pairwise correlations between the columns <code class="docutils literal notranslate"><span class="pre">sample1</span></code>, <code class="docutils literal notranslate"><span class="pre">sample2</span></code>, <code class="docutils literal notranslate"><span class="pre">sample3</span></code>, and <code class="docutils literal notranslate"><span class="pre">sample4</span></code>.</p>
 <p>We take the appropriate columns first</p>
