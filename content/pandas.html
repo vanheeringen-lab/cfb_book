@@ -890,22 +890,22 @@ It will illustrate what you can do with pandas DataFrames.</p>
   </thead>
   <tbody>
     <tr>
+      <th>19</th>
+      <td>NM_024097</td>
+      <td>ENSG00000164008</td>
+      <td>C1orf50</td>
+    </tr>
+    <tr>
       <th>15</th>
       <td>NM_006017</td>
       <td>ENSG00000007062</td>
       <td>PROM1</td>
     </tr>
     <tr>
-      <th>1</th>
-      <td>NM_001098638</td>
-      <td>ENSG00000166439</td>
-      <td>RNF169</td>
-    </tr>
-    <tr>
-      <th>17</th>
-      <td>NM_016522</td>
-      <td>ENSG00000182667</td>
-      <td>NTM</td>
+      <th>5</th>
+      <td>NM_001164283</td>
+      <td>ENSG00000056972</td>
+      <td>TRAF3IP2</td>
     </tr>
   </tbody>
 </table>
@@ -2011,7 +2011,7 @@ Name: full_name, dtype: bool
 </div>
 </div>
 </div>
-<p>We can use this strategy to remove all rows that have <code class="docutils literal notranslate"><span class="pre">NaN</span></code> in the column <code class="docutils literal notranslate"><span class="pre">sample1</span></code>:</p>
+<p>We can use this strategy to remove all rows that have <code class="docutils literal notranslate"><span class="pre">NaN</span></code> in the column <code class="docutils literal notranslate"><span class="pre">full_name</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_all</span><span class="p">[</span><span class="o">~</span><span class="n">df_all</span><span class="p">[</span><span class="s1">&#39;full_name&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">isnull</span><span class="p">()]</span>
