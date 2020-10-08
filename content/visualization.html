@@ -721,7 +721,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.FacetGrid at 0x7f47e849d090&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.FacetGrid at 0x7fa71bf738d0&gt;
 </pre></div>
 </div>
 <img alt="../_images/visualization_54_1.png" src="../_images/visualization_54_1.png" />
@@ -744,7 +744,7 @@
   result = getattr(ufunc, method)(*inputs, **kwargs)
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.FacetGrid at 0x7f47e0284910&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.FacetGrid at 0x7fa71a92f190&gt;
 </pre></div>
 </div>
 <img alt="../_images/visualization_56_2.png" src="../_images/visualization_56_2.png" />
@@ -786,7 +786,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.FacetGrid at 0x7f47e0284b50&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.FacetGrid at 0x7fa71a83b550&gt;
 </pre></div>
 </div>
 <img alt="../_images/visualization_62_1.png" src="../_images/visualization_62_1.png" />
@@ -932,11 +932,12 @@ By the way, for help you are allowed (=encouraged) to use Google as well!</p>
 </ul>
 <p>Make one such dictionary for promoters, and one dictionary for enhancers</p>
 <p><strong>Question 4. Make a merged DataFrame with readcounts</strong></p>
-<p>Make a merged pandas DataFrame in which the columns contain the readcounts from each DataFrame in your dictionary</p>
+<p>Make a new pandas DataFrame in which the columns contain the readcounts from each DataFrame in your dictionary</p>
 <ul class="simple">
 <li><p>one DataFrame for the promoters</p></li>
 <li><p>one DataFrame for the enhancers</p></li>
 </ul>
+<p>To do this, you can use a loop over your dictionaries and create a new DataFrame column by column.</p>
 <p><strong>Question 5. Make a DataFrame with pairwise correlations</strong></p>
 <p>Make a pandas DataFrame containing the pairwise correlations between the different datasets</p>
 <ul class="simple">
