@@ -20,7 +20,7 @@ Some suggested resources are listed here, in no particular order:
 
 Python comes in two major versions, Python 2 and 3. This course will use Python 3. The switch from Python 2 to 3 has taken a long time, therefore you might still find many Python 2 materials and examples on-line. However, since this year, Python 2 will not be supported anymore. Pretty much all important scientific libraries have also announced the end of support for Python 2. 
 
-For the course Computation for Biologists (NWI-BM066A), everything you need will be installed on the course webserver. You can reach this server at [https://mbscourse.science.ru.nl](https://mbscourse.science.ru.nl). You can login with your Science faculty username and password (note: not your student number!). If you don't have a science account, contact [C&CZ](http://wiki.science.ru.nl/cncz/), located in the Huygens building (HG03.055). 
+For the course Computation for Biologists (NWI-BM066A), everything you need will be installed on the course webserver. You can reach this server at [https://jupyterhub.science.ru.nl](https://jupyterhub.science.ru.nl). You can login with your Science faculty username and password (note: not your student number!). If you don't have a science account, contact [C&CZ](http://wiki.science.ru.nl/cncz/), located in the Huygens building (HG03.055). 
 
 ```{note}
 You will need to use a VPN when you are not on campus. You can use [eduVPN](https://www.surf.nl/en/eduvpn) or [VPNSec](https://wiki.cncz.science.ru.nl/Vpn).
