@@ -1,5 +1,8 @@
-- file: content/01_introduction
+format: jb-article
+root: content/01_introduction
+options:
   numbered: true
+sections:
 - file: content/first_exercises
 - file: content/lists
 - file: content/control_flow
