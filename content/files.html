@@ -7,7 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>8. Files &#8212; NWI-BM066A Computation for Biologists</title>
     
-  <link rel="stylesheet" href="../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
+  <link href="../_static/css/theme.css" rel="stylesheet" />
+  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
 
     
   <link rel="stylesheet"
@@ -19,14 +20,10 @@
 
     
       
-  <link rel="stylesheet"
-    href="../_static/vendor/open-sans_all/1.44.1/index.css">
-  <link rel="stylesheet"
-    href="../_static/vendor/lato_latin-ext/1.44.1/index.css">
 
     
-    <link rel="stylesheet" href="../_static/sphinx-book-theme.2d2078699c18a0efb88233928e1cf6ed.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.e8f53015daec13862f6db5e763c41738.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
@@ -34,19 +31,18 @@
     <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="../_static/js/index.3da636dd464baa7582d2.js">
+  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
 
     <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
-    <script src="../_static/language_data.js"></script>
     <script src="../_static/togglebutton.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../_static/sphinx-book-theme.be0a4a0c39cd630af62a2fcf693f3f06.js"></script>
-    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
         const thebe_selector_input = "pre"
@@ -57,14 +53,14 @@
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="9. Scripts" href="scripts.html" />
     <link rel="prev" title="7. Assembling the pieces" href="extra_exercises.html" />
-
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
-
-
-
+    
   </head>
   <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
     
 
     <div class="container-xl">
@@ -73,28 +69,25 @@
 <div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
     
         <div class="navbar-brand-box">
-<a class="navbar-brand text-wrap" href="../index.html">
-  
-  
-  <h1 class="site-logo" id="site-title">NWI-BM066A Computation for Biologists</h1>
-  
-</a>
-</div>
-
-<form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+      
+      <h1 class="site-logo" id="site-title">NWI-BM066A Computation for Biologists</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form>
-
-<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
-  <ul class="nav sidenav_l1">
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="01_introduction.html">
    Introduction
   </a>
  </li>
 </ul>
-<ul class="current nav sidenav_l1">
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="first_exercises.html">
    1. First exercises
@@ -167,9 +160,8 @@
  </li>
 </ul>
 
-</nav>
-
- <!-- To handle the deprecated key -->
+    </div>
+</nav> <!-- To handle the deprecated key -->
 
 <div class="navbar_extra_footer">
   Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
@@ -184,25 +176,25 @@
           
 <main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
     
-    <div class="row topbar fixed-top container-xl">
-    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
-    </div>
-    <div class="col pl-2 topbar-main">
-        
-        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-            <i class="fas fa-bars"></i>
-            <i class="fas fa-arrow-left"></i>
-            <i class="fas fa-arrow-up"></i>
-        </button>
-        
-        <div class="dropdown-buttons-trigger">
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
     <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
             class="fas fa-download"></i></button>
 
-    
     <div class="dropdown-buttons">
         <!-- ipynb file if we had a myst markdown file -->
         
@@ -214,9 +206,9 @@
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
             onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
     </div>
-    
 </div>
-        <!-- Source interaction buttons -->
+
+            <!-- Source interaction buttons -->
 
 <div class="dropdown-buttons-trigger">
     <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
@@ -236,14 +228,14 @@
     </div>
 </div>
 
+            <!-- Full screen (wrap in <a> to have style consistency -->
 
-        <!-- Full screen (wrap in <a> to have style consistency -->
-        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-                title="Fullscreen mode"><i
-                    class="fas fa-expand"></i></button></a>
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
 
-        <!-- Launch buttons -->
+            <!-- Launch buttons -->
 
 <div class="dropdown-buttons-trigger">
     <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
@@ -258,25 +250,20 @@
         
         
         
-        <a class="colab-button" href="https://colab.research.google.com/github/vanheeringen-lab/cfb_book/blob/master/content/files.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
-                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
-                    src="../_static/images/logo_colab.png"
-                    alt="Interact on Colab">Colab</button></a>
-        
         
     </div>
 </div>
 
-    </div>
-
-    <!-- Table of contents -->
-    <div class="d-none d-md-block col-md-2 bd-toc show">
-        
-        <div class="tocsection onthispage pt-5 pb-3">
-            <i class="fas fa-list"></i> Contents
         </div>
-        <nav id="bd-toc-nav">
-            <ul class="nav section-nav flex-column">
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#introduction-to-files">
    8.1. Introduction to files
@@ -294,8 +281,8 @@
  </li>
 </ul>
 
-        </nav>
-        
+            </nav>
+        </div>
     </div>
 </div>
     <div id="main-content" class="row">
@@ -341,7 +328,7 @@
 <p>At the end of the code that you execute for each line, you should close the file.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">infile</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;/scratch/cfb/list-dict-loop/example.bed&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">infile</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;/vol/cursus/CFB/list-dict-loop/example.bed&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span>
 <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">infile</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
 <span class="n">infile</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
@@ -351,22 +338,22 @@
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">FileNotFoundError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">2</span><span class="o">-</span><span class="mi">72375905</span><span class="n">f81a</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">infile</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;/scratch/cfb/list-dict-loop/example.bed&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span>
+<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_2057</span><span class="o">/</span><span class="mf">2966629597.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">infile</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;/vol/cursus/CFB/list-dict-loop/example.bed&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span>
 <span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">infile</span><span class="p">:</span>
 <span class="g g-Whitespace">      </span><span class="mi">3</span>     <span class="nb">print</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
 <span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">infile</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 
-<span class="ne">FileNotFoundError</span>: [Errno 2] No such file or directory: &#39;/scratch/cfb/list-dict-loop/example.bed&#39;
+<span class="ne">FileNotFoundError</span>: [Errno 2] No such file or directory: &#39;/vol/cursus/CFB/list-dict-loop/example.bed&#39;
 </pre></div>
 </div>
 </div>
 </div>
-<p>The file <code class="docutils literal notranslate"><span class="pre">/scratch/cfb/list-dict-loop/example.bed</span></code> is an example BED file. BED files are used to store genomic coordinates along with additional information. BED files are for instance used to store genomic coordinates of ChIP-seq peaks. The first three fields (columns) contain the chromosome, start, and end of the features, respectively. The file <code class="docutils literal notranslate"><span class="pre">/scratch/cfb/list-dict-loop/example.bed</span></code> also contains ‘header’ lines that are used when the file is displayed in the UCSC genome browser. This is not always the case for BED files.</p>
+<p>The file <code class="docutils literal notranslate"><span class="pre">/vol/cursus/CFB/list-dict-loop/example.bed</span></code> is an example BED file. BED files are used to store genomic coordinates along with additional information. BED files are for instance used to store genomic coordinates of ChIP-seq peaks. The first three fields (columns) contain the chromosome, start, and end of the features, respectively. The file <code class="docutils literal notranslate"><span class="pre">/vol/cursus/CFB/list-dict-loop/example.bed</span></code> also contains ‘header’ lines that are used when the file is displayed in the UCSC genome browser. This is not always the case for BED files.</p>
 <p>While the code above functions just fine, it is nowadays more common in Python to open files with the <code class="docutils literal notranslate"><span class="pre">with</span></code> statement.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;/scratch/cfb/list-dict-loop/example.bed&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">infile</span><span class="p">:</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;/vol/cursus/CFB/list-dict-loop/example.bed&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">infile</span><span class="p">:</span>
     <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">infile</span><span class="p">:</span>
         <span class="nb">print</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
 </pre></div>
@@ -408,7 +395,7 @@ chr7	127480532	127481699	Neg4	0	-	127480532	127481699	0,0,255
 <p>In the next few examples we will see some analysis of this file in action. Each example adds some steps and builds from the previous example.</p>
 <p>Example 1:</p>
 <ul class="simple">
-<li><p>open the <code class="docutils literal notranslate"><span class="pre">/scratch/cfb/list-dict-loop/example.bed</span></code> file</p></li>
+<li><p>open the <code class="docutils literal notranslate"><span class="pre">/vol/cursus/CFB/list-dict-loop/example.bed</span></code> file</p></li>
 <li><p>read the file line-by-line</p></li>
 <li><p>ignore header lines starting with ‘browser’ or ‘track’</p></li>
 <li><p>split each line into a list based on the <code class="docutils literal notranslate"><span class="pre">&lt;tab&gt;</span></code> character</p></li>
@@ -417,7 +404,7 @@ chr7	127480532	127481699	Neg4	0	-	127480532	127481699	0,0,255
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;/scratch/cfb/list-dict-loop/example.bed&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">infile</span><span class="p">:</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;/vol/cursus/CFB/list-dict-loop/example.bed&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">infile</span><span class="p">:</span>
     <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">infile</span><span class="p">:</span>        <span class="c1"># use a variable called &#39;line&#39; for each line</span>
         <span class="n">line</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>    <span class="c1"># take away the &#39;\\n&#39; character at the end of each line</span>
         <span class="c1"># only proceed with lines lacking &#39;browser&#39; or &#39;track&#39; at the beginning</span>
@@ -449,7 +436,7 @@ chr7	127480532	127481699	Neg4	0	-	127480532	127481699	0,0,255
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;/scratch/cfb/list-dict-loop/example.bed&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">infile</span><span class="p">:</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;/vol/cursus/CFB/list-dict-loop/example.bed&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">infile</span><span class="p">:</span>
     <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">infile</span><span class="p">:</span>
         <span class="n">line</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="n">line</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;browser&#39;</span><span class="p">)</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">line</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;track&#39;</span><span class="p">):</span>
@@ -480,7 +467,7 @@ chr7 127480532 127481699
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;/scratch/cfb/list-dict-loop/example.bed&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">infile</span><span class="p">:</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;/vol/cursus/CFB/list-dict-loop/example.bed&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">infile</span><span class="p">:</span>
     <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">infile</span><span class="p">:</span>              
         <span class="n">line</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>          
         <span class="k">if</span> <span class="ow">not</span> <span class="n">line</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;browser&#39;</span><span class="p">)</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">line</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;track&#39;</span><span class="p">):</span>
@@ -515,7 +502,7 @@ chr7 127480532 127481699
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plus</span> <span class="o">=</span> <span class="mi">0</span>
 <span class="n">minus</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;/scratch/cfb/list-dict-loop/example.bed&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">infile</span><span class="p">:</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;/vol/cursus/CFB/list-dict-loop/example.bed&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">infile</span><span class="p">:</span>
     <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">infile</span><span class="p">:</span>
         <span class="n">line</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="n">line</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;browser&#39;</span><span class="p">)</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">line</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;track&#39;</span><span class="p">):</span>
@@ -586,14 +573,14 @@ Cell line 3 is HEK293
 <p>In this exercise you are going to analyze data from ChIP-seq of several transcription factors in mouse embryonic stem cells (<a class="reference external" href="https://pubmed.ncbi.nlm.nih.gov/18555785/">Chen et al. 2008, 13;133(6):1106-17, PMID 18555785</a>). Please have a look at Figure 1 and 2 of this paper. Figure 1 shows the ChIP-seq profiles for the transcription factors.</p>
 <p>The ChIP-seq peaks that you see represent <em>in vivo</em> binding sites of these transcription factors. In Figure 2 the authors have analyzed the DNA sequence underneath these peaks, and identified specific DNA sequences (<strong>motifs</strong>) for each transcription factor.</p>
 <p>You are going to analyze these sequences as well, to see which motifs you can identify. You will count <strong>k-mers</strong> (short sequences, e.g. 8 bases in length) in the sequences underneath the ChIP-seq peaks of a specific transcription factor, and analyze which k-mers are overrepresented.</p>
-<p>DNA (or amino acid) sequence files are usually in FASTA format. Check out https://en.wikipedia.org/wiki/FASTA_format for a FASTA description and an example. Just read the first part.</p>
-<p>Before you start off using the FASTA files from the study mentioned above, you will work on a file called <code class="docutils literal notranslate"><span class="pre">testfile.fasta</span></code> (present in <code class="docutils literal notranslate"><span class="pre">/scratch/cfb/list-dict-loop</span></code>), which is a small FASTA file. This allows you to make and test your code quicker.</p>
+<p>DNA (or amino acid) sequence files are usually in FASTA format. Check out <a class="reference external" href="https://en.wikipedia.org/wiki/FASTA_format">https://en.wikipedia.org/wiki/FASTA_format</a> for a FASTA description and an example. Just read the first part.</p>
+<p>Before you start off using the FASTA files from the study mentioned above, you will work on a file called <code class="docutils literal notranslate"><span class="pre">testfile.fasta</span></code> (present in <code class="docutils literal notranslate"><span class="pre">/vol/cursus/CFB/list-dict-loop</span></code>), which is a small FASTA file. This allows you to make and test your code quicker.</p>
 <ol class="simple">
 <li><p>Provide the Python code that allows you to read the FASTA file while ignoring the description lines containing <code class="docutils literal notranslate"><span class="pre">&gt;</span></code>. For now it is OK to print the output.</p></li>
 <li><p>Extend your code with the following: For each sequence, extract all possible k-mers of length 4. Skip sequences that are shorter than 4 bases. Print the output. Make sure your code allows you to easily run the same analysis with different k-mer lengths.</p></li>
 <li><p>Extend your code with the following: Count the number of occurrences for each k-mer that is encountered (in all sequences together).</p></li>
 <li><p>Extend your code with the following: Write the top 10 most abundant k-mer sequences to an output file, along with the number of times they occur.</p></li>
-<li><p>Now that you have assembled your code (you can remove the printing statements you used for testing) adapt your code to count kmers of <strong>length 8</strong>. Run your code on 2 files present in the <code class="docutils literal notranslate"><span class="pre">/scratch/cfb/list-dict-loop</span></code> directory:</p></li>
+<li><p>Now that you have assembled your code (you can remove the printing statements you used for testing) adapt your code to count kmers of <strong>length 8</strong>. Run your code on 2 files present in the <code class="docutils literal notranslate"><span class="pre">/vol/cursus/CFB/list-dict-loop</span></code> directory:</p></li>
 </ol>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">GSM288346_ES_Oct4_mm9.peaks.fasta</span></code></p></li>
@@ -613,7 +600,7 @@ with the sequence identifier as key and the actual sequence as value. Note that 
 Create files for all your test cases.
 You can create text files from the jupyter window (<code class="docutils literal notranslate"><span class="pre">New</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">Text</span> <span class="pre">File</span></code>) or use the <code class="docutils literal notranslate"><span class="pre">Upload</span></code> button to upload files you created locally.</p>
 <p><strong>Exercise 8.3: convert gene annotation file</strong></p>
-<p>The file <code class="docutils literal notranslate"><span class="pre">/scratch/cfb/files/genes.txt</span></code> contains gene annotation. Each line represents one gene. The file is
+<p>The file <code class="docutils literal notranslate"><span class="pre">/vol/cursus/CFB/files/genes.txt</span></code> contains gene annotation. Each line represents one gene. The file is
 tab-separated and contains the following columns:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">1</span> <span class="o">-</span> <span class="n">chromosome</span>
 <span class="mi">2</span> <span class="o">-</span> <span class="n">gene</span> <span class="n">start</span>
@@ -634,10 +621,10 @@ tab-separated and contains the following columns:</p>
 </pre></div>
 </div>
 <p>For instance, for the gene SALL4 the output should look like this:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">chr20</span> <span class="mi">51782330</span> <span class="mi">51784684</span> <span class="n">SALL4</span><span class="o">.</span><span class="mi">1</span> <span class="o">-</span>
-<span class="n">chr20</span> <span class="mi">51788860</span> <span class="mi">51789141</span> <span class="n">SALL4</span><span class="o">.</span><span class="mi">2</span> <span class="o">-</span>
-<span class="n">chr20</span> <span class="mi">51790021</span> <span class="mi">51792352</span> <span class="n">SALL4</span><span class="o">.</span><span class="mi">3</span> <span class="o">-</span>
-<span class="n">chr20</span> <span class="mi">51802278</span> <span class="mi">51802520</span> <span class="n">SALL4</span><span class="o">.</span><span class="mi">4</span> <span class="o">-</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">chr20</span> <span class="mi">51782330</span> <span class="mi">51784684</span> <span class="n">SALL4</span><span class="mf">.1</span> <span class="o">-</span>
+<span class="n">chr20</span> <span class="mi">51788860</span> <span class="mi">51789141</span> <span class="n">SALL4</span><span class="mf">.2</span> <span class="o">-</span>
+<span class="n">chr20</span> <span class="mi">51790021</span> <span class="mi">51792352</span> <span class="n">SALL4</span><span class="mf">.3</span> <span class="o">-</span>
+<span class="n">chr20</span> <span class="mi">51802278</span> <span class="mi">51802520</span> <span class="n">SALL4</span><span class="mf">.4</span> <span class="o">-</span>
 </pre></div>
 </div>
 <p>The gene SALL4 has four exons, which are numbered from 1 to 4. Exon numbers are not dependent on the
@@ -667,15 +654,35 @@ strand, they are numbered from low start position to high start position.</p>
 
               </div>
               
-        </div>
-    </div>
-    
-    
-    <div class='prev-next-bottom'>
         
-    <a class='left-prev' id="prev-link" href="extra_exercises.html" title="previous page"><span class="section-number">7. </span>Assembling the pieces</a>
-    <a class='right-next' id="next-link" href="scripts.html" title="next page"><span class="section-number">9. </span>Scripts</a>
+            
 
+
+
+<div class='prev-next-bottom'>
+    
+    <div id="prev">
+        <a class="left-prev" href="extra_exercises.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title"><span class="section-number">7. </span>Assembling the pieces</p>
+            </div>
+        </a>
+    </div>
+     <div id="next">
+        <a class="right-next" href="scripts.html" title="next page">
+            <div class="prevnext-info">
+                <p class="prevnext-label">next</p>
+                <p class="prevnext-title"><span class="section-number">9. </span>Scripts</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
+
+</div>
+        
+        </div>
     </div>
     <footer class="footer mt-5 mt-md-0">
     <div class="container">
@@ -683,7 +690,7 @@ strand, they are numbered from low start position to high start position.</p>
         
           By Simon van Heeringen, Arjen Brinkman, Kees Albers<br/>
         
-            &copy; Copyright 2020.<br/>
+            &copy; Copyright 2021.<br/>
       </p>
     </div>
   </footer>
@@ -692,11 +699,9 @@ strand, they are numbered from low start position to high start position.</p>
 
       </div>
     </div>
+  
+  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
 
-    
-  <script src="../_static/js/index.3da636dd464baa7582d2.js"></script>
-
-
-    
+  
   </body>
 </html>
