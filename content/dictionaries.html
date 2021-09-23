@@ -23,7 +23,7 @@
 
     
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/sphinx-book-theme.e8f53015daec13862f6db5e763c41738.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.e2363ea40746bee74734a24ffefccd78.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
@@ -70,6 +70,7 @@
     
         <div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../index.html">
+      
       
       
       <h1 class="site-logo" id="site-title">NWI-BM066A Computation for Biologists</h1>
@@ -403,7 +404,7 @@ If the key isn’t in the dictionary, you get a <code class="docutils literal no
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">KeyError</span><span class="g g-Whitespace">                                  </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_1782</span><span class="o">/</span><span class="mf">4188483742.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_1963</span><span class="o">/</span><span class="mf">4188483742.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="nb">print</span><span class="p">(</span><span class="n">cod2aa</span><span class="p">[</span><span class="s1">&#39;GGT&#39;</span><span class="p">])</span>
 
 <span class="ne">KeyError</span>: &#39;GGT&#39;
@@ -413,7 +414,7 @@ If the key isn’t in the dictionary, you get a <code class="docutils literal no
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Dictionaries are very similar to lists. The one major differences is that values in a <code class="docutils literal notranslate"><span class="pre">list</span></code> are always accessed by an integer and that values in a <code class="docutils literal notranslate"><span class="pre">dict</span></code> can be accessed by a variety of key types.</p>
+<p>Dictionaries are very similar to lists. The one major difference is that values in a <code class="docutils literal notranslate"><span class="pre">list</span></code> are always accessed by an integer and that values in a <code class="docutils literal notranslate"><span class="pre">dict</span></code> can be accessed by a variety of key types.</p>
 </div>
 <p>Because you use keys to look up values, you can understand that <em>keys must always be unique</em>. On the other hand, <em>values do not need to be unique and can be anything</em>, including a <code class="docutils literal notranslate"><span class="pre">list</span></code> or a <code class="docutils literal notranslate"><span class="pre">dict</span></code>.
 Let us add another codon (key) that maps to an already existing amino acid (value):</p>
@@ -798,10 +799,10 @@ Create this by running this command (using copy-paste):</p>
 <p>Hint: you need to initialize the list in such a way that 5 is a valid index for the list.</p>
 <ol class="simple">
 <li><p>Question: what is the minimum length of the list required to accomplish this?</p></li>
-<li><p>Question: Why is not possible to define a list (for instance, <code class="docutils literal notranslate"><span class="pre">my_list</span></code>) with only 4 items that still produces a value for index 5 (<code class="docutils literal notranslate"><span class="pre">my_list[5]</span></code>)?</p></li>
-<li><p>Question: Suppose you have a consecutive list of indices (or integer keys) 0,1,2,3,4,…,100 and corresponding values.
+<li><p>Question: why is it not possible to define a list (for instance, <code class="docutils literal notranslate"><span class="pre">my_list</span></code>) with only 4 items that still produces a value for index 5 (<code class="docutils literal notranslate"><span class="pre">my_list[5]</span></code>)?</p></li>
+<li><p>Question: suppose you have a consecutive list of indices (or integer keys) 0,1,2,3,4,…,100 and corresponding values.
 Which type of variable is more efficient to store and access these keys and values: a list or a dictionary?</p></li>
-<li><p>Question: Suppose you have a sparse and non-consecutive list of 4 integers (for instance 1,2,10000 and 2000000) and associated values (for instance ‘A’,’B’,’C’ and ‘D’). Which type of variable is more efficient to store and access this particular combination of keys and values together: a list or a dictionary? Explain why!</p></li>
+<li><p>Question: suppose you have a sparse and non-consecutive list of 4 integers (for instance 1,2,10000 and 2000000) and associated values (for instance ‘A’,’B’,’C’ and ‘D’). Which type of variable is more efficient to store and access this particular combination of keys and values together: a list or a dictionary? Explain why!</p></li>
 </ol>
 </div>
 </div>
@@ -858,7 +859,7 @@ Which type of variable is more efficient to store and access these keys and valu
         
         </div>
     </div>
-    <footer class="footer mt-5 mt-md-0">
+    <footer class="footer">
     <div class="container">
       <p>
         
