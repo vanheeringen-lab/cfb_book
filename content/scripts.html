@@ -23,7 +23,7 @@
 
     
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/sphinx-book-theme.e2363ea40746bee74734a24ffefccd78.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
@@ -312,24 +312,24 @@
 <h2><span class="section-number">9.1. </span>Exercises: scripts<a class="headerlink" href="#exercises-scripts" title="Permalink to this headline">¶</a></h2>
 <p><strong>Exercise 9.1: Copying the files required for the exercises</strong></p>
 <p>Open a terminal from the Jupyter “Home” page in your web browser (the view of your home directory), by clicking on “Terminal” in the “New” pull down menu.</p>
-<p>If you haven’t already done so, first create a folder/directory named <code class="docutils literal notranslate"><span class="pre">cfb_2020</span></code> in your network folder for this course:</p>
+<p>If you haven’t already done so, first create a folder/directory named <code class="docutils literal notranslate"><span class="pre">cfb_2021</span></code> in your network folder for this course:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>cd                # go to root of your home directory
-mkdir cfb_2020    # mkdir creates a directory
-cd cfb_2020       # change directory
+mkdir cfb_2021    # mkdir creates a directory
+cd cfb_2021       # change directory
 pwd               # print current working directory. 
-                  # In my case, the result is: /home/kalbers/cfb_2018
+                  # In my case, the result is: /home/kalbers/cfb_2021
 </pre></div>
 </div>
-<p>Now we are going the copy the files and scripts necessary to perform these exercises to the “cfb_2018” directory.
+<p>Now we are going the copy the files and scripts necessary to perform these exercises to the “cfb_2021” directory.
 The Linux command “cp” copies files and directories.</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>cp -rp /vol/cursus/CFB/scripts_and_debugging ~/cfb_2020/
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>cp -rp /vol/cursus/CFB/scripts_and_debugging ~/cfb_2021/
 </pre></div>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>The <code class="docutils literal notranslate"><span class="pre">~</span></code> refers to the root of your home directory (whatever your username is), and the directory <code class="docutils literal notranslate"><span class="pre">cfb_2020</span></code> has to exist for this particular copy command to work.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">~</span></code> refers to the root of your home directory (whatever your username is), and the directory <code class="docutils literal notranslate"><span class="pre">cfb_2021</span></code> has to exist for this particular copy command to work.</p>
 </div>
-<p>Now change directory (using <code class="docutils literal notranslate"><span class="pre">cd</span></code>) to the directory <code class="docutils literal notranslate"><span class="pre">~/cfb_2020/scripts_and_debugging</span></code>.
+<p>Now change directory (using <code class="docutils literal notranslate"><span class="pre">cd</span></code>) to the directory <code class="docutils literal notranslate"><span class="pre">~/cfb_2021/scripts_and_debugging</span></code>.
 Validate that you are in the correct directory using the command <code class="docutils literal notranslate"><span class="pre">pwd</span></code> as above.</p>
 <p><strong>Exercise 9.2: Comparing the Jupyter notebook with running scripts from the command line</strong></p>
 <p>Open a new Python3 Jupyter-notebook for these exercises. Copy the following code into a cell and execute the cell:</p>
@@ -345,7 +345,7 @@ Validate that you are in the correct directory using the command <code class="do
 <li><p>Is this output formatted in the same way?</p></li>
 </ol>
 <p>Now create a new text file by clicking “Text File” in the “New” drop-down menu in the file-browser tab-page of your Jupyter notebook.
-Make sure to first go the correct subdirectory (<code class="docutils literal notranslate"><span class="pre">~/cfb_2020/scripts_and_debugging</span></code>) by clicking on the respective subdirectories in the
+Make sure to first go the correct subdirectory (<code class="docutils literal notranslate"><span class="pre">~/cfb_2021/scripts_and_debugging</span></code>) by clicking on the respective subdirectories in the
 Jupyter file browser window.
 Put the same three lines of code in this text file. Then, rename the text file to “<a class="reference external" href="http://exercise2.py">exercise2.py</a>” by clicking on the file name at the top of the screen.
 (The default file name is “untitled.txt”).</p>
